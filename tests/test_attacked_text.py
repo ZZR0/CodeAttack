@@ -2,14 +2,14 @@ import collections
 
 import pytest
 
-import textattack
+import codeattack
 
 raw_text = "A person walks up stairs into a room and sees beer poured from a keg and people talking."
 
 
 @pytest.fixture
 def attacked_text():
-    return textattack.shared.AttackedText(raw_text)
+    return codeattack.shared.AttackedCode(raw_text)
 
 
 raw_pokemon_text = "the threat implied in the title pokémon 4ever is terrifying  like locusts in a horde these things will keep coming ."
@@ -17,7 +17,7 @@ raw_pokemon_text = "the threat implied in the title pokémon 4ever is terrifying
 
 @pytest.fixture
 def pokemon_attacked_text():
-    return textattack.shared.AttackedText(raw_pokemon_text)
+    return codeattack.shared.AttackedCode(raw_pokemon_text)
 
 
 premise = "Among these are the red brick Royal Palace, which now houses the Patan Museum (Nepal's finest and most modern museum), and, facing the palace across the narrow brick plaza, eight temples of different styles and sizes."
@@ -31,15 +31,15 @@ raw_hyphenated_text = "It's a run-of-the-mill kind of farmer's tan."
 
 @pytest.fixture
 def hyphenated_text():
-    return textattack.shared.AttackedText(raw_hyphenated_text)
+    return codeattack.shared.AttackedCode(raw_hyphenated_text)
 
 
 @pytest.fixture
 def attacked_text_pair():
-    return textattack.shared.AttackedText(raw_text_pair)
+    return codeattack.shared.AttackedCode(raw_text_pair)
 
 
-class TestAttackedText:
+class TestAttackedCode:
     def test_words(self, attacked_text, pokemon_attacked_text):
         # fmt: off
         assert attacked_text.words == [

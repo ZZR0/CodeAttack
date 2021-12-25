@@ -47,3 +47,7 @@ checkpoints/
 
 .vscode
 *.csv
+*.jsonl
+
+dataset
+*.bin

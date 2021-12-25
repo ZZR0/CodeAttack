@@ -1,13 +1,13 @@
 def test_imports():
     import torch
 
-    import textattack
+    import codeattack
 
-    del textattack, torch
+    del codeattack, torch
 
 
 def test_embedding_augmenter():
-    from textattack.augmentation import EmbeddingAugmenter
+    from codeattack.augmentation import EmbeddingAugmenter
 
     augmenter = EmbeddingAugmenter(
         pct_words_to_swap=0.01, transformations_per_example=64
@@ -21,7 +21,7 @@ def test_embedding_augmenter():
 
 
 def test_checklist_augmenter():
-    from textattack.augmentation import CheckListAugmenter
+    from codeattack.augmentation import CheckListAugmenter
 
     augmenter = CheckListAugmenter(
         pct_words_to_swap=0.01, transformations_per_example=64
@@ -38,7 +38,7 @@ def test_checklist_augmenter():
 
 
 def test_charwap_augmenter():
-    from textattack.augmentation import CharSwapAugmenter
+    from codeattack.augmentation import CharSwapAugmenter
 
     augmenter = CharSwapAugmenter(
         pct_words_to_swap=0.01, transformations_per_example=64
@@ -50,7 +50,7 @@ def test_charwap_augmenter():
 
 
 def test_easydata_augmenter():
-    from textattack.augmentation import EasyDataAugmenter
+    from codeattack.augmentation import EasyDataAugmenter
 
     augmenter = EasyDataAugmenter(
         pct_words_to_swap=0.01, transformations_per_example=64
@@ -62,7 +62,7 @@ def test_easydata_augmenter():
 
 
 def test_easydata_augmenter2():
-    from textattack.augmentation import EasyDataAugmenter
+    from codeattack.augmentation import EasyDataAugmenter
 
     augmenter = EasyDataAugmenter(
         pct_words_to_swap=0.01, transformations_per_example=64
@@ -74,7 +74,7 @@ def test_easydata_augmenter2():
 
 
 def test_wordnet_augmenter():
-    from textattack.augmentation import WordNetAugmenter
+    from codeattack.augmentation import WordNetAugmenter
 
     augmenter = WordNetAugmenter(pct_words_to_swap=0.01, transformations_per_example=64)
     s = "The Dragon warrior is a panda"
@@ -84,7 +84,7 @@ def test_wordnet_augmenter():
 
 
 def test_deletion_augmenter():
-    from textattack.augmentation import DeletionAugmenter
+    from codeattack.augmentation import DeletionAugmenter
 
     augmenter = DeletionAugmenter(pct_words_to_swap=0.1, transformations_per_example=10)
     s = "The United States"
@@ -94,7 +94,7 @@ def test_deletion_augmenter():
 
 
 def test_high_yield_fast_augment():
-    from textattack.augmentation import WordNetAugmenter
+    from codeattack.augmentation import WordNetAugmenter
 
     augmenter_hy = WordNetAugmenter(
         pct_words_to_swap=0.1, transformations_per_example=2, high_yield=True
@@ -126,8 +126,8 @@ def test_high_yield_fast_augment():
 
 
 def test_back_translation():
-    from textattack.augmentation import Augmenter
-    from textattack.transformations.sentence_transformations import BackTranslation
+    from codeattack.augmentation import Augmenter
+    from codeattack.transformations.sentence_transformations import BackTranslation
 
     augmenter = Augmenter(transformation=BackTranslation())
     s = "What on earth are you doing?"

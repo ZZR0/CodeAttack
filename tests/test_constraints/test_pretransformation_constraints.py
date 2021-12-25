@@ -2,7 +2,7 @@ import collections
 
 import pytest
 
-import textattack
+import codeattack
 
 # a sentence with 23 words
 sentence = "south korea's inflation rate slowed slightly in august as oil and commodity prices showed signs of stabilising, the national statistical office said monday."
@@ -15,7 +15,7 @@ hypothesis = "The Patan Museum is down the street from the red brick Royal Palac
 
 @pytest.fixture
 def sentence_attacked_text():
-    return textattack.shared.AttackedText(sentence)
+    return codeattack.shared.AttackedCode(sentence)
 
 
 @pytest.fixture
@@ -23,14 +23,14 @@ def entailment_attacked_text():
     raw_text_pair = collections.OrderedDict(
         [("premise", premise), ("hypothesis", hypothesis)]
     )
-    return textattack.shared.AttackedText(raw_text_pair)
+    return codeattack.shared.AttackedCode(raw_text_pair)
 
 
 class TestPretransformationConstraints:
     def test_input_column_modification_basic(
         self, sentence_attacked_text, entailment_attacked_text
     ):
-        constraint = textattack.constraints.pre_transformation.InputColumnModification(
+        constraint = codeattack.constraints.pre_transformation.InputColumnModification(
             ["text"], {}
         )
         assert constraint._get_modifiable_indices(sentence_attacked_text) == set(
@@ -42,7 +42,7 @@ class TestPretransformationConstraints:
         )
 
     def test_input_column_modification_premise(self, entailment_attacked_text):
-        constraint = textattack.constraints.pre_transformation.InputColumnModification(
+        constraint = codeattack.constraints.pre_transformation.InputColumnModification(
             ["premise", "hypothesis"],
             {"hypothesis"},  # don't modify 'hypothesis' column
         )
@@ -51,7 +51,7 @@ class TestPretransformationConstraints:
         )
 
     def test_input_column_modification_hypothesis(self, entailment_attacked_text):
-        constraint = textattack.constraints.pre_transformation.InputColumnModification(
+        constraint = codeattack.constraints.pre_transformation.InputColumnModification(
             ["premise", "hypothesis"], {"premise"}  # don't modify 'premise' column
         )
         assert constraint._get_modifiable_indices(entailment_attacked_text) == set(
@@ -60,14 +60,14 @@ class TestPretransformationConstraints:
 
     def test_max_word_index(self, sentence_attacked_text):
         short_constraint = (
-            textattack.constraints.pre_transformation.MaxWordIndexModification(8)
+            codeattack.constraints.pre_transformation.MaxWordIndexModification(8)
         )
         assert short_constraint._get_modifiable_indices(sentence_attacked_text) == set(
             range(8)
         )
 
         long_constraint = (
-            textattack.constraints.pre_transformation.MaxWordIndexModification(8000)
+            codeattack.constraints.pre_transformation.MaxWordIndexModification(8000)
         )
         assert long_constraint._get_modifiable_indices(sentence_attacked_text) == set(
             range(len(sentence_attacked_text.words))
@@ -76,7 +76,7 @@ class TestPretransformationConstraints:
     def test_repeat_modification(
         self, sentence_attacked_text, entailment_attacked_text
     ):
-        constraint = textattack.constraints.pre_transformation.RepeatModification()
+        constraint = codeattack.constraints.pre_transformation.RepeatModification()
         assert constraint._get_modifiable_indices(sentence_attacked_text) == set(
             range(len(sentence_attacked_text.words))
         )
@@ -95,7 +95,7 @@ class TestPretransformationConstraints:
     def test_stopword_modification(
         self, sentence_attacked_text, entailment_attacked_text
     ):
-        constraint = textattack.constraints.pre_transformation.StopwordModification()
+        constraint = codeattack.constraints.pre_transformation.StopwordModification()
         assert constraint._get_modifiable_indices(sentence_attacked_text) == (
             set(range(len(sentence_attacked_text.words))) - {6, 8, 10, 15, 17}
         )
