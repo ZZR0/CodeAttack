@@ -3,12 +3,13 @@ Managing Attack Logs.
 ========================
 """
 
-from codeattack.goal_function_results.search_goal_function_result import SearchGoalFunctionResult
+from codeattack.goal_function_results.search_goal_function_result import SearchGoalFunctionResult, CloneGoalFunctionResult
+from codeattack.goal_function_results.text_to_text_goal_function_result import TextToTextGoalFunctionResult
 from codeattack.metrics.attack_metrics import (
     AttackQueries,
     AttackSuccessRate,
     WordsPerturbed,
-    MRR,
+    MRR, MAP, BLEU
 )
 from codeattack.metrics.quality_metrics import Perplexity, USEMetric
 
@@ -125,6 +126,20 @@ class AttackLogManager:
             ["Original MRR:", mrr_stats["original_mrr"]])
             summary_table_rows.append(
             ["Perturbed MRR:", mrr_stats["perturbed_mrr"]])
+        
+        if isinstance(self.results[0].original_result, CloneGoalFunctionResult):
+            map_stats = MAP().calculate(self.results)
+            summary_table_rows.append(
+            ["Original MAP:", map_stats["original_map"]])
+            summary_table_rows.append(
+            ["Perturbed MAP:", map_stats["perturbed_map"]])
+        
+        if isinstance(self.results[0].original_result, TextToTextGoalFunctionResult):
+            map_stats = BLEU().calculate(self.results)
+            summary_table_rows.append(
+            ["Original BLEU-4:", map_stats["original_bleu4"]])
+            summary_table_rows.append(
+            ["Perturbed BLEU-4:", map_stats["perturbed_bleu4"]])
 
         if self.enable_advance_metrics:
             perplexity_stats = Perplexity().calculate(self.results)

@@ -80,3 +80,7 @@ class SearchGoalFunctionResult(GoalFunctionResult):
         # concatenate with label and convert confidence score to percent, like '33%'
         output_str = f"{output} ({confidence_score:.0%})"
         return utils.color_text(output_str, color=color, method=color_method)
+
+class CloneGoalFunctionResult(SearchGoalFunctionResult):
+    def __init__(self, attacked_text, raw_output, output, goal_status, score, num_queries, ground_truth_output):
+        super().__init__(attacked_text, raw_output, output, goal_status, score, num_queries, ground_truth_output)

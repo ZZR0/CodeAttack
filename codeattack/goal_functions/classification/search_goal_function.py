@@ -8,6 +8,7 @@ import numpy as np
 import torch
 
 from codeattack.goal_function_results import SearchGoalFunctionResult
+from codeattack.goal_function_results.search_goal_function_result import CloneGoalFunctionResult
 from codeattack.goal_functions import GoalFunction
 
 
@@ -63,3 +64,9 @@ class SearchGoalFunction(GoalFunction):
 
     def _get_displayed_output(self, raw_output):
         return 0
+
+class CloneGoalFunction(SearchGoalFunction):
+
+    def _goal_function_result_type(self):
+        """Returns the class of this goal function's results."""
+        return CloneGoalFunctionResult

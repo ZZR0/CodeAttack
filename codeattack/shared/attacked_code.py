@@ -68,7 +68,7 @@ class AttackedCode:
 
     SPLIT_TOKEN = "<SPLIT>"
 
-    def __init__(self, text_input, site_map, adv_key="adv", k=0, attack_attrs=None):
+    def __init__(self, text_input, site_map, adv_key="adv", k=0, attack_attrs=None, ground_truth_output=None):
         # Read in ``text_input`` as a string or OrderedDict.
         if isinstance(text_input, str):
             self._text_input = OrderedDict([("text", text_input)])
@@ -89,6 +89,7 @@ class AttackedCode:
         self._words_per_input = None
         self._pos_tags = None
         self._ner_tags = None
+        self.ground_truth_output = ground_truth_output
         # Format text inputs.
         self._origin_input = OrderedDict([(k, v) for k, v in self._text_input.items()])
         od = []
@@ -108,6 +109,7 @@ class AttackedCode:
             raise TypeError(f"Invalid type for attack_attrs: {type(attack_attrs)}")
         # Indices of words from the *original* text. Allows us to map
         # indices between original text and this text, and vice-versa.
+        self.attack_attrs.setdefault("original_index_map", np.arange(self.num_words))
         # A list of all indices in *this* text that have been modified.
         self.attack_attrs.setdefault("modified_indices", set())
 
@@ -392,20 +394,16 @@ class AttackedCode:
             raise ValueError(
                 f"Cannot replace {len(new_words)} words at {len(indices)} indices."
             )
-        words = copy.deepcopy(self.adv_tokens)
         site_map = copy.deepcopy(self.adv_site_map)
         for i, new_word in zip(indices, new_words):
             if not isinstance(new_word, str):
                 raise TypeError(
                     f"replace_words_at_indices requires ``str`` words, got {type(new_word)}"
                 )
-            if (i < 0) or (i > len(words)):
+            if (i < 0) or (i > len(site_map)):
                 raise ValueError(f"Cannot assign word at index {i}")
             
             site_map[self.rep_key(i)][0] = self.format_new_word(new_word, self.rep_key(i))
-        # for id in indices:
-        #     for site in self.adv_map[id]:
-        #         words[site]=site_map[self.rep_key(id)][0]
         return self.generate_new_attacked_text(site_map)
 
     def replace_word_at_index(self, index, new_word):
@@ -482,7 +480,8 @@ class AttackedCode:
                 new_attack_attrs["newly_modified_indices"].add(i)
                 k += 1
 
-        return AttackedCode(self._origin_input, new_site_map, k=k, attack_attrs=new_attack_attrs)
+        return AttackedCode(self._origin_input, new_site_map, k=k, attack_attrs=new_attack_attrs,
+                            ground_truth_output=self.ground_truth_output)
 
     # def words_diff_ratio(self, x):
     #     """Get the ratio of words difference between current text and `x`.
@@ -558,12 +557,12 @@ class AttackedCode:
     @property
     def words(self):
         if not self._words:
-            self._words = [self.adv_site_map[self.rep_key(i)][0] for i in list(self.adv_map.keys())]
+            self._words = [v[0] for v in self.adv_site_map.values()]
         return self._words
     
     def idx(self):
         if not self._idx:
-            self._idx = list(self.adv_map.keys())
+            self._idx = list(self.id2key.keys())
         return self._idx
 
     @property

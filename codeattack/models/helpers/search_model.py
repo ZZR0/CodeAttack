@@ -2,12 +2,6 @@ import torch.nn as nn
 import torch
 import os
 
-def build_and_load_model(model, config, tokenizer, args):
-    model = Model(model, config, tokenizer, args)
-    model.load_state_dict(torch.load(args.model_from_file))
-    model.tie_weights()
-    return model
-
 class Model(nn.Module):   
     def __init__(self, encoder,config,tokenizer,args):
         super(Model, self).__init__()

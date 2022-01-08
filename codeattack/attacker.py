@@ -26,7 +26,6 @@ from codeattack.shared.utils import logger
 from .attack import Attack
 from .attack_args import AttackArgs
 
-
 class Attacker:
     """Class for running attacks on a dataset with specified parameters. This
     class uses the :class:`~textattack.Attack` to actually run the attacks,
@@ -161,7 +160,7 @@ class Attacker:
                 example, ground_truth_output, site_map = self.dataset[idx]
             except IndexError:
                 continue
-            example = codeattack.shared.AttackedCode(example, site_map)
+            example = codeattack.shared.AttackedCode(example, site_map, ground_truth_output=ground_truth_output)
             if self.dataset.label_names is not None:
                 example.attack_attrs["label_names"] = self.dataset.label_names
             try:
@@ -263,8 +262,8 @@ class Attacker:
         out_queue = torch.multiprocessing.Queue()
         for i in worklist:
             try:
-                example, ground_truth_output = self.dataset[i]
-                example = codeattack.shared.AttackedCode(example)
+                example, ground_truth_output, site_map = self.dataset[i]
+                example = codeattack.shared.AttackedCode(example, site_map, ground_truth_output=ground_truth_output)
                 if self.dataset.label_names is not None:
                     example.attack_attrs["label_names"] = self.dataset.label_names
                 in_queue.put((i, example, ground_truth_output))
@@ -342,8 +341,8 @@ class Attacker:
             ):
                 if worklist_candidates:
                     next_sample = worklist_candidates.popleft()
-                    example, ground_truth_output = self.dataset[next_sample]
-                    example = codeattack.shared.AttackedCode(example)
+                    example, ground_truth_output, site_map = self.dataset[next_sample]
+                    example = codeattack.shared.AttackedCode(example, site_map, ground_truth_output=ground_truth_output)
                     if self.dataset.label_names is not None:
                         example.attack_attrs["label_names"] = self.dataset.label_names
                     worklist.append(next_sample)

@@ -47,10 +47,14 @@ class MinimizeBleu(TextToTextGoalFunction):
         return bleu_score <= (self.target_bleu + MinimizeBleu.EPS)
 
     def _get_score(self, model_output, _):
-        model_output_at = codeattack.shared.AttackedCode(model_output)
-        ground_truth_at = codeattack.shared.AttackedCode(self.ground_truth_output)
+        model_output_at = model_output
+        ground_truth_at = self.ground_truth_output
         bleu_score = get_bleu(model_output_at, ground_truth_at)
         return 1.0 - bleu_score
+    
+    def _process_model_outputs(self, _, outputs):
+        """Processes and validates a list of model outputs."""
+        return outputs
 
     def extra_repr_keys(self):
         if self.maximizable:
@@ -61,7 +65,7 @@ class MinimizeBleu(TextToTextGoalFunction):
 
 @functools.lru_cache(maxsize=2 ** 12)
 def get_bleu(a, b):
-    ref = a.words
-    hyp = b.words
+    ref = a.split()
+    hyp = b.split()
     bleu_score = nltk.translate.bleu_score.sentence_bleu([ref], hyp)
     return bleu_score

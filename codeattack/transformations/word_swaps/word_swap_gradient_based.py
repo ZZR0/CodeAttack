@@ -40,7 +40,7 @@ class WordSwapGradientBased(WordSwap):
         self.model_wrapper = model_wrapper
         self.tokenizer = self.model_wrapper.tokenizer
         # Make sure we know how to compute the gradient for this model.
-        validate_model_gradient_word_swap_compatibility(self.model)
+        # validate_model_gradient_word_swap_compatibility(self.model)
         # Make sure this model has all of the required properties.
         if not hasattr(self.model, "get_input_embeddings"):
             raise ValueError(
@@ -62,24 +62,26 @@ class WordSwapGradientBased(WordSwap):
             attacked_text (AttackedCode): The full text input to perturb
             word_index (int): index of the word to replace
         """
+        indices_to_replace = list(indices_to_replace)
 
         lookup_table = self.model.get_input_embeddings().weight.data.cpu()
 
-        grad_output = self.model_wrapper.get_grad(attacked_text.tokenizer_input)
+        grad_output = self.model_wrapper.get_grad(attacked_text, indices_to_replace)
         emb_grad = torch.tensor(grad_output["gradient"])
         text_ids = grad_output["ids"]
+        ids_to_replace = grad_output["ids_to_replace"]
         # grad differences between all flips and original word (eq. 1 from paper)
         vocab_size = lookup_table.size(0)
-        diffs = torch.zeros(len(indices_to_replace), vocab_size)
-        indices_to_replace = list(indices_to_replace)
+        diffs = torch.zeros(len(ids_to_replace), vocab_size)
         # word_idx: word location,  text_ids: ids in a sentances
-        for j, word_idx in enumerate(indices_to_replace):
+        for j, word_idx in enumerate(ids_to_replace):
             # Make sure the word is in bounds.
-            if word_idx >= len(emb_grad):
+            if len(word_idx) == 0:
                 continue
             # Get the grad w.r.t the one-hot index of the word.
-            b_grads = lookup_table.mv(emb_grad[word_idx]).squeeze()
-            a_grad = b_grads[text_ids[word_idx]]
+            grad = emb_grad[word_idx].mean(dim=0)
+            b_grads = lookup_table.mv(grad).squeeze()
+            a_grad = b_grads[text_ids[word_idx[0]]]
             diffs[j] = b_grads - a_grad
 
         # Don't change to the pad token.
@@ -94,7 +96,7 @@ class WordSwapGradientBased(WordSwap):
             idx_in_diffs = idx // num_words_in_vocab
             idx_in_vocab = idx % (num_words_in_vocab)
             idx_in_sentence = indices_to_replace[idx_in_diffs]
-            word = self.tokenizer.convert_id_to_word(idx_in_vocab)
+            word = self.tokenizer.decode(idx_in_vocab).strip()
             if (not utils.has_letter(word)) or (len(utils.words_from_text(word)) != 1):
                 # Do not consider words that are solely letters or punctuation.
                 continue

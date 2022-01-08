@@ -15,7 +15,7 @@ from codeattack.constraints.pre_transformation import (
 )
 from codeattack.constraints.semantics import WordEmbeddingDistance
 from codeattack.constraints.semantics.sentence_encoders import UniversalSentenceEncoder
-from codeattack.goal_functions import UntargetedClassification, SearchGoalFunction
+from codeattack.goal_functions import UntargetedClassification
 from codeattack.search_methods import GreedyWordSwapWIR
 from codeattack.transformations import WordSwapEmbedding
 
@@ -71,20 +71,18 @@ class TextFoolerJin2019(AttackRecipe):
         # embeddings by pi. So if the original threshold was that 1 - sim >= 0.5, the
         # new threshold is 1 - (0.5) / pi = 0.840845057
         #
-        # use_constraint = UniversalSentenceEncoder(
-        #     threshold=0.840845057,
-        #     metric="angular",
-        #     compare_against_original=False,
-        #     window_size=15,
-        #     skip_text_shorter_than_window=True,
-        # )
-        # constraints.append(use_constraint)
+        use_constraint = UniversalSentenceEncoder(
+            threshold=0.840845057,
+            metric="angular",
+            compare_against_original=False,
+            window_size=15,
+            skip_text_shorter_than_window=True,
+        )
+        constraints.append(use_constraint)
         #
         # Goal is untargeted classification
         #
-        # goal_function = UntargetedClassification(model_wrapper)
-        goal_function = SearchGoalFunction(model_wrapper)
-
+        goal_function = UntargetedClassification(model_wrapper)
         #
         # Greedily swap words with "Word Importance Ranking".
         #
