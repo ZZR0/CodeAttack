@@ -3,18 +3,22 @@ Managing Attack Logs.
 ========================
 """
 
-from codeattack.goal_function_results.search_goal_function_result import SearchGoalFunctionResult, CloneGoalFunctionResult
+from codeattack.goal_function_results.search_goal_function_result import (
+    SearchGoalFunctionResult, 
+    CloneGoalFunctionResult
+)
+from codeattack.goal_function_results.classification_goal_function_result import ClassificationGoalFunctionResult
 from codeattack.goal_function_results.text_to_text_goal_function_result import TextToTextGoalFunctionResult
 from codeattack.metrics.attack_metrics import (
     AttackQueries,
     AttackSuccessRate,
     WordsPerturbed,
-    MRR, MAP, BLEU
+    MRR, MAP, BLEU,
+    F1, Precision, Recall,
 )
 from codeattack.metrics.quality_metrics import Perplexity, USEMetric
 
 from . import CSVLogger, FileLogger, VisdomLogger, WeightsAndBiasesLogger
-
 
 class AttackLogManager:
     """Logs the results of an attack to all attached loggers."""
@@ -120,6 +124,26 @@ class AttackLogManager:
         summary_table_rows.append(
             ["Avg num queries:", attack_query_stats["avg_num_queries"]]
         )
+        
+        if isinstance(self.results[0].original_result, ClassificationGoalFunctionResult):
+            stats = F1().calculate(self.results)
+            summary_table_rows.append(
+            ["Original F1:", stats["original_f1"]])
+            summary_table_rows.append(
+            ["Perturbed F1:", stats["perturbed_f1"]])
+
+            stats = Precision().calculate(self.results)
+            summary_table_rows.append(
+            ["Original Precision:", stats["original_precision"]])
+            summary_table_rows.append(
+            ["Perturbed Precision:", stats["perturbed_precision"]])
+
+            stats = Recall().calculate(self.results)
+            summary_table_rows.append(
+            ["Original Recall:", stats["original_recall"]])
+            summary_table_rows.append(
+            ["Perturbed Recall:", stats["perturbed_recall"]])
+
         if isinstance(self.results[0].original_result, SearchGoalFunctionResult):
             mrr_stats = MRR().calculate(self.results)
             summary_table_rows.append(
