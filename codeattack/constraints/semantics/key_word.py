@@ -84,6 +84,10 @@ class KeyWord(Constraint):
 
         for i in indices:
             transformed_word = transformed_text.words[i]
+            if '" != "' in transformed_word:
+                transformed_word = transformed_word.replace('" != "', "")[1:-1]
+            if '" == "' in transformed_word:
+                transformed_word = transformed_word.replace('" == "', "")[1:-1]
             if classify_tok(transformed_word) != 'WORDS':
                 return False
 

@@ -22,31 +22,6 @@ from .utils import device, words_from_text
 
 flair.device = device
 
-def split_replace_words(code, site_map):
-    r = []
-    id2key, key2id = {}, {}
-    for idx, key in enumerate(site_map.keys()):
-        pattern = re.compile(key)
-        r += [(m.span()) for m in re.finditer(pattern, code)]
-        id2key[idx] = key
-        key2id[key] = idx
-    tokens, prev, end = [], 0, len(code)
-    r.sort()
-    for span in r:
-        tokens += [code[prev:span[0]]]
-        tokens += [code[span[0]:span[1]]]
-        prev = span[1]
-    if prev < end: tokens += [code[prev:end]]
-
-    out = {}
-    for idx, token in enumerate(tokens):
-        if token in key2id:
-            id = key2id[token]
-            if id in out: out[id] += [idx]
-            else: out[id] = [idx]
-    return tokens, out, id2key, key2id
-
-
 class AttackedCode:
 
     """A helper class that represents a string that can be attacked.
@@ -82,7 +57,7 @@ class AttackedCode:
             self.ori_site_map = attack_attrs["ori_site_map"]
         else:
             self.ori_site_map = site_map
-        self.adv_site_map = site_map
+        self.site_map = site_map
         # Process input lazily.
         self.k = k
         self._words = None
@@ -92,11 +67,15 @@ class AttackedCode:
         self.ground_truth_output = ground_truth_output
         # Format text inputs.
         self._origin_input = OrderedDict([(k, v) for k, v in self._text_input.items()])
+        self.id2key, self.key2id = {}, {}
+        for idx, key in enumerate(site_map.keys()):
+            self.id2key[idx] = key
+            self.key2id[key] = idx
+
         od = []
         for k, v in self._text_input.items():
-            if k == adv_key:
-                self.adv_tokens, self.adv_map, self.id2key, self.key2id = split_replace_words(v, site_map)
-                v = self.generate_adv_text()
+            if adv_key in k:
+                v = self.generate_adv_text(v, self.site_map)
             od += [(k, v)]
 
         self._text_input = OrderedDict(od)
@@ -116,12 +95,10 @@ class AttackedCode:
     def rep_key(self, id):
         return self.id2key[id]
 
-    def generate_adv_text(self):
-        tokens = copy.deepcopy(self.adv_tokens)
-        for id, sites in self.adv_map.items():
-            for site in sites:
-                tokens[site]=self.adv_site_map[self.rep_key(id)][0]
-        return "".join(tokens)
+    def generate_adv_text(self, src, site_map):
+        for key in site_map:
+            src = src.replace(key, site_map[key][0])
+        return src
 
     def __eq__(self, other):
         """Compares two text instances to make sure they have the same attack
@@ -378,11 +355,11 @@ class AttackedCode:
 
     def format_new_word(self, new_word, key):
         if new_word == "": return new_word
-        if self.adv_site_map[key][1] == "transforms.AddDeadCode":
+        if self.site_map[key][1] == "transforms.AddDeadCode":
             return "if (false) {{ int "+new_word+" = 1; }};"
-        if self.adv_site_map[key][1] == "transforms.InsertPrintStatements":
+        if self.site_map[key][1] == "transforms.InsertPrintStatements":
             return 'System.out.println("'+new_word+'");'
-        if self.adv_site_map[key][1] == "transforms.ReplaceTrueFalse":
+        if self.site_map[key][1] == "transforms.ReplaceTrueFalse":
             idx = (len(key) // 2)
             return f'"{new_word}"' + key[idx-2:idx+2] + f'"{new_word}"'
         return new_word
@@ -394,7 +371,7 @@ class AttackedCode:
             raise ValueError(
                 f"Cannot replace {len(new_words)} words at {len(indices)} indices."
             )
-        site_map = copy.deepcopy(self.adv_site_map)
+        site_map = copy.deepcopy(self.site_map)
         for i, new_word in zip(indices, new_words):
             if not isinstance(new_word, str):
                 raise TypeError(
@@ -530,12 +507,7 @@ class AttackedCode:
     @property
     def tokenizer_input(self):
         """The tuple of inputs to be passed to the tokenizer."""
-        input_tuple = tuple(self._text_input.values())
-        # Prefer to return a string instead of a tuple with a single value.
-        if len(input_tuple) == 1:
-            return input_tuple[0]
-        else:
-            return input_tuple
+        return self._text_input
 
     @property
     def column_labels(self):
@@ -557,7 +529,7 @@ class AttackedCode:
     @property
     def words(self):
         if not self._words:
-            self._words = [v[0] for v in self.adv_site_map.values()]
+            self._words = [v[0] for v in self.site_map.values()]
         return self._words
     
     def idx(self):
@@ -576,7 +548,7 @@ class AttackedCode:
     @property
     def num_words(self):
         """Returns the number of words in the sequence."""
-        return len(self.adv_site_map)
+        return len(self.site_map)
 
     def printable_text(self, key_color="bold", key_color_method=None):
         """Represents full text input. Adds field descriptions.
@@ -587,28 +559,23 @@ class AttackedCode:
             hypothesis: ...
             ```
         """
-        # For single-sequence inputs, don't show a prefix.
-        if len(self._text_input) == 1:
-            return next(iter(self._text_input.values()))
-        # For multiple-sequence inputs, show a prefix and a colon. Optionally,
-        # color the key.
+
+        if key_color_method:
+
+            def ck(k):
+                return codeattack.shared.utils.color_text(
+                    k, key_color, key_color_method
+                )
+
         else:
-            if key_color_method:
 
-                def ck(k):
-                    return codeattack.shared.utils.color_text(
-                        k, key_color, key_color_method
-                    )
+            def ck(k):
+                return k
 
-            else:
-
-                def ck(k):
-                    return k
-
-            return "\n".join(
-                f"{ck(key.capitalize())}: {value}"
-                for key, value in self._text_input.items()
-            )
+        return "\n".join(
+            f"{ck(key.capitalize())}: {value}"
+            for key, value in self._text_input.items()
+        )
 
     def __repr__(self):
         return f'<AttackedCode "{self.text}">'

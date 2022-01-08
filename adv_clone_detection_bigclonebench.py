@@ -1,26 +1,12 @@
 # Quiet TensorFlow.
-import os
 import json
-import torch
+import copy
 import argparse
-import numpy as np
-import torch.nn as nn
-
-from transformers import RobertaConfig, RobertaModel, RobertaTokenizer
 
 import codeattack
 from codeattack import Attacker
-from codeattack import Attack
-from codeattack.models.wrappers import ModelWrapper
-from codeattack.search_methods import GreedyWordSwapWIR
-from codeattack.transformations import WordSwapEmbedding, WordSwapGradientBased
-from codeattack.constraints.overlap.max_words_perturbed import MaxWordsPerturbed
-from codeattack.constraints.pre_transformation import (
-    RepeatModification,
-)
-from codeattack.constraints.semantics import KeyWord
 from codeattack.goal_functions import DefectClassification, UntargetedClassification
-from codeattack.attack_recipes import AttackRecipe
+from recipe import TextFoolerAttack, RandomAttack
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -32,10 +18,11 @@ def parse_args():
     parser.add_argument('--z_epsilon', type=int)
     parser.add_argument('--u_pgd_epochs', type=int)
     
-    parser.add_argument('--task', type=str, default=None)
+    parser.add_argument('--task', type=str, default="clone_bcb")
     parser.add_argument('--model', type=str, default="codebert")
     parser.add_argument('--lang', type=str, default="java")
-    parser.add_argument('--num_examples', type=int, default=100)
+    parser.add_argument('--recipe', type=str, default="textfooler")
+    parser.add_argument('--num_examples', type=int, default=-1)
     parser.add_argument('--max_source_length', type=int, default=400)
     parser.add_argument('--max_target_length', type=int, default=400)
     parser.add_argument("--model_name_or_path", default=None, type=str, 
@@ -51,6 +38,13 @@ def parse_args():
 
     return args
 
+def update_code(adv_code, site_map, start=0):
+    new_site_map = {}
+    for idx, key in enumerate(site_map.keys()):
+        new_key = key.replace("@R_{}@".format(idx), "@R_{}@".format(idx+start))
+        adv_code = adv_code.replace(key, new_key)
+        new_site_map[new_key] = site_map[key]
+    return adv_code, new_site_map
 
 def build_dataset(args):
     test_file = "/home/zzr/CodeAttack/dataset/clone_detection_bigclonebench/test.txt"
@@ -75,45 +69,18 @@ def build_dataset(args):
             
             code1 = url_to_code[url1]["code"]
             adv_code1 = url_to_code[url1]["adv"]
-            site_map1 = url_to_code[url1]["site_map"]
+            site_map1 = copy.deepcopy(url_to_code[url1]["site_map"])
             code2 = url_to_code[url2]["code"]
             adv_code2 = url_to_code[url2]["adv"]
-            site_map2 = url_to_code[url2]["site_map"]
+            site_map2 = copy.deepcopy(url_to_code[url2]["site_map"])
 
-            dataset += [((code1, adv_code2), label, site_map1)]
+            adv_code2, site_map2 = update_code(adv_code2, site_map2, start=len(site_map1))
+            site_map1.update(site_map2)
+            dataset += [((adv_code1, adv_code2), label, site_map1)]
 
-    dataset = codeattack.datasets.Dataset(dataset, input_columns=["code", "adv"])
+    dataset = codeattack.datasets.Dataset(dataset, input_columns=["adv1", "adv2"])
     return dataset
 
-class CloneDetectionBCBAttack(AttackRecipe):
-
-    @staticmethod
-    def build(model_wrapper):
-        #
-        # Swap words with their 50 closest embedding nearest-neighbors.
-        # Embedding: Counter-fitted PARAGRAM-SL999 vectors.
-        #
-        transformation = WordSwapEmbedding(max_candidates=50)
-        # transformation = WordSwapGradientBased(model_wrapper)
-
-        #
-        # Don't modify the same word twice or the stopwords defined
-        # in the TextFooler public implementation.
-        #
-        constraints = [RepeatModification()]
-        constraints.append(MaxWordsPerturbed(max_num_words=5))
-        constraints.append(KeyWord())
-        #
-        # Goal is untargeted classification
-        #
-        goal_function = UntargetedClassification(model_wrapper, model_batch_size=16)
-        # goal_function = DefectClassification(model_wrapper)
-        #
-        # Greedily swap words with "Word Importance Ranking".
-        #
-        search_method = GreedyWordSwapWIR(wir_method="delete")
-
-        return Attack(goal_function, constraints, transformation, search_method)
 
 def get_wrapper(args):
     if args.model == "codebert":
@@ -135,12 +102,22 @@ def get_wrapper(args):
 
     return build_wrapper(args)
 
+def get_recipe(args, model_wrapper, goal_function):
+    if args.recipe == "textfooler":
+        recipe = TextFoolerAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "random":
+        recipe = RandomAttack.build(model_wrapper, goal_function)
+    else:
+        print("Wrong Recipe.")
+    return recipe
+
+
 if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-
-    recipe = CloneDetectionBCBAttack.build(model_wrapper)
+    goal_function = UntargetedClassification(model_wrapper, model_batch_size=16)
+    recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
     attack_args = codeattack.AttackArgs(num_examples=args.num_examples)

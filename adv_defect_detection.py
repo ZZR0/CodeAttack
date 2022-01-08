@@ -1,28 +1,13 @@
 # Quiet TensorFlow.
-import os
 import json
-import torch
 import argparse
-import numpy as np
-import torch.nn as nn
-
-from transformers import RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer
 
 import codeattack
 from codeattack import Attacker
-from codeattack import Attack
 from codeattack.models.wrappers import ModelWrapper, model_wrapper
-from codeattack.search_methods import GreedyWordSwapWIR
-from codeattack.transformations import WordSwapEmbedding, WordSwapGradientBased
-from codeattack.constraints.overlap.max_words_perturbed import MaxWordsPerturbed
-from codeattack.constraints.pre_transformation import (
-    RepeatModification,
-)
-from codeattack.constraints.semantics import KeyWord
 from codeattack.goal_functions import DefectClassification
-from codeattack.attack_recipes import AttackRecipe
+from recipe import TextFoolerAttack, RandomAttack
 
-from models.codebert_models import DefectDetectionModel, DefectDetectionModelWrapper
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -34,11 +19,12 @@ def parse_args():
     parser.add_argument('--z_epsilon', type=int)
     parser.add_argument('--u_pgd_epochs', type=int)
     
-    parser.add_argument('--task', type=str, default=None)
+    parser.add_argument('--task', type=str, default="defect")
     parser.add_argument("--model", default="codebert", type=str,)
     parser.add_argument("--lang", default="c", type=str,)
+    parser.add_argument('--recipe', type=str, default="textfooler")
 
-    parser.add_argument('--num_examples', type=int, default=100)
+    parser.add_argument('--num_examples', type=int, default=-1)
     parser.add_argument('--max_source_length', type=int, default=400)
     parser.add_argument('--max_target_length', type=int, default=400)
     parser.add_argument("--model_name_or_path", default=None, type=str, 
@@ -64,40 +50,11 @@ def build_dataset(args):
             adv_code=' '.join(js['adv'].split())
             site_map = js["site_map"]
             label = int(js['label'])
-            dataset += [((code, adv_code), label, site_map)]
+            dataset += [((adv_code), label, site_map)]
 
-    dataset = codeattack.datasets.Dataset(dataset, input_columns=["code", "adv"])
+    dataset = codeattack.datasets.Dataset(dataset, input_columns=["adv"])
     return dataset
 
-class DefectDetectionAttack(AttackRecipe):
-
-    @staticmethod
-    def build(model_wrapper):
-        #
-        # Swap words with their 50 closest embedding nearest-neighbors.
-        # Embedding: Counter-fitted PARAGRAM-SL999 vectors.
-        #
-        transformation = WordSwapEmbedding(max_candidates=50)
-        # transformation = WordSwapGradientBased(model_wrapper)
-
-        #
-        # Don't modify the same word twice or the stopwords defined
-        # in the TextFooler public implementation.
-        #
-        constraints = [RepeatModification()]
-        constraints.append(MaxWordsPerturbed(max_num_words=5))
-        constraints.append(KeyWord())
-        #
-        # Goal is untargeted classification
-        #
-        # goal_function = UntargetedClassification(model_wrapper)
-        goal_function = DefectClassification(model_wrapper)
-        #
-        # Greedily swap words with "Word Importance Ranking".
-        #
-        search_method = GreedyWordSwapWIR(wir_method="delete")
-
-        return Attack(goal_function, constraints, transformation, search_method)
 
 def get_wrapper(args):
     if args.model == "codebert":
@@ -119,11 +76,22 @@ def get_wrapper(args):
     
     return build_wrapper(args)
 
+def get_recipe(args, model_wrapper, goal_function):
+    if args.recipe == "textfooler":
+        recipe = TextFoolerAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "random":
+        recipe = RandomAttack.build(model_wrapper, goal_function)
+    else:
+        print("Wrong Recipe.")
+    return recipe
+
+
 if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-    recipe = DefectDetectionAttack.build(model_wrapper)
+    goal_function = DefectClassification(model_wrapper)
+    recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
     attack_args = codeattack.AttackArgs(num_examples=args.num_examples)

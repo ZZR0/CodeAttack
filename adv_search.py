@@ -1,27 +1,12 @@
 # Quiet TensorFlow.
-import os
 import json
-import torch
 import argparse
-import numpy as np
-import torch.nn as nn
-from transformers import RobertaConfig, RobertaModel, RobertaTokenizer
 
 import codeattack
 from codeattack import Attacker
 from codeattack.models.wrappers import ModelWrapper, model_wrapper
-from codeattack.attack_recipes import AttackRecipe
-from codeattack.search_methods import GreedyWordSwapWIR
-from codeattack.transformations import WordSwapEmbedding, WordSwapGradientBased
-from codeattack.constraints.semantics import KeyWord
-from codeattack import Attack
-from codeattack.constraints.overlap.max_words_perturbed import MaxWordsPerturbed
 from codeattack.goal_functions import UntargetedClassification, SearchGoalFunction
-from codeattack.constraints.pre_transformation import (
-    RepeatModification,
-)
-
-from models.codebert_models import SearchModel, SearchModelWrapper
+from recipe import TextFoolerAttack, RandomAttack
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -36,9 +21,11 @@ def parse_args():
     parser.add_argument('--task', type=str, default="search")
     parser.add_argument('--model', type=str, default="codebert")
     parser.add_argument('--lang', type=str, default="java")
-    parser.add_argument('--num_examples', type=int, default=100)
-    parser.add_argument('--max_source_length', type=int, default=400)
-    parser.add_argument('--max_target_length', type=int, default=400)
+    parser.add_argument('--recipe', type=str, default="textfooler")
+
+    parser.add_argument('--num_examples', type=int, default=-1)
+    parser.add_argument('--max_source_length', type=int, default=256)
+    parser.add_argument('--max_target_length', type=int, default=256)
     parser.add_argument("--model_name_or_path", default=None, type=str, 
                         help="The model checkpoint for weights initialization.")
     parser.add_argument("--config_name", default="", type=str,
@@ -64,39 +51,11 @@ def build_dataset(args):
             nl=' '.join(js['docstring_summary'].split())
             site_map = js["site_map"]
             label = 1
-            dataset += [((code, adv_code, nl), label, site_map)]
+            dataset += [((adv_code, nl), label, site_map)]
 
-    dataset = codeattack.datasets.Dataset(dataset, input_columns=["code", "adv", "nl"])
+    dataset = codeattack.datasets.Dataset(dataset, input_columns=["adv", "nl"])
     return dataset
 
-class CodeSearchAttack(AttackRecipe):
-
-    @staticmethod
-    def build(model_wrapper):
-        #
-        # Swap words with their 50 closest embedding nearest-neighbors.
-        # Embedding: Counter-fitted PARAGRAM-SL999 vectors.
-        #
-        transformation = WordSwapEmbedding(max_candidates=50)
-        # transformation = WordSwapGradientBased(model_wrapper)
-        #
-        # Don't modify the same word twice or the stopwords defined
-        # in the TextFooler public implementation.
-        #
-        constraints = [RepeatModification()]
-        constraints.append(MaxWordsPerturbed(max_num_words=5))
-        constraints.append(KeyWord())
-        #
-        # Goal is untargeted classification
-        #
-        # goal_function = UntargetedClassification(model_wrapper)
-        goal_function = SearchGoalFunction(model_wrapper, model_batch_size=16)
-        #
-        # Greedily swap words with "Word Importance Ranking".
-        #
-        search_method = GreedyWordSwapWIR(wir_method="delete")
-
-        return Attack(goal_function, constraints, transformation, search_method)
 
 def get_wrapper(args):
     if args.model == "codebert":
@@ -118,11 +77,22 @@ def get_wrapper(args):
     
     return build_wrapper(args)
 
+def get_recipe(args, model_wrapper, goal_function):
+    if args.recipe == "textfooler":
+        recipe = TextFoolerAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "random":
+        recipe = RandomAttack.build(model_wrapper, goal_function)
+    else:
+        print("Wrong Recipe.")
+    return recipe
+
+
 if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-    recipe = CodeSearchAttack.build(model_wrapper)
+    goal_function = SearchGoalFunction(model_wrapper, model_batch_size=16)
+    recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
     attack_args = codeattack.AttackArgs(num_examples=args.num_examples)

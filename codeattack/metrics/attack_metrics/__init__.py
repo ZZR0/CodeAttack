@@ -11,4 +11,4 @@ from .attack_queries import AttackQueries
 from .attack_success_rate import AttackSuccessRate
 from .words_perturbed import WordsPerturbed
 from .mrr_map import MRR, MAP
-from .bleu import BLEU
+from .bleu import BLEU, computeMaps, bleuFromMaps

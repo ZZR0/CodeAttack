@@ -24,6 +24,7 @@ from .word_swap_extend import WordSwapExtend
 from .word_swap_change_number import WordSwapChangeNumber
 from .word_swap_change_location import WordSwapChangeLocation
 from .word_swap_change_name import WordSwapChangeName
+from .word_swap_random import WordSwapRandom
 
 # White box transformation
 from .word_swap_gradient_based import WordSwapGradientBased
