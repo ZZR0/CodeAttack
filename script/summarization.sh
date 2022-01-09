@@ -31,8 +31,13 @@ function graphcodebert() {
     run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base random
 }
 
-# for model in codebert graphcodebert
-for model in graphcodebert
+function codet5() {
+    run codet5 Salesforce/codet5-base Salesforce/codet5-base textfooler
+    run codet5 Salesforce/codet5-base Salesforce/codet5-base random
+}
+
+# for model in codebert graphcodebert codet5
+for model in codet5
 do
     $model
 done
