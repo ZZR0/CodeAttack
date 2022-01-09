@@ -18,7 +18,7 @@ def parse_args():
     parser.add_argument('--z_epsilon', type=int)
     parser.add_argument('--u_pgd_epochs', type=int)
     
-    parser.add_argument('--task', type=str, default="defect")
+    parser.add_argument('--task', type=str, default="clone_poj")
     parser.add_argument('--model', type=str, default="codebert")
     parser.add_argument('--lang', type=str, default="c")
     parser.add_argument('--recipe', type=str, default="textfooler")

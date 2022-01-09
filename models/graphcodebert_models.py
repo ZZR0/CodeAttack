@@ -303,8 +303,8 @@ class CloneDetectionBCBModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
         input_ids, position_idx, attn_mask = [], [], []
         model_device = next(self.model.parameters()).device
-        code0_inputs = [self.get_ids(text[0]) for text in text_input_list]
-        code1_inputs = [self.get_ids(text[1]) for text in text_input_list]
+        code0_inputs = [self.get_ids(text["adv1"]) for text in text_input_list]
+        code1_inputs = [self.get_ids(text["adv2"]) for text in text_input_list]
         for code0, code1 in zip(code0_inputs, code1_inputs):
             input_ids += [code0[0] + code1[0]]
             position_idx += [code0[1] + code1[1]]
@@ -458,8 +458,8 @@ class CloneDetectionPOJModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        code = [self.get_ids(text[0]) for text in text_input_list]
-        adv = [self.get_ids(text[1]) for text in text_input_list]
+        code = [self.get_ids(text["code"]) for text in text_input_list]
+        adv = [self.get_ids(text["adv"]) for text in text_input_list]
 
         code_ids = [c[0] for c in code]
         code_ids = torch.tensor(code_ids).to(model_device)
@@ -603,7 +603,7 @@ class DefectDetectionModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        code = [self.get_ids(text[1]) for text in text_input_list]
+        code = [self.get_ids(text["adv"]) for text in text_input_list]
 
         code_ids = [c[0] for c in code]
         code_ids = torch.tensor(code_ids).to(model_device)
@@ -762,8 +762,8 @@ class SearchModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        code = [self.get_code_ids(text[1]) for text in text_input_list]
-        nl_ids = [self.get_nl_ids(text[2]) for text in text_input_list]
+        code = [self.get_code_ids(text["adv"]) for text in text_input_list]
+        nl_ids = [self.get_nl_ids(text["nl"]) for text in text_input_list]
 
         code_ids = [c[0] for c in code]
         code_ids = torch.tensor(code_ids).to(model_device)
@@ -901,8 +901,8 @@ class SummarizationModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        code = [self.get_code_ids(text[1]) for text in text_input_list]
-        tgt_ids = [self.get_nl_ids(text[2]) for text in text_input_list]
+        code = [self.get_code_ids(text["adv"]) for text in text_input_list]
+        tgt_ids = [self.get_nl_ids(text["nl"]) for text in text_input_list]
 
         code_ids = [c[0] for c in code]
         code_ids = torch.tensor(code_ids).to(model_device)

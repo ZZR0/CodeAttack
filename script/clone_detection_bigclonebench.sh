@@ -26,7 +26,13 @@ function codebert() {
     run codebert microsoft/codebert-base roberta-base random
 }
 
-for model in codebert
+function graphcodebert() {
+    run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base textfooler
+    run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base random
+}
+
+# for model in codebert graphcodebert
+for model in graphcodebert
 do
     $model
 done
