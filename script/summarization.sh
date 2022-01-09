@@ -15,7 +15,7 @@ function run() {
             --model $model \
             --save_dir ./saved_models/ \
             --task summarization \
-            --num_examples -1 \
+            --num_examples 1000 \
             --recipe $re \
             2>&1 | tee ./saved_models/$model/code_summarization_$re.log
 }

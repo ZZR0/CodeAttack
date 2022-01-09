@@ -9,7 +9,7 @@ function run() {
     re=$4
 
     python adv_clone_detection_bigclonebench.py \
-            --test_data_file ./dataset/clone_detection_bigclonebench/transforms.Replace/adv_test.jsonl \
+            --test_data_file ./dataset/clone_detection_bigclonebench/transforms.Replace/adv_data.jsonl \
             --model_name_or_path $mode_path \
             --tokenizer_name $tokenizer_path \
             --model $model \
@@ -17,6 +17,7 @@ function run() {
             --task clone_bcb \
             --num_examples -1 \
             --recipe $re \
+            --parallel \
             2>&1 | tee ./saved_models/$model/clone_detection_bigclonebench_$re.log
 }
 
