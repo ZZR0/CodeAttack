@@ -17,6 +17,7 @@ function run() {
             --task clone_poj \
             --num_examples -1 \
             --recipe $re \
+            --parallel \
             2>&1 | tee ./saved_models/$model/clone_detection_poj_$re.log
 }
 

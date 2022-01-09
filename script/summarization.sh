@@ -17,6 +17,7 @@ function run() {
             --task summarization \
             --num_examples 1000 \
             --recipe $re \
+            --parallel \
             2>&1 | tee ./saved_models/$model/code_summarization_$re.log
 }
 

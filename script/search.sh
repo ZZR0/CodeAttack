@@ -17,6 +17,7 @@ function run() {
             --task search \
             --num_examples -1 \
             --recipe $re \
+            --parallel \
             2>&1 | tee ./saved_models/$model/code_search_$re.log
 }
 
