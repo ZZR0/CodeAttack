@@ -1,0 +1,48 @@
+  0%|          | 0/11998 [00:00<?, ?it/s]Attack(
+  (search_method): GreedyWordSwapWIR(
+    (wir_method):  random
+  )
+  (goal_function):  CloneGoalFunction
+  (transformation):  WordSwapRandom(
+    (max_candidates):  50
+    (embedding):  WordEmbedding
+  )
+  (constraints): 
+    (0): MaxWordsPerturbed(
+        (max_num_words):  5
+        (compare_against_original):  True
+      )
+    (1): KeyWord(
+        (compare_against_original):  True
+      )
+    (2): RepeatModification
+  (is_black_box):  True
+) 
+
+Traceback (most recent call last):
+  File "adv_clone_detection_poj.py", line 101, in <module>
+    results = attacker.attack_dataset()
+  File "/home/zzr/CodeAttack/codeattack/attacker.py", line 440, in attack_dataset
+    self._attack()
+  File "/home/zzr/CodeAttack/codeattack/attacker.py", line 169, in _attack
+    raise e
+  File "/home/zzr/CodeAttack/codeattack/attacker.py", line 167, in _attack
+    result = self.attack.attack(example, ground_truth_output)
+  File "/home/zzr/CodeAttack/codeattack/attack.py", line 417, in attack
+    goal_function_result, _ = self.goal_function.init_attack_example(
+  File "/home/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 68, in init_attack_example
+    result, _ = self.get_result(attacked_text, check_skip=True)
+  File "/home/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 79, in get_result
+    results, search_over = self.get_results([attacked_text], **kwargs)
+  File "/home/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 96, in get_results
+    model_outputs = self._call_model(attacked_text_list)
+  File "/home/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 216, in _call_model
+    outputs = self._call_model_uncached(uncached_list)
+  File "/home/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 165, in _call_model_uncached
+    batch_preds = self.model(batch)
+  File "/home/zzr/CodeAttack/models/codebert_models.py", line 318, in __call__
+    code_ids = [self.get_ids(text[0]) for text in text_input_list]
+  File "/home/zzr/CodeAttack/models/codebert_models.py", line 318, in <listcomp>
+    code_ids = [self.get_ids(text[0]) for text in text_input_list]
+KeyError: 0
+  0%|          | 0/11998 [00:00<?, ?it/s]
