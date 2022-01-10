@@ -1,0 +1,8 @@
+Traceback (most recent call last):
+  File "adv_clone_detection_poj.py", line 94, in <module>
+    model_wrapper = get_wrapper(args)
+  File "adv_clone_detection_poj.py", line 79, in get_wrapper
+    return build_wrapper(args)
+  File "/home/zzr/CodeAttack/models/graphcodebert_models.py", line 150, in build_wrapper
+    tokenizer = tokenizer_class.f
+AttributeError: type object 'RobertaTokenizer' has no attribute 'f'
