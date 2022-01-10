@@ -22,22 +22,35 @@ function run() {
 }
 
 function codebert() {
-    run codebert microsoft/codebert-base roberta-base textfooler
-    run codebert microsoft/codebert-base roberta-base random
+    for attack in random textfooler pso bertattack
+    do
+        run codebert microsoft/codebert-base roberta-base $attack
+    done
 }
 
 function graphcodebert() {
-    run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base textfooler
-    run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base random
+    for attack in random textfooler pso bertattack
+    do
+        run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base $attack
+    done
 }
 
 function codet5() {
-    run codet5 Salesforce/codet5-base Salesforce/codet5-base textfooler
-    run codet5 Salesforce/codet5-base Salesforce/codet5-base random
+    for attack in random textfooler pso bertattack
+    do
+        run codet5 Salesforce/codet5-base Salesforce/codet5-base $attack
+    done
 }
 
-# for model in codebert graphcodebert codet5
-for model in codet5
+function plbart() {
+    for attack in random textfooler pso bertattack
+    do
+        run plbart ./saved_models/plbart/checkpoint_11_100000.pt ./saved_models/plbart/sentencepiece.bpe.model $attack
+    done
+}
+
+# for model in codebert graphcodebert codet5 plbart
+for model in plbart
 do
     $model
 done

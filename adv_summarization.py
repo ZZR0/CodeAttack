@@ -6,7 +6,7 @@ import codeattack
 from codeattack import Attacker
 from codeattack.models.wrappers import ModelWrapper, model_wrapper
 from codeattack.goal_functions import MinimizeBleu
-from recipe import TextFoolerAttack, RandomAttack
+from recipe import *
 
 
 def parse_args():
@@ -38,6 +38,7 @@ def parse_args():
     parser.add_argument("--block_size", default=-1, type=int)
     parser.add_argument("--test_data_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
+    parser.add_argument("--parallel", action='store_true')
  
     args = parser.parse_args()
 
@@ -83,6 +84,10 @@ def get_wrapper(args):
 def get_recipe(args, model_wrapper, goal_function):
     if args.recipe == "textfooler":
         recipe = TextFoolerAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "pso":
+        recipe = PSOAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "bertattack":
+        recipe = BERTAttack.build(model_wrapper, goal_function)
     elif args.recipe == "random":
         recipe = RandomAttack.build(model_wrapper, goal_function)
     else:
@@ -94,7 +99,7 @@ if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-    goal_function = MinimizeBleu(model_wrapper, model_batch_size=16)
+    goal_function = MinimizeBleu(model_wrapper, model_batch_size=10)
     recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
