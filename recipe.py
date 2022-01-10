@@ -1,7 +1,15 @@
 from codeattack import Attack
-from codeattack.models.wrappers import ModelWrapper
-from codeattack.search_methods import GreedyWordSwapWIR
-from codeattack.transformations import WordSwapEmbedding, WordSwapGradientBased, WordSwapRandom
+from codeattack.search_methods import (
+    GreedyWordSwapWIR,
+    ParticleSwarmOptimization,
+)
+from codeattack.transformations import (
+    WordSwapEmbedding, 
+    WordSwapGradientBased, 
+    WordSwapRandom,
+    WordSwapMaskedLM,
+    WordSwapHowNet,
+)
 from codeattack.constraints.overlap.max_words_perturbed import MaxWordsPerturbed
 from codeattack.constraints.pre_transformation import (
     RepeatModification,
@@ -21,6 +29,54 @@ class RandomAttack(AttackRecipe):
 
 
         search_method = GreedyWordSwapWIR(wir_method="random")
+
+        return Attack(goal_function, constraints, transformation, search_method)
+
+class PSOAttack(AttackRecipe):
+
+    @staticmethod
+    def build(model_wrapper, goal_function):
+        transformation = WordSwapHowNet()
+
+        constraints = [RepeatModification()]
+        constraints.append(MaxWordsPerturbed(max_num_words=5))
+        constraints.append(KeyWord())
+
+
+        search_method = ParticleSwarmOptimization(pop_size=60, max_iters=20)
+
+        return Attack(goal_function, constraints, transformation, search_method)
+
+class BERTAttack(AttackRecipe):
+
+    @staticmethod
+    def build(model_wrapper, goal_function):
+        transformation = WordSwapMaskedLM(method="bert-attack", max_candidates=48)
+
+        constraints = [RepeatModification()]
+        constraints.append(MaxWordsPerturbed(max_num_words=5))
+        constraints.append(KeyWord())
+
+
+        search_method = GreedyWordSwapWIR(wir_method="unk")
+
+        return Attack(goal_function, constraints, transformation, search_method)
+
+
+class BAEAttack(AttackRecipe):
+
+    @staticmethod
+    def build(model_wrapper, goal_function):
+        transformation = WordSwapMaskedLM(
+            method="bae", max_candidates=50, min_confidence=0.0
+        )
+
+        constraints = [RepeatModification()]
+        constraints.append(MaxWordsPerturbed(max_num_words=5))
+        constraints.append(KeyWord())
+
+
+        search_method = GreedyWordSwapWIR(wir_method="delete")
 
         return Attack(goal_function, constraints, transformation, search_method)
 

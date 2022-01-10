@@ -160,35 +160,35 @@ class AttackedCode:
     #     text_idx_end = self._text_index_of_word_index(end) + len(self.words[end])
     #     return self.text[text_idx_start:text_idx_end]
 
-    # def pos_of_word_index(self, desired_word_idx):
-    #     """Returns the part-of-speech of the word at index `word_idx`.
+    def pos_of_word_index(self, desired_word_idx):
+        """Returns the part-of-speech of the word at index `word_idx`.
 
-    #     Uses FLAIR part-of-speech tagger.
-    #     """
-    #     if not self._pos_tags:
-    #         sentence = Sentence(
-    #             self.text, use_tokenizer=codeattack.shared.utils.words_from_text
-    #         )
-    #         codeattack.shared.utils.flair_tag(sentence)
-    #         self._pos_tags = sentence
-    #     flair_word_list, flair_pos_list = codeattack.shared.utils.zip_flair_result(
-    #         self._pos_tags
-    #     )
+        Uses FLAIR part-of-speech tagger.
+        """
+        if not self._pos_tags:
+            sentence = Sentence(
+                self.text, use_tokenizer=codeattack.shared.utils.words_from_text
+            )
+            codeattack.shared.utils.flair_tag(sentence)
+            self._pos_tags = sentence
+        flair_word_list, flair_pos_list = codeattack.shared.utils.zip_flair_result(
+            self._pos_tags
+        )
 
-    #     for word_idx, word in enumerate(self.words):
-    #         assert (
-    #             word in flair_word_list
-    #         ), "word absent in flair returned part-of-speech tags"
-    #         word_idx_in_flair_tags = flair_word_list.index(word)
-    #         if word_idx == desired_word_idx:
-    #             return flair_pos_list[word_idx_in_flair_tags]
-    #         else:
-    #             flair_word_list = flair_word_list[word_idx_in_flair_tags + 1 :]
-    #             flair_pos_list = flair_pos_list[word_idx_in_flair_tags + 1 :]
+        for word_idx, word in enumerate(self.words):
+            assert (
+                word in flair_word_list
+            ), "word absent in flair returned part-of-speech tags"
+            word_idx_in_flair_tags = flair_word_list.index(word)
+            if word_idx == desired_word_idx:
+                return flair_pos_list[word_idx_in_flair_tags]
+            else:
+                flair_word_list = flair_word_list[word_idx_in_flair_tags + 1 :]
+                flair_pos_list = flair_pos_list[word_idx_in_flair_tags + 1 :]
 
-    #     raise ValueError(
-    #         f"Did not find word from index {desired_word_idx} in flair POS tag"
-    #     )
+        raise ValueError(
+            f"Did not find word from index {desired_word_idx} in flair POS tag"
+        )
 
     # def ner_of_word_index(self, desired_word_idx):
     #     """Returns the ner tag of the word at index `word_idx`.

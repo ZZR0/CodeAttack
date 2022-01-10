@@ -6,7 +6,7 @@ import codeattack
 from codeattack import Attacker
 from codeattack.models.wrappers import ModelWrapper, model_wrapper
 from codeattack.goal_functions import UntargetedClassification, SearchGoalFunction
-from recipe import TextFoolerAttack, RandomAttack
+from recipe import *
 
 def parse_args():
     parser = argparse.ArgumentParser()
@@ -81,6 +81,10 @@ def get_wrapper(args):
 def get_recipe(args, model_wrapper, goal_function):
     if args.recipe == "textfooler":
         recipe = TextFoolerAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "pso":
+        recipe = PSOAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "bertattack":
+        recipe = BERTAttack.build(model_wrapper, goal_function)
     elif args.recipe == "random":
         recipe = RandomAttack.build(model_wrapper, goal_function)
     else:
