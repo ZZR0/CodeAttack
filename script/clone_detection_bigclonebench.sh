@@ -9,7 +9,7 @@ function run() {
     re=$4
 
     python adv_clone_detection_bigclonebench.py \
-            --test_data_file ./dataset/clone_detection_bigclonebench/transforms.Replace/adv_data.jsonl \
+            --test_data_file ./dataset/clone_detection_bigclonebench/transforms.Identifier/adv_data.jsonl \
             --model_name_or_path $mode_path \
             --tokenizer_name $tokenizer_path \
             --model $model \
@@ -18,7 +18,7 @@ function run() {
             --num_examples -1 \
             --recipe $re \
             --parallel \
-            2>&1 | tee ./saved_models/$model/clone_detection_bigclonebench_$re.log
+            2>&1 | tee ./saved_models/$model/clone_detection_bigclonebench_$re_test.log
 }
 
 function codebert() {
@@ -36,8 +36,13 @@ function codet5() {
     run codet5 Salesforce/codet5-base Salesforce/codet5-base random
 }
 
-# for model in codebert graphcodebert codet5
-for model in codet5
+function plbart() {
+    run plbart ./saved_models/plbart/checkpoint_11_100000.pt ./saved_models/plbart/sentencepiece.bpe.model textfooler
+    run plbart ./saved_models/plbart/checkpoint_11_100000.pt ./saved_models/plbart/sentencepiece.bpe.model random
+}
+
+# for model in codebert graphcodebert codet5 plbart
+for model in codebert
 do
     $model
 done

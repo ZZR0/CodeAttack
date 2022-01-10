@@ -176,8 +176,8 @@ class CloneDetectionBCBModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
         code_ids, prev_ids, lengths = [], [], []
         model_device = next(self.model.parameters()).device
-        codes0 = [self.get_ids(text[0]) for text in text_input_list]
-        codes1 = [self.get_ids(text[1]) for text in text_input_list]
+        codes0 = [self.get_ids(text["adv1"]) for text in text_input_list]
+        codes1 = [self.get_ids(text["adv2"]) for text in text_input_list]
         for code0, code1 in zip(codes0, codes1):
             code_ids += [code0[0] + code1[0]]
             prev_ids += [code0[1] + code1[1]]
@@ -344,8 +344,8 @@ class CloneDetectionPOJModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        codes = [self.get_ids(text[0]) for text in text_input_list]
-        advs = [self.get_ids(text[1]) for text in text_input_list]
+        codes = [self.get_ids(text["code"]) for text in text_input_list]
+        advs = [self.get_ids(text["adv"]) for text in text_input_list]
 
         code_ids = [code[0] for code in codes]
         code_prev_ids = [code[1] for code in codes]
@@ -514,7 +514,7 @@ class DefectDetectionModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        codes = [self.get_ids(text[1]) for text in text_input_list]
+        codes = [self.get_ids(text["adv"]) for text in text_input_list]
 
         code_ids = [code[0] for code in codes]
         code_prev_ids = [code[1] for code in codes]
@@ -682,8 +682,8 @@ class SearchModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        codes = [self.get_ids(text[1]) for text in text_input_list]
-        nls = [self.get_ids(text[2]) for text in text_input_list]
+        codes = [self.get_ids(text["code"]) for text in text_input_list]
+        nls = [self.get_ids(text["nl"]) for text in text_input_list]
 
         code_ids = [code[0] for code in codes]
         code_prev_ids = [code[1] for code in codes]
@@ -832,8 +832,8 @@ class SummarizationModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        src = [self.get_ids(text[1], max_length=self.max_source_length) for text in text_input_list]
-        tgt = [self.get_ids(text[2], max_length=self.max_target_length) for text in text_input_list]
+        src = [self.get_ids(text["code"], max_length=self.max_source_length) for text in text_input_list]
+        tgt = [self.get_ids(text["nl"], max_length=self.max_target_length) for text in text_input_list]
 
         src_ids = [s[0] for s in src]
         source_mask = [[True]*s[2] + [False]*(self.max_source_length-s[2]) for s in src]

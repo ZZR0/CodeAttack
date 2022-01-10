@@ -38,6 +38,7 @@ def parse_args():
     parser.add_argument("--block_size", default=-1, type=int)
     parser.add_argument("--test_data_file", default=None, type=str,
                         help="An optional input evaluation data file to evaluate the perplexity on (a text file).")
+    parser.add_argument("--parallel", action='store_true')
  
     args = parser.parse_args()
 
@@ -94,7 +95,7 @@ if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-    goal_function = MinimizeBleu(model_wrapper, model_batch_size=16)
+    goal_function = MinimizeBleu(model_wrapper, model_batch_size=10)
     recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
