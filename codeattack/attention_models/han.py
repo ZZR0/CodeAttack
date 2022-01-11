@@ -46,7 +46,7 @@ class HAN():
                                             dropout=dropout)
         mode_dict = torch.load(path, map_location=self.device)
         self.model.load_state_dict(mode_dict)
-        #self.model = self.model.to(self.device)
+        self.model = self.model.to(self.device)
         self.model.eval()
 
     def classify(self,document):

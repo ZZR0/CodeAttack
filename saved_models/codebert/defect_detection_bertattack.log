@@ -5,7 +5,58 @@ Some weights of RobertaForSequenceClassification were not initialized from the m
 You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
 Attempting to acquire lock 139818665536144 on /data/zzr/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
 Lock 139818665536144 acquired on /data/zzr/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
-Downloading:   0%|          | 0.00/420M [00:00<?, ?B/s]Downloading:   1%|          | 3.05M/420M [00:00<00:13, 31.9MB/s]Downloading:   2%|▏         | 8.67M/420M [00:00<00:09, 47.8MB/s]Downloading:   4%|▎         | 15.0M/420M [00:00<00:07, 56.3MB/s]Downloading:   5%|▌         | 22.9M/420M [00:00<00:06, 66.7MB/s]Downloading:   7%|▋         | 31.5M/420M [00:00<00:05, 75.2MB/s]Downloading:  10%|▉         | 40.3M/420M [00:00<00:04, 80.9MB/s]Downloading:  12%|█▏        | 49.0M/420M [00:00<00:04, 84.5MB/s]Downloading:  14%|█▍        | 57.8M/420M [00:00<00:04, 87.0MB/s]Downloading:  16%|█▌        | 66.6M/420M [00:00<00:04, 88.5MB/s]Downloading:  18%|█▊        | 75.2M/420M [00:01<00:04, 89.0MB/s]Downloading:  20%|█▉        | 83.9M/420M [00:01<00:03, 89.6MB/s]Downloading:  22%|██▏       | 92.7M/420M [00:01<00:03, 90.4MB/s]Downloading:  24%|██▍       | 101M/420M [00:01<00:03, 91.0MB/s] Downloading:  26%|██▋       | 110M/420M [00:01<00:03, 91.5MB/s]Downloading:  28%|██▊       | 119M/420M [00:01<00:03, 91.8MB/s]Downloading:  30%|███       | 128M/420M [00:01<00:03, 92.0MB/s]Downloading:  33%|███▎      | 137M/420M [00:01<00:03, 91.6MB/s]Downloading:  35%|███▍      | 145M/420M [00:01<00:03, 91.7MB/s]Downloading:  37%|███▋      | 154M/420M [00:01<00:03, 91.7MB/s]Downloading:  39%|███▉      | 163M/420M [00:02<00:02, 91.9MB/s]Downloading:  41%|████      | 172M/420M [00:02<00:02, 91.9MB/s]Downloading:  43%|████▎     | 181M/420M [00:02<00:02, 91.6MB/s]Downloading:  45%|████▌     | 189M/420M [00:02<00:02, 91.1MB/s]Downloading:  47%|████▋     | 198M/420M [00:02<00:02, 91.4MB/s]Downloading:  49%|████▉     | 207M/420M [00:02<00:02, 91.6MB/s]Downloading:  51%|█████▏    | 216M/420M [00:02<00:02, 91.7MB/s]Downloading:  53%|█████▎    | 224M/420M [00:02<00:02, 91.7MB/s]Downloading:  56%|█████▌    | 233M/420M [00:02<00:02, 92.0MB/s]Downloading:  58%|█████▊    | 242M/420M [00:02<00:02, 91.7MB/s]Downloading:  60%|█████▉    | 251M/420M [00:03<00:01, 91.3MB/s]Downloading:  62%|██████▏   | 260M/420M [00:03<00:01, 91.5MB/s]Downloading:  64%|██████▍   | 268M/420M [00:03<00:01, 91.6MB/s]Downloading:  66%|██████▌   | 277M/420M [00:03<00:01, 91.6MB/s]Downloading:  68%|██████▊   | 286M/420M [00:03<00:01, 90.3MB/s]Downloading:  70%|███████   | 294M/420M [00:03<00:01, 90.3MB/s]Downloading:  72%|███████▏  | 303M/420M [00:03<00:01, 89.9MB/s]Downloading:  74%|███████▍  | 312M/420M [00:03<00:01, 90.1MB/s]Downloading:  76%|███████▋  | 320M/420M [00:03<00:01, 90.4MB/s]Downloading:  78%|███████▊  | 329M/420M [00:03<00:01, 89.9MB/s]Downloading:  80%|████████  | 338M/420M [00:04<00:00, 89.4MB/s]Downloading:  82%|████████▏ | 346M/420M [00:04<00:00, 89.4MB/s]Downloading:  84%|████████▍ | 355M/420M [00:04<00:00, 89.0MB/s]Downloading:  86%|████████▋ | 363M/420M [00:04<00:00, 89.4MB/s]Downloading:  88%|████████▊ | 372M/420M [00:04<00:00, 89.1MB/s]Downloading:  91%|█████████ | 380M/420M [00:04<00:00, 89.1MB/s]Downloading:  93%|█████████▎| 389M/420M [00:04<00:00, 89.9MB/s]Downloading:  95%|█████████▍| 398M/420M [00:04<00:00, 90.2MB/s]Downloading:  97%|█████████▋| 406M/420M [00:04<00:00, 90.6MB/s]Downloading:  99%|█████████▉| 415M/420M [00:04<00:00, 89.8MB/s]Downloading: 100%|██████████| 420M/420M [00:04<00:00, 88.4MB/s]
+
+Downloading:   0%|          | 0.00/420M [00:00<?, ?B/s]
+Downloading:   1%|          | 3.05M/420M [00:00<00:13, 31.9MB/s]
+Downloading:   2%|▏         | 8.67M/420M [00:00<00:09, 47.8MB/s]
+Downloading:   4%|▎         | 15.0M/420M [00:00<00:07, 56.3MB/s]
+Downloading:   5%|▌         | 22.9M/420M [00:00<00:06, 66.7MB/s]
+Downloading:   7%|▋         | 31.5M/420M [00:00<00:05, 75.2MB/s]
+Downloading:  10%|▉         | 40.3M/420M [00:00<00:04, 80.9MB/s]
+Downloading:  12%|█▏        | 49.0M/420M [00:00<00:04, 84.5MB/s]
+Downloading:  14%|█▍        | 57.8M/420M [00:00<00:04, 87.0MB/s]
+Downloading:  16%|█▌        | 66.6M/420M [00:00<00:04, 88.5MB/s]
+Downloading:  18%|█▊        | 75.2M/420M [00:01<00:04, 89.0MB/s]
+Downloading:  20%|█▉        | 83.9M/420M [00:01<00:03, 89.6MB/s]
+Downloading:  22%|██▏       | 92.7M/420M [00:01<00:03, 90.4MB/s]
+Downloading:  24%|██▍       | 101M/420M [00:01<00:03, 91.0MB/s] 
+Downloading:  26%|██▋       | 110M/420M [00:01<00:03, 91.5MB/s]
+Downloading:  28%|██▊       | 119M/420M [00:01<00:03, 91.8MB/s]
+Downloading:  30%|███       | 128M/420M [00:01<00:03, 92.0MB/s]
+Downloading:  33%|███▎      | 137M/420M [00:01<00:03, 91.6MB/s]
+Downloading:  35%|███▍      | 145M/420M [00:01<00:03, 91.7MB/s]
+Downloading:  37%|███▋      | 154M/420M [00:01<00:03, 91.7MB/s]
+Downloading:  39%|███▉      | 163M/420M [00:02<00:02, 91.9MB/s]
+Downloading:  41%|████      | 172M/420M [00:02<00:02, 91.9MB/s]
+Downloading:  43%|████▎     | 181M/420M [00:02<00:02, 91.6MB/s]
+Downloading:  45%|████▌     | 189M/420M [00:02<00:02, 91.1MB/s]
+Downloading:  47%|████▋     | 198M/420M [00:02<00:02, 91.4MB/s]
+Downloading:  49%|████▉     | 207M/420M [00:02<00:02, 91.6MB/s]
+Downloading:  51%|█████▏    | 216M/420M [00:02<00:02, 91.7MB/s]
+Downloading:  53%|█████▎    | 224M/420M [00:02<00:02, 91.7MB/s]
+Downloading:  56%|█████▌    | 233M/420M [00:02<00:02, 92.0MB/s]
+Downloading:  58%|█████▊    | 242M/420M [00:02<00:02, 91.7MB/s]
+Downloading:  60%|█████▉    | 251M/420M [00:03<00:01, 91.3MB/s]
+Downloading:  62%|██████▏   | 260M/420M [00:03<00:01, 91.5MB/s]
+Downloading:  64%|██████▍   | 268M/420M [00:03<00:01, 91.6MB/s]
+Downloading:  66%|██████▌   | 277M/420M [00:03<00:01, 91.6MB/s]
+Downloading:  68%|██████▊   | 286M/420M [00:03<00:01, 90.3MB/s]
+Downloading:  70%|███████   | 294M/420M [00:03<00:01, 90.3MB/s]
+Downloading:  72%|███████▏  | 303M/420M [00:03<00:01, 89.9MB/s]
+Downloading:  74%|███████▍  | 312M/420M [00:03<00:01, 90.1MB/s]
+Downloading:  76%|███████▋  | 320M/420M [00:03<00:01, 90.4MB/s]
+Downloading:  78%|███████▊  | 329M/420M [00:03<00:01, 89.9MB/s]
+Downloading:  80%|████████  | 338M/420M [00:04<00:00, 89.4MB/s]
+Downloading:  82%|████████▏ | 346M/420M [00:04<00:00, 89.4MB/s]
+Downloading:  84%|████████▍ | 355M/420M [00:04<00:00, 89.0MB/s]
+Downloading:  86%|████████▋ | 363M/420M [00:04<00:00, 89.4MB/s]
+Downloading:  88%|████████▊ | 372M/420M [00:04<00:00, 89.1MB/s]
+Downloading:  91%|█████████ | 380M/420M [00:04<00:00, 89.1MB/s]
+Downloading:  93%|█████████▎| 389M/420M [00:04<00:00, 89.9MB/s]
+Downloading:  95%|█████████▍| 398M/420M [00:04<00:00, 90.2MB/s]
+Downloading:  97%|█████████▋| 406M/420M [00:04<00:00, 90.6MB/s]
+Downloading:  99%|█████████▉| 415M/420M [00:04<00:00, 89.8MB/s]
+Downloading: 100%|██████████| 420M/420M [00:04<00:00, 88.4MB/s]
 Attempting to release lock 139818665536144 on /data/zzr/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
 Lock 139818665536144 released on /data/zzr/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f.lock
 Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['cls.seq_relationship.weight', 'cls.seq_relationship.bias']
@@ -13,23 +64,41 @@ Some weights of the model checkpoint at bert-base-uncased were not used when ini
 - This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
 Attempting to acquire lock 139818665534416 on /data/zzr/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79.lock
 Lock 139818665534416 acquired on /data/zzr/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79.lock
-Downloading:   0%|          | 0.00/28.0 [00:00<?, ?B/s]Downloading: 100%|██████████| 28.0/28.0 [00:00<00:00, 19.0kB/s]
+
+Downloading:   0%|          | 0.00/28.0 [00:00<?, ?B/s]
+Downloading: 100%|██████████| 28.0/28.0 [00:00<00:00, 19.0kB/s]
 Attempting to release lock 139818665534416 on /data/zzr/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79.lock
 Lock 139818665534416 released on /data/zzr/.cache/huggingface/transformers/c1d7f0a763fb63861cc08553866f1fc3e5a6f4f07621be277452d26d71303b7e.20430bd8e10ef77a7d2977accefe796051e01bc2fc4aa146bc862997a1a15e79.lock
 Attempting to acquire lock 139818616405488 on /data/zzr/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
 Lock 139818616405488 acquired on /data/zzr/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
-Downloading:   0%|          | 0.00/226k [00:00<?, ?B/s]Downloading:   2%|▏         | 4.00k/226k [00:00<00:12, 18.8kB/s]Downloading:  16%|█▌        | 36.0k/226k [00:00<00:02, 95.5kB/s]Downloading:  40%|███▉      | 90.0k/226k [00:00<00:00, 167kB/s] Downloading:  89%|████████▉ | 202k/226k [00:00<00:00, 307kB/s] Downloading: 100%|██████████| 226k/226k [00:00<00:00, 262kB/s]
+
+Downloading:   0%|          | 0.00/226k [00:00<?, ?B/s]
+Downloading:   2%|▏         | 4.00k/226k [00:00<00:12, 18.8kB/s]
+Downloading:  16%|█▌        | 36.0k/226k [00:00<00:02, 95.5kB/s]
+Downloading:  40%|███▉      | 90.0k/226k [00:00<00:00, 167kB/s] 
+Downloading:  89%|████████▉ | 202k/226k [00:00<00:00, 307kB/s] 
+Downloading: 100%|██████████| 226k/226k [00:00<00:00, 262kB/s]
 Attempting to release lock 139818616405488 on /data/zzr/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
 Lock 139818616405488 released on /data/zzr/.cache/huggingface/transformers/45c3f7a79a80e1cf0a489e5c62b43f173c15db47864303a55d623bb3c96f72a5.d789d64ebfe299b0e416afc4a169632f903f693095b4629a7ea271d5a0cf2c99.lock
 Attempting to acquire lock 139818616403616 on /data/zzr/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
 Lock 139818616403616 acquired on /data/zzr/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
-Downloading:   0%|          | 0.00/455k [00:00<?, ?B/s]Downloading:   9%|▉         | 40.0k/455k [00:00<00:02, 191kB/s]Downloading:  18%|█▊        | 84.0k/455k [00:00<00:01, 201kB/s]Downloading:  38%|███▊      | 174k/455k [00:00<00:00, 304kB/s] Downloading:  80%|████████  | 366k/455k [00:00<00:00, 544kB/s]Downloading: 100%|██████████| 455k/455k [00:00<00:00, 537kB/s]
+
+Downloading:   0%|          | 0.00/455k [00:00<?, ?B/s]
+Downloading:   9%|▉         | 40.0k/455k [00:00<00:02, 191kB/s]
+Downloading:  18%|█▊        | 84.0k/455k [00:00<00:01, 201kB/s]
+Downloading:  38%|███▊      | 174k/455k [00:00<00:00, 304kB/s] 
+Downloading:  80%|████████  | 366k/455k [00:00<00:00, 544kB/s]
+Downloading: 100%|██████████| 455k/455k [00:00<00:00, 537kB/s]
 Attempting to release lock 139818616403616 on /data/zzr/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
 Lock 139818616403616 released on /data/zzr/.cache/huggingface/transformers/534479488c54aeaf9c3406f647aa2ec13648c06771ffe269edabebd4c412da1d.7f2721073f19841be16f41b0a70b600ca6b880c8f3df6f3535cbc704371bdfa4.lock
 textattack: Running 4 worker(s) on 4 GPU(s).
 textattack: Worklist size: 2690
 textattack: Worklist candidate size: 0
-  0%|          | 0/2690 [00:00<?, ?it/s][Succeeded / Failed / Skipped / Total] 0 / 0 / 1 / 1:   0%|          | 1/2690 [00:00<00:01, 1911.72it/s][Succeeded / Failed / Skipped / Total] 0 / 0 / 2 / 2:   0%|          | 2/2690 [00:00<00:01, 2398.80it/s][Succeeded / Failed / Skipped / Total] 0 / 0 / 3 / 3:   0%|          | 3/2690 [00:00<00:00, 2773.40it/s]--------------------------------------------- Result 1 ---------------------------------------------
+
+  0%|          | 0/2690 [00:00<?, ?it/s]
+[Succeeded / Failed / Skipped / Total] 0 / 0 / 1 / 1:   0%|          | 1/2690 [00:00<00:01, 1911.72it/s]
+[Succeeded / Failed / Skipped / Total] 0 / 0 / 2 / 2:   0%|          | 2/2690 [00:00<00:01, 2398.80it/s]
+[Succeeded / Failed / Skipped / Total] 0 / 0 / 3 / 3:   0%|          | 3/2690 [00:00<00:00, 2773.40it/s]--------------------------------------------- Result 1 ---------------------------------------------
 [[0 (51%)]] --> [[[SKIPPED]]]
 
 [[[[Adv]]]]: int ff_get_wav_header(AVFormatContext *s, AVIOContext *pb, AVCodecContext *codec, int size, int big_endian) { int id; uint64_t bitrate; if (size < 14) { avpriv_request_sample(codec, "wav header size < 14"); return AVERROR_INVALIDDATA; } codec->codec_type = AVMEDIA_TYPE_AUDIO; if (!big_endian) { id = avio_rl16(pb); if (id != 0x0165) { codec->channels = avio_rl16(pb); codec->sample_rate = avio_rl32(pb); bitrate = avio_rl32(pb) * 8LL; codec->block_align = avio_rl16(pb); } } else { id = avio_rb16(pb); codec->channels = avio_rb16(pb); codec->sample_rate = avio_rb32(pb); bitrate = avio_rb32(pb) * 8LL; codec->block_align = avio_rb16(pb); } if (size == 14) { codec->bits_per_coded_sample = 8; } else { if (!big_endian) { codec->bits_per_coded_sample = avio_rl16(pb); } else { codec->bits_per_coded_sample = avio_rb16(pb); } } if (id == 0xFFFE) { codec->codec_tag = 0; } else { codec->codec_tag = id; codec->codec_id = ff_wav_codec_get_id(id, codec->bits_per_coded_sample); } if (size >= 18 && id != 0x0165) { int cbSize = avio_rl16(pb); if (big_endian) { avpriv_report_missing_feature(codec, "WAVEFORMATEX support for RIFX files\n"); return AVERROR_PATCHWELCOME; } size -= 18; cbSize = FFMIN(size, cbSize); if (cbSize >= 22 && id == 0xfffe) { parse_waveformatex(pb, codec); cbSize -= 22; size -= 22; } if (cbSize > 0) { av_freep(&codec->extradata); if (ff_get_extradata(codec, pb, cbSize) < 0) return AVERROR(ENOMEM); size -= cbSize; } if (size > 0) avio_skip(pb, size); } else if (id == 0x0165 && size >= 32) { int nb_streams, i; size -= 4; av_freep(&codec->extradata); if (ff_get_extradata(codec, pb, size) < 0) return AVERROR(ENOMEM); nb_streams = AV_RL16(codec->extradata + 4); codec->sample_rate = AV_RL32(codec->extradata + 12); codec->channels = 0; bitrate = 0; if (size < 8 + nb_streams * 20) return AVERROR_INVALIDDATA; for (i = 0; i < nb_streams; i++) codec->channels += codec->extradata[8 + i * 20 + 17]; } if (bitrate > INT_MAX) { if (s->error_recognition & AV_EF_EXPLODE) { av_log(s, AV_LOG_ERROR, "The bitrate %"PRIu64" is too large.\n", bitrate); return AVERROR_INVALIDDATA; } else { av_log(s, AV_LOG_WARNING, "The bitrate %"PRIu64" is too large, resetting to 0.", bitrate); codec->bit_rate = 0; } } else { codec->bit_rate = bitrate; } if (codec->sample_rate <= 0) { av_log(s, AV_LOG_ERROR, "Invalid sample rate: %d\n", codec->sample_rate); return AVERROR_INVALIDDATA; } if (codec->codec_id == AV_CODEC_ID_AAC_LATM) { codec->channels = 0; codec->sample_rate = 0; } if (codec->codec_id == AV_CODEC_ID_ADPCM_G726 && codec->sample_rate) codec->bits_per_coded_sample = codec->bit_rate / codec->sample_rate; return 0; }
@@ -42,4 +111,67 @@ textattack: Worklist candidate size: 0
 
 [[[[Adv]]]]: static int subframe_count_exact(FlacEncodeContext *s, FlacSubframe *sub, int pred_order) { int p, porder, psize; int i, part_end; int count = 0; count += 8; if (sub->type == FLAC_SUBFRAME_CONSTANT) { count += sub->obits; } else if (sub->type == FLAC_SUBFRAME_VERBATIM) { count += s->frame.blocksize * sub->obits; } else { count += pred_order * sub->obits; if (sub->type == FLAC_SUBFRAME_LPC) count += 4 + 5 + pred_order * s->options.lpc_coeff_precision; count += 2; porder = sub->rc.porder; psize = s->frame.blocksize >> porder; count += 4; i = pred_order; part_end = psize; for (p = 0; p < 1 << porder; p++) { int k = sub->rc.params[p]; count += 4; count += rice_count_exact(&sub->residual[i], part_end - i, k); i = part_end; part_end = FFMIN(s->frame.blocksize, part_end + psize); } } return count; }
 --------------------------------------------- Result 4 ---------------------------------------------
-[Succeeded / Failed / Skipped / Total] 0 / 0 / 4 / 4:   0%|          | 4/2690 [00:00<00:00, 2884.17it/s][Succeeded / Failed / Skipped / Total] 1 / 0 / 4 / 5:   0%|          | 5/2690 [00:00<00:01, 2615.56it/s]
+
+[Succeeded / Failed / Skipped / Total] 0 / 0 / 4 / 4:   0%|          | 4/2690 [00:00<00:00, 2884.17it/s]
+[Succeeded / Failed / Skipped / Total] 1 / 0 / 4 / 5:   0%|          | 5/2690 [00:00<00:01, 2615.56it/s]
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+Some weights of the model checkpoint at microsoft/codebert-base were not used when initializing RobertaForSequenceClassification: ['pooler.dense.bias', 'pooler.dense.weight']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at microsoft/codebert-base and are newly initialized: ['classifier.out_proj.bias', 'classifier.out_proj.weight', 'classifier.dense.weight', 'classifier.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  huggingface.co:443  ...  OK
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+textattack: Running 1 worker(s) on 1 GPU(s).
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+[proxychains] DLL init: proxychains-ng 4.15-git-1-g7de7dd0
+textattack: Worklist size: 2690
+textattack: Worklist candidate size: 0
+
+  0%|          | 0/2690 [00:00<?, ?it/s]/home/zzr/.pyenv/versions/3.8-dev/lib/python3.8/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 14 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

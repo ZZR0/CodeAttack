@@ -22,29 +22,29 @@ function run() {
 }
 
 function codebert() {
-    # for attack in random textfooler pso bertattack bae
-    for attack in pso bertattack bae
+    # for attack in random textfooler pso bertattack lsh hard
+    for attack in lsh
     do
         run codebert microsoft/codebert-base roberta-base $attack
     done
 }
 
 function graphcodebert() {
-    for attack in random textfooler pso bertattack bae
+    for attack in random textfooler pso bertattack lsh hard
     do
         run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base $attack
     done
 }
 
 function codet5() {
-    for attack in random textfooler pso bertattack bae
+    for attack in random textfooler pso bertattack lsh hard
     do
         run codet5 Salesforce/codet5-base Salesforce/codet5-base $attack
     done
 }
 
 function plbart() {
-    for attack in random textfooler pso bertattack bae
+    for attack in random textfooler pso bertattack lsh hard
     do
         run plbart ./saved_models/plbart/checkpoint_11_100000.pt ./saved_models/plbart/sentencepiece.bpe.model $attack
     done
