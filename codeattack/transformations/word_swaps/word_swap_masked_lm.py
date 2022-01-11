@@ -7,6 +7,7 @@ Word Swap by BERT-Masked LM.
 import itertools
 
 import torch
+import random
 from transformers import AutoModelForMaskedLM, AutoTokenizer
 
 from codeattack.shared import utils
@@ -170,6 +171,19 @@ class WordSwapMaskedLM(WordSwap):
 
         return replacement_words
 
+    def random_sub_words_combination(self, top_preds):
+        sub_words = []
+        size = top_preds[0].shape[0]
+        for i in range(size):
+            word = []
+            for preds in top_preds:
+                idx = random.randint(0,size-1)
+                word += [preds[idx]]
+            sub_words += [word]
+
+        return sub_words
+
+
     def _bert_attack_replacement_words(
         self,
         current_text,
@@ -225,7 +239,8 @@ class WordSwapMaskedLM(WordSwap):
         else:
             # Word to replace is tokenized as multiple sub-words
             top_preds = [id_preds[i] for i in target_ids_pos]
-            products = itertools.product(*top_preds)
+            # products = itertools.product(*top_preds)
+            products = self.random_sub_words_combination(top_preds)
             combination_results = []
             # Original BERT-Attack implement uses cross-entropy loss
             cross_entropy_loss = torch.nn.CrossEntropyLoss(reduction="none")
