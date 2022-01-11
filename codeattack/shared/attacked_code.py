@@ -60,6 +60,7 @@ class AttackedCode:
         self.site_map = site_map
         # Process input lazily.
         self.k = k
+        self._text_words = None
         self._words = None
         self._words_per_input = None
         self._pos_tags = None
@@ -142,53 +143,58 @@ class AttackedCode:
             if isinstance(self.attack_attrs[key], torch.Tensor):
                 self.attack_attrs.pop(key, None)
 
-    # def text_window_around_index(self, index, window_size):
-    #     """The text window of ``window_size`` words centered around
-    #     ``index``."""
-    #     length = self.num_words
-    #     half_size = (window_size - 1) / 2.0
-    #     if index - half_size < 0:
-    #         start = 0
-    #         end = min(window_size - 1, length - 1)
-    #     elif index + half_size >= length:
-    #         start = max(0, length - window_size)
-    #         end = length - 1
-    #     else:
-    #         start = index - math.ceil(half_size)
-    #         end = index + math.floor(half_size)
-    #     text_idx_start = self._text_index_of_word_index(start)
-    #     text_idx_end = self._text_index_of_word_index(end) + len(self.words[end])
-    #     return self.text[text_idx_start:text_idx_end]
+    def text_window_around_index(self, index, window_size):
+        """The text window of ``window_size`` words centered around
+        ``index``."""
+        # return self.text
+        word = self.words[index]
+        for index, token in enumerate(self.text_words):
+            if word in token: break
+        length = len(self.text_words)
+        half_size = (window_size - 1) / 2.0
+        if index - half_size < 0:
+            start = 0
+            end = min(window_size - 1, length - 1)
+        elif index + half_size >= length:
+            start = max(0, length - window_size)
+            end = length - 1
+        else:
+            start = index - math.ceil(half_size)
+            end = index + math.floor(half_size)
+        text_idx_start = self._text_index_of_word_index(start)
+        text_idx_end = self._text_index_of_word_index(end) + len(self.text_words[end])
+        return self.text[text_idx_start:text_idx_end]
 
     def pos_of_word_index(self, desired_word_idx):
         """Returns the part-of-speech of the word at index `word_idx`.
 
         Uses FLAIR part-of-speech tagger.
         """
-        if not self._pos_tags:
-            sentence = Sentence(
-                self.text, use_tokenizer=codeattack.shared.utils.words_from_text
-            )
-            codeattack.shared.utils.flair_tag(sentence)
-            self._pos_tags = sentence
-        flair_word_list, flair_pos_list = codeattack.shared.utils.zip_flair_result(
-            self._pos_tags
-        )
+        return "NOUN"
+        # if not self._pos_tags:
+            # sentence = Sentence(
+        #         self.text, use_tokenizer=codeattack.shared.utils.words_from_text
+        #     )
+        #     codeattack.shared.utils.flair_tag(sentence)
+        #     self._pos_tags = sentence
+        # flair_word_list, flair_pos_list = codeattack.shared.utils.zip_flair_result(
+        #     self._pos_tags
+        # )
 
-        for word_idx, word in enumerate(self.words):
-            assert (
-                word in flair_word_list
-            ), "word absent in flair returned part-of-speech tags"
-            word_idx_in_flair_tags = flair_word_list.index(word)
-            if word_idx == desired_word_idx:
-                return flair_pos_list[word_idx_in_flair_tags]
-            else:
-                flair_word_list = flair_word_list[word_idx_in_flair_tags + 1 :]
-                flair_pos_list = flair_pos_list[word_idx_in_flair_tags + 1 :]
+        # for word_idx, word in enumerate(self.words):
+        #     assert (
+        #         word in flair_word_list
+        #     ), "word absent in flair returned part-of-speech tags"
+        #     word_idx_in_flair_tags = flair_word_list.index(word)
+        #     if word_idx == desired_word_idx:
+        #         return flair_pos_list[word_idx_in_flair_tags]
+        #     else:
+        #         flair_word_list = flair_word_list[word_idx_in_flair_tags + 1 :]
+        #         flair_pos_list = flair_pos_list[word_idx_in_flair_tags + 1 :]
 
-        raise ValueError(
-            f"Did not find word from index {desired_word_idx} in flair POS tag"
-        )
+        # raise ValueError(
+        #     f"Did not find word from index {desired_word_idx} in flair POS tag"
+        # )
 
     # def ner_of_word_index(self, desired_word_idx):
     #     """Returns the ner tag of the word at index `word_idx`.
@@ -217,18 +223,18 @@ class AttackedCode:
     #         f"Did not find word from index {desired_word_idx} in flair POS tag"
     #     )
 
-    # def _text_index_of_word_index(self, i):
-    #     """Returns the index of word ``i`` in self.text."""
-    #     pre_words = self.words[: i + 1]
-    #     lower_text = self.text.lower()
-    #     # Find all words until `i` in string.
-    #     look_after_index = 0
-    #     for word in pre_words:
-    #         look_after_index = lower_text.find(word.lower(), look_after_index) + len(
-    #             word
-    #         )
-    #     look_after_index -= len(self.words[i])
-    #     return look_after_index
+    def _text_index_of_word_index(self, i):
+        """Returns the index of word ``i`` in self.text."""
+        pre_words = self.text_words[: i + 1]
+        lower_text = self.text.lower()
+        # Find all words until `i` in string.
+        look_after_index = 0
+        for word in pre_words:
+            look_after_index = lower_text.find(word.lower(), look_after_index) + len(
+                word
+            )
+        look_after_index -= len(self.text_words[i])
+        return look_after_index
 
     # def text_until_word_index(self, i):
     #     """Returns the text before the beginning of word at index ``i``."""
@@ -460,13 +466,13 @@ class AttackedCode:
         return AttackedCode(self._origin_input, new_site_map, k=k, attack_attrs=new_attack_attrs,
                             ground_truth_output=self.ground_truth_output)
 
-    # def words_diff_ratio(self, x):
-    #     """Get the ratio of words difference between current text and `x`.
+    def words_diff_ratio(self, x):
+        """Get the ratio of words difference between current text and `x`.
 
-    #     Note that current text and `x` must have same number of words.
-    #     """
-    #     assert self.num_words == x.num_words
-    #     return float(np.sum(self.words != x.words)) / self.num_words
+        Note that current text and `x` must have same number of words.
+        """
+        assert self.num_words == x.num_words
+        return float(np.sum(self.words != x.words)) / self.num_words
 
     # def align_with_model_tokens(self, model_wrapper):
     #     """Align AttackedCode's `words` with target model's tokenization scheme
@@ -525,6 +531,12 @@ class AttackedCode:
     #             words_from_text(_input) for _input in self._text_input.values()
     #         ]
     #     return self._words_per_input
+
+    @property
+    def text_words(self):
+        if not self._text_words:
+            self._text_words = self.text.split()
+        return self._text_words
 
     @property
     def words(self):

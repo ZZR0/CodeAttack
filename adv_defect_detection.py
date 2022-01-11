@@ -84,6 +84,12 @@ def get_recipe(args, model_wrapper, goal_function):
         recipe = PSOAttack.build(model_wrapper, goal_function)
     elif args.recipe == "bertattack":
         recipe = BERTAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "bae":
+        recipe = BAEAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "lsh":
+        recipe = LSHAttentionAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "hard":
+        recipe = HardLabelAttack.build(model_wrapper, goal_function)
     elif args.recipe == "random":
         recipe = RandomAttack.build(model_wrapper, goal_function)
     else:
