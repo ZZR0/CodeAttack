@@ -121,7 +121,7 @@ class LSHAttentionAttack(AttackRecipe):
     """
 
     @staticmethod
-    def build(model, goal_function, attention_model="attention_models/yelp/han_model_yelp"):
+    def build(model, goal_function, attention_model="attention_models/yelp/han_model_yelp.pt"):
         transformation = WordSwapWordNet()
 
         constraints = [RepeatModification()]
