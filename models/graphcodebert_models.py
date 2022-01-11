@@ -147,7 +147,7 @@ def build_wrapper(args):
     elif args.task == "clone_poj":
         config_class, model_class, tokenizer_class = RobertaConfig, RobertaModel, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        tokenizer = tokenizer_class.f
+        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
         config.num_labels=1
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
         model = CloneDetectionPOJModel(model, config, tokenizer, args)

@@ -1,0 +1,39 @@
+Some weights of the model checkpoint at microsoft/codebert-base were not used when initializing RobertaForSequenceClassification: ['pooler.dense.weight', 'pooler.dense.bias']
+- This IS expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaForSequenceClassification from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaForSequenceClassification were not initialized from the model checkpoint at microsoft/codebert-base and are newly initialized: ['classifier.out_proj.weight', 'classifier.out_proj.bias', 'classifier.dense.weight', 'classifier.dense.bias']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+Traceback (most recent call last):
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/modeling_utils.py", line 1348, in from_pretrained
+    state_dict = torch.load(resolved_archive_file, map_location="cpu")
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/torch/serialization.py", line 593, in load
+    return _legacy_load(opened_file, map_location, pickle_module, **pickle_load_args)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/torch/serialization.py", line 779, in _legacy_load
+    deserialized_objects[key]._set_from_file(f, offset, f_should_read_directly)
+RuntimeError: unexpected EOF, expected 9402880 more bytes. The file might be corrupted.
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/modeling_utils.py", line 1352, in from_pretrained
+    if f.read().startswith("version"):
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/codecs.py", line 322, in decode
+    (result, consumed) = self._buffer_decode(data, self.errors, final)
+UnicodeDecodeError: 'utf-8' codec can't decode byte 0x80 in position 0: invalid start byte
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "adv_defect_detection.py", line 105, in <module>
+    recipe = get_recipe(args, model_wrapper, goal_function)
+  File "adv_defect_detection.py", line 88, in get_recipe
+    recipe = BAEAttack.build(model_wrapper, goal_function)
+  File "/data/zzr/CodeAttack/recipe.py", line 72, in build
+    transformation = WordSwapMaskedLM(
+  File "/data/zzr/CodeAttack/codeattack/transformations/word_swaps/word_swap_masked_lm.py", line 72, in __init__
+    self._language_model = AutoModelForMaskedLM.from_pretrained(
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/models/auto/auto_factory.py", line 419, in from_pretrained
+    return model_class.from_pretrained(pretrained_model_name_or_path, *model_args, config=config, **kwargs)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/modeling_utils.py", line 1361, in from_pretrained
+    raise OSError(
+OSError: Unable to load weights from pytorch checkpoint file for 'bert-base-uncased' at '/data/zzr/.cache/huggingface/transformers/a8041bf617d7f94ea26d15e218abd04afc2004805632abc0ed2066aa16d50d04.faf6ea826ae9c5867d12b22257f9877e6b8367890837bd60f7c54a29633f7f2f'. If you tried to load a PyTorch model from a TF 2.0 checkpoint, please set from_tf=True.
