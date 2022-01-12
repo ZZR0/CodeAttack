@@ -96,9 +96,21 @@ class AttackedCode:
     def rep_key(self, id):
         return self.id2key[id]
 
+    def format_new_word(self, new_word, key):
+        if new_word == "": return new_word
+        if self.site_map[key][1] in ["transforms.AddDeadCode", "transforms.InsertPrintStatements"]:
+            s_k = key.split('@')
+            assert len(s_k) == 3
+            return s_k[0] + new_word + s_k[-1]
+        if self.site_map[key][1] == "transforms.ReplaceTrueFalse":
+            idx = (len(key) // 2)
+            return f'"{new_word}"' + key[idx-2:idx+2] + f'"{new_word}"'
+        return new_word
+
     def generate_adv_text(self, src, site_map):
         for key in site_map:
-            src = src.replace(key, site_map[key][0])
+            new_word = self.format_new_word(site_map[key][0], key)
+            src = src.replace(key, new_word)
         return src
 
     def __eq__(self, other):
@@ -359,17 +371,6 @@ class AttackedCode:
 
     #     return [self.attack_attrs["original_index_map"][i] for i in idxs]
 
-    def format_new_word(self, new_word, key):
-        if new_word == "": return new_word
-        if self.site_map[key][1] == "transforms.AddDeadCode":
-            return "if (false) {{ int "+new_word+" = 1; }};"
-        if self.site_map[key][1] == "transforms.InsertPrintStatements":
-            return 'System.out.println("'+new_word+'");'
-        if self.site_map[key][1] == "transforms.ReplaceTrueFalse":
-            idx = (len(key) // 2)
-            return f'"{new_word}"' + key[idx-2:idx+2] + f'"{new_word}"'
-        return new_word
-
     def replace_words_at_indices(self, indices, new_words):
         """This code returns a new AttackedCode object where the word at
         ``index`` is replaced with a new word."""
@@ -386,7 +387,7 @@ class AttackedCode:
             if (i < 0) or (i > len(site_map)):
                 raise ValueError(f"Cannot assign word at index {i}")
             
-            site_map[self.rep_key(i)][0] = self.format_new_word(new_word, self.rep_key(i))
+            site_map[self.rep_key(i)][0] = new_word
         return self.generate_new_attacked_text(site_map)
 
     def replace_word_at_index(self, index, new_word):
