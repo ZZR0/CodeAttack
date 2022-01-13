@@ -113,6 +113,12 @@ function codet5() {
     $task codet5 Salesforce/codet5-base Salesforce/codet5-base $attack
 }
 
+function contracode() {
+    task=$1
+    attack=$2
+    $task contracode ./saved_models/contracode/ckpt_transformer_hybrid_pretrain_240k.pth ./saved_models/contracode/csnjs_8k_9995p_unigram_url.model $attack
+}
+
 function plbart() {
     task=$1
     attack=$2
