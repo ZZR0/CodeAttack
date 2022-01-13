@@ -5,12 +5,12 @@ import torch.nn.functional as F
 
 from codeattack.models.wrappers import ModelWrapper
 from torch.nn import CrossEntropyLoss, MSELoss
-from transformers import GPT2Config, GPT2Model, GPT2Tokenizer, GPT2ForSequenceClassification, GPT2LMHeadModel
+from transformers import RobertaConfig, RobertaModel, RobertaTokenizer, RobertaForSequenceClassification
 
 def build_wrapper(args):
 
     if args.task == "clone_bcb":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2Model, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = RobertaConfig, RobertaModel, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
         tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
         config.num_labels=2
@@ -22,11 +22,10 @@ def build_wrapper(args):
         model_wrapper = CloneDetectionBCBModelWrapper(model, tokenizer, args)
 
     elif args.task == "clone_poj":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2Model, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = RobertaConfig, RobertaModel, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
         tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
         config.num_labels=1
-        config.pad_token_id=50255
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
         model = CloneDetectionPOJModel(model, config, tokenizer, args)
         checkpoint_prefix = 'checkpoint-best-map/model.bin'
@@ -35,10 +34,10 @@ def build_wrapper(args):
         model_wrapper = CloneDetectionPOJModelWrapper(model, tokenizer, args)
 
     elif args.task == "defect":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2ForSequenceClassification, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = RobertaConfig, RobertaForSequenceClassification, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
         config.num_labels=1
-        config.pad_token_id=50255
+
         tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
 
@@ -50,9 +49,8 @@ def build_wrapper(args):
         model_wrapper = DefectDetectionModelWrapper(model, tokenizer, args)
     
     elif args.task == "search":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2Model, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = RobertaConfig, RobertaModel, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        config.num_labels=1
         tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
 
@@ -64,17 +62,16 @@ def build_wrapper(args):
         model_wrapper = SearchModelWrapper(model, tokenizer, args)
        
     elif args.task == "summarization":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2LMHeadModel, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = RobertaConfig, RobertaModel, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        tokenizer = tokenizer_class.from_pretrained(args.model_name_or_path, bos_token='<s>', eos_token='</s>', pad_token='<pad>', unk_token='<|UNKNOWN|>', sep_token='concode_elem_sep')
-        decoder = model_class.from_pretrained(args.model_name_or_path)
-        decoder.resize_token_embeddings(len(tokenizer))    
-        decoder.config.bos_token_id = tokenizer.bos_token_id
-        decoder.config.eos_token_id = tokenizer.eos_token_id
-        decoder.config.pad_token_id = tokenizer.pad_token_id
-        model = Seq2Seq(decoder=decoder,config=decoder.config,
-                        beam_size=args.beam_size,max_length=args.max_target_length,
-                        sos_id=tokenizer.bos_token_id,eos_id=tokenizer.eos_token_id)
+        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name)
+        encoder = model_class.from_pretrained(args.model_name_or_path, config=config)    
+
+        decoder_layer = nn.TransformerDecoderLayer(d_model=config.hidden_size, nhead=config.num_attention_heads)
+        decoder = nn.TransformerDecoder(decoder_layer, num_layers=6)
+        model=Seq2Seq(encoder=encoder,decoder=decoder,config=config,
+                    beam_size=args.beam_size,max_length=args.max_target_length,
+                    sos_id=tokenizer.cls_token_id,eos_id=tokenizer.sep_token_id)
 
         checkpoint_prefix = 'checkpoint-best-bleu/pytorch_model.bin'
         output_dir = os.path.join(args.save_dir, '{}/{}'.format(args.model, checkpoint_prefix)) 
@@ -95,7 +92,7 @@ class RobertaClassificationHead(nn.Module):
     def __init__(self, config):
         super().__init__()
         self.dense = nn.Linear(config.hidden_size*2, config.hidden_size)
-        self.dropout = nn.Dropout(config.attn_pdrop)
+        self.dropout = nn.Dropout(config.dropout_rate)
         self.out_proj = nn.Linear(config.hidden_size, 2)
 
     def forward(self, x, **kwargs):
@@ -116,13 +113,16 @@ class CloneDetectionBCBModel(nn.Module):
         self.classifier=RobertaClassificationHead(config)
         self.args=args
     
-    def forward(self, input_ids=None): 
+    def model_loss(self, prob, labels):
+        loss_fct = CrossEntropyLoss()
+        loss = loss_fct(prob, labels)
+        return loss
+        
+    def forward(self, input_ids): 
         input_ids=input_ids.view(-1,self.args.max_source_length)
-        outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(self.tokenizer.pad_token_id))[0] # 2B * L * D
-        sequence_lengths = torch.ne(input_ids, self.tokenizer.pad_token_id).sum(-1) - 1
-        outputs=outputs[range(input_ids.size(0)),sequence_lengths,:] # 2B * D
-        logits=self.classifier(outputs) # 2B * D
-        prob=F.softmax(logits) # B * 2
+        outputs = self.encoder(input_ids=input_ids,attention_mask=input_ids.ne(1))[0]
+        logits=self.classifier(outputs)
+        prob=F.softmax(logits)
         return prob
     
     def get_input_embeddings(self):
@@ -153,7 +153,7 @@ class CloneDetectionBCBModelWrapper(ModelWrapper):
     
     def get_ids(self, source, tokens_to_replace=None):
         source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
+        source_tokens =[self.tokenizer.cls_token]+source_tokens+[self.tokenizer.sep_token]
         source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
         padding_length = self.max_source_length - len(source_ids)
         source_ids+=[self.tokenizer.pad_token_id]*padding_length
@@ -243,19 +243,6 @@ class CloneDetectionBCBModelWrapper(ModelWrapper):
 ###############################################################
 # Clone Detection POJ
 ############################################################### 
-class Pooler(nn.Module):
-    def __init__(self, hidden_size):
-        super().__init__()
-        self.dense = nn.Linear(hidden_size, hidden_size)
-        self.activation = nn.Tanh()
-
-    def forward(self, hidden_states):
-        # We "pool" the model by simply taking the hidden state corresponding
-        # to the first token.
-        pooled_output = self.dense(hidden_states)
-        pooled_output = self.activation(pooled_output)
-        return pooled_output
-
 class CloneDetectionPOJModel(nn.Module):   
     def __init__(self, encoder,config,tokenizer,args):
         super(CloneDetectionPOJModel, self).__init__()
@@ -263,17 +250,19 @@ class CloneDetectionPOJModel(nn.Module):
         self.config=config
         self.tokenizer=tokenizer
         self.args=args
-        self.pooler=Pooler(self.config.hidden_size)
     
+    # B * D
+    # def model_loss(self, code_vec, nl_vec):
+    #     batch_loss=-(nl_vec*code_vec).sum(-1)
+    #     loss = torch.mean(batch_loss)
+    #     return batch_loss, loss
+
     def forward(self, input_ids=None,p_input_ids=None): 
         bs,_=input_ids.size()
         input_ids=torch.cat((input_ids,p_input_ids),0)
         
-        vecs=self.encoder(input_ids,attention_mask=input_ids.ne(self.config.pad_token_id))[0] # 3B * L * D
-        sequence_lengths = torch.ne(input_ids, self.config.pad_token_id).sum(-1) - 1
-        vecs=vecs[range(2*bs),sequence_lengths,:] # 3B * D
-        vecs=self.pooler(vecs) # 3B * D
-        vecs=vecs.split(bs,0)
+        vecs=self.encoder(input_ids,attention_mask=input_ids.ne(1))[1] # 2B * D
+        vecs=vecs.split(bs,0) # B * D , B * D , B * D 
 
         outputs = []
         for adv, code in zip(vecs[0], vecs[1]):
@@ -310,7 +299,7 @@ class CloneDetectionPOJModelWrapper(ModelWrapper):
     
     def get_ids(self, source, tokens_to_replace=None):
         source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
+        source_tokens =[self.tokenizer.cls_token]+source_tokens+[self.tokenizer.sep_token]
         source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
         padding_length = self.max_source_length - len(source_ids)
         source_ids+=[self.tokenizer.pad_token_id]*padding_length
@@ -412,10 +401,12 @@ class DefectDetectionModel(nn.Module):
         mean_loss = batch_wish_loss.mean()
         return batch_wish_loss, mean_loss
 
-    def forward(self, input_ids=None): 
-        outputs=self.encoder(input_ids,attention_mask=input_ids.ne(50255))[0]
+    def forward(self, input_ids): 
+        # labels : B
+        attention_mask = input_ids.ne(1)
+        outputs = self.encoder(input_ids=input_ids,attention_mask=attention_mask)[0]
         logits=outputs # 4*1
-        prob=F.sigmoid(logits)
+        prob=torch.sigmoid(logits)
         return prob
     
     def get_input_embeddings(self):
@@ -446,7 +437,7 @@ class DefectDetectionModelWrapper(ModelWrapper):
     
     def get_ids(self, source, tokens_to_replace=None):
         source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
+        source_tokens =[self.tokenizer.cls_token]+source_tokens+[self.tokenizer.sep_token]
         source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
         padding_length = self.max_source_length - len(source_ids)
         source_ids+=[self.tokenizer.pad_token_id]*padding_length
@@ -534,19 +525,6 @@ class DefectDetectionModelWrapper(ModelWrapper):
 ###############################################################
 # Code Search
 ############################################################### 
-class SearchPooler(nn.Module):
-    def __init__(self, hidden_size):
-        super().__init__()
-        self.dense = nn.Linear(hidden_size, hidden_size)
-        self.activation = nn.Tanh()
-
-    def forward(self, hidden_states):
-        # We "pool" the model by simply taking the hidden state corresponding
-        # to the first token.
-        pooled_output = self.dense(hidden_states)
-        pooled_output = self.activation(pooled_output)
-        return pooled_output
-
 class SearchModel(nn.Module):   
     def __init__(self, encoder,config,tokenizer,args):
         super(SearchModel, self).__init__()
@@ -554,15 +532,46 @@ class SearchModel(nn.Module):
         self.config=config
         self.tokenizer=tokenizer
         self.args=args
-        self.pooler=Pooler(self.config.hidden_size)
+    
+    def _tie_or_clone_weights(self, first_module, second_module):
+        """ Tie or clone module weights depending of weither we are using TorchScript or not
+        """
+        if self.config.torchscript:
+            first_module.weight = nn.Parameter(second_module.weight.clone())
+        else:
+            first_module.weight = second_module.weight
+                  
+    def tie_weights(self):
+        """ Make sure we are sharing the input and output embeddings.
+            Export to TorchScript can't handle parameter sharing so we are cloning them instead.
+        """
+        self.lm_head = nn.Linear(self.config.hidden_size, self.config.vocab_size, bias=False)
+        self.lsm = nn.LogSoftmax(dim=-1)
+        self._tie_or_clone_weights(self.lm_head,
+                                   self.encoder.embeddings.word_embeddings)      
+    
+    # B * D
+    def model_loss(self, code_vec, nl_vec):
+        batch_loss=-(nl_vec*code_vec).sum(-1)
+        loss = torch.mean(batch_loss)
+        return batch_loss, loss
 
-    def forward(self, code_inputs,nl_inputs): 
-        bs=code_inputs.shape[0]
+    # B * D
+    # def model_loss(self, code_vec, nl_vec):
+    #     bs=code_vec.shape[0]
+    #     scores=(nl_vec[:,None,:]*code_vec[None,:,:]).sum(-1)
+    #     loss_fct = CrossEntropyLoss(reduction="none")
+    #     batch_loss = loss_fct(scores, torch.arange(bs, device=scores.device))
+    #     loss = torch.mean(batch_loss)
+    #     return batch_loss, loss
+
+    def forward(self, code_inputs=None, nl_inputs=None): 
         inputs=torch.cat((code_inputs,nl_inputs),0)
-        sequence_lengths = torch.ne(inputs, self.tokenizer.pad_token_id).sum(-1) - 1
-        outputs=self.encoder(inputs,attention_mask=inputs.ne(1))[0] # B * L * D
-        outputs=outputs[range(2*bs),sequence_lengths,:] # 3B * D
-        outputs=self.pooler(outputs) # 3B * D
+        attention_mask=inputs.ne(1)
+        bs=code_inputs.shape[0]
+        inputs_embeds = None
+
+        outputs=self.encoder(input_ids=inputs,inputs_embeds=inputs_embeds,attention_mask=attention_mask)[1]
         code_vec=outputs[:bs]
         nl_vec=outputs[bs:]
         outputs = []
@@ -604,7 +613,7 @@ class SearchModelWrapper(ModelWrapper):
     
     def get_ids(self, source, tokens_to_replace=None):
         source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
+        source_tokens =[self.tokenizer.cls_token]+source_tokens+[self.tokenizer.sep_token]
         source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
         padding_length = self.max_source_length - len(source_ids)
         source_ids+=[self.tokenizer.pad_token_id]*padding_length
@@ -717,41 +726,25 @@ class SummarizationModelWrapper(ModelWrapper):
     def to(self, device):
         self.model.to(device)
     
-    def get_ids(self, source, target, max_length=-1, tokens_to_replace=None, stage="test"):
-        block_size = self.args.max_source_length + self.args.max_target_length
-        code = self.tokenizer.encode(source)
-        doc = self.tokenizer.encode(target)
-        if stage == 'test':
-            doc = []
-        while len(doc)+1 > self.args.max_target_length:
-            doc = doc[:-1]
-        while len(code)+1 > self.args.max_source_length:
-            code = code[:-1]
-        if stage == 'train':
-            inputs = code + [self.tokenizer.bos_token_id] + doc + [self.tokenizer.eos_token_id]
-            labels = [1] * len(code) + [2] * (len(doc)+1) + [0]
-            assert len(inputs) <= block_size
-            pad_len = block_size - len(inputs)
-            inputs += [self.tokenizer.pad_token_id] * pad_len
-            labels += [0] * pad_len
-            assert len(inputs) == len(labels)
-        else:
-            inputs = code + [self.tokenizer.bos_token_id]
-            labels = [1] * len(code) + [2]
+    def get_ids(self, source, max_length=-1, tokens_to_replace=None):
+        max_length = max_length if max_length>0 else self.max_source_length
+        source_tokens=self.tokenizer.tokenize(source)[:max_length-2]
+        source_tokens =[self.tokenizer.cls_token]+source_tokens+[self.tokenizer.sep_token]
+        source_ids = self.tokenizer.convert_tokens_to_ids(source_tokens)
+        padding_length = max_length - len(source_ids)
+        source_ids+=[self.tokenizer.pad_token_id]*padding_length
 
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
-                indices.append([i for i, x in enumerate(inputs) if x == token])
-            return inputs, indices
+                indices.append([i for i, x in enumerate(source_ids) if x == token])
+            return source_ids, indices
 
-        return inputs, labels
+        return source_ids
     
     def decode(self, outputs):
         preds = []
         for pred in outputs:
-            if 0 in pred:
-                pred = pred[:pred.index(0)]
             pred = self.tokenizer.decode(pred,skip_special_tokens=True,clean_up_tokenization_spaces=False)
             preds += [pred]
         return preds
@@ -760,17 +753,16 @@ class SummarizationModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        data = [self.get_ids(text["adv"], text["nl"], max_length=self.max_source_length) for text in text_input_list]
+        src_ids = [self.get_ids(text["adv"], max_length=self.max_source_length) for text in text_input_list]
+        tgt_ids = [self.get_ids(text["nl"], max_length=self.max_target_length) for text in text_input_list]
 
-        inputs = [torch.tensor([d[0]]).to(model_device) for d in data]
-        labels = [torch.tensor([d[1]]).to(model_device) for d in data]
+        src_ids = torch.tensor(src_ids).to(model_device)
+        tgt_ids = torch.tensor(tgt_ids).to(model_device)
 
-        outputs = []
         with torch.no_grad():
-            for input in inputs:
-                output = self.model.generate(inputs=input)
-                outputs.extend(output.cpu().numpy().tolist())
+            outputs = self.model.generate(source_ids=src_ids,target_ids=tgt_ids)
         
+        outputs = outputs.cpu().numpy().tolist()
         outputs = self.decode(outputs)
             
         return outputs
@@ -851,56 +843,117 @@ class Seq2Seq(nn.Module):
         * `sos_id`- start of symbol ids in target for beam search.
         * `eos_id`- end of symbol ids in target for beam search. 
     """
-    def __init__(self, decoder,config,beam_size=None,max_length=None,sos_id=None,eos_id=None):
+    def __init__(self, encoder,decoder,config,beam_size=None,max_length=None,sos_id=None,eos_id=None,pad_id=1):
         super(Seq2Seq, self).__init__()
+        self.encoder = encoder
         self.decoder=decoder
         self.config=config
-        self.m = torch.nn.LogSoftmax(dim=-1)
+        self.register_buffer("bias", torch.tril(torch.ones(2048, 2048)))
+        self.dense = nn.Linear(config.hidden_size, config.hidden_size)
+        self.lm_head = nn.Linear(config.hidden_size, config.vocab_size, bias=False)
+        self.lsm = nn.LogSoftmax(dim=-1)
+        self.tie_weights()
         
         self.beam_size=beam_size
         self.max_length=max_length
         self.sos_id=sos_id
-        self.eos_id=eos_id     
+        self.eos_id=eos_id
+        self.pad_id=pad_id
         
     def get_input_embeddings(self):
         return self.encoder.embeddings.word_embeddings
 
+    def _tie_or_clone_weights(self, first_module, second_module):
+        """ Tie or clone module weights depending of weither we are using TorchScript or not
+        """
+        if self.config.torchscript:
+            first_module.weight = nn.Parameter(second_module.weight.clone())
+        else:
+            first_module.weight = second_module.weight
+                  
+    def tie_weights(self):
+        """ Make sure we are sharing the input and output embeddings.
+            Export to TorchScript can't handle parameter sharing so we are cloning them instead.
+        """
+        self._tie_or_clone_weights(self.lm_head,
+                                   self.encoder.embeddings.word_embeddings)        
 
-    def forward(self, inputs=None, attn_mask=None):   
-        outputs = self.decoder(input_ids=inputs, attention_mask=attn_mask)
-        logits = outputs[0] # B * L * V
-        return logits
+    def model_loss(self, lm_logits, target_ids,target_mask=None):
+        # Shift so that tokens < n predict n
+        target_mask = target_ids.ne(self.pad_id)
+        active_loss = target_mask[..., 1:].half() # [B*(L-1)]
+        shift_logits = lm_logits[..., :-1, :].contiguous() # B * L-1 * V
+        shift_labels = target_ids[..., 1:].contiguous() # B * L-1
+        # Flatten the tokens
+        loss_fct = nn.CrossEntropyLoss(ignore_index=-1, reduction="none")
+        batch_loss = loss_fct(shift_logits.view(-1, shift_logits.size(-1)),
+                        shift_labels.view(-1)) # [B*(L-1)] * V , [B*(L-1)]
+        batch_loss = batch_loss.view(target_ids.shape[0], -1).contiguous()
+        # batch_loss = torch.sum(batch_loss * active_loss, dim=1)
+        count = torch.sum(active_loss, dim=1)
+        batch_loss = torch.sum(batch_loss * active_loss, dim=1)
+        batch_loss = batch_loss / count
 
-    def generate(self, inputs=None):
-        outputs = self.decoder(input_ids=inputs)
-        outputs = outputs[1]
-        preds = []       
-        zero = torch.cuda.LongTensor(1).fill_(0)
-        for i in range(inputs.shape[0]):
-            past_hidden = [(x[0][i:i+1].expand(self.beam_size, -1, -1, -1),
-                            x[1][i:i+1].expand(self.beam_size, -1, -1, -1))
-                                for x in outputs]
-            # context_mask=source_mask[i:i+1,:].expand(beam_size,-1)
-            beam = Beam(self.beam_size, self.sos_id, self.eos_id)
-            input_ids = None
-            for _ in range(self.max_length): 
-                if beam.done():
-                    break
-                input_ids = beam.getCurrentState()    
-                # context_mask=torch.cat((context_mask,input_ids*0+1),-1)
-                # mask=context_mask.unsqueeze(0).unsqueeze(-2).unsqueeze(-2).expand(self.config.n_layer, -1, -1, -1, -1)
-                transformer_outputs = self.decoder(input_ids, past_key_values=past_hidden)
-                out = self.m(transformer_outputs[0][:, -1, :]).data
-                # out = self.lsm(self.lm_head(transformer_outputs[0][:,-1,:])).data
-                beam.advance(out)
-                past_hidden = [(x[0].data.index_select(0, beam.getCurrentOrigin()),
-                                x[1].data.index_select(0, beam.getCurrentOrigin())) 
-                                for x in transformer_outputs[1]]
-            hyp = beam.getHyp(beam.getFinal())
-            pred  =beam.buildTargetTokens(hyp)[:self.beam_size]
+        loss = torch.mean(batch_loss)
+        return batch_loss, loss
 
-            pred = [torch.cat([x.view(-1) for x in p]+[zero]*(self.max_length-len(p))).view(1,-1) for p in pred]
-            preds.append(pred[0]) # 1 * l
+    def forward(self, source_ids=None, target_ids=None):
+        source_mask = source_ids.ne(self.pad_id)
+
+        outputs = self.encoder(input_ids=source_ids, attention_mask=source_mask) # B * L * D
+        encoder_output = outputs[0].permute([1,0,2]).contiguous() # L * B * D 
+        attn_mask=-1e4 *(1-self.bias[:target_ids.shape[1],:target_ids.shape[1]])
+        tgt_embeddings = self.encoder.embeddings(target_ids)
+        tgt_embeddings = tgt_embeddings.permute([1,0,2]).contiguous() # L * B * D
+        out = self.decoder(tgt_embeddings,encoder_output,tgt_mask=attn_mask,memory_key_padding_mask=(~source_mask).bool()) # L * B * D
+        hidden_states = torch.tanh(self.dense(out)).permute([1,0,2]).contiguous() # B * L * D
+        lm_logits = self.lm_head(hidden_states) # B * L * V
+        return lm_logits
+
+    def generate(self, source_ids=None, target_ids=None):
+        source_mask = source_ids.ne(self.pad_id)
+        outputs = self.encoder(source_ids, attention_mask=source_mask) # B * L * D
+        encoder_output = outputs[0].permute([1,0,2]).contiguous() # L * B * D 
+        attn_mask=-1e4 *(1-self.bias[:target_ids.shape[1],:target_ids.shape[1]])
+        tgt_embeddings = self.encoder.embeddings(target_ids)
+        tgt_embeddings = tgt_embeddings.permute([1,0,2]).contiguous() # L * B * D
+        out = self.decoder(tgt_embeddings,encoder_output,tgt_mask=attn_mask,memory_key_padding_mask=(~source_mask).bool()) # L * B * D
+        hidden_states = torch.tanh(self.dense(out)).permute([1,0,2]).contiguous() # B * L * D
+        lm_logits = self.lm_head(hidden_states) # B * L * V
+        
+        if self.beam_size == 0:
+            #Predict 
+            preds=[]       
+            out = self.lsm(lm_logits).data # B * L * V
+            max_probs, preds = torch.max(out, dim=2)
+        else:
+            #Predict 
+            preds=[]       
+            zero=torch.cuda.LongTensor(1).fill_(0)     # [0]
+            for i in range(source_ids.shape[0]): # B
+                context=encoder_output[:,i:i+1] # L * 1 * D
+                context_mask=source_mask[i:i+1,:] # 1 * L
+                beam = Beam(self.beam_size,self.sos_id,self.eos_id)
+                input_ids=beam.getCurrentState() # beam * 1
+                context=context.repeat(1, self.beam_size,1) # L * beam * D
+                context_mask=context_mask.repeat(self.beam_size,1) # beam * L
+                for _ in range(self.max_length): 
+                    if beam.done():
+                        break
+                    attn_mask=-1e4 *(1-self.bias[:input_ids.shape[1],:input_ids.shape[1]])
+                    tgt_embeddings = self.encoder.embeddings(input_ids).permute([1,0,2]).contiguous() # 1 * beam * D
+                    out = self.decoder(tgt_embeddings,context,tgt_mask=attn_mask,memory_key_padding_mask=~context_mask) # 1 * beam * D
+                    out = torch.tanh(self.dense(out))
+                    hidden_states=out.permute([1,0,2]).contiguous()[:,-1,:] # beam * D
+                    out = self.lsm(self.lm_head(hidden_states)).data # beam * V
+                    beam.advance(out)
+                    input_ids.data.copy_(input_ids.data.index_select(0, beam.getCurrentOrigin())) # beam * 1
+                    input_ids=torch.cat((input_ids,beam.getCurrentState()),-1) # beam * 2
+                hyp= beam.getHyp(beam.getFinal())
+                pred=beam.buildTargetTokens(hyp)[:self.beam_size]
+                pred=[torch.cat([x.view(-1) for x in p]+[zero]*(self.max_length-len(p))).view(1,-1) for p in pred] # beam * l
+                preds.append(pred[0]) # 1 * l
+                
             preds=torch.cat(preds,0)                         # B * l
         return preds
 

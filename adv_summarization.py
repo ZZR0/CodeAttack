@@ -53,6 +53,9 @@ def build_dataset(args):
             js=json.loads(line.strip())
             code=' '.join(js['code'].split())
             adv_code=' '.join(js['adv'].split())
+            if args.model == "cotext":
+                code = replace_tokens(code)
+                adv_code = replace_tokens(adv_code)
             nl=' '.join(js['nl'].split())
             site_map = js["site_map"]
             dataset += [((adv_code, nl), nl, site_map)]

@@ -5,76 +5,67 @@ import torch.nn.functional as F
 
 from codeattack.models.wrappers import ModelWrapper
 from torch.nn import CrossEntropyLoss, MSELoss
-from transformers import GPT2Config, GPT2Model, GPT2Tokenizer, GPT2ForSequenceClassification, GPT2LMHeadModel
+from transformers import T5Config, T5ForConditionalGeneration, RobertaTokenizer
+import sentencepiece as spm
 
 def build_wrapper(args):
 
     if args.task == "clone_bcb":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2Model, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = T5Config, T5ForConditionalGeneration, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
-        config.num_labels=2
+        tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
         model = CloneDetectionBCBModel(model, config, tokenizer, args)
-        checkpoint_prefix = 'checkpoint-best-f1/model.bin'
+        checkpoint_prefix = 'checkpoint-best-f1/pytorch_model.bin'
         output_dir = os.path.join(args.save_dir, '{}/{}'.format(args.model, checkpoint_prefix))  
         model.load_state_dict(torch.load(output_dir))
         model_wrapper = CloneDetectionBCBModelWrapper(model, tokenizer, args)
 
     elif args.task == "clone_poj":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2Model, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = T5Config, T5ForConditionalGeneration, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
+        tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
         config.num_labels=1
-        config.pad_token_id=50255
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
         model = CloneDetectionPOJModel(model, config, tokenizer, args)
-        checkpoint_prefix = 'checkpoint-best-map/model.bin'
+        checkpoint_prefix = 'checkpoint-best-map/pytorch_model.bin'
         output_dir = os.path.join(args.save_dir, '{}/{}'.format(args.model, checkpoint_prefix))  
         model.load_state_dict(torch.load(output_dir))
         model_wrapper = CloneDetectionPOJModelWrapper(model, tokenizer, args)
 
     elif args.task == "defect":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2ForSequenceClassification, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = T5Config, T5ForConditionalGeneration, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
         config.num_labels=1
-        config.pad_token_id=50255
-        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
+
+        tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
 
         model = DefectDetectionModel(model, config, tokenizer, args)
-        checkpoint_prefix = 'checkpoint-best-acc/model.bin'
+        checkpoint_prefix = 'checkpoint-best-acc/pytorch_model.bin'
         output_dir = os.path.join(args.save_dir, '{}/{}'.format(args.model, checkpoint_prefix))  
         model.load_state_dict(torch.load(output_dir))
 
         model_wrapper = DefectDetectionModelWrapper(model, tokenizer, args)
     
     elif args.task == "search":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2Model, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = T5Config, T5ForConditionalGeneration, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        config.num_labels=1
-        tokenizer = tokenizer_class.from_pretrained(args.tokenizer_name, use_fast=True)
+        tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
         model = model_class.from_pretrained(args.model_name_or_path, config=config)
 
         model = SearchModel(model, config, tokenizer, args)
-        checkpoint_prefix = 'checkpoint-best-mrr/model.bin'
+        checkpoint_prefix = 'checkpoint-best-mrr/pytorch_model.bin'
         output_dir = os.path.join(args.save_dir, '{}/{}'.format(args.model, checkpoint_prefix))  
         model.load_state_dict(torch.load(output_dir))
 
         model_wrapper = SearchModelWrapper(model, tokenizer, args)
        
     elif args.task == "summarization":
-        config_class, model_class, tokenizer_class = GPT2Config, GPT2LMHeadModel, GPT2Tokenizer
+        config_class, model_class, tokenizer_class = T5Config, T5ForConditionalGeneration, RobertaTokenizer
         config = config_class.from_pretrained(args.model_name_or_path)
-        tokenizer = tokenizer_class.from_pretrained(args.model_name_or_path, bos_token='<s>', eos_token='</s>', pad_token='<pad>', unk_token='<|UNKNOWN|>', sep_token='concode_elem_sep')
-        decoder = model_class.from_pretrained(args.model_name_or_path)
-        decoder.resize_token_embeddings(len(tokenizer))    
-        decoder.config.bos_token_id = tokenizer.bos_token_id
-        decoder.config.eos_token_id = tokenizer.eos_token_id
-        decoder.config.pad_token_id = tokenizer.pad_token_id
-        model = Seq2Seq(decoder=decoder,config=decoder.config,
-                        beam_size=args.beam_size,max_length=args.max_target_length,
-                        sos_id=tokenizer.bos_token_id,eos_id=tokenizer.eos_token_id)
+        tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
+        model = model_class.from_pretrained(args.model_name_or_path, config=config)    
 
         checkpoint_prefix = 'checkpoint-best-bleu/pytorch_model.bin'
         output_dir = os.path.join(args.save_dir, '{}/{}'.format(args.model, checkpoint_prefix)) 
@@ -85,7 +76,7 @@ def build_wrapper(args):
         print("Not Such Task: {}.".format(args.task))
 
     return model_wrapper
-
+    
 ###############################################################
 # Clone Detection BigCloneBench
 ############################################################### 
@@ -94,16 +85,13 @@ class RobertaClassificationHead(nn.Module):
 
     def __init__(self, config):
         super().__init__()
-        self.dense = nn.Linear(config.hidden_size*2, config.hidden_size)
-        self.dropout = nn.Dropout(config.attn_pdrop)
+        self.dense = nn.Linear(config.hidden_size * 2, config.hidden_size)
         self.out_proj = nn.Linear(config.hidden_size, 2)
 
     def forward(self, x, **kwargs):
-        x = x.reshape(-1,x.size(-1)*2)
-        x = self.dropout(x)
+        x = x.reshape(-1, x.size(-1) * 2)
         x = self.dense(x)
         x = torch.tanh(x)
-        x = self.dropout(x)
         x = self.out_proj(x)
         return x
         
@@ -116,13 +104,24 @@ class CloneDetectionBCBModel(nn.Module):
         self.classifier=RobertaClassificationHead(config)
         self.args=args
     
-    def forward(self, input_ids=None): 
+    def get_t5_vec(self, source_ids):
+        attention_mask = source_ids.ne(self.tokenizer.piece_to_id("<pad>"))
+        outputs = self.encoder(input_ids=source_ids, attention_mask=attention_mask,
+                               labels=source_ids, decoder_attention_mask=attention_mask, output_hidden_states=True)
+        hidden_states = outputs['decoder_hidden_states'][-1]
+        eos_mask = source_ids.eq(self.tokenizer.piece_to_id("</s>"))
+
+        if len(torch.unique(eos_mask.sum(1))) > 1:
+            raise ValueError("All examples must have the same number of <eos> tokens.")
+        vec = hidden_states[eos_mask, :].view(hidden_states.size(0), -1,
+                                              hidden_states.size(-1))[:, -1, :]
+        return vec
+
+    def forward(self, input_ids): 
         input_ids=input_ids.view(-1,self.args.max_source_length)
-        outputs = self.encoder(input_ids= input_ids,attention_mask=input_ids.ne(self.tokenizer.pad_token_id))[0] # 2B * L * D
-        sequence_lengths = torch.ne(input_ids, self.tokenizer.pad_token_id).sum(-1) - 1
-        outputs=outputs[range(input_ids.size(0)),sequence_lengths,:] # 2B * D
-        logits=self.classifier(outputs) # 2B * D
-        prob=F.softmax(logits) # B * 2
+        outputs = self.get_t5_vec(input_ids)
+        logits=self.classifier(outputs)
+        prob=nn.functional.softmax(logits)
         return prob
     
     def get_input_embeddings(self):
@@ -152,12 +151,9 @@ class CloneDetectionBCBModelWrapper(ModelWrapper):
         self.model.to(device)
     
     def get_ids(self, source, tokens_to_replace=None):
-        source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
-        source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
-        padding_length = self.max_source_length - len(source_ids)
-        source_ids+=[self.tokenizer.pad_token_id]*padding_length
-
+        source_ids = self.tokenizer.encode(source)
+        source_ids = source_ids[:self.args.max_source_length-1] + [self.tokenizer.piece_to_id("</s>")]
+        source_ids = source_ids + [self.tokenizer.piece_to_id("<pad>")] * (self.args.max_source_length-len(source_ids))
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
@@ -243,37 +239,34 @@ class CloneDetectionBCBModelWrapper(ModelWrapper):
 ###############################################################
 # Clone Detection POJ
 ############################################################### 
-class Pooler(nn.Module):
-    def __init__(self, hidden_size):
-        super().__init__()
-        self.dense = nn.Linear(hidden_size, hidden_size)
-        self.activation = nn.Tanh()
-
-    def forward(self, hidden_states):
-        # We "pool" the model by simply taking the hidden state corresponding
-        # to the first token.
-        pooled_output = self.dense(hidden_states)
-        pooled_output = self.activation(pooled_output)
-        return pooled_output
-
 class CloneDetectionPOJModel(nn.Module):   
     def __init__(self, encoder,config,tokenizer,args):
         super(CloneDetectionPOJModel, self).__init__()
         self.encoder = encoder
         self.config=config
         self.tokenizer=tokenizer
+        self.classifier = RobertaClassificationHead(config)
         self.args=args
-        self.pooler=Pooler(self.config.hidden_size)
     
+    def get_t5_vec(self, source_ids):
+        attention_mask = source_ids.ne(self.tokenizer.piece_to_id("<pad>"))
+        outputs = self.encoder(input_ids=source_ids, attention_mask=attention_mask,
+                               labels=source_ids, decoder_attention_mask=attention_mask, output_hidden_states=True)
+        hidden_states = outputs['decoder_hidden_states'][-1]
+        eos_mask = source_ids.eq(self.tokenizer.piece_to_id("</s>"))
+
+        if len(torch.unique(eos_mask.sum(1))) > 1:
+            raise ValueError("All examples must have the same number of <eos> tokens.")
+        vec = hidden_states[eos_mask, :].view(hidden_states.size(0), -1,
+                                              hidden_states.size(-1))[:, -1, :]
+        return vec
+
     def forward(self, input_ids=None,p_input_ids=None): 
         bs,_=input_ids.size()
         input_ids=torch.cat((input_ids,p_input_ids),0)
         
-        vecs=self.encoder(input_ids,attention_mask=input_ids.ne(self.config.pad_token_id))[0] # 3B * L * D
-        sequence_lengths = torch.ne(input_ids, self.config.pad_token_id).sum(-1) - 1
-        vecs=vecs[range(2*bs),sequence_lengths,:] # 3B * D
-        vecs=self.pooler(vecs) # 3B * D
-        vecs=vecs.split(bs,0)
+        vecs = self.get_t5_vec(input_ids)
+        vecs = vecs.split(bs,0) # B * D , B * D , B * D 
 
         outputs = []
         for adv, code in zip(vecs[0], vecs[1]):
@@ -309,12 +302,9 @@ class CloneDetectionPOJModelWrapper(ModelWrapper):
         self.model.to(device)
     
     def get_ids(self, source, tokens_to_replace=None):
-        source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
-        source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
-        padding_length = self.max_source_length - len(source_ids)
-        source_ids+=[self.tokenizer.pad_token_id]*padding_length
-
+        source_ids = self.tokenizer.encode(source)
+        source_ids = source_ids[:self.args.max_source_length-1] + [self.tokenizer.piece_to_id("</s>")]
+        source_ids = source_ids + [self.tokenizer.piece_to_id("<pad>")] * (self.args.max_source_length-len(source_ids))
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
@@ -405,17 +395,28 @@ class DefectDetectionModel(nn.Module):
         self.encoder = encoder
         self.config=config
         self.tokenizer=tokenizer
+        self.classifier = nn.Linear(config.hidden_size, 2)
         self.args=args
         
-    def model_loss(self, prob, labels):
-        batch_wish_loss=-torch.log(prob[:,0]+1e-10)*labels-torch.log((1-prob)[:,0]+1e-10)*(1-labels)
-        mean_loss = batch_wish_loss.mean()
-        return batch_wish_loss, mean_loss
+    def get_t5_vec(self, source_ids):
+        attention_mask = source_ids.ne(self.tokenizer.piece_to_id("<pad>"))
+        outputs = self.encoder(input_ids=source_ids, attention_mask=attention_mask,
+                               labels=source_ids, decoder_attention_mask=attention_mask, output_hidden_states=True)
+        hidden_states = outputs['decoder_hidden_states'][-1]
+        eos_mask = source_ids.eq(self.tokenizer.piece_to_id("</s>"))
 
-    def forward(self, input_ids=None): 
-        outputs=self.encoder(input_ids,attention_mask=input_ids.ne(50255))[0]
-        logits=outputs # 4*1
-        prob=F.sigmoid(logits)
+        if len(torch.unique(eos_mask.sum(1))) > 1:
+            raise ValueError("All examples must have the same number of <eos> tokens.")
+        vec = hidden_states[eos_mask, :].view(hidden_states.size(0), -1,
+                                              hidden_states.size(-1))[:, -1, :]
+        return vec
+
+    def forward(self, input_ids): 
+        # labels : B
+        input_ids = input_ids.view(-1, self.args.max_source_length)
+        vec = self.get_t5_vec(input_ids)
+        logits = self.classifier(vec)
+        prob = nn.functional.softmax(logits)
         return prob
     
     def get_input_embeddings(self):
@@ -445,12 +446,9 @@ class DefectDetectionModelWrapper(ModelWrapper):
         self.model.to(device)
     
     def get_ids(self, source, tokens_to_replace=None):
-        source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
-        source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
-        padding_length = self.max_source_length - len(source_ids)
-        source_ids+=[self.tokenizer.pad_token_id]*padding_length
-
+        source_ids = self.tokenizer.encode(source)
+        source_ids = source_ids[:self.args.max_source_length-1] + [self.tokenizer.piece_to_id("</s>")]
+        source_ids = source_ids + [self.tokenizer.piece_to_id("<pad>")] * (self.args.max_source_length-len(source_ids))
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
@@ -534,37 +532,36 @@ class DefectDetectionModelWrapper(ModelWrapper):
 ###############################################################
 # Code Search
 ############################################################### 
-class SearchPooler(nn.Module):
-    def __init__(self, hidden_size):
-        super().__init__()
-        self.dense = nn.Linear(hidden_size, hidden_size)
-        self.activation = nn.Tanh()
-
-    def forward(self, hidden_states):
-        # We "pool" the model by simply taking the hidden state corresponding
-        # to the first token.
-        pooled_output = self.dense(hidden_states)
-        pooled_output = self.activation(pooled_output)
-        return pooled_output
-
 class SearchModel(nn.Module):   
     def __init__(self, encoder,config,tokenizer,args):
         super(SearchModel, self).__init__()
         self.encoder = encoder
         self.config=config
         self.tokenizer=tokenizer
+        self.classifier = RobertaClassificationHead(config)
         self.args=args
-        self.pooler=Pooler(self.config.hidden_size)
+    
+    def get_t5_vec(self, source_ids):
+        attention_mask = source_ids.ne(self.tokenizer.piece_to_id("<pad>"))
+        outputs = self.encoder(input_ids=source_ids, attention_mask=attention_mask,
+                               labels=source_ids, decoder_attention_mask=attention_mask, output_hidden_states=True)
+        hidden_states = outputs['decoder_hidden_states'][-1]
+        eos_mask = source_ids.eq(self.tokenizer.piece_to_id("</s>"))
 
-    def forward(self, code_inputs,nl_inputs): 
+        if len(torch.unique(eos_mask.sum(1))) > 1:
+            raise ValueError("All examples must have the same number of <eos> tokens.")
+        vec = hidden_states[eos_mask, :].view(hidden_states.size(0), -1,
+                                              hidden_states.size(-1))[:, -1, :]
+        return vec
+
+    def forward(self, code_inputs=None, nl_inputs=None): 
         bs=code_inputs.shape[0]
-        inputs=torch.cat((code_inputs,nl_inputs),0)
-        sequence_lengths = torch.ne(inputs, self.tokenizer.pad_token_id).sum(-1) - 1
-        outputs=self.encoder(inputs,attention_mask=inputs.ne(1))[0] # B * L * D
-        outputs=outputs[range(2*bs),sequence_lengths,:] # 3B * D
-        outputs=self.pooler(outputs) # 3B * D
-        code_vec=outputs[:bs]
-        nl_vec=outputs[bs:]
+        source_ids=torch.cat((code_inputs,nl_inputs),0)
+
+        vec = self.get_t5_vec(source_ids)
+
+        code_vec=vec[:bs]
+        nl_vec=vec[bs:]
         outputs = []
         for code, nl in zip(code_vec, nl_vec):
             one = torch.cat((code.unsqueeze(0), nl.unsqueeze(0)), dim=0)
@@ -603,12 +600,9 @@ class SearchModelWrapper(ModelWrapper):
         self.model.to(device)
     
     def get_ids(self, source, tokens_to_replace=None):
-        source_tokens=self.tokenizer.tokenize(source)[:self.max_source_length-2]
-        source_tokens =[self.tokenizer.bos_token]+source_tokens+[self.tokenizer.eos_token]
-        source_ids =  self.tokenizer.convert_tokens_to_ids(source_tokens)
-        padding_length = self.max_source_length - len(source_ids)
-        source_ids+=[self.tokenizer.pad_token_id]*padding_length
-
+        source_ids = self.tokenizer.encode(source)
+        source_ids = source_ids[:self.args.max_source_length-1] + [self.tokenizer.piece_to_id("</s>")]
+        source_ids = source_ids + [self.tokenizer.piece_to_id("<pad>")] * (self.args.max_source_length-len(source_ids))
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
@@ -717,42 +711,27 @@ class SummarizationModelWrapper(ModelWrapper):
     def to(self, device):
         self.model.to(device)
     
-    def get_ids(self, source, target, max_length=-1, tokens_to_replace=None, stage="test"):
-        block_size = self.args.max_source_length + self.args.max_target_length
-        code = self.tokenizer.encode(source)
-        doc = self.tokenizer.encode(target)
-        if stage == 'test':
-            doc = []
-        while len(doc)+1 > self.args.max_target_length:
-            doc = doc[:-1]
-        while len(code)+1 > self.args.max_source_length:
-            code = code[:-1]
-        if stage == 'train':
-            inputs = code + [self.tokenizer.bos_token_id] + doc + [self.tokenizer.eos_token_id]
-            labels = [1] * len(code) + [2] * (len(doc)+1) + [0]
-            assert len(inputs) <= block_size
-            pad_len = block_size - len(inputs)
-            inputs += [self.tokenizer.pad_token_id] * pad_len
-            labels += [0] * pad_len
-            assert len(inputs) == len(labels)
-        else:
-            inputs = code + [self.tokenizer.bos_token_id]
-            labels = [1] * len(code) + [2]
+
+    def get_ids(self, source, max_length=-1, tokens_to_replace=None):
+        max_length = max_length if max_length>0 else self.max_source_length
+        source_ids = self.tokenizer.encode(source)
+        source_ids = source_ids[:max_length-1] + [self.tokenizer.piece_to_id("</s>")]
+        source_ids = source_ids + [self.tokenizer.piece_to_id("<pad>")] * (max_length-len(source_ids))
 
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
-                indices.append([i for i, x in enumerate(inputs) if x == token])
-            return inputs, indices
+                indices.append([i for i, x in enumerate(source_ids) if x == token])
+            return source_ids, indices
 
-        return inputs, labels
+        return source_ids
     
     def decode(self, outputs):
         preds = []
         for pred in outputs:
-            if 0 in pred:
-                pred = pred[:pred.index(0)]
-            pred = self.tokenizer.decode(pred,skip_special_tokens=True,clean_up_tokenization_spaces=False)
+            while self.tokenizer.unk_id() in pred:
+                pred.remove(self.tokenizer.unk_id())
+            pred = "".join([self.tokenizer.decode(id) for id in pred])
             preds += [pred]
         return preds
 
@@ -760,17 +739,21 @@ class SummarizationModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        data = [self.get_ids(text["adv"], text["nl"], max_length=self.max_source_length) for text in text_input_list]
+        src_ids = [self.get_ids(text["adv"], max_length=self.max_source_length) for text in text_input_list]
 
-        inputs = [torch.tensor([d[0]]).to(model_device) for d in data]
-        labels = [torch.tensor([d[1]]).to(model_device) for d in data]
-
-        outputs = []
-        with torch.no_grad():
-            for input in inputs:
-                output = self.model.generate(inputs=input)
-                outputs.extend(output.cpu().numpy().tolist())
+        src_ids = torch.tensor(src_ids).to(model_device)
         
+        source_mask = src_ids.ne(self.tokenizer.piece_to_id("<pad>"))
+        with torch.no_grad():
+            outputs = self.model.generate(
+                        input_ids=src_ids,
+                        attention_mask=source_mask,
+                        use_cache=True,
+                        num_beams=self.args.beam_size,
+                        early_stopping=True,
+                        max_length=self.args.max_target_length)
+        
+        outputs = outputs.cpu().numpy().tolist()
         outputs = self.decode(outputs)
             
         return outputs
@@ -836,185 +819,3 @@ class SummarizationModelWrapper(ModelWrapper):
         output = {"ids": src_ids[0].tolist(), "gradient": grad, "ids_to_replace":ids_to_replace}
 
         return output
-
-class Seq2Seq(nn.Module):
-    """
-        Build Seqence-to-Sequence.
-        
-        Parameters:
-
-        * `encoder`- encoder of seq2seq model. e.g. roberta
-        * `decoder`- decoder of seq2seq model. e.g. transformer
-        * `config`- configuration of encoder model. 
-        * `beam_size`- beam size for beam search. 
-        * `max_length`- max length of target for beam search. 
-        * `sos_id`- start of symbol ids in target for beam search.
-        * `eos_id`- end of symbol ids in target for beam search. 
-    """
-    def __init__(self, decoder,config,beam_size=None,max_length=None,sos_id=None,eos_id=None):
-        super(Seq2Seq, self).__init__()
-        self.decoder=decoder
-        self.config=config
-        self.m = torch.nn.LogSoftmax(dim=-1)
-        
-        self.beam_size=beam_size
-        self.max_length=max_length
-        self.sos_id=sos_id
-        self.eos_id=eos_id     
-        
-    def get_input_embeddings(self):
-        return self.encoder.embeddings.word_embeddings
-
-
-    def forward(self, inputs=None, attn_mask=None):   
-        outputs = self.decoder(input_ids=inputs, attention_mask=attn_mask)
-        logits = outputs[0] # B * L * V
-        return logits
-
-    def generate(self, inputs=None):
-        outputs = self.decoder(input_ids=inputs)
-        outputs = outputs[1]
-        preds = []       
-        zero = torch.cuda.LongTensor(1).fill_(0)
-        for i in range(inputs.shape[0]):
-            past_hidden = [(x[0][i:i+1].expand(self.beam_size, -1, -1, -1),
-                            x[1][i:i+1].expand(self.beam_size, -1, -1, -1))
-                                for x in outputs]
-            # context_mask=source_mask[i:i+1,:].expand(beam_size,-1)
-            beam = Beam(self.beam_size, self.sos_id, self.eos_id)
-            input_ids = None
-            for _ in range(self.max_length): 
-                if beam.done():
-                    break
-                input_ids = beam.getCurrentState()    
-                # context_mask=torch.cat((context_mask,input_ids*0+1),-1)
-                # mask=context_mask.unsqueeze(0).unsqueeze(-2).unsqueeze(-2).expand(self.config.n_layer, -1, -1, -1, -1)
-                transformer_outputs = self.decoder(input_ids, past_key_values=past_hidden)
-                out = self.m(transformer_outputs[0][:, -1, :]).data
-                # out = self.lsm(self.lm_head(transformer_outputs[0][:,-1,:])).data
-                beam.advance(out)
-                past_hidden = [(x[0].data.index_select(0, beam.getCurrentOrigin()),
-                                x[1].data.index_select(0, beam.getCurrentOrigin())) 
-                                for x in transformer_outputs[1]]
-            hyp = beam.getHyp(beam.getFinal())
-            pred  =beam.buildTargetTokens(hyp)[:self.beam_size]
-
-            pred = [torch.cat([x.view(-1) for x in p]+[zero]*(self.max_length-len(p))).view(1,-1) for p in pred]
-            preds.append(pred[0]) # 1 * l
-            preds=torch.cat(preds,0)                         # B * l
-        return preds
-
-
-class Beam(object):
-    def __init__(self, size,sos,eos):
-        self.size = size
-        self.tt = torch.cuda
-        # The score for each translation on the beam.
-        self.scores = self.tt.FloatTensor(size).zero_()
-        # The backpointers at each time-step.
-        self.prevKs = []
-        # The outputs at each time-step.
-        self.nextYs = [self.tt.LongTensor(size)
-                       .fill_(0)]
-        self.nextYs[0][0] = sos
-        # Has EOS topped the beam yet.
-        self._eos = eos
-        self.eosTop = False
-        # Time and k pair for finished.
-        self.finished = []
-
-    def getCurrentState(self):
-        "Get the outputs for the current timestep."
-        batch = self.tt.LongTensor(self.nextYs[-1]).view(-1, 1)
-        return batch
-
-    def getCurrentOrigin(self):
-        "Get the backpointers for the current timestep."
-        return self.prevKs[-1]
-
-    def advance(self, wordLk):
-        """
-        Given prob over words for every last beam `wordLk` and attention
-        `attnOut`: Compute and update the beam search.
-
-        Parameters:
-
-        * `wordLk`- probs of advancing from the last step (K x words)
-        * `attnOut`- attention at the last step
-
-        Returns: True if beam search is complete.
-        """
-        numWords = wordLk.size(1)
-
-        # Sum the previous scores.
-        if len(self.prevKs) > 0:
-            beamLk = wordLk + self.scores.unsqueeze(1).expand_as(wordLk) # beam * V
-
-            # Don't let EOS have children.
-            for i in range(self.nextYs[-1].size(0)):
-                if self.nextYs[-1][i] == self._eos:
-                    beamLk[i] = -1e20
-        else:
-            beamLk = wordLk[0]
-        flatBeamLk = beamLk.view(-1) # beam*V
-        bestScores, bestScoresId = flatBeamLk.topk(self.size, 0, True, True) # beam， beam
-
-        self.scores = bestScores
-
-        # bestScoresId is flattened beam x word array, so calculate which
-        # word and beam each score came from
-        prevK = bestScoresId // numWords
-        self.prevKs.append(prevK)
-        self.nextYs.append((bestScoresId - prevK * numWords))
-
-
-        for i in range(self.nextYs[-1].size(0)): # beam
-            if self.nextYs[-1][i] == self._eos:
-                s = self.scores[i]
-                self.finished.append((s, len(self.nextYs) - 1, i))
-
-        # End condition is when top-of-beam is EOS and no global score.
-        if self.nextYs[-1][0] == self._eos:
-            self.eosTop = True
-
-    def done(self):
-        return self.eosTop and len(self.finished) >=self.size
-
-    def getFinal(self):
-        if len(self.finished) == 0:
-            self.finished.append((self.scores[0], len(self.nextYs) - 1, 0))
-        self.finished.sort(key=lambda a: -a[0])
-        if len(self.finished) != self.size:
-            unfinished=[]
-            for i in range(self.nextYs[-1].size(0)):
-                if self.nextYs[-1][i] != self._eos:
-                    s = self.scores[i]
-                    unfinished.append((s, len(self.nextYs) - 1, i)) 
-            unfinished.sort(key=lambda a: -a[0])
-            self.finished+=unfinished[:self.size-len(self.finished)]
-        return self.finished[:self.size]
-
-    def getHyp(self, beam_res):
-        """
-        Walk back to construct the full hypothesis.
-        """
-        hyps=[]
-        for _,timestep, k in beam_res:
-            hyp = []
-            for j in range(len(self.prevKs[:timestep]) - 1, -1, -1):
-                hyp.append(self.nextYs[j+1][k])
-                k = self.prevKs[j][k]
-            hyps.append(hyp[::-1])
-        return hyps
-    
-    def buildTargetTokens(self, preds):
-        sentence=[]
-        for pred in preds:
-            tokens = []
-            for tok in pred:
-                if tok==self._eos:
-                    break
-                tokens.append(tok)
-            sentence.append(tokens)
-        return sentence
-        
