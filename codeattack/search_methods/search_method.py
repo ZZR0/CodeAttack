@@ -33,7 +33,10 @@ class SearchMethod(ABC):
                 "Search Method must have access to filter_transformations method"
             )
 
-        result = self.perform_search(initial_result)
+        try:
+            result = self.perform_search(initial_result)
+        except ValueError:
+            result = initial_result
         # ensure that the number of queries for this GoalFunctionResult is up-to-date
         result.num_queries = self.goal_function.num_queries
         return result
