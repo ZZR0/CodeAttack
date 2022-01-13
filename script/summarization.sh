@@ -22,7 +22,7 @@ function run() {
 }
 
 function codebert() {
-    for attack in pso bae bertattack lsh hard
+    for attack in pso lsh hard
     do
         run codebert microsoft/codebert-base roberta-base $attack
     done

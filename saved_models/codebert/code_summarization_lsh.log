@@ -1,0 +1,28 @@
+textattack: Running 4 worker(s) on 4 GPU(s).
+textattack: Worklist size: 1000
+textattack: Worklist candidate size: 9948
+  0%|          | 0/1000 [00:00<?, ?it/s]textattack: Exception encountered for input "OrderedDict([('adv', 'protected final void @R_0@ ( U @R_3@ , boolean @R_4@ , Disposable @R_5@ ) { final Observer < ? super V > @R_1@ = downstream ; final SimplePlainQueue < U > @R_2@ = queue ; if ( wip . get ( ) == 0 && wip . compareAndSet ( 0 , 1 ) ) { if ( @R_2@ . isEmpty ( ) ) { accept ( @R_1@ , @R_3@ ) ; if ( leave ( - 1 ) == 0 ) { return ; } } else { @R_2@ . offer ( @R_3@ ) ; } } else { @R_2@ . offer ( @R_3@ ) ; if ( ! enter ( ) ) { return ; } } QueueDrainHelper . drainLoop ( @R_2@ , @R_1@ , @R_4@ , @R_5@ , this ) ; }'), ('nl', 'Makes sure the fast - path emits in order .')])".
+textattack: Traceback (most recent call last):
+  File "/data/zzr/CodeAttack/codeattack/attacker.py", line 590, in attack_from_queue
+    result = attack.attack(example, ground_truth_output)
+  File "/data/zzr/CodeAttack/codeattack/attack.py", line 423, in attack
+    result = self._attack(goal_function_result)
+  File "/data/zzr/CodeAttack/codeattack/attack.py", line 372, in _attack
+    final_result = self.search_method(initial_result)
+  File "/data/zzr/CodeAttack/codeattack/search_methods/search_method.py", line 36, in __call__
+    result = self.perform_search(initial_result)
+  File "/data/zzr/CodeAttack/codeattack/search_methods/greedy_word_swap_wir.py", line 223, in perform_search
+    index_order, search_over = self._get_index_order(attacked_text)
+  File "/data/zzr/CodeAttack/codeattack/search_methods/greedy_word_swap_wir.py", line 62, in _get_index_order
+    han = HAN(path=self.attention_model_path)
+  File "/data/zzr/CodeAttack/codeattack/attention_models/han.py", line 47, in __init__
+    mode_dict = torch.load(path, map_location=self.device)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/torch/serialization.py", line 579, in load
+    with _open_file_like(f, 'rb') as opened_file:
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/torch/serialization.py", line 230, in _open_file_like
+    return _open_file(name_or_buffer, mode)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/torch/serialization.py", line 211, in __init__
+    super(_open_file, self).__init__(open(name, mode))
+FileNotFoundError: [Errno 2] No such file or directory: 'attention_models/yelp/han_model_yelp.pt'
+
+  0%|          | 0/1000 [01:59<?, ?it/s]
