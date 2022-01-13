@@ -37,7 +37,8 @@ function graphcodebert() {
 }
 
 function codet5() {
-    for attack in random textfooler pso bae bertattack lsh hard
+    # for attack in random textfooler pso bae bertattack lsh hard
+    for attack in pso bae bertattack lsh hard
     do
         run codet5 Salesforce/codet5-base Salesforce/codet5-base $attack
     done
@@ -51,7 +52,7 @@ function plbart() {
 }
 
 # for model in codebert graphcodebert codet5 plbart
-for model in graphcodebert
+for model in codet5
 do
     $model
 done
