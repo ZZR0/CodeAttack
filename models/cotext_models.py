@@ -731,7 +731,7 @@ class SummarizationModelWrapper(ModelWrapper):
         for pred in outputs:
             while self.tokenizer.unk_id() in pred:
                 pred.remove(self.tokenizer.unk_id())
-            pred = "".join([self.tokenizer.decode(id) for id in pred])
+            pred = self.tokenizer.decode(pred)
             preds += [pred]
         return preds
 
@@ -752,7 +752,8 @@ class SummarizationModelWrapper(ModelWrapper):
                         num_beams=self.args.beam_size,
                         early_stopping=True,
                         max_length=self.args.max_target_length)
-        
+
+        outputs[outputs >= self.tokenizer.vocab_size()] = self.tokenizer.unk_id()
         outputs = outputs.cpu().numpy().tolist()
         outputs = self.decode(outputs)
             
