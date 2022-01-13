@@ -55,7 +55,13 @@ def build_dataset(args):
         for line in f:
             line=line.strip()
             js=json.loads(line)
-            url_to_code[js['idx']]={"code":js["code"], "adv":js['adv'], "site_map":js["site_map"]}
+            code = js["code"]
+            adv = js['adv']
+            if args.model == "cotext":
+                code = replace_tokens(code)
+                adv = replace_tokens(adv)
+
+            url_to_code[js['idx']]={"code":code, "adv":adv, "site_map":js["site_map"]}
 
     dataset = []
     with open(test_file) as f:

@@ -19,6 +19,18 @@ from codeattack.constraints.pre_transformation import (
 from codeattack.constraints.semantics import KeyWord
 from codeattack.attack_recipes import AttackRecipe
 
+def replace_tokens(code):
+    code = code.replace("\n", "NEW_LINE")
+    code = code.replace("\t", "INDENT")
+    code = code.replace("{", "OPEN_CURLY_TOKEN")
+    code = code.replace("}", "CLOSE_CURLY_TOKEN")
+    code = code.replace("<", "SMALLER_TOKEN")
+    code = code.replace(">", "GREATER_TOKEN")
+    code = code.replace("[", "OPEN_SQUARE_TOKEN")
+    code = code.replace("]", "CLOSE_SQUARE_TOKEN")
+    code = code.replace("$", "DOLLAR_TOKEN")
+    return code
+
 class RandomAttack(AttackRecipe):
 
     @staticmethod

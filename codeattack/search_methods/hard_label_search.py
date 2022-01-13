@@ -236,6 +236,10 @@ class HardLabelSearch(PopulationBasedSearch):
         )
         population = []
         # Randomly select `self.pop_size - 1` substituted indices for mutation.
+        if len(changed_indices) < self.pop_size - 1:
+            indices = list(range(len(changed_indices)))
+        else:
+            indices = np.random.choice(len(changed_indices), size=self.pop_size - 1)
         indices = np.random.choice(len(changed_indices), size=self.pop_size - 1)
         for i in range(len(indices)):
 
