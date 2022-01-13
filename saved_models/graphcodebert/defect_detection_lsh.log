@@ -1,0 +1,37 @@
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+Traceback (most recent call last):
+  File "adv_defect_detection.py", line 5, in <module>
+    import codeattack
+  File "/data2/cg/CodeAttack/codeattack/__init__.py", line 11, in <module>
+    from .attack_args import AttackArgs, CommandLineAttackArgs
+  File "/data2/cg/CodeAttack/codeattack/attack_args.py", line 15, in <module>
+    from .attack import Attack
+  File "/data2/cg/CodeAttack/codeattack/attack.py", line 19, in <module>
+    from codeattack.constraints import Constraint, PreTransformationConstraint
+  File "/data2/cg/CodeAttack/codeattack/constraints/__init__.py", line 25, in <module>
+    from . import semantics
+  File "/data2/cg/CodeAttack/codeattack/constraints/semantics/__init__.py", line 7, in <module>
+    from . import sentence_encoders
+  File "/data2/cg/CodeAttack/codeattack/constraints/semantics/sentence_encoders/__init__.py", line 12, in <module>
+    from .universal_sentence_encoder import (
+  File "/data2/cg/CodeAttack/codeattack/constraints/semantics/sentence_encoders/universal_sentence_encoder/__init__.py", line 8, in <module>
+    from .multilingual_universal_sentence_encoder import (
+  File "/data2/cg/CodeAttack/codeattack/constraints/semantics/sentence_encoders/universal_sentence_encoder/multilingual_universal_sentence_encoder.py", line 5, in <module>
+    import tensorflow_text  # noqa: F401
+ModuleNotFoundError: No module named 'tensorflow_text'

@@ -22,15 +22,15 @@ function run() {
 }
 
 function codebert() {
-    # for attack in random textfooler pso bae bertattack lsh hard
-    for attack in bertattack
+    for attack in random textfooler pso bae bertattack lsh hard
     do
         run codebert microsoft/codebert-base roberta-base $attack
     done
 }
 
 function graphcodebert() {
-    for attack in random textfooler pso bae bertattack lsh hard
+    # for attack in random textfooler pso bae bertattack lsh hard
+    for attack in pso bae bertattack lsh hard
     do
         run graphcodebert microsoft/graphcodebert-base microsoft/graphcodebert-base $attack
     done
@@ -51,7 +51,7 @@ function plbart() {
 }
 
 # for model in codebert graphcodebert codet5 plbart
-for model in codebert
+for model in graphcodebert
 do
     $model
 done
