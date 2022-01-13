@@ -127,6 +127,15 @@ function plbart() {
 
 model=$1
 task=$2
-attack=$3
+# attack=$3
 
-$model $task $attack
+num=$#
+one=1
+stop_args=2
+array=($@) 
+while [ ${num} != ${stop_args} ] 
+do
+	let "num-=one"
+	# echo "${array[num]}"
+    $model $task ${array[num]}
+done
