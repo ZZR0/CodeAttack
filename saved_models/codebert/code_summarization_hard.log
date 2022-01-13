@@ -1,0 +1,230 @@
+textattack: Running 4 worker(s) on 4 GPU(s).
+Using /tmp/tfhub_modules to cache modules.
+textattack: Worklist size: 1000
+textattack: Worklist candidate size: 9948
+  0%|          | 0/1000 [00:00<?, ?it/s][Succeeded / Failed / Skipped / Total] 1 / 0 / 0 / 1:   0%|          | 1/1000 [00:00<00:00, 1579.18it/s][Succeeded / Failed / Skipped / Total] 2 / 0 / 0 / 2:   0%|          | 2/1000 [00:00<00:00, 1803.61it/s][Succeeded / Failed / Skipped / Total] 3 / 0 / 0 / 3:   0%|          | 3/1000 [00:00<00:00, 2041.35it/s][Succeeded / Failed / Skipped / Total] 4 / 0 / 0 / 4:   0%|          | 4/1000 [00:00<00:00, 2231.31it/s][Succeeded / Failed / Skipped / Total] 5 / 0 / 0 / 5:   0%|          | 5/1000 [00:00<00:00, 2387.74it/s]--------------------------------------------- Result 1 ---------------------------------------------
+Wrap the given Observable into an Observable . --> Adjusts the background --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Observable < T > [[wrap]] ( ObservableSource < T > [[source]] ) { ObjectHelper . requireNonNull ( [[source]] , "source is null" ) ; if ( [[source]] instanceof Observable ) { return RxJavaPlugins . onAssembly ( ( Observable < T > ) [[source]] ) ; } return RxJavaPlugins . onAssembly ( new ObservableFromUnsafeSource < T > ( [[source]] ) ) ; }
+[[[[Nl]]]]: Wraps an ObservableSource into an Observable if not already an Observable .
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Observable < T > [[adjustment]] ( ObservableSource < T > [[backgrounds]] ) { ObjectHelper . requireNonNull ( [[backgrounds]] , "source is null" ) ; if ( [[backgrounds]] instanceof Observable ) { return RxJavaPlugins . onAssembly ( ( Observable < T > ) [[backgrounds]] ) ; } return RxJavaPlugins . onAssembly ( new ObservableFromUnsafeSource < T > ( [[backgrounds]] ) ) ; }
+[[[[Nl]]]]: Wraps an ObservableSource into an Observable if not already an Observable .
+--------------------------------------------- Result 2 ---------------------------------------------
+Fast implementation for fast - path elements . --> Perform a timer --> Socre: 1.0
+
+[[[[Adv]]]]: protected final void [[fastPathOrderedEmit]] ( U value , boolean delayError , Disposable disposable ) { final Observer < ? super V > observer = downstream ; final SimplePlainQueue < U > q = queue ; if ( wip . get ( ) == 0 && wip . compareAndSet ( 0 , 1 ) ) { if ( q . isEmpty ( ) ) { accept ( observer , value ) ; if ( leave ( - 1 ) == 0 ) { return ; } } else { q . offer ( value ) ; } } else { q . offer ( value ) ; if ( ! enter ( ) ) { return ; } } QueueDrainHelper . drainLoop ( q , observer , delayError , disposable , this ) ; }
+[[[[Nl]]]]: Makes sure the fast - path emits in order .
+
+[[[[Adv]]]]: protected final void [[timeframe]] ( U value , boolean delayError , Disposable disposable ) { final Observer < ? super V > observer = downstream ; final SimplePlainQueue < U > q = queue ; if ( wip . get ( ) == 0 && wip . compareAndSet ( 0 , 1 ) ) { if ( q . isEmpty ( ) ) { accept ( observer , value ) ; if ( leave ( - 1 ) == 0 ) { return ; } } else { q . offer ( value ) ; } } else { q . offer ( value ) ; if ( ! enter ( ) ) { return ; } } QueueDrainHelper . drainLoop ( q , observer , delayError , disposable , this ) ; }
+[[[[Nl]]]]: Makes sure the fast - path emits in order .
+--------------------------------------------- Result 3 ---------------------------------------------
+Adapts a ConnectableObserver to a ConnectableObservable Observable . --> Create a new Reaction from a ConnectableObserver --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > ConnectableObservable < T > [[observeOn]] ( final ConnectableObservable < T > co , final Scheduler scheduler ) { final Observable < T > observable = co . observeOn ( scheduler ) ; return RxJavaPlugins . onAssembly ( new Replay < T > ( co , observable ) ) ; }
+[[[[Nl]]]]: Child Observers will observe the events of the ConnectableObservable on the specified scheduler .
+
+[[[[Adv]]]]: public static < T > ConnectableObservable < T > [[horseshoes]] ( final ConnectableObservable < T > co , final Scheduler scheduler ) { final Observable < T > observable = co . observeOn ( scheduler ) ; return RxJavaPlugins . onAssembly ( new Replay < T > ( co , observable ) ) ; }
+[[[[Nl]]]]: Child Observers will observe the events of the ConnectableObservable on the specified scheduler .
+--------------------------------------------- Result 4 ---------------------------------------------
+Create a new instance of this processor . --> Create a new nucleast processor --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[create]] ( int [[capacityHint]] ) { return new UnicastProcessor < T > ( [[capacityHint]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[formation]] ( int [[multe]] ) { return new UnicastProcessor < T > ( [[multe]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint .
+--------------------------------------------- Result 5 ---------------------------------------------
+Returns a sorted observable sorted by the specified comparator . --> Catalog --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Observable < T > [[sorted]] ( Comparator < ? super T > [[sortFunction]] ) { ObjectHelper . requireNonNull ( [[sortFunction]] , "sortFunction is null" ) ; return toList ( ) . toObservable ( ) . map ( Functions . listSorter ( [[sortFunction]] ) ) . flatMapIterable ( Functions . < List < T > > identity ( ) ) ; }
+[[[[Nl]]]]: Returns an Observable that emits the events emitted by source ObservableSource in a sorted order based on a specified comparison function .
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Observable < T > [[catalogued]] ( Comparator < ? super T > [[billabong]] ) { ObjectHelper . requireNonNull ( [[billabong]] , "sortFunction is null" ) ; return toList ( ) . toObservable ( ) . map ( Functions . listSorter ( [[billabong]] ) ) . flatMapIterable ( Functions . < List < T > > identity ( ) ) ; }
+[[[[Nl]]]]: Returns an Observable that emits the events emitted by source ObservableSource in a sorted order based on a specified comparison function .
+--------------------------------------------- Result 6 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 6 / 0 / 0 / 6:   1%|          | 6/1000 [00:00<00:00, 2295.52it/s][Succeeded / Failed / Skipped / Total] 7 / 0 / 0 / 7:   1%|          | 7/1000 [00:00<00:00, 2382.93it/s][Succeeded / Failed / Skipped / Total] 8 / 0 / 0 / 8:   1%|          | 8/1000 [00:00<00:00, 2453.71it/s][Succeeded / Failed / Skipped / Total] 9 / 0 / 0 / 9:   1%|          | 9/1000 [00:00<00:00, 2521.63it/s]Try to perform a scalar function . --> Utility function for testing --> Socre: 1.0
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T , R > boolean tryScalarXMapSubscribe ( Publisher < T > source , Subscriber < ? super R > subscriber , Function < ? super T , ? extends Publisher < ? extends R > > mapper ) { if ( source instanceof Callable ) { T [[t]] ; try { [[t]] = ( ( Callable < T > ) source ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "[[True]]" == "[[True]]" ; } if ( [[t]] == null ) { EmptySubscription . complete ( subscriber ) ; return "[[True]]" == "[[True]]" ; } Publisher < ? extends R > [[r]] ; try { [[r]] = ObjectHelper . requireNonNull ( mapper . apply ( [[t]] ) , "The mapper returned a null Publisher" ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "[[True]]" == "[[True]]" ; } if ( [[r]] instanceof Callable ) { R u ; try { u = ( ( Callable < R > ) [[r]] ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "[[True]]" == "[[True]]" ; } if ( u == null ) { EmptySubscription . complete ( subscriber ) ; return "[[True]]" == "[[True]]" ; } subscriber . onSubscribe ( new ScalarSubscription < R > ( subscriber , u ) ) ; } else { [[r]] . subscribe ( subscriber ) ; } return "[[True]]" == "[[True]]" ; } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to subscribe to a possibly Callable source s mapped Publisher .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T , R > boolean tryScalarXMapSubscribe ( Publisher < T > source , Subscriber < ? super R > subscriber , Function < ? super T , ? extends Publisher < ? extends R > > mapper ) { if ( source instanceof Callable ) { T [[tonnes]] ; try { [[tonnes]] = ( ( Callable < T > ) source ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "[[Accurate]]" == "[[Accurate]]" ; } if ( [[tonnes]] == null ) { EmptySubscription . complete ( subscriber ) ; return "[[Accurate]]" == "[[Accurate]]" ; } Publisher < ? extends R > [[j]] ; try { [[j]] = ObjectHelper . requireNonNull ( mapper . apply ( [[tonnes]] ) , "The mapper returned a null Publisher" ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "[[Accurate]]" == "[[Accurate]]" ; } if ( [[j]] instanceof Callable ) { R u ; try { u = ( ( Callable < R > ) [[j]] ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "[[Accurate]]" == "[[Accurate]]" ; } if ( u == null ) { EmptySubscription . complete ( subscriber ) ; return "[[Accurate]]" == "[[Accurate]]" ; } subscriber . onSubscribe ( new ScalarSubscription < R > ( subscriber , u ) ) ; } else { [[j]] . subscribe ( subscriber ) ; } return "[[Accurate]]" == "[[Accurate]]" ; } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to subscribe to a possibly Callable source s mapped Publisher .
+--------------------------------------------- Result 7 ---------------------------------------------
+Creates a new instance of this processor . --> Census processor --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[create]] ( int [[capacityHint]] , Runnable [[onCancelled]] ) { ObjectHelper . requireNonNull ( [[onCancelled]] , "onTerminate" ) ; return new UnicastProcessor < T > ( [[capacityHint]] , [[onCancelled]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[crea]] ( int [[stavanger]] , Runnable [[fbi]] ) { ObjectHelper . requireNonNull ( [[fbi]] , "onTerminate" ) ; return new UnicastProcessor < T > ( [[stavanger]] , [[fbi]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+--------------------------------------------- Result 8 ---------------------------------------------
+Reset all settings . --> Reset the system --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[reset]] ( ) { setErrorHandler ( null ) ; setScheduleHandler ( null ) ; setComputationSchedulerHandler ( null ) ; setInitComputationSchedulerHandler ( null ) ; setIoSchedulerHandler ( null ) ; setInitIoSchedulerHandler ( null ) ; setSingleSchedulerHandler ( null ) ; setInitSingleSchedulerHandler ( null ) ; setNewThreadSchedulerHandler ( null ) ; setInitNewThreadSchedulerHandler ( null ) ; setOnFlowableAssembly ( null ) ; setOnFlowableSubscribe ( null ) ; setOnObservableAssembly ( null ) ; setOnObservableSubscribe ( null ) ; setOnSingleAssembly ( null ) ; setOnSingleSubscribe ( null ) ; setOnCompletableAssembly ( null ) ; setOnCompletableSubscribe ( null ) ; setOnConnectableFlowableAssembly ( null ) ; setOnConnectableObservableAssembly ( null ) ; setOnMaybeAssembly ( null ) ; setOnMaybeSubscribe ( null ) ; setOnParallelAssembly ( null ) ; setFailOnNonBlockingScheduler ( "False" != "False" ) ; setOnBeforeBlocking ( null ) ; }
+[[[[Nl]]]]: Removes all handlers and resets to default behavior .
+
+[[[[Adv]]]]: public static void [[reinstating]] ( ) { setErrorHandler ( null ) ; setScheduleHandler ( null ) ; setComputationSchedulerHandler ( null ) ; setInitComputationSchedulerHandler ( null ) ; setIoSchedulerHandler ( null ) ; setInitIoSchedulerHandler ( null ) ; setSingleSchedulerHandler ( null ) ; setInitSingleSchedulerHandler ( null ) ; setNewThreadSchedulerHandler ( null ) ; setInitNewThreadSchedulerHandler ( null ) ; setOnFlowableAssembly ( null ) ; setOnFlowableSubscribe ( null ) ; setOnObservableAssembly ( null ) ; setOnObservableSubscribe ( null ) ; setOnSingleAssembly ( null ) ; setOnSingleSubscribe ( null ) ; setOnCompletableAssembly ( null ) ; setOnCompletableSubscribe ( null ) ; setOnConnectableFlowableAssembly ( null ) ; setOnConnectableObservableAssembly ( null ) ; setOnMaybeAssembly ( null ) ; setOnMaybeSubscribe ( null ) ; setOnParallelAssembly ( null ) ; setFailOnNonBlockingScheduler ( "False" != "False" ) ; setOnBeforeBlocking ( null ) ; }
+[[[[Nl]]]]: Removes all handlers and resets to default behavior .
+--------------------------------------------- Result 9 ---------------------------------------------
+Convert a scalar value to a Streamable --> Blocking flow --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T , U > Flowable < U > [[scalarXMap]] ( final T [[value]] , final Function < ? super T , ? extends Publisher < ? extends U > > [[mapper]] ) { return RxJavaPlugins . onAssembly ( new ScalarXMapFlowable < T , U > ( [[value]] , [[mapper]] ) ) ; }
+[[[[Nl]]]]: Maps a scalar value into a Publisher and emits its values .
+
+[[[[Adv]]]]: public static < T , U > Flowable < U > [[dumb]] ( final T [[magnitude]] , final Function < ? super T , ? extends Publisher < ? extends U > > [[workout]] ) { return RxJavaPlugins . onAssembly ( new ScalarXMapFlowable < T , U > ( [[magnitude]] , [[workout]] ) ) ; }
+[[[[Nl]]]]: Maps a scalar value into a Publisher and emits its values .
+--------------------------------------------- Result 10 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 10 / 0 / 0 / 10:   1%|          | 10/1000 [00:00<00:00, 2567.52it/s][Succeeded / Failed / Skipped / Total] 11 / 0 / 0 / 11:   1%|          | 11/1000 [00:00<00:00, 2620.84it/s][Succeeded / Failed / Skipped / Total] 11 / 0 / 0 / 11:   1%|          | 12/1000 [00:10<14:54,  1.11it/s]  [Succeeded / Failed / Skipped / Total] 12 / 0 / 0 / 12:   1%|          | 12/1000 [00:10<14:54,  1.10it/s][Succeeded / Failed / Skipped / Total] 12 / 0 / 0 / 12:   1%|▏         | 13/1000 [00:12<15:17,  1.08it/s][Succeeded / Failed / Skipped / Total] 13 / 0 / 0 / 13:   1%|▏         | 13/1000 [00:12<15:17,  1.08it/s][Succeeded / Failed / Skipped / Total] 13 / 0 / 0 / 13:   1%|▏         | 14/1000 [00:13<15:56,  1.03it/s][Succeeded / Failed / Skipped / Total] 13 / 1 / 0 / 14:   1%|▏         | 14/1000 [00:13<15:56,  1.03it/s][Succeeded / Failed / Skipped / Total] 13 / 1 / 0 / 14:   2%|▏         | 15/1000 [00:17<19:35,  1.19s/it][Succeeded / Failed / Skipped / Total] 14 / 1 / 0 / 15:   2%|▏         | 15/1000 [00:17<19:35,  1.19s/it][Succeeded / Failed / Skipped / Total] 14 / 1 / 0 / 15:   2%|▏         | 16/1000 [00:18<19:19,  1.18s/it][Succeeded / Failed / Skipped / Total] 15 / 1 / 0 / 16:   2%|▏         | 16/1000 [00:18<19:19,  1.18s/it][Succeeded / Failed / Skipped / Total] 15 / 1 / 0 / 16:   2%|▏         | 17/1000 [00:29<28:22,  1.73s/it][Succeeded / Failed / Skipped / Total] 16 / 1 / 0 / 17:   2%|▏         | 17/1000 [00:29<28:22,  1.73s/it][Succeeded / Failed / Skipped / Total] 16 / 1 / 0 / 17:   2%|▏         | 18/1000 [01:31<1:23:04,  5.08s/it][Succeeded / Failed / Skipped / Total] 17 / 1 / 0 / 18:   2%|▏         | 18/1000 [01:31<1:23:05,  5.08s/it][Succeeded / Failed / Skipped / Total] 17 / 1 / 0 / 18:   2%|▏         | 19/1000 [01:45<1:31:11,  5.58s/it][Succeeded / Failed / Skipped / Total] 18 / 1 / 0 / 19:   2%|▏         | 19/1000 [01:45<1:31:11,  5.58s/it][Succeeded / Failed / Skipped / Total] 18 / 1 / 0 / 19:   2%|▏         | 20/1000 [02:45<2:15:00,  8.27s/it]Retries the given number of times for the given number of times . --> Ack on failure --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Maybe < T > [[retry]] ( long [[times]] , Predicate < ? super Throwable > predicate ) { return toFlowable ( ) . retry ( [[times]] , predicate ) . singleElement ( ) ; }
+[[[[Nl]]]]: Retries at most times or until the predicate returns false whichever happens first .
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Maybe < T > [[ack]] ( long [[epoch]] , Predicate < ? super Throwable > predicate ) { return toFlowable ( ) . retry ( [[epoch]] , predicate ) . singleElement ( ) ; }
+[[[[Nl]]]]: Retries at most times or until the predicate returns false whichever happens first .
+--------------------------------------------- Result 11 ---------------------------------------------
+Construct a Maybe from a Completable . --> Minimize the given Completable --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[fromCompletable]] ( CompletableSource [[completableSource]] ) { ObjectHelper . requireNonNull ( [[completableSource]] , "completableSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromCompletable < T > ( [[completableSource]] ) ) ; }
+[[[[Nl]]]]: Wraps a CompletableSource into a Maybe .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[muñoz]] ( CompletableSource [[diameter]] ) { ObjectHelper . requireNonNull ( [[diameter]] , "completableSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromCompletable < T > ( [[diameter]] ) ) ; }
+[[[[Nl]]]]: Wraps a CompletableSource into a Maybe .
+--------------------------------------------- Result 12 ---------------------------------------------
+Wrapper function . --> Convenience method for convenience --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > Callable < T > [[justCallable]] ( T [[value]] ) { return new JustValue < Object , T > ( [[value]] ) ; }
+[[[[Nl]]]]: Returns a Callable that returns the given value .
+
+[[[[Adv]]]]: public static < T > Callable < T > [[galactic]] ( T [[amount]] ) { return new JustValue < Object , T > ( [[amount]] ) ; }
+[[[[Nl]]]]: Returns a Callable that returns the given value .
+--------------------------------------------- Result 13 ---------------------------------------------
+Construct a Maybe from a single source . --> Pluto from single source --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[fromSingle]] ( SingleSource < T > singleSource ) { ObjectHelper . requireNonNull ( singleSource , "singleSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromSingle < T > ( singleSource ) ) ; }
+[[[[Nl]]]]: Wraps a SingleSource into a Maybe .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[pluto]] ( SingleSource < T > singleSource ) { ObjectHelper . requireNonNull ( singleSource , "singleSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromSingle < T > ( singleSource ) ) ; }
+[[[[Nl]]]]: Wraps a SingleSource into a Maybe .
+--------------------------------------------- Result 14 ---------------------------------------------
+Checks that the specified object is not null . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static < T > T requireNonNull ( T object , String message ) { if ( object == null ) { throw new NullPointerException ( message ) ; } return object ; }
+[[[[Nl]]]]: Verifies if the object is not null and returns it or throws a NullPointerException with the given message .
+
+[[[[Adv]]]]: public static < T > T requireNonNull ( T object , String message ) { if ( object == null ) { throw new NullPointerException ( message ) ; } return object ; }
+[[[[Nl]]]]: Verifies if the object is not null and returns it or throws a NullPointerException with the given message .
+--------------------------------------------- Result 15 ---------------------------------------------
+Returns a function that wraps a value . --> Singularish --> Socre: 1.0
+
+[[[[Adv]]]]: public static < [[T]] , U > Function < [[T]] , U > [[justFunction]] ( U [[value]] ) { return new JustValue < [[T]] , U > ( [[value]] ) ; }
+[[[[Nl]]]]: Returns a Function that ignores its parameter and returns the given value .
+
+[[[[Adv]]]]: public static < [[n]] , U > Function < [[n]] , U > [[spelled]] ( U [[worth]] ) { return new JustValue < [[n]] , U > ( [[worth]] ) ; }
+[[[[Nl]]]]: Returns a Function that ignores its parameter and returns the given value .
+--------------------------------------------- Result 16 ---------------------------------------------
+Create a new unicast subject with the specified capacity . --> Create a creative subject --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[create]] ( int [[capacityHint]] ) { return new UnicastSubject < T > ( [[capacityHint]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[creative]] ( int [[gush]] ) { return new UnicastSubject < T > ( [[gush]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint .
+--------------------------------------------- Result 17 ---------------------------------------------
+Cast function . --> Shortcut to an albatim --> Socre: 1.0
+
+[[[[Adv]]]]: public static < [[T]] , U > Function < [[T]] , U > [[castFunction]] ( Class < U > [[target]] ) { return new CastToClass < [[T]] , U > ( [[target]] ) ; }
+[[[[Nl]]]]: Returns a function that cast the incoming values via a Class object .
+
+[[[[Adv]]]]: public static < [[million]] , U > Function < [[million]] , U > [[albatross]] ( Class < U > [[ambition]] ) { return new CastToClass < [[million]] , U > ( [[ambition]] ) ; }
+[[[[Nl]]]]: Returns a function that cast the incoming values via a Class object .
+--------------------------------------------- Result 18 ---------------------------------------------
+Create a reusable subject with the specified capacity . --> Static factory method --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[create]] ( int [[capacityHint]] , Runnable [[onTerminate]] ) { return new UnicastSubject < T > ( [[capacityHint]] , [[onTerminate]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[producing]] ( int [[jacko]] , Runnable [[fett]] ) { return new UnicastSubject < T > ( [[jacko]] , [[fett]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+--------------------------------------------- Result 19 ---------------------------------------------
+Create a new unicast subject . --> Create a new unicast subject --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[create]] ( boolean [[delayError]] ) { return new UnicastSubject < T > ( bufferSize ( ) , [[delayError]] ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 and given delay error flag .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[inception]] ( boolean [[church]] ) { return new UnicastSubject < T > ( bufferSize ( ) , [[church]] ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 and given delay error flag .
+--------------------------------------------- Result 20 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 19 / 1 / 0 / 20:   2%|▏         | 20/1000 [02:45<2:15:00,  8.27s/it][Succeeded / Failed / Skipped / Total] 19 / 1 / 0 / 20:   2%|▏         | 21/1000 [02:46<2:09:41,  7.95s/it][Succeeded / Failed / Skipped / Total] 20 / 1 / 0 / 21:   2%|▏         | 21/1000 [02:46<2:09:41,  7.95s/it][Succeeded / Failed / Skipped / Total] 20 / 1 / 0 / 21:   2%|▏         | 22/1000 [05:53<4:22:15, 16.09s/it][Succeeded / Failed / Skipped / Total] 21 / 1 / 0 / 22:   2%|▏         | 22/1000 [05:53<4:22:15, 16.09s/it][Succeeded / Failed / Skipped / Total] 21 / 1 / 0 / 22:   2%|▏         | 23/1000 [06:01<4:15:51, 15.71s/it][Succeeded / Failed / Skipped / Total] 22 / 1 / 0 / 23:   2%|▏         | 23/1000 [06:01<4:15:51, 15.71s/it][Succeeded / Failed / Skipped / Total] 22 / 1 / 0 / 23:   2%|▏         | 24/1000 [06:12<4:12:12, 15.50s/it][Succeeded / Failed / Skipped / Total] 23 / 1 / 0 / 24:   2%|▏         | 24/1000 [06:12<4:12:12, 15.50s/it][Succeeded / Failed / Skipped / Total] 23 / 1 / 0 / 24:   2%|▎         | 25/1000 [06:32<4:15:10, 15.70s/it][Succeeded / Failed / Skipped / Total] 23 / 2 / 0 / 25:   2%|▎         | 25/1000 [06:32<4:15:10, 15.70s/it][Succeeded / Failed / Skipped / Total] 23 / 2 / 0 / 25:   3%|▎         | 26/1000 [06:44<4:12:17, 15.54s/it][Succeeded / Failed / Skipped / Total] 23 / 3 / 0 / 26:   3%|▎         | 26/1000 [06:44<4:12:17, 15.54s/it][Succeeded / Failed / Skipped / Total] 23 / 3 / 0 / 26:   3%|▎         | 27/1000 [06:51<4:07:13, 15.25s/it]Get an error from the queue . --> convert to Hadoop --> Socre: 1.0
+
+[[[[Adv]]]]: public Throwable [[blockingGetError]] ( ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; await ( ) ; } catch ( InterruptedException ex ) { dispose ( ) ; return ex ; } } return error ; }
+[[[[Nl]]]]: Block until the latch is counted down and return the error received or null if no error happened .
+
+[[[[Adv]]]]: public Throwable [[tohoku]] ( ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; await ( ) ; } catch ( InterruptedException ex ) { dispose ( ) ; return ex ; } } return error ; }
+[[[[Nl]]]]: Block until the latch is counted down and return the error received or null if no error happened .
+--------------------------------------------- Result 21 ---------------------------------------------
+Waits for errors to be executed . --> Waiting for hour intervals --> Socre: 1.0
+
+[[[[Adv]]]]: public boolean [[blockingAwait]] ( long [[timeout]] , TimeUnit [[unit]] ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; if ( ! await ( [[timeout]] , [[unit]] ) ) { dispose ( ) ; return "False" != "False" ; } } catch ( InterruptedException ex ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( [[ex]] ) ; } } Throwable [[ex]] = error ; if ( [[ex]] != null ) { throw ExceptionHelper . wrapOrThrow ( [[ex]] ) ; } return "True" == "True" ; }
+[[[[Nl]]]]: Block until the observer terminates and return true ; return false if the wait times out .
+
+[[[[Adv]]]]: public boolean [[hourglass]] ( long [[jawing]] , TimeUnit [[services]] ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; if ( ! await ( [[jawing]] , [[services]] ) ) { dispose ( ) ; return "False" != "False" ; } } catch ( InterruptedException ex ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( [[recently]] ) ; } } Throwable [[recently]] = error ; if ( [[recently]] != null ) { throw ExceptionHelper . wrapOrThrow ( [[recently]] ) ; } return "True" == "True" ; }
+[[[[Nl]]]]: Block until the observer terminates and return true ; return false if the wait times out .
+--------------------------------------------- Result 22 ---------------------------------------------
+Removes the maximum number of items from queue . --> Emit a holiday --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T , U > void [[drainMaxLoop]] ( SimplePlainQueue < T > q , Subscriber < ? super U > a , boolean [[delayError]] , Disposable dispose , QueueDrain < T , U > [[qd]] ) { int missed = 1 ; for ( ; ; ) { for ( ; ; ) { boolean d = [[qd]] . done ( ) ; T v = q . poll ( ) ; boolean empty = v == null ; if ( checkTerminated ( d , empty , a , [[delayError]] , q , [[qd]] ) ) { if ( dispose != null ) { dispose . dispose ( ) ; } return ; } if ( empty ) { break ; } long r = [[qd]] . requested ( ) ; if ( r != 0L ) { if ( [[qd]] . accept ( a , v ) ) { if ( r != Long . MAX_VALUE ) { [[qd]] . produced ( 1 ) ; } } } else { q . clear ( ) ; if ( dispose != null ) { dispose . dispose ( ) ; } a . onError ( new MissingBackpressureException ( "Could not emit value due to lack of requests." ) ) ; return ; } } missed = [[qd]] . leave ( - missed ) ; if ( missed == 0 ) { break ; } } }
+[[[[Nl]]]]: Drain the queue but give up with an error if there aren t enough requests .
+
+[[[[Adv]]]]: public static < T , U > void [[holiday]] ( SimplePlainQueue < T > q , Subscriber < ? super U > a , boolean [[beria]] , Disposable dispose , QueueDrain < T , U > [[bwoy]] ) { int missed = 1 ; for ( ; ; ) { for ( ; ; ) { boolean d = [[bwoy]] . done ( ) ; T v = q . poll ( ) ; boolean empty = v == null ; if ( checkTerminated ( d , empty , a , [[beria]] , q , [[bwoy]] ) ) { if ( dispose != null ) { dispose . dispose ( ) ; } return ; } if ( empty ) { break ; } long r = [[bwoy]] . requested ( ) ; if ( r != 0L ) { if ( [[bwoy]] . accept ( a , v ) ) { if ( r != Long . MAX_VALUE ) { [[bwoy]] . produced ( 1 ) ; } } } else { q . clear ( ) ; if ( dispose != null ) { dispose . dispose ( ) ; } a . onError ( new MissingBackpressureException ( "Could not emit value due to lack of requests." ) ) ; return ; } } missed = [[bwoy]] . leave ( - missed ) ; if ( missed == 0 ) { break ; } } }
+[[[[Nl]]]]: Drain the queue but give up with an error if there aren t enough requests .
+--------------------------------------------- Result 23 ---------------------------------------------
+Sends a request to the given subscription . --> Request a voucher to be requested --> Socre: 1.0
+
+[[[[Adv]]]]: public static void request ( Subscription s , int [[prefetch]] ) { s . request ( [[prefetch]] < 0 ? Long . MAX_VALUE : [[prefetch]] ) ; }
+[[[[Nl]]]]: Requests Long . MAX_VALUE if prefetch is negative or the exact amount if prefetch is positive .
+
+[[[[Adv]]]]: public static void request ( Subscription s , int [[tougher]] ) { s . request ( [[tougher]] < 0 ? Long . MAX_VALUE : [[tougher]] ) ; }
+[[[[Nl]]]]: Requests Long . MAX_VALUE if prefetch is negative or the exact amount if prefetch is positive .
+--------------------------------------------- Result 24 ---------------------------------------------
+Called when a subscriber is complete . --> Called after a task completes --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > void postComplete ( Subscriber < ? super T > [[actual]] , Queue < T > [[queue]] , AtomicLong state , BooleanSupplier isCancelled ) { if ( [[queue]] . isEmpty ( ) ) { [[actual]] . onComplete ( ) ; return ; } if ( postCompleteDrain ( state . get ( ) , [[actual]] , [[queue]] , state , isCancelled ) ) { return ; } for ( ; ; ) { long r = state . get ( ) ; if ( ( r & COMPLETED_MASK ) != 0L ) { return ; } long u = r | COMPLETED_MASK ;
+[[[[Nl]]]]: Signals the completion of the main sequence and switches to post - completion replay mode .
+
+[[[[Adv]]]]: public static < T > void postComplete ( Subscriber < ? super T > [[actually]] , Queue < T > [[noodle]] , AtomicLong state , BooleanSupplier isCancelled ) { if ( [[noodle]] . isEmpty ( ) ) { [[actually]] . onComplete ( ) ; return ; } if ( postCompleteDrain ( state . get ( ) , [[actually]] , [[noodle]] , state , isCancelled ) ) { return ; } for ( ; ; ) { long r = state . get ( ) ; if ( ( r & COMPLETED_MASK ) != 0L ) { return ; } long u = r | COMPLETED_MASK ;
+[[[[Nl]]]]: Signals the completion of the main sequence and switches to post - completion replay mode .
+--------------------------------------------- Result 25 ---------------------------------------------
+Returns identity function . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T > Function < T , T > identity ( ) { return ( Function < T , T > ) IDENTITY ; }
+[[[[Nl]]]]: Returns an identity function that simply returns its argument .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T > Function < T , T > identity ( ) { return ( Function < T , T > ) IDENTITY ; }
+[[[[Nl]]]]: Returns an identity function that simply returns its argument .
+--------------------------------------------- Result 26 ---------------------------------------------
+Create a new instance . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > create ( ) { return new UnicastSubject < T > ( bufferSize ( ) , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > create ( ) { return new UnicastSubject < T > ( bufferSize ( ) , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 .
+--------------------------------------------- Result 27 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 24 / 3 / 0 / 27:   3%|▎         | 27/1000 [06:51<4:07:13, 15.25s/it]textattack: Exception encountered for input "OrderedDict([('adv', 'public static boolean @R_0@ ( Disposable @R_1@ , Disposable @R_2@ , Class < ? > @R_3@ ) { ObjectHelper . requireNonNull ( @R_2@ , "next is null" ) ; if ( @R_1@ != null ) { @R_2@ . dispose ( ) ; if ( @R_1@ != DisposableHelper . DISPOSED ) { reportDoubleSubscription ( @R_3@ ) ; } return "@R_4@" != "@R_4@" ; } return "@R_5@" == "@R_5@" ; }'), ('nl', 'Ensures that the upstream Disposable is null and returns true otherwise disposes the next Disposable and if the upstream is not the shared disposed instance reports a ProtocolViolationException due to multiple subscribe attempts .')])".
+textattack: Traceback (most recent call last):
+  File "/data/zzr/CodeAttack/codeattack/attacker.py", line 590, in attack_from_queue
+    result = attack.attack(example, ground_truth_output)
+  File "/data/zzr/CodeAttack/codeattack/attack.py", line 423, in attack
+    result = self._attack(goal_function_result)
+  File "/data/zzr/CodeAttack/codeattack/attack.py", line 372, in _attack
+    final_result = self.search_method(initial_result)
+  File "/data/zzr/CodeAttack/codeattack/search_methods/search_method.py", line 36, in __call__
+    result = self.perform_search(initial_result)
+  File "/data/zzr/CodeAttack/codeattack/search_methods/hard_label_search.py", line 440, in perform_search
+    population = self._initialize_population(
+  File "/data/zzr/CodeAttack/codeattack/search_methods/hard_label_search.py", line 239, in _initialize_population
+    indices = np.random.choice(len(changed_indices), size=self.pop_size - 1)
+  File "mtrand.pyx", line 909, in numpy.random.mtrand.RandomState.choice
+ValueError: a must be greater than 0 unless no samples are taken
+
