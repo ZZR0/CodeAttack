@@ -104,7 +104,7 @@ if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-    goal_function = DefectClassification(model_wrapper, model_batch_size=24, query_budget=200)
+    goal_function = DefectClassification(model_wrapper, model_batch_size=24)
     recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
