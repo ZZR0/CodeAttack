@@ -40,7 +40,7 @@ class F1(Metric):
             y_preds.append(result.output)
 
         f1=f1_score(y_trues, y_preds, average='macro')
-        return f1
+        return round(f1, 4)
 
 
 class Precision(Metric):
@@ -72,7 +72,7 @@ class Precision(Metric):
             y_preds.append(result.output)
 
         precision=precision_score(y_trues, y_preds, average='macro')   
-        return precision
+        return round(precision, 4)
 
 
 class Recall(Metric):
@@ -104,4 +104,4 @@ class Recall(Metric):
             y_preds.append(result.output)
 
         recall=recall_score(y_trues, y_preds, average='macro')
-        return recall
+        return round(recall, 4)

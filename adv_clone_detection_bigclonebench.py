@@ -123,6 +123,8 @@ def get_recipe(args, model_wrapper, goal_function):
         recipe = LSHAttentionAttack.build(model_wrapper, goal_function)
     elif args.recipe == "hard":
         recipe = HardLabelAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "random+":
+        recipe = RandomPlusAttack.build(model_wrapper, goal_function)
     elif args.recipe == "random":
         recipe = RandomAttack.build(model_wrapper, goal_function)
     else:
@@ -134,7 +136,7 @@ if __name__ == "__main__":
     args = parse_args()
 
     model_wrapper = get_wrapper(args)
-    goal_function = UntargetedClassification(model_wrapper, model_batch_size=16, query_budget=200)
+    goal_function = UntargetedClassification(model_wrapper, model_batch_size=16)
     recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
