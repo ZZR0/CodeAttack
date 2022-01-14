@@ -1,0 +1,1009 @@
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+Some weights of the model checkpoint at microsoft/graphcodebert-base were not used when initializing RobertaModel: ['lm_head.layer_norm.bias', 'lm_head.dense.bias', 'lm_head.decoder.bias', 'lm_head.dense.weight', 'lm_head.bias', 'lm_head.layer_norm.weight', 'lm_head.decoder.weight']
+- This IS expected if you are initializing RobertaModel from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing RobertaModel from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+Some weights of RobertaModel were not initialized from the model checkpoint at microsoft/graphcodebert-base and are newly initialized: ['roberta.pooler.dense.bias', 'roberta.pooler.dense.weight']
+You should probably TRAIN this model on a down-stream task to be able to use it for predictions and inference.
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['cls.seq_relationship.weight', 'cls.seq_relationship.bias']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+[proxychains] Strict chain  ...  127.0.0.1:1089  ...  127.0.0.1:8889  ...  huggingface.co:443  ...  OK
+textattack: Running 4 worker(s) on 4 GPU(s).
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+[proxychains] DLL init: proxychains-ng 4.14-git-42-g931e0df
+textattack: Worklist size: 1000
+textattack: Worklist candidate size: 9948
+  0%|          | 0/1000 [00:00<?, ?it/s]  0%|          | 1/1000 [00:11<3:06:33, 11.20s/it][Succeeded / Failed / Skipped / Total] 0 / 1 / 0 / 1:   0%|          | 1/1000 [00:11<3:06:38, 11.21s/it][Succeeded / Failed / Skipped / Total] 0 / 1 / 0 / 1:   0%|          | 2/1000 [00:22<3:07:42, 11.28s/it][Succeeded / Failed / Skipped / Total] 1 / 1 / 0 / 2:   0%|          | 2/1000 [00:22<3:07:42, 11.28s/it][Succeeded / Failed / Skipped / Total] 1 / 1 / 0 / 2:   0%|          | 3/1000 [00:30<2:46:59, 10.05s/it][Succeeded / Failed / Skipped / Total] 1 / 2 / 0 / 3:   0%|          | 3/1000 [00:30<2:47:00, 10.05s/it][Succeeded / Failed / Skipped / Total] 1 / 2 / 0 / 3:   0%|          | 4/1000 [00:40<2:48:07, 10.13s/it][Succeeded / Failed / Skipped / Total] 2 / 2 / 0 / 4:   0%|          | 4/1000 [00:40<2:48:07, 10.13s/it][Succeeded / Failed / Skipped / Total] 2 / 2 / 0 / 4:   0%|          | 5/1000 [01:06<3:41:26, 13.35s/it][Succeeded / Failed / Skipped / Total] 3 / 2 / 0 / 5:   0%|          | 5/1000 [01:06<3:41:27, 13.35s/it][Succeeded / Failed / Skipped / Total] 3 / 2 / 0 / 5:   1%|          | 6/1000 [01:17<3:33:02, 12.86s/it]--------------------------------------------- Result 1 ---------------------------------------------
+Wraps an Observable . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Observable < T > [[wrap]] ( ObservableSource < T > [[source]] ) { ObjectHelper . requireNonNull ( [[source]] , "source is null" ) ; if ( [[source]] instanceof Observable ) { return RxJavaPlugins . onAssembly ( ( Observable < T > ) [[source]] ) ; } return RxJavaPlugins . onAssembly ( new ObservableFromUnsafeSource < T > ( [[source]] ) ) ; }
+[[[[Nl]]]]: Wraps an ObservableSource into an Observable if not already an Observable .
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Observable < T > [[format]] ( ObservableSource < T > [[data]] ) { ObjectHelper . requireNonNull ( [[data]] , "source is null" ) ; if ( [[data]] instanceof Observable ) { return RxJavaPlugins . onAssembly ( ( Observable < T > ) [[data]] ) ; } return RxJavaPlugins . onAssembly ( new ObservableFromUnsafeSource < T > ( [[data]] ) ) ; }
+[[[[Nl]]]]: Wraps an ObservableSource into an Observable if not already an Observable .
+--------------------------------------------- Result 2 ---------------------------------------------
+Observes the observable using the given scheduler . --> Observable observable --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > ConnectableObservable < T > [[observeOn]] ( final ConnectableObservable < T > co , final Scheduler scheduler ) { final Observable < T > observable = co . observeOn ( scheduler ) ; return RxJavaPlugins . onAssembly ( new Replay < T > ( co , observable ) ) ; }
+[[[[Nl]]]]: Child Observers will observe the events of the ConnectableObservable on the specified scheduler .
+
+[[[[Adv]]]]: public static < T > ConnectableObservable < T > [[function]] ( final ConnectableObservable < T > co , final Scheduler scheduler ) { final Observable < T > observable = co . observeOn ( scheduler ) ; return RxJavaPlugins . onAssembly ( new Replay < T > ( co , observable ) ) ; }
+[[[[Nl]]]]: Child Observers will observe the events of the ConnectableObservable on the specified scheduler .
+--------------------------------------------- Result 3 ---------------------------------------------
+Returns an Observable with the given sort function . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Observable < T > [[sorted]] ( Comparator < ? super T > [[sortFunction]] ) { ObjectHelper . requireNonNull ( [[sortFunction]] , "sortFunction is null" ) ; return toList ( ) . toObservable ( ) . map ( Functions . listSorter ( [[sortFunction]] ) ) . flatMapIterable ( Functions . < List < T > > identity ( ) ) ; }
+[[[[Nl]]]]: Returns an Observable that emits the events emitted by source ObservableSource in a sorted order based on a specified comparison function .
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Observable < T > [[command]] ( Comparator < ? super T > [[right]] ) { ObjectHelper . requireNonNull ( [[right]] , "sortFunction is null" ) ; return toList ( ) . toObservable ( ) . map ( Functions . listSorter ( [[right]] ) ) . flatMapIterable ( Functions . < List < T > > identity ( ) ) ; }
+[[[[Nl]]]]: Returns an Observable that emits the events emitted by source ObservableSource in a sorted order based on a specified comparison function .
+--------------------------------------------- Result 4 ---------------------------------------------
+Creates a new capacity instance . --> Create a new uncastProcessor instance --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[create]] ( int [[capacityHint]] ) { return new UnicastProcessor < T > ( [[capacityHint]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[c]] ( int [[e]] ) { return new UnicastProcessor < T > ( [[e]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint .
+--------------------------------------------- Result 5 ---------------------------------------------
+Tries to apply scalar XMap as a scalar X map . --> Operator operator --> Socre: 1.0
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T , R > boolean [[tryScalarXMapSubscribe]] ( Publisher < T > source , Subscriber < ? super R > subscriber , Function < ? super T , ? extends Publisher < ? extends R > > [[mapper]] ) { if ( source instanceof Callable ) { T t ; try { t = ( ( Callable < T > ) source ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "True" == "True" ; } if ( t == null ) { EmptySubscription . complete ( subscriber ) ; return "True" == "True" ; } Publisher < ? extends R > r ; try { r = ObjectHelper . requireNonNull ( [[mapper]] . apply ( t ) , "The mapper returned a null Publisher" ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "True" == "True" ; } if ( r instanceof Callable ) { R u ; try { u = ( ( Callable < R > ) r ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "True" == "True" ; } if ( u == null ) { EmptySubscription . complete ( subscriber ) ; return "True" == "True" ; } subscriber . onSubscribe ( new ScalarSubscription < R > ( subscriber , u ) ) ; } else { r . subscribe ( subscriber ) ; } return "True" == "True" ; } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to subscribe to a possibly Callable source s mapped Publisher .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T , R > boolean [[operator]] ( Publisher < T > source , Subscriber < ? super R > subscriber , Function < ? super T , ? extends Publisher < ? extends R > > [[source]] ) { if ( source instanceof Callable ) { T t ; try { t = ( ( Callable < T > ) source ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "True" == "True" ; } if ( t == null ) { EmptySubscription . complete ( subscriber ) ; return "True" == "True" ; } Publisher < ? extends R > r ; try { r = ObjectHelper . requireNonNull ( [[source]] . apply ( t ) , "The mapper returned a null Publisher" ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "True" == "True" ; } if ( r instanceof Callable ) { R u ; try { u = ( ( Callable < R > ) r ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptySubscription . error ( ex , subscriber ) ; return "True" == "True" ; } if ( u == null ) { EmptySubscription . complete ( subscriber ) ; return "True" == "True" ; } subscriber . onSubscribe ( new ScalarSubscription < R > ( subscriber , u ) ) ; } else { r . subscribe ( subscriber ) ; } return "True" == "True" ; } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to subscribe to a possibly Callable source s mapped Publisher .
+--------------------------------------------- Result 6 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 3 / 3 / 0 / 6:   1%|          | 6/1000 [01:17<3:33:02, 12.86s/it][Succeeded / Failed / Skipped / Total] 3 / 3 / 0 / 6:   1%|          | 7/1000 [01:18<3:06:20, 11.26s/it][Succeeded / Failed / Skipped / Total] 3 / 4 / 0 / 7:   1%|          | 7/1000 [01:18<3:06:20, 11.26s/it][Succeeded / Failed / Skipped / Total] 3 / 4 / 0 / 7:   1%|          | 8/1000 [01:21<2:48:10, 10.17s/it][Succeeded / Failed / Skipped / Total] 4 / 4 / 0 / 8:   1%|          | 8/1000 [01:21<2:48:10, 10.17s/it][Succeeded / Failed / Skipped / Total] 4 / 4 / 0 / 8:   1%|          | 9/1000 [01:39<3:02:01, 11.02s/it][Succeeded / Failed / Skipped / Total] 5 / 4 / 0 / 9:   1%|          | 9/1000 [01:39<3:02:01, 11.02s/it][Succeeded / Failed / Skipped / Total] 5 / 4 / 0 / 9:   1%|          | 10/1000 [01:45<2:53:44, 10.53s/it][Succeeded / Failed / Skipped / Total] 6 / 4 / 0 / 10:   1%|          | 10/1000 [01:45<2:53:45, 10.53s/it][Succeeded / Failed / Skipped / Total] 6 / 4 / 0 / 10:   1%|          | 11/1000 [01:46<2:39:32,  9.68s/it][Succeeded / Failed / Skipped / Total] 6 / 5 / 0 / 11:   1%|          | 11/1000 [01:46<2:39:32,  9.68s/it][Succeeded / Failed / Skipped / Total] 6 / 5 / 0 / 11:   1%|          | 12/1000 [01:51<2:32:54,  9.29s/it]Creates a new executor with the given capacity . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[create]] ( int capacityHint , Runnable [[onCancelled]] ) { ObjectHelper . requireNonNull ( [[onCancelled]] , "onTerminate" ) ; return new UnicastProcessor < T > ( capacityHint , [[onCancelled]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastProcessor < T > [[program]] ( int capacityHint , Runnable [[buffer]] ) { ObjectHelper . requireNonNull ( [[buffer]] , "onTerminate" ) ; return new UnicastProcessor < T > ( capacityHint , [[buffer]] ) ; }
+[[[[Nl]]]]: Creates an UnicastProcessor with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+--------------------------------------------- Result 7 ---------------------------------------------
+Emit the given value to the downstream . --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected final void fastPathOrderedEmit ( U [[value]] , boolean delayError , Disposable disposable ) { final Observer < ? super V > [[observer]] = downstream ; final SimplePlainQueue < U > q = queue ; if ( wip . get ( ) == 0 && wip . compareAndSet ( 0 , 1 ) ) { if ( q . isEmpty ( ) ) { accept ( [[observer]] , [[value]] ) ; if ( leave ( - 1 ) == 0 ) { return ; } } else { q . offer ( [[value]] ) ; } } else { q . offer ( [[value]] ) ; if ( ! enter ( ) ) { return ; } } QueueDrainHelper . drainLoop ( q , [[observer]] , delayError , disposable , this ) ; }
+[[[[Nl]]]]: Makes sure the fast - path emits in order .
+
+[[[[Adv]]]]: protected final void fastPathOrderedEmit ( U [[boundary]] , boolean delayError , Disposable disposable ) { final Observer < ? super V > [[flow]] = downstream ; final SimplePlainQueue < U > q = queue ; if ( wip . get ( ) == 0 && wip . compareAndSet ( 0 , 1 ) ) { if ( q . isEmpty ( ) ) { accept ( [[flow]] , [[boundary]] ) ; if ( leave ( - 1 ) == 0 ) { return ; } } else { q . offer ( [[boundary]] ) ; } } else { q . offer ( [[boundary]] ) ; if ( ! enter ( ) ) { return ; } } QueueDrainHelper . drainLoop ( q , [[flow]] , delayError , disposable , this ) ; }
+[[[[Nl]]]]: Makes sure the fast - path emits in order .
+--------------------------------------------- Result 8 ---------------------------------------------
+Gets a sequence of scalar X maps from the supplied value . --> documentation inherited from interface --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T , U > Flowable < U > [[scalarXMap]] ( final T value , final Function < ? super T , ? extends Publisher < ? extends U > > [[mapper]] ) { return RxJavaPlugins . onAssembly ( new ScalarXMapFlowable < T , U > ( value , [[mapper]] ) ) ; }
+[[[[Nl]]]]: Maps a scalar value into a Publisher and emits its values .
+
+[[[[Adv]]]]: public static < T , U > Flowable < U > [[document]] ( final T value , final Function < ? super T , ? extends Publisher < ? extends U > > [[text]] ) { return RxJavaPlugins . onAssembly ( new ScalarXMapFlowable < T , U > ( value , [[text]] ) ) ; }
+[[[[Nl]]]]: Maps a scalar value into a Publisher and emits its values .
+--------------------------------------------- Result 9 ---------------------------------------------
+Resets the handlers . --> For testing purposes only --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[reset]] ( ) { setErrorHandler ( null ) ; setScheduleHandler ( null ) ; setComputationSchedulerHandler ( null ) ; setInitComputationSchedulerHandler ( null ) ; setIoSchedulerHandler ( null ) ; setInitIoSchedulerHandler ( null ) ; setSingleSchedulerHandler ( null ) ; setInitSingleSchedulerHandler ( null ) ; setNewThreadSchedulerHandler ( null ) ; setInitNewThreadSchedulerHandler ( null ) ; setOnFlowableAssembly ( null ) ; setOnFlowableSubscribe ( null ) ; setOnObservableAssembly ( null ) ; setOnObservableSubscribe ( null ) ; setOnSingleAssembly ( null ) ; setOnSingleSubscribe ( null ) ; setOnCompletableAssembly ( null ) ; setOnCompletableSubscribe ( null ) ; setOnConnectableFlowableAssembly ( null ) ; setOnConnectableObservableAssembly ( null ) ; setOnMaybeAssembly ( null ) ; setOnMaybeSubscribe ( null ) ; setOnParallelAssembly ( null ) ; setFailOnNonBlockingScheduler ( "[[False]]" != "[[False]]" ) ; setOnBeforeBlocking ( null ) ; }
+[[[[Nl]]]]: Removes all handlers and resets to default behavior .
+
+[[[[Adv]]]]: public static void [[ask]] ( ) { setErrorHandler ( null ) ; setScheduleHandler ( null ) ; setComputationSchedulerHandler ( null ) ; setInitComputationSchedulerHandler ( null ) ; setIoSchedulerHandler ( null ) ; setInitIoSchedulerHandler ( null ) ; setSingleSchedulerHandler ( null ) ; setInitSingleSchedulerHandler ( null ) ; setNewThreadSchedulerHandler ( null ) ; setInitNewThreadSchedulerHandler ( null ) ; setOnFlowableAssembly ( null ) ; setOnFlowableSubscribe ( null ) ; setOnObservableAssembly ( null ) ; setOnObservableSubscribe ( null ) ; setOnSingleAssembly ( null ) ; setOnSingleSubscribe ( null ) ; setOnCompletableAssembly ( null ) ; setOnCompletableSubscribe ( null ) ; setOnConnectableFlowableAssembly ( null ) ; setOnConnectableObservableAssembly ( null ) ; setOnMaybeAssembly ( null ) ; setOnMaybeSubscribe ( null ) ; setOnParallelAssembly ( null ) ; setFailOnNonBlockingScheduler ( "[[end]]" != "[[end]]" ) ; setOnBeforeBlocking ( null ) ; }
+[[[[Nl]]]]: Removes all handlers and resets to default behavior .
+--------------------------------------------- Result 10 ---------------------------------------------
+Retries the first element of the element with the given predicate . --> Attempt to retry a single element --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Maybe < T > retry ( long [[times]] , Predicate < ? super Throwable > predicate ) { return toFlowable ( ) . retry ( [[times]] , predicate ) . singleElement ( ) ; }
+[[[[Nl]]]]: Retries at most times or until the predicate returns false whichever happens first .
+
+[[[[Adv]]]]: @ CheckReturnValue @ SchedulerSupport ( SchedulerSupport . NONE ) public final Maybe < T > retry ( long [[arguments]] , Predicate < ? super Throwable > predicate ) { return toFlowable ( ) . retry ( [[arguments]] , predicate ) . singleElement ( ) ; }
+[[[[Nl]]]]: Retries at most times or until the predicate returns false whichever happens first .
+--------------------------------------------- Result 11 ---------------------------------------------
+Creates a Maybe from a single source . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[fromSingle]] ( SingleSource < T > singleSource ) { ObjectHelper . requireNonNull ( singleSource , "singleSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromSingle < T > ( singleSource ) ) ; }
+[[[[Nl]]]]: Wraps a SingleSource into a Maybe .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[assume]] ( SingleSource < T > singleSource ) { ObjectHelper . requireNonNull ( singleSource , "singleSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromSingle < T > ( singleSource ) ) ; }
+[[[[Nl]]]]: Wraps a SingleSource into a Maybe .
+--------------------------------------------- Result 12 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 6 / 6 / 0 / 12:   1%|          | 12/1000 [01:51<2:32:54,  9.29s/it][Succeeded / Failed / Skipped / Total] 6 / 6 / 0 / 12:   1%|▏         | 13/1000 [01:57<2:28:45,  9.04s/it][Succeeded / Failed / Skipped / Total] 6 / 7 / 0 / 13:   1%|▏         | 13/1000 [01:57<2:28:45,  9.04s/it][Succeeded / Failed / Skipped / Total] 6 / 7 / 0 / 13:   1%|▏         | 14/1000 [02:15<2:38:54,  9.67s/it][Succeeded / Failed / Skipped / Total] 6 / 8 / 0 / 14:   1%|▏         | 14/1000 [02:15<2:38:54,  9.67s/it][Succeeded / Failed / Skipped / Total] 6 / 8 / 0 / 14:   2%|▏         | 15/1000 [02:17<2:30:31,  9.17s/it][Succeeded / Failed / Skipped / Total] 7 / 8 / 0 / 15:   2%|▏         | 15/1000 [02:17<2:30:31,  9.17s/it][Succeeded / Failed / Skipped / Total] 7 / 8 / 0 / 15:   2%|▏         | 16/1000 [02:30<2:34:02,  9.39s/it][Succeeded / Failed / Skipped / Total] 8 / 8 / 0 / 16:   2%|▏         | 16/1000 [02:30<2:34:02,  9.39s/it][Succeeded / Failed / Skipped / Total] 8 / 8 / 0 / 16:   2%|▏         | 17/1000 [02:31<2:26:24,  8.94s/it][Succeeded / Failed / Skipped / Total] 9 / 8 / 0 / 17:   2%|▏         | 17/1000 [02:31<2:26:24,  8.94s/it][Succeeded / Failed / Skipped / Total] 9 / 8 / 0 / 17:   2%|▏         | 18/1000 [02:39<2:24:52,  8.85s/it][Succeeded / Failed / Skipped / Total] 9 / 9 / 0 / 18:   2%|▏         | 18/1000 [02:39<2:24:52,  8.85s/it][Succeeded / Failed / Skipped / Total] 9 / 9 / 0 / 18:   2%|▏         | 19/1000 [02:45<2:22:22,  8.71s/it][Succeeded / Failed / Skipped / Total] 9 / 10 / 0 / 19:   2%|▏         | 19/1000 [02:45<2:22:22,  8.71s/it][Succeeded / Failed / Skipped / Total] 9 / 10 / 0 / 19:   2%|▏         | 20/1000 [02:59<2:26:31,  8.97s/it][Succeeded / Failed / Skipped / Total] 9 / 11 / 0 / 20:   2%|▏         | 20/1000 [02:59<2:26:31,  8.97s/it][Succeeded / Failed / Skipped / Total] 9 / 11 / 0 / 20:   2%|▏         | 21/1000 [03:03<2:22:22,  8.73s/it][Succeeded / Failed / Skipped / Total] 9 / 12 / 0 / 21:   2%|▏         | 21/1000 [03:03<2:22:22,  8.73s/it][Succeeded / Failed / Skipped / Total] 9 / 12 / 0 / 21:   2%|▏         | 22/1000 [03:36<2:40:25,  9.84s/it][Succeeded / Failed / Skipped / Total] 9 / 13 / 0 / 22:   2%|▏         | 22/1000 [03:36<2:40:25,  9.84s/it][Succeeded / Failed / Skipped / Total] 9 / 13 / 0 / 22:   2%|▏         | 23/1000 [03:49<2:42:28,  9.98s/it]Construct a Maybe from a CompletableSource --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[fromCompletable]] ( CompletableSource [[completableSource]] ) { ObjectHelper . requireNonNull ( [[completableSource]] , "completableSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromCompletable < T > ( [[completableSource]] ) ) ; }
+[[[[Nl]]]]: Wraps a CompletableSource into a Maybe .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ SchedulerSupport ( SchedulerSupport . NONE ) public static < T > Maybe < T > [[replace]] ( CompletableSource [[message]] ) { ObjectHelper . requireNonNull ( [[message]] , "completableSource is null" ) ; return RxJavaPlugins . onAssembly ( new MaybeFromCompletable < T > ( [[message]] ) ) ; }
+[[[[Nl]]]]: Wraps a CompletableSource into a Maybe .
+--------------------------------------------- Result 13 ---------------------------------------------
+Ensures that an object is not null . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static < [[T]] > [[T]] requireNonNull ( [[T]] object , String message ) { if ( object == null ) { throw new NullPointerException ( message ) ; } return object ; }
+[[[[Nl]]]]: Verifies if the object is not null and returns it or throws a NullPointerException with the given message .
+
+[[[[Adv]]]]: public static < [[export]] > [[export]] requireNonNull ( [[export]] object , String message ) { if ( object == null ) { throw new NullPointerException ( message ) ; } return object ; }
+[[[[Nl]]]]: Verifies if the object is not null and returns it or throws a NullPointerException with the given message .
+--------------------------------------------- Result 14 ---------------------------------------------
+Gets the identity function . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T > Function < T , T > [[identity]] ( ) { return ( Function < T , T > ) IDENTITY ; }
+[[[[Nl]]]]: Returns an identity function that simply returns its argument .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T > Function < T , T > [[statement]] ( ) { return ( Function < T , T > ) IDENTITY ; }
+[[[[Nl]]]]: Returns an identity function that simply returns its argument .
+--------------------------------------------- Result 15 ---------------------------------------------
+Static factory for callable . --> Query for function results --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > Callable < T > [[justCallable]] ( T [[value]] ) { return new JustValue < Object , T > ( [[value]] ) ; }
+[[[[Nl]]]]: Returns a Callable that returns the given value .
+
+[[[[Adv]]]]: public static < T > Callable < T > [[query]] ( T [[function]] ) { return new JustValue < Object , T > ( [[function]] ) ; }
+[[[[Nl]]]]: Returns a Callable that returns the given value .
+--------------------------------------------- Result 16 ---------------------------------------------
+Create a reusable subject . --> The main basic test --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[create]] ( ) { return new UnicastSubject < T > ( bufferSize ( ) , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[main]] ( ) { return new UnicastSubject < T > ( bufferSize ( ) , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 .
+--------------------------------------------- Result 17 ---------------------------------------------
+Creates a reusable subject . --> Create a unicast subject --> Socre: 1.0
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > create ( int [[capacityHint]] ) { return new UnicastSubject < T > ( [[capacityHint]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > create ( int [[python]] ) { return new UnicastSubject < T > ( [[python]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint .
+--------------------------------------------- Result 18 ---------------------------------------------
+Returns a function that returns a value . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static < [[T]] , U > Function < [[T]] , U > [[justFunction]] ( U [[value]] ) { return new JustValue < [[T]] , U > ( [[value]] ) ; }
+[[[[Nl]]]]: Returns a Function that ignores its parameter and returns the given value .
+
+[[[[Adv]]]]: public static < [[function]] , U > Function < [[function]] , U > [[parameters]] ( U [[itself]] ) { return new JustValue < [[function]] , U > ( [[itself]] ) ; }
+[[[[Nl]]]]: Returns a Function that ignores its parameter and returns the given value .
+--------------------------------------------- Result 19 ---------------------------------------------
+Returns a new function that casts to the specified class . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static < [[T]] , U > Function < [[T]] , U > [[castFunction]] ( Class < U > [[target]] ) { return new CastToClass < [[T]] , U > ( [[target]] ) ; }
+[[[[Nl]]]]: Returns a function that cast the incoming values via a Class object .
+
+[[[[Adv]]]]: public static < [[one]] , U > Function < [[one]] , U > [[call]] ( Class < U > [[empty]] ) { return new CastToClass < [[one]] , U > ( [[empty]] ) ; }
+[[[[Nl]]]]: Returns a function that cast the incoming values via a Class object .
+--------------------------------------------- Result 20 ---------------------------------------------
+Waits for an error . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public Throwable [[blockingGetError]] ( ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; await ( ) ; } catch ( InterruptedException ex ) { dispose ( ) ; return ex ; } } return error ; }
+[[[[Nl]]]]: Block until the latch is counted down and return the error received or null if no error happened .
+
+[[[[Adv]]]]: public Throwable [[implement]] ( ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; await ( ) ; } catch ( InterruptedException ex ) { dispose ( ) ; return ex ; } } return error ; }
+[[[[Nl]]]]: Block until the latch is counted down and return the error received or null if no error happened .
+--------------------------------------------- Result 21 ---------------------------------------------
+Create a reusable subject with default buffer size . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[create]] ( boolean [[delayError]] ) { return new UnicastSubject < T > ( bufferSize ( ) , [[delayError]] ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 and given delay error flag .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[call]] ( boolean [[array]] ) { return new UnicastSubject < T > ( bufferSize ( ) , [[array]] ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with an internal buffer capacity hint 16 and given delay error flag .
+--------------------------------------------- Result 22 ---------------------------------------------
+Creates a new uncast subject . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[create]] ( int [[capacityHint]] , Runnable [[onTerminate]] ) { return new UnicastSubject < T > ( [[capacityHint]] , [[onTerminate]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull public static < T > UnicastSubject < T > [[assume]] ( int [[nat]] , Runnable [[name]] ) { return new UnicastSubject < T > ( [[nat]] , [[name]] , "True" == "True" ) ; }
+[[[[Nl]]]]: Creates an UnicastSubject with the given internal buffer capacity hint and a callback for the case when the single Subscriber cancels its subscription .
+--------------------------------------------- Result 23 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 9 / 14 / 0 / 23:   2%|▏         | 23/1000 [03:49<2:42:28,  9.98s/it][Succeeded / Failed / Skipped / Total] 9 / 14 / 0 / 23:   2%|▏         | 24/1000 [04:07<2:47:53, 10.32s/it][Succeeded / Failed / Skipped / Total] 10 / 14 / 0 / 24:   2%|▏         | 24/1000 [04:07<2:47:53, 10.32s/it][Succeeded / Failed / Skipped / Total] 10 / 14 / 0 / 24:   2%|▎         | 25/1000 [04:47<3:06:40, 11.49s/it][Succeeded / Failed / Skipped / Total] 11 / 14 / 0 / 25:   2%|▎         | 25/1000 [04:47<3:06:40, 11.49s/it][Succeeded / Failed / Skipped / Total] 11 / 14 / 0 / 25:   3%|▎         | 26/1000 [05:09<3:13:17, 11.91s/it][Succeeded / Failed / Skipped / Total] 12 / 14 / 0 / 26:   3%|▎         | 26/1000 [05:09<3:13:17, 11.91s/it][Succeeded / Failed / Skipped / Total] 12 / 14 / 0 / 26:   3%|▎         | 27/1000 [05:19<3:11:41, 11.82s/it][Succeeded / Failed / Skipped / Total] 13 / 14 / 0 / 27:   3%|▎         | 27/1000 [05:19<3:11:41, 11.82s/it][Succeeded / Failed / Skipped / Total] 13 / 14 / 0 / 27:   3%|▎         | 28/1000 [05:23<3:07:15, 11.56s/it][Succeeded / Failed / Skipped / Total] 13 / 15 / 0 / 28:   3%|▎         | 28/1000 [05:23<3:07:15, 11.56s/it][Succeeded / Failed / Skipped / Total] 13 / 15 / 0 / 28:   3%|▎         | 29/1000 [05:41<3:10:45, 11.79s/it][Succeeded / Failed / Skipped / Total] 13 / 16 / 0 / 29:   3%|▎         | 29/1000 [05:41<3:10:45, 11.79s/it][Succeeded / Failed / Skipped / Total] 13 / 16 / 0 / 29:   3%|▎         | 30/1000 [06:21<3:25:33, 12.71s/it]Waits until the element has failed . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public Throwable [[blockingGetError]] ( long [[timeout]] , TimeUnit unit ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; if ( ! await ( [[timeout]] , unit ) ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( new TimeoutException ( timeoutMessage ( [[timeout]] , unit ) ) ) ; } } catch ( InterruptedException ex ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( ex ) ; } } return error ; }
+[[[[Nl]]]]: Block until the latch is counted down and return the error received or when the wait is interrupted or times out null otherwise .
+
+[[[[Adv]]]]: public Throwable [[execute]] ( long [[order]] , TimeUnit unit ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; if ( ! await ( [[order]] , unit ) ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( new TimeoutException ( timeoutMessage ( [[order]] , unit ) ) ) ; } } catch ( InterruptedException ex ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( ex ) ; } } return error ; }
+[[[[Nl]]]]: Block until the latch is counted down and return the error received or when the wait is interrupted or times out null otherwise .
+--------------------------------------------- Result 24 ---------------------------------------------
+Requests to a subscription . --> Claim a given number of messages --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[request]] ( Subscription s , int [[prefetch]] ) { s . request ( [[prefetch]] < 0 ? Long . MAX_VALUE : [[prefetch]] ) ; }
+[[[[Nl]]]]: Requests Long . MAX_VALUE if prefetch is negative or the exact amount if prefetch is positive .
+
+[[[[Adv]]]]: public static void [[claim]] ( Subscription s , int [[es]] ) { s . request ( [[es]] < 0 ? Long . MAX_VALUE : [[es]] ) ; }
+[[[[Nl]]]]: Requests Long . MAX_VALUE if prefetch is negative or the exact amount if prefetch is positive .
+--------------------------------------------- Result 25 ---------------------------------------------
+Waits for the element to complete . --> Include program --> Socre: 1.0
+
+[[[[Adv]]]]: public boolean [[blockingAwait]] ( long [[timeout]] , TimeUnit unit ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; if ( ! await ( [[timeout]] , unit ) ) { dispose ( ) ; return "False" != "False" ; } } catch ( InterruptedException ex ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( ex ) ; } } Throwable ex = error ; if ( ex != null ) { throw ExceptionHelper . wrapOrThrow ( ex ) ; } return "[[True]]" == "[[True]]" ; }
+[[[[Nl]]]]: Block until the observer terminates and return true ; return false if the wait times out .
+
+[[[[Adv]]]]: public boolean [[include]] ( long [[program]] , TimeUnit unit ) { if ( getCount ( ) != 0 ) { try { BlockingHelper . verifyNonBlocking ( ) ; if ( ! await ( [[program]] , unit ) ) { dispose ( ) ; return "False" != "False" ; } } catch ( InterruptedException ex ) { dispose ( ) ; throw ExceptionHelper . wrapOrThrow ( ex ) ; } } Throwable ex = error ; if ( ex != null ) { throw ExceptionHelper . wrapOrThrow ( ex ) ; } return "[[blank]]" == "[[blank]]" ; }
+[[[[Nl]]]]: Block until the observer terminates and return true ; return false if the wait times out .
+--------------------------------------------- Result 26 ---------------------------------------------
+Post complete event . --> only for testing --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > void [[postComplete]] ( Subscriber < ? super T > actual , Queue < T > queue , AtomicLong state , BooleanSupplier isCancelled ) { if ( queue . isEmpty ( ) ) { actual . onComplete ( ) ; return ; } if ( postCompleteDrain ( state . get ( ) , actual , queue , state , isCancelled ) ) { return ; } for ( ; ; ) { long r = state . get ( ) ; if ( ( r & COMPLETED_MASK ) != 0L ) { return ; } long [[u]] = r | COMPLETED_MASK ;
+[[[[Nl]]]]: Signals the completion of the main sequence and switches to post - completion replay mode .
+
+[[[[Adv]]]]: public static < T > void [[var]] ( Subscriber < ? super T > actual , Queue < T > queue , AtomicLong state , BooleanSupplier isCancelled ) { if ( queue . isEmpty ( ) ) { actual . onComplete ( ) ; return ; } if ( postCompleteDrain ( state . get ( ) , actual , queue , state , isCancelled ) ) { return ; } for ( ; ; ) { long r = state . get ( ) ; if ( ( r & COMPLETED_MASK ) != 0L ) { return ; } long [[w]] = r | COMPLETED_MASK ;
+[[[[Nl]]]]: Signals the completion of the main sequence and switches to post - completion replay mode .
+--------------------------------------------- Result 27 ---------------------------------------------
+Signal that the stream is complete . --> creates a new packet --> Socre: 1.0
+
+[[[[Adv]]]]: protected final void [[complete]] ( R [[n]] ) { long [[p]] = produced ; if ( [[p]] != 0 ) { BackpressureHelper . produced ( this , [[p]] ) ; } for ( ; ; ) { long r = get ( ) ; if ( ( r & COMPLETE_MASK ) != 0 ) { onDrop ( [[n]] ) ; return ; } if ( ( r & REQUEST_MASK ) != 0 ) { lazySet ( COMPLETE_MASK + 1 ) ; downstream . onNext ( [[n]] ) ; downstream . onComplete ( ) ; return ; } value = [[n]] ; if ( compareAndSet ( 0 , COMPLETE_MASK ) ) { return ; } value = null ; } }
+[[[[Nl]]]]: Signals the given value and an onComplete if the downstream is ready to receive the final value .
+
+[[[[Adv]]]]: protected final void [[create]] ( R [[²]] ) { long [[alt]] = produced ; if ( [[alt]] != 0 ) { BackpressureHelper . produced ( this , [[alt]] ) ; } for ( ; ; ) { long r = get ( ) ; if ( ( r & COMPLETE_MASK ) != 0 ) { onDrop ( [[²]] ) ; return ; } if ( ( r & REQUEST_MASK ) != 0 ) { lazySet ( COMPLETE_MASK + 1 ) ; downstream . onNext ( [[²]] ) ; downstream . onComplete ( ) ; return ; } value = [[²]] ; if ( compareAndSet ( 0 , COMPLETE_MASK ) ) { return ; } value = null ; } }
+[[[[Nl]]]]: Signals the given value and an onComplete if the downstream is ready to receive the final value .
+--------------------------------------------- Result 28 ---------------------------------------------
+Gets the value . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) @ Nullable public T getValue ( ) { Object [[o]] = value ; if ( [[o]] != null && ! NotificationLite . isError ( [[o]] ) ) { return ( T ) value ; } return null ; }
+[[[[Nl]]]]: Returns the contained value if this notification is an onNext signal null otherwise .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) @ Nullable public T getValue ( ) { Object [[at]] = value ; if ( [[at]] != null && ! NotificationLite . isError ( [[at]] ) ) { return ( T ) value ; } return null ; }
+[[[[Nl]]]]: Returns the contained value if this notification is an onNext signal null otherwise .
+--------------------------------------------- Result 29 ---------------------------------------------
+Gets the notification . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ Nullable public Throwable [[getError]] ( ) { Object o = value ; if ( NotificationLite . isError ( o ) ) { return NotificationLite . getError ( o ) ; } return null ; }
+[[[[Nl]]]]: Returns the container Throwable error if this notification is an onError signal null otherwise .
+
+[[[[Adv]]]]: @ Nullable public Throwable [[utility]] ( ) { Object o = value ; if ( NotificationLite . isError ( o ) ) { return NotificationLite . getError ( o ) ; } return null ; }
+[[[[Nl]]]]: Returns the container Throwable error if this notification is an onError signal null otherwise .
+--------------------------------------------- Result 30 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 14 / 16 / 0 / 30:   3%|▎         | 30/1000 [06:21<3:25:33, 12.71s/it][Succeeded / Failed / Skipped / Total] 14 / 16 / 0 / 30:   3%|▎         | 31/1000 [06:58<3:38:02, 13.50s/it][Succeeded / Failed / Skipped / Total] 15 / 16 / 0 / 31:   3%|▎         | 31/1000 [06:58<3:38:02, 13.50s/it][Succeeded / Failed / Skipped / Total] 15 / 16 / 0 / 31:   3%|▎         | 32/1000 [07:01<3:32:18, 13.16s/it][Succeeded / Failed / Skipped / Total] 16 / 16 / 0 / 32:   3%|▎         | 32/1000 [07:01<3:32:18, 13.16s/it][Succeeded / Failed / Skipped / Total] 16 / 16 / 0 / 32:   3%|▎         | 33/1000 [07:29<3:39:24, 13.61s/it][Succeeded / Failed / Skipped / Total] 17 / 16 / 0 / 33:   3%|▎         | 33/1000 [07:29<3:39:24, 13.61s/it][Succeeded / Failed / Skipped / Total] 17 / 16 / 0 / 33:   3%|▎         | 34/1000 [07:44<3:40:10, 13.68s/it][Succeeded / Failed / Skipped / Total] 17 / 17 / 0 / 34:   3%|▎         | 34/1000 [07:44<3:40:10, 13.68s/it][Succeeded / Failed / Skipped / Total] 17 / 17 / 0 / 34:   4%|▎         | 35/1000 [07:55<3:38:33, 13.59s/it][Succeeded / Failed / Skipped / Total] 18 / 17 / 0 / 35:   4%|▎         | 35/1000 [07:55<3:38:33, 13.59s/it][Succeeded / Failed / Skipped / Total] 18 / 17 / 0 / 35:   4%|▎         | 36/1000 [08:11<3:39:25, 13.66s/it]Runs a maximum loop over a queue . --> add a subscriber to a queueDrain --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T , U > void [[drainMaxLoop]] ( SimplePlainQueue < T > q , Subscriber < ? super U > a , boolean delayError , Disposable [[dispose]] , QueueDrain < T , U > [[qd]] ) { int missed = 1 ; for ( ; ; ) { for ( ; ; ) { boolean d = [[qd]] . done ( ) ; T [[v]] = q . poll ( ) ; boolean empty = [[v]] == null ; if ( checkTerminated ( d , empty , a , delayError , q , [[qd]] ) ) { if ( [[dispose]] != null ) { [[dispose]] . [[dispose]] ( ) ; } return ; } if ( empty ) { break ; } long r = [[qd]] . requested ( ) ; if ( r != 0L ) { if ( [[qd]] . accept ( a , [[v]] ) ) { if ( r != Long . MAX_VALUE ) { [[qd]] . produced ( 1 ) ; } } } else { q . clear ( ) ; if ( [[dispose]] != null ) { [[dispose]] . [[dispose]] ( ) ; } a . onError ( new MissingBackpressureException ( "Could not emit value due to lack of requests." ) ) ; return ; } } missed = [[qd]] . leave ( - missed ) ; if ( missed == 0 ) { break ; } } }
+[[[[Nl]]]]: Drain the queue but give up with an error if there aren t enough requests .
+
+[[[[Adv]]]]: public static < T , U > void [[add]] ( SimplePlainQueue < T > q , Subscriber < ? super U > a , boolean delayError , Disposable [[access]] , QueueDrain < T , U > [[j]] ) { int missed = 1 ; for ( ; ; ) { for ( ; ; ) { boolean d = [[j]] . done ( ) ; T [[ᵢ]] = q . poll ( ) ; boolean empty = [[ᵢ]] == null ; if ( checkTerminated ( d , empty , a , delayError , q , [[j]] ) ) { if ( [[access]] != null ) { [[access]] . [[access]] ( ) ; } return ; } if ( empty ) { break ; } long r = [[j]] . requested ( ) ; if ( r != 0L ) { if ( [[j]] . accept ( a , [[ᵢ]] ) ) { if ( r != Long . MAX_VALUE ) { [[j]] . produced ( 1 ) ; } } } else { q . clear ( ) ; if ( [[access]] != null ) { [[access]] . [[access]] ( ) ; } a . onError ( new MissingBackpressureException ( "Could not emit value due to lack of requests." ) ) ; return ; } } missed = [[j]] . leave ( - missed ) ; if ( missed == 0 ) { break ; } } }
+[[[[Nl]]]]: Drain the queue but give up with an error if there aren t enough requests .
+--------------------------------------------- Result 31 ---------------------------------------------
+Determines whether or not the stream is valid . --> Convenience method for testing --> Socre: 1.0
+
+[[[[Adv]]]]: public static boolean [[validate]] ( Disposable upstream , Disposable [[next]] , Class < ? > observer ) { ObjectHelper . requireNonNull ( [[next]] , "next is null" ) ; if ( upstream != null ) { [[next]] . dispose ( ) ; if ( upstream != DisposableHelper . DISPOSED ) { reportDoubleSubscription ( observer ) ; } return "False" != "False" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Ensures that the upstream Disposable is null and returns true otherwise disposes the next Disposable and if the upstream is not the shared disposed instance reports a ProtocolViolationException due to multiple subscribe attempts .
+
+[[[[Adv]]]]: public static boolean [[operations]] ( Disposable upstream , Disposable [[indirectly]] , Class < ? > observer ) { ObjectHelper . requireNonNull ( [[indirectly]] , "next is null" ) ; if ( upstream != null ) { [[indirectly]] . dispose ( ) ; if ( upstream != DisposableHelper . DISPOSED ) { reportDoubleSubscription ( observer ) ; } return "False" != "False" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Ensures that the upstream Disposable is null and returns true otherwise disposes the next Disposable and if the upstream is not the shared disposed instance reports a ProtocolViolationException due to multiple subscribe attempts .
+--------------------------------------------- Result 32 ---------------------------------------------
+Atomically sets the next AtomicReference to the given AtomicReference . --> Associate another dependent object with another --> Socre: 1.0
+
+[[[[Adv]]]]: public static boolean [[setOnce]] ( AtomicReference < Disposable > [[upstream]] , Disposable [[next]] , Class < ? > observer ) { ObjectHelper . requireNonNull ( [[next]] , "next is null" ) ; if ( ! [[upstream]] . compareAndSet ( null , [[next]] ) ) { [[next]] . dispose ( ) ; if ( [[upstream]] . get ( ) != DisposableHelper . DISPOSED ) { reportDoubleSubscription ( observer ) ; } return "False" != "False" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Atomically updates the target upstream AtomicReference from null to the non - null next Disposable otherwise disposes next and reports a ProtocolViolationException if the AtomicReference doesn t contain the shared disposed indicator .
+
+[[[[Adv]]]]: public static boolean [[add]] ( AtomicReference < Disposable > [[independent]] , Disposable [[side]] , Class < ? > observer ) { ObjectHelper . requireNonNull ( [[side]] , "next is null" ) ; if ( ! [[independent]] . compareAndSet ( null , [[side]] ) ) { [[side]] . dispose ( ) ; if ( [[independent]] . get ( ) != DisposableHelper . DISPOSED ) { reportDoubleSubscription ( observer ) ; } return "False" != "False" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Atomically updates the target upstream AtomicReference from null to the non - null next Disposable otherwise disposes next and reports a ProtocolViolationException if the AtomicReference doesn t contain the shared disposed indicator .
+--------------------------------------------- Result 33 ---------------------------------------------
+Cap long . --> Capacity of longs --> Socre: 1.0
+
+[[[[Adv]]]]: public static long addCap ( long [[a]] , long b ) { long [[u]] = [[a]] + b ; if ( [[u]] < 0L ) { return Long . MAX_VALUE ; } return [[u]] ; }
+[[[[Nl]]]]: Adds two long values and caps the sum at Long . MAX_VALUE .
+
+[[[[Adv]]]]: public static long addCap ( long [[he]] , long b ) { long [[j]] = [[he]] + b ; if ( [[j]] < 0L ) { return Long . MAX_VALUE ; } return [[j]] ; }
+[[[[Nl]]]]: Adds two long values and caps the sum at Long . MAX_VALUE .
+--------------------------------------------- Result 34 ---------------------------------------------
+Checks if the next stream is valid . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static boolean validate ( Subscription upstream , Subscription [[next]] , Class < ? > subscriber ) { ObjectHelper . requireNonNull ( [[next]] , "next is null" ) ; if ( upstream != null ) { [[next]] . cancel ( ) ; if ( upstream != SubscriptionHelper . CANCELLED ) { reportDoubleSubscription ( subscriber ) ; } return "[[False]]" != "[[False]]" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Ensures that the upstream Subscription is null and returns true otherwise cancels the next Subscription and if the upstream is not the shared cancelled instance reports a ProtocolViolationException due to multiple subscribe attempts .
+
+[[[[Adv]]]]: public static boolean validate ( Subscription upstream , Subscription [[event]] , Class < ? > subscriber ) { ObjectHelper . requireNonNull ( [[event]] , "next is null" ) ; if ( upstream != null ) { [[event]] . cancel ( ) ; if ( upstream != SubscriptionHelper . CANCELLED ) { reportDoubleSubscription ( subscriber ) ; } return "[[downstream]]" != "[[downstream]]" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Ensures that the upstream Subscription is null and returns true otherwise cancels the next Subscription and if the upstream is not the shared cancelled instance reports a ProtocolViolationException due to multiple subscribe attempts .
+--------------------------------------------- Result 35 ---------------------------------------------
+Multiply two values . --> A combination of c --> Socre: 1.0
+
+[[[[Adv]]]]: public static long [[multiplyCap]] ( long [[a]] , long b ) { long u = [[a]] * b ; if ( ( ( [[a]] | b ) >>> 31 ) != 0 ) { if ( u / [[a]] != b ) { return Long . MAX_VALUE ; } } return u ; }
+[[[[Nl]]]]: Multiplies two long values and caps the product at Long . MAX_VALUE .
+
+[[[[Adv]]]]: public static long [[a]] ( long [[c]] , long b ) { long u = [[c]] * b ; if ( ( ( [[c]] | b ) >>> 31 ) != 0 ) { if ( u / [[c]] != b ) { return Long . MAX_VALUE ; } } return u ; }
+[[[[Nl]]]]: Multiplies two long values and caps the product at Long . MAX_VALUE .
+--------------------------------------------- Result 36 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 19 / 17 / 0 / 36:   4%|▎         | 36/1000 [08:11<3:39:25, 13.66s/it][Succeeded / Failed / Skipped / Total] 19 / 17 / 0 / 36:   4%|▎         | 37/1000 [08:19<3:36:33, 13.49s/it][Succeeded / Failed / Skipped / Total] 19 / 18 / 0 / 37:   4%|▎         | 37/1000 [08:19<3:36:33, 13.49s/it][Succeeded / Failed / Skipped / Total] 19 / 18 / 0 / 37:   4%|▍         | 38/1000 [08:49<3:43:36, 13.95s/it][Succeeded / Failed / Skipped / Total] 19 / 19 / 0 / 38:   4%|▍         | 38/1000 [08:49<3:43:36, 13.95s/it][Succeeded / Failed / Skipped / Total] 19 / 19 / 0 / 38:   4%|▍         | 39/1000 [08:59<3:41:22, 13.82s/it][Succeeded / Failed / Skipped / Total] 19 / 20 / 0 / 39:   4%|▍         | 39/1000 [08:59<3:41:22, 13.82s/it][Succeeded / Failed / Skipped / Total] 19 / 20 / 0 / 39:   4%|▍         | 40/1000 [09:06<3:38:37, 13.66s/it][Succeeded / Failed / Skipped / Total] 19 / 21 / 0 / 40:   4%|▍         | 40/1000 [09:06<3:38:37, 13.66s/it][Succeeded / Failed / Skipped / Total] 19 / 21 / 0 / 40:   4%|▍         | 41/1000 [09:20<3:38:33, 13.67s/it][Succeeded / Failed / Skipped / Total] 19 / 22 / 0 / 41:   4%|▍         | 41/1000 [09:20<3:38:33, 13.67s/it][Succeeded / Failed / Skipped / Total] 19 / 22 / 0 / 41:   4%|▍         | 42/1000 [09:48<3:43:33, 14.00s/it][Succeeded / Failed / Skipped / Total] 19 / 23 / 0 / 42:   4%|▍         | 42/1000 [09:48<3:43:34, 14.00s/it][Succeeded / Failed / Skipped / Total] 19 / 23 / 0 / 42:   4%|▍         | 43/1000 [10:06<3:44:48, 14.09s/it][Succeeded / Failed / Skipped / Total] 19 / 24 / 0 / 43:   4%|▍         | 43/1000 [10:06<3:44:48, 14.09s/it][Succeeded / Failed / Skipped / Total] 19 / 24 / 0 / 43:   4%|▍         | 44/1000 [10:21<3:45:02, 14.12s/it][Succeeded / Failed / Skipped / Total] 19 / 25 / 0 / 44:   4%|▍         | 44/1000 [10:21<3:45:02, 14.12s/it][Succeeded / Failed / Skipped / Total] 19 / 25 / 0 / 44:   4%|▍         | 45/1000 [10:28<3:42:14, 13.96s/it]Adds an object to the list . --> Cookie c --> Socre: 1.0
+
+[[[[Adv]]]]: public void [[add]] ( Object o ) {
+[[[[Nl]]]]: Adds a new element to this list .
+
+[[[[Adv]]]]: public void [[c]] ( Object o ) {
+[[[[Nl]]]]: Adds a new element to this list .
+--------------------------------------------- Result 37 ---------------------------------------------
+Atomically sets the next stream to the given AtomicReference . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static boolean [[setOnce]] ( AtomicReference < Subscription > [[upstream]] , Subscription [[next]] , Class < ? > subscriber ) { ObjectHelper . requireNonNull ( [[next]] , "next is null" ) ; if ( ! [[upstream]] . compareAndSet ( null , [[next]] ) ) { [[next]] . cancel ( ) ; if ( [[upstream]] . get ( ) != SubscriptionHelper . CANCELLED ) { reportDoubleSubscription ( subscriber ) ; } return "False" != "False" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Atomically updates the target upstream AtomicReference from null to the non - null next Subscription otherwise cancels next and reports a ProtocolViolationException if the AtomicReference doesn t contain the shared cancelled indicator .
+
+[[[[Adv]]]]: public static boolean [[function]] ( AtomicReference < Subscription > [[earlier]] , Subscription [[more]] , Class < ? > subscriber ) { ObjectHelper . requireNonNull ( [[more]] , "next is null" ) ; if ( ! [[earlier]] . compareAndSet ( null , [[more]] ) ) { [[more]] . cancel ( ) ; if ( [[earlier]] . get ( ) != SubscriptionHelper . CANCELLED ) { reportDoubleSubscription ( subscriber ) ; } return "False" != "False" ; } return "True" == "True" ; }
+[[[[Nl]]]]: Atomically updates the target upstream AtomicReference from null to the non - null next Subscription otherwise cancels next and reports a ProtocolViolationException if the AtomicReference doesn t contain the shared cancelled indicator .
+--------------------------------------------- Result 38 ---------------------------------------------
+Shut down the pool . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static void [[shutdown]] ( ) { ScheduledExecutorService [[exec]] = PURGE_THREAD . getAndSet ( null ) ; if ( [[exec]] != null ) { [[exec]] . shutdownNow ( ) ; } POOLS . clear ( ) ; }
+[[[[Nl]]]]: Stops the purge thread .
+
+[[[[Adv]]]]: public static void [[restore]] ( ) { ScheduledExecutorService [[source]] = PURGE_THREAD . getAndSet ( null ) ; if ( [[source]] != null ) { [[source]] . shutdownNow ( ) ; } POOLS . clear ( ) ; }
+[[[[Nl]]]]: Stops the purge thread .
+--------------------------------------------- Result 39 ---------------------------------------------
+Atomically add n to the requested long . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static long add ( AtomicLong [[requested]] , long n ) { for ( ; ; ) { long r = [[requested]] . get ( ) ; if ( r == Long . MAX_VALUE ) { return Long . MAX_VALUE ; } long u = addCap ( r , n ) ; if ( [[requested]] . compareAndSet ( r , u ) ) { return r ; } } }
+[[[[Nl]]]]: Atomically adds the positive value n to the requested value in the AtomicLong and caps the result at Long . MAX_VALUE and returns the previous value .
+
+[[[[Adv]]]]: public static long add ( AtomicLong [[b]] , long n ) { for ( ; ; ) { long r = [[b]] . get ( ) ; if ( r == Long . MAX_VALUE ) { return Long . MAX_VALUE ; } long u = addCap ( r , n ) ; if ( [[b]] . compareAndSet ( r , u ) ) { return r ; } } }
+[[[[Nl]]]]: Atomically adds the positive value n to the requested value in the AtomicLong and caps the result at Long . MAX_VALUE and returns the previous value .
+--------------------------------------------- Result 40 ---------------------------------------------
+Converts a Throwable to a NullPointerException . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private static NullPointerException toNpe ( Throwable ex ) { NullPointerException npe = new NullPointerException ( "Actually not, but can't pass out an exception otherwise..." ) ; npe . initCause ( ex ) ; return npe ; }
+[[[[Nl]]]]: Creates a NullPointerException instance and sets the given Throwable as its initial cause .
+
+[[[[Adv]]]]: private static NullPointerException toNpe ( Throwable ex ) { NullPointerException npe = new NullPointerException ( "Actually not, but can't pass out an exception otherwise..." ) ; npe . initCause ( ex ) ; return npe ; }
+[[[[Nl]]]]: Creates a NullPointerException instance and sets the given Throwable as its initial cause .
+--------------------------------------------- Result 41 ---------------------------------------------
+Creates a new scheduled thread pool . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static ScheduledExecutorService [[create]] ( ThreadFactory [[factory]] ) { final ScheduledExecutorService [[exec]] = Executors . newScheduledThreadPool ( 1 , [[factory]] ) ; tryPutIntoPool ( PURGE_ENABLED , [[exec]] ) ; return [[exec]] ; }
+[[[[Nl]]]]: Creates a ScheduledExecutorService with the given factory .
+
+[[[[Adv]]]]: public static ScheduledExecutorService [[boot]] ( ThreadFactory [[script]] ) { final ScheduledExecutorService [[test]] = Executors . newScheduledThreadPool ( 1 , [[script]] ) ; tryPutIntoPool ( PURGE_ENABLED , [[test]] ) ; return [[test]] ; }
+[[[[Nl]]]]: Creates a ScheduledExecutorService with the given factory .
+--------------------------------------------- Result 42 ---------------------------------------------
+Loops through the queue . --> [[[FAILED]]]
+
+[[[[Adv]]]]: void [[emitLoop]] ( ) { for ( ; ; ) { AppendOnlyLinkedArrayList < Object > [[q]] ; synchronized ( this ) { [[q]] = queue ; if ( [[q]] == null ) { emitting = "False" != "False" ; return ; } queue = null ; } [[q]] . forEachWhile ( this ) ; } }
+[[[[Nl]]]]: Loops until all notifications in the queue has been processed .
+
+[[[[Adv]]]]: void [[function]] ( ) { for ( ; ; ) { AppendOnlyLinkedArrayList < Object > [[data]] ; synchronized ( this ) { [[data]] = queue ; if ( [[data]] == null ) { emitting = "False" != "False" ; return ; } queue = null ; } [[data]] . forEachWhile ( this ) ; } }
+[[[[Nl]]]]: Loops until all notifications in the queue has been processed .
+--------------------------------------------- Result 43 ---------------------------------------------
+Wraps a RuntimeException if it is a RuntimeException . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static RuntimeException [[wrapOrThrow]] ( Throwable [[error]] ) { if ( [[error]] instanceof Error ) { throw ( Error ) [[error]] ; } if ( [[error]] instanceof RuntimeException ) { return ( RuntimeException ) [[error]] ; } return new RuntimeException ( [[error]] ) ; }
+[[[[Nl]]]]: If the provided Throwable is an Error this method throws it otherwise returns a RuntimeException wrapping the error if that error is a checked exception .
+
+[[[[Adv]]]]: public static RuntimeException [[a]] ( Throwable [[false]] ) { if ( [[false]] instanceof Error ) { throw ( Error ) [[false]] ; } if ( [[false]] instanceof RuntimeException ) { return ( RuntimeException ) [[false]] ; } return new RuntimeException ( [[false]] ) ; }
+[[[[Nl]]]]: If the provided Throwable is an Error this method throws it otherwise returns a RuntimeException wrapping the error if that error is a checked exception .
+--------------------------------------------- Result 44 ---------------------------------------------
+If the given exception is a Throwable otherwise throw an Exception . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < [[E]] [[extends]] Throwable > Exception throwIfThrowable ( Throwable e ) throws [[E]] { if ( e instanceof Exception ) { return ( Exception ) e ; } throw ( [[E]] ) e ; }
+[[[[Nl]]]]: Workaround for Java 6 not supporting throwing a final Throwable from a catch block .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < [[big]] [[p]] Throwable > Exception throwIfThrowable ( Throwable e ) throws [[big]] { if ( e instanceof Exception ) { return ( Exception ) e ; } throw ( [[big]] ) e ; }
+[[[[Nl]]]]: Workaround for Java 6 not supporting throwing a final Throwable from a catch block .
+--------------------------------------------- Result 45 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 19 / 26 / 0 / 45:   4%|▍         | 45/1000 [10:28<3:42:14, 13.96s/it][Succeeded / Failed / Skipped / Total] 19 / 26 / 0 / 45:   5%|▍         | 46/1000 [10:34<3:39:19, 13.79s/it][Succeeded / Failed / Skipped / Total] 19 / 27 / 0 / 46:   5%|▍         | 46/1000 [10:34<3:39:19, 13.79s/it][Succeeded / Failed / Skipped / Total] 19 / 27 / 0 / 46:   5%|▍         | 47/1000 [10:50<3:39:56, 13.85s/it][Succeeded / Failed / Skipped / Total] 20 / 27 / 0 / 47:   5%|▍         | 47/1000 [10:50<3:39:56, 13.85s/it][Succeeded / Failed / Skipped / Total] 20 / 27 / 0 / 47:   5%|▍         | 48/1000 [11:09<3:41:12, 13.94s/it][Succeeded / Failed / Skipped / Total] 21 / 27 / 0 / 48:   5%|▍         | 48/1000 [11:09<3:41:12, 13.94s/it][Succeeded / Failed / Skipped / Total] 21 / 27 / 0 / 48:   5%|▍         | 49/1000 [11:32<3:43:58, 14.13s/it][Succeeded / Failed / Skipped / Total] 21 / 28 / 0 / 49:   5%|▍         | 49/1000 [11:32<3:43:58, 14.13s/it][Succeeded / Failed / Skipped / Total] 21 / 28 / 0 / 49:   5%|▌         | 50/1000 [11:48<3:44:14, 14.16s/it]Sets the Subscription . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public final void [[setSubscription]] ( Subscription [[s]] ) { if ( cancelled ) { [[s]] . cancel ( ) ; return ; } ObjectHelper . requireNonNull ( [[s]] , "s is null" ) ; if ( get ( ) == 0 && compareAndSet ( 0 , 1 ) ) { Subscription [[a]] = actual ; if ( [[a]] != null && cancelOnReplace ) { [[a]] . cancel ( ) ; } actual = [[s]] ; long r = requested ; if ( decrementAndGet ( ) != 0 ) { drainLoop ( ) ; } if ( r != 0L ) { [[s]] . request ( r ) ; } return ; } Subscription [[a]] = missedSubscription . getAndSet ( [[s]] ) ; if ( [[a]] != null && cancelOnReplace ) { [[a]] . cancel ( ) ; } drain ( ) ; }
+[[[[Nl]]]]: Atomically sets a new subscription .
+
+[[[[Adv]]]]: public final void [[after]] ( Subscription [[time]] ) { if ( cancelled ) { [[time]] . cancel ( ) ; return ; } ObjectHelper . requireNonNull ( [[time]] , "s is null" ) ; if ( get ( ) == 0 && compareAndSet ( 0 , 1 ) ) { Subscription [[t]] = actual ; if ( [[t]] != null && cancelOnReplace ) { [[t]] . cancel ( ) ; } actual = [[time]] ; long r = requested ; if ( decrementAndGet ( ) != 0 ) { drainLoop ( ) ; } if ( r != 0L ) { [[time]] . request ( r ) ; } return ; } Subscription [[t]] = missedSubscription . getAndSet ( [[time]] ) ; if ( [[t]] != null && cancelOnReplace ) { [[t]] . cancel ( ) ; } drain ( ) ; }
+[[[[Nl]]]]: Atomically sets a new subscription .
+--------------------------------------------- Result 46 ---------------------------------------------
+Removes all resources . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void [[clear]] ( ) { if ( disposed ) { return ; } OpenHashSet < Disposable > set ; synchronized ( this ) { if ( disposed ) { return ; } set = resources ; resources = null ; } dispose ( set ) ; }
+[[[[Nl]]]]: Atomically clears the container then disposes all the previously contained Disposables .
+
+[[[[Adv]]]]: public void [[bin]] ( ) { if ( disposed ) { return ; } OpenHashSet < Disposable > set ; synchronized ( this ) { if ( disposed ) { return ; } set = resources ; resources = null ; } dispose ( set ) ; }
+[[[[Nl]]]]: Atomically clears the container then disposes all the previously contained Disposables .
+--------------------------------------------- Result 47 ---------------------------------------------
+Returns the number of resources . --> Test if this object is disposed --> Socre: 1.0
+
+[[[[Adv]]]]: public int [[size]] ( ) { if ( disposed ) { return 0 ; } synchronized ( this ) { if ( disposed ) { return 0 ; } OpenHashSet < Disposable > [[set]] = resources ; return [[set]] != null ? [[set]] . size ( ) : 0 ; } }
+[[[[Nl]]]]: Returns the number of currently held Disposables .
+
+[[[[Adv]]]]: public int [[test]] ( ) { if ( disposed ) { return 0 ; } synchronized ( this ) { if ( disposed ) { return 0 ; } OpenHashSet < Disposable > [[x]] = resources ; return [[x]] != null ? [[x]] . size ( ) : 0 ; } }
+[[[[Nl]]]]: Returns the number of currently held Disposables .
+--------------------------------------------- Result 48 ---------------------------------------------
+Try to apply a scalar XMap to an ObservableSource . --> Operator operator --> Socre: 1.0
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T , R > boolean [[tryScalarXMapSubscribe]] ( ObservableSource < T > [[source]] , Observer < ? super R > observer , Function < ? super T , ? extends ObservableSource < ? extends R > > mapper ) { if ( [[source]] instanceof Callable ) { T t ; try { t = ( ( Callable < T > ) [[source]] ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptyDisposable . error ( ex , observer ) ; return "True" == "True" ; } if ( t == null ) { EmptyDisposable . complete ( observer ) ; return "True" == "True" ; } ObservableSource < ? extends R > r ; try { r = ObjectHelper . requireNonNull ( mapper . apply ( t ) , "The mapper returned a null ObservableSource" ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptyDisposable . error ( ex , observer ) ; return "True" == "True" ; } if ( r instanceof Callable ) { R u ; try { u = ( ( Callable < R > ) r ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptyDisposable . error ( ex , observer ) ; return "True" == "True" ; } if ( u == null ) { EmptyDisposable . complete ( observer ) ; return "True" == "True" ; } ScalarDisposable < R > sd = new ScalarDisposable < R > ( observer , u ) ; observer . onSubscribe ( sd ) ; sd . run ( ) ; } else { r . subscribe ( observer ) ; } return "True" == "True" ; } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to subscribe to a possibly Callable source s mapped ObservableSource .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) public static < T , R > boolean [[operator]] ( ObservableSource < T > [[actor]] , Observer < ? super R > observer , Function < ? super T , ? extends ObservableSource < ? extends R > > mapper ) { if ( [[actor]] instanceof Callable ) { T t ; try { t = ( ( Callable < T > ) [[actor]] ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptyDisposable . error ( ex , observer ) ; return "True" == "True" ; } if ( t == null ) { EmptyDisposable . complete ( observer ) ; return "True" == "True" ; } ObservableSource < ? extends R > r ; try { r = ObjectHelper . requireNonNull ( mapper . apply ( t ) , "The mapper returned a null ObservableSource" ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptyDisposable . error ( ex , observer ) ; return "True" == "True" ; } if ( r instanceof Callable ) { R u ; try { u = ( ( Callable < R > ) r ) . call ( ) ; } catch ( Throwable ex ) { Exceptions . throwIfFatal ( ex ) ; EmptyDisposable . error ( ex , observer ) ; return "True" == "True" ; } if ( u == null ) { EmptyDisposable . complete ( observer ) ; return "True" == "True" ; } ScalarDisposable < R > sd = new ScalarDisposable < R > ( observer , u ) ; observer . onSubscribe ( sd ) ; sd . run ( ) ; } else { r . subscribe ( observer ) ; } return "True" == "True" ; } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to subscribe to a possibly Callable source s mapped ObservableSource .
+--------------------------------------------- Result 49 ---------------------------------------------
+Creates an observable using a scalar X map function . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static < T , U > Observable < U > [[scalarXMap]] ( T [[value]] , Function < ? super T , ? extends ObservableSource < ? extends U > > mapper ) { return RxJavaPlugins . onAssembly ( new ScalarXMapObservable < T , U > ( [[value]] , mapper ) ) ; }
+[[[[Nl]]]]: Maps a scalar value into an Observable and emits its values .
+
+[[[[Adv]]]]: public static < T , U > Observable < U > [[search]] ( T [[z]] , Function < ? super T , ? extends ObservableSource < ? extends U > > mapper ) { return RxJavaPlugins . onAssembly ( new ScalarXMapObservable < T , U > ( [[z]] , mapper ) ) ; }
+[[[[Nl]]]]: Maps a scalar value into an Observable and emits its values .
+--------------------------------------------- Result 50 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 22 / 28 / 0 / 50:   5%|▌         | 50/1000 [11:48<3:44:14, 14.16s/it][Succeeded / Failed / Skipped / Total] 22 / 28 / 0 / 50:   5%|▌         | 51/1000 [11:49<3:40:00, 13.91s/it][Succeeded / Failed / Skipped / Total] 23 / 28 / 0 / 51:   5%|▌         | 51/1000 [11:49<3:40:00, 13.91s/it][Succeeded / Failed / Skipped / Total] 23 / 28 / 0 / 51:   5%|▌         | 52/1000 [12:04<3:40:17, 13.94s/it][Succeeded / Failed / Skipped / Total] 24 / 28 / 0 / 52:   5%|▌         | 52/1000 [12:04<3:40:17, 13.94s/it][Succeeded / Failed / Skipped / Total] 24 / 28 / 0 / 52:   5%|▌         | 53/1000 [12:13<3:38:23, 13.84s/it][Succeeded / Failed / Skipped / Total] 25 / 28 / 0 / 53:   5%|▌         | 53/1000 [12:13<3:38:23, 13.84s/it][Succeeded / Failed / Skipped / Total] 25 / 28 / 0 / 53:   5%|▌         | 54/1000 [12:24<3:37:29, 13.79s/it][Succeeded / Failed / Skipped / Total] 26 / 28 / 0 / 54:   5%|▌         | 54/1000 [12:24<3:37:29, 13.79s/it][Succeeded / Failed / Skipped / Total] 26 / 28 / 0 / 54:   6%|▌         | 55/1000 [12:40<3:37:45, 13.83s/it][Succeeded / Failed / Skipped / Total] 27 / 28 / 0 / 55:   6%|▌         | 55/1000 [12:40<3:37:45, 13.83s/it][Succeeded / Failed / Skipped / Total] 27 / 28 / 0 / 55:   6%|▌         | 56/1000 [12:57<3:38:22, 13.88s/it][Succeeded / Failed / Skipped / Total] 28 / 28 / 0 / 56:   6%|▌         | 56/1000 [12:57<3:38:22, 13.88s/it][Succeeded / Failed / Skipped / Total] 28 / 28 / 0 / 56:   6%|▌         | 57/1000 [13:11<3:38:09, 13.88s/it][Succeeded / Failed / Skipped / Total] 28 / 29 / 0 / 57:   6%|▌         | 57/1000 [13:11<3:38:09, 13.88s/it][Succeeded / Failed / Skipped / Total] 28 / 29 / 0 / 57:   6%|▌         | 58/1000 [13:29<3:39:01, 13.95s/it]Flatten a Throwable into a list --> Query for exceptions --> Socre: 1.0
+
+[[[[Adv]]]]: public static List < Throwable > [[flatten]] ( Throwable [[t]] ) { List < Throwable > list = new ArrayList < Throwable > ( ) ; ArrayDeque < Throwable > deque = new ArrayDeque < Throwable > ( ) ; deque . offer ( [[t]] ) ; while ( ! deque . isEmpty ( ) ) { Throwable e = deque . removeFirst ( ) ; if ( e instanceof CompositeException ) { CompositeException ce = ( CompositeException ) e ; List < Throwable > exceptions = ce . getExceptions ( ) ; for ( int i = exceptions . size ( ) - 1 ; i >= 0 ; i -- ) { deque . offerFirst ( exceptions . get ( i ) ) ; } } else { list . add ( e ) ; } } return list ; }
+[[[[Nl]]]]: Returns a flattened list of Throwables from tree - like CompositeException chain .
+
+[[[[Adv]]]]: public static List < Throwable > [[query]] ( Throwable [[id]] ) { List < Throwable > list = new ArrayList < Throwable > ( ) ; ArrayDeque < Throwable > deque = new ArrayDeque < Throwable > ( ) ; deque . offer ( [[id]] ) ; while ( ! deque . isEmpty ( ) ) { Throwable e = deque . removeFirst ( ) ; if ( e instanceof CompositeException ) { CompositeException ce = ( CompositeException ) e ; List < Throwable > exceptions = ce . getExceptions ( ) ; for ( int i = exceptions . size ( ) - 1 ; i >= 0 ; i -- ) { deque . offerFirst ( exceptions . get ( i ) ) ; } } else { list . add ( e ) ; } } return list ; }
+[[[[Nl]]]]: Returns a flattened list of Throwables from tree - like CompositeException chain .
+--------------------------------------------- Result 51 ---------------------------------------------
+Starts the stream . --> Create empty table --> Socre: 1.0
+
+[[[[Adv]]]]: public void [[start]] ( ) { if ( SubscriptionHelper . setOnce ( upstream , EmptySubscription . INSTANCE ) ) { queue = new SpscArrayQueue < T > ( bufferSize ) ; } }
+[[[[Nl]]]]: Initializes this Processor by setting an upstream Subscription that ignores request amounts uses a fixed buffer and allows using the onXXX and offer methods afterwards .
+
+[[[[Adv]]]]: public void [[table]] ( ) { if ( SubscriptionHelper . setOnce ( upstream , EmptySubscription . INSTANCE ) ) { queue = new SpscArrayQueue < T > ( bufferSize ) ; } }
+[[[[Nl]]]]: Initializes this Processor by setting an upstream Subscription that ignores request amounts uses a fixed buffer and allows using the onXXX and offer methods afterwards .
+--------------------------------------------- Result 52 ---------------------------------------------
+Start unbounded queue . --> Create empty table --> Socre: 1.0
+
+[[[[Adv]]]]: public void [[startUnbounded]] ( ) { if ( SubscriptionHelper . setOnce ( upstream , EmptySubscription . INSTANCE ) ) { queue = new SpscLinkedArrayQueue < T > ( bufferSize ) ; } }
+[[[[Nl]]]]: Initializes this Processor by setting an upstream Subscription that ignores request amounts uses an unbounded buffer and allows using the onXXX and offer methods afterwards .
+
+[[[[Adv]]]]: public void [[table]] ( ) { if ( SubscriptionHelper . setOnce ( upstream , EmptySubscription . INSTANCE ) ) { queue = new SpscLinkedArrayQueue < T > ( bufferSize ) ; } }
+[[[[Nl]]]]: Initializes this Processor by setting an upstream Subscription that ignores request amounts uses an unbounded buffer and allows using the onXXX and offer methods afterwards .
+--------------------------------------------- Result 53 ---------------------------------------------
+Accept a notification . --> Evaluates var --> Socre: 1.0
+
+[[[[Adv]]]]: public < U > boolean [[accept]] ( Subscriber < ? super U > subscriber ) { Object [ ] a = head ; final int [[c]] = capacity ; while ( a != null ) { for ( int i = 0 ; i < [[c]] ; i ++ ) { Object o = a [ i ] ; if ( o == null ) { break ; } if ( NotificationLite . acceptFull ( o , subscriber ) ) { return "True" == "True" ; } } a = ( Object [ ] ) a [ [[c]] ] ; } return "False" != "False" ; }
+[[[[Nl]]]]: Interprets the contents as NotificationLite objects and calls the appropriate Subscriber method .
+
+[[[[Adv]]]]: public < U > boolean [[var]] ( Subscriber < ? super U > subscriber ) { Object [ ] a = head ; final int [[a]] = capacity ; while ( a != null ) { for ( int i = 0 ; i < [[a]] ; i ++ ) { Object o = a [ i ] ; if ( o == null ) { break ; } if ( NotificationLite . acceptFull ( o , subscriber ) ) { return "True" == "True" ; } } a = ( Object [ ] ) a [ [[a]] ] ; } return "False" != "False" ; }
+[[[[Nl]]]]: Interprets the contents as NotificationLite objects and calls the appropriate Subscriber method .
+--------------------------------------------- Result 54 ---------------------------------------------
+Offers an object to the operator . --> Begins a transaction --> Socre: 1.0
+
+[[[[Adv]]]]: public boolean [[offer]] ( T [[t]] ) { if ( once . get ( ) ) { return "False" != "False" ; } ObjectHelper . requireNonNull ( [[t]] , "offer called with null. Null values are generally not allowed in 2.x operators and sources." ) ; if ( fusionMode == QueueSubscription . NONE ) { if ( queue . offer ( [[t]] ) ) { drain ( ) ; return "True" == "True" ; } } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to offer an item into the internal queue and returns false if the queue is full .
+
+[[[[Adv]]]]: public boolean [[bid]] ( T [[ms]] ) { if ( once . get ( ) ) { return "False" != "False" ; } ObjectHelper . requireNonNull ( [[ms]] , "offer called with null. Null values are generally not allowed in 2.x operators and sources." ) ; if ( fusionMode == QueueSubscription . NONE ) { if ( queue . offer ( [[ms]] ) ) { drain ( ) ; return "True" == "True" ; } } return "False" != "False" ; }
+[[[[Nl]]]]: Tries to offer an item into the internal queue and returns false if the queue is full .
+--------------------------------------------- Result 55 ---------------------------------------------
+Gets the resource . --> Package private for unit testing --> Socre: 1.0
+
+[[[[Adv]]]]: @ Nullable public Disposable [[get]] ( ) { Disposable [[d]] = resource . get ( ) ; if ( [[d]] == DisposableHelper . DISPOSED ) { return Disposables . disposed ( ) ; } return [[d]] ; }
+[[[[Nl]]]]: Returns the currently contained Disposable or null if this container is empty .
+
+[[[[Adv]]]]: @ Nullable public Disposable [[container]] ( ) { Disposable [[payload]] = resource . get ( ) ; if ( [[payload]] == DisposableHelper . DISPOSED ) { return Disposables . disposed ( ) ; } return [[payload]] ; }
+[[[[Nl]]]]: Returns the currently contained Disposable or null if this container is empty .
+--------------------------------------------- Result 56 ---------------------------------------------
+Completes this operation . --> Transition to state --> Socre: 1.0
+
+[[[[Adv]]]]: public final void [[complete]] ( ) { int state = get ( ) ; if ( ( state & ( FUSED_READY | FUSED_CONSUMED | TERMINATED | DISPOSED ) ) != 0 ) { return ; } lazySet ( TERMINATED ) ; downstream . onComplete ( ) ; }
+[[[[Nl]]]]: Complete the target without any value .
+
+[[[[Adv]]]]: public final void [[state]] ( ) { int state = get ( ) ; if ( ( state & ( FUSED_READY | FUSED_CONSUMED | TERMINATED | DISPOSED ) ) != 0 ) { return ; } lazySet ( TERMINATED ) ; downstream . onComplete ( ) ; }
+[[[[Nl]]]]: Complete the target without any value .
+--------------------------------------------- Result 57 ---------------------------------------------
+Sends an error . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public final void [[error]] ( Throwable t ) { int state = get ( ) ; if ( ( state & ( FUSED_READY | FUSED_CONSUMED | TERMINATED | DISPOSED ) ) != 0 ) { RxJavaPlugins . onError ( t ) ; return ; } lazySet ( TERMINATED ) ; downstream . onError ( t ) ; }
+[[[[Nl]]]]: Complete the target with an error signal .
+
+[[[[Adv]]]]: public final void [[by]] ( Throwable t ) { int state = get ( ) ; if ( ( state & ( FUSED_READY | FUSED_CONSUMED | TERMINATED | DISPOSED ) ) != 0 ) { RxJavaPlugins . onError ( t ) ; return ; } lazySet ( TERMINATED ) ; downstream . onError ( t ) ; }
+[[[[Nl]]]]: Complete the target with an error signal .
+--------------------------------------------- Result 58 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 29 / 29 / 0 / 58:   6%|▌         | 58/1000 [13:29<3:39:01, 13.95s/it][Succeeded / Failed / Skipped / Total] 29 / 29 / 0 / 58:   6%|▌         | 59/1000 [13:33<3:36:16, 13.79s/it][Succeeded / Failed / Skipped / Total] 30 / 29 / 0 / 59:   6%|▌         | 59/1000 [13:33<3:36:16, 13.79s/it][Succeeded / Failed / Skipped / Total] 30 / 29 / 0 / 59:   6%|▌         | 60/1000 [13:48<3:36:22, 13.81s/it][Succeeded / Failed / Skipped / Total] 31 / 29 / 0 / 60:   6%|▌         | 60/1000 [13:48<3:36:22, 13.81s/it][Succeeded / Failed / Skipped / Total] 31 / 29 / 0 / 60:   6%|▌         | 61/1000 [13:52<3:33:37, 13.65s/it][Succeeded / Failed / Skipped / Total] 31 / 30 / 0 / 61:   6%|▌         | 61/1000 [13:52<3:33:37, 13.65s/it][Succeeded / Failed / Skipped / Total] 31 / 30 / 0 / 61:   6%|▌         | 62/1000 [13:57<3:31:17, 13.52s/it][Succeeded / Failed / Skipped / Total] 31 / 31 / 0 / 62:   6%|▌         | 62/1000 [13:57<3:31:17, 13.52s/it][Succeeded / Failed / Skipped / Total] 31 / 31 / 0 / 62:   6%|▋         | 63/1000 [14:09<3:30:38, 13.49s/it][Succeeded / Failed / Skipped / Total] 31 / 32 / 0 / 63:   6%|▋         | 63/1000 [14:09<3:30:38, 13.49s/it][Succeeded / Failed / Skipped / Total] 31 / 32 / 0 / 63:   6%|▋         | 64/1000 [14:20<3:29:50, 13.45s/it][Succeeded / Failed / Skipped / Total] 32 / 32 / 0 / 64:   6%|▋         | 64/1000 [14:20<3:29:50, 13.45s/it][Succeeded / Failed / Skipped / Total] 32 / 32 / 0 / 64:   6%|▋         | 65/1000 [14:27<3:27:58, 13.35s/it]Completes the operation with the given value . --> Used for test purposes --> Socre: 1.0
+
+[[[[Adv]]]]: public final void [[complete]] ( T [[value]] ) { int state = get ( ) ; if ( ( state & ( FUSED_READY | FUSED_CONSUMED | TERMINATED | DISPOSED ) ) != 0 ) { return ; } Observer < ? super T > a = downstream ; if ( state == FUSED_EMPTY ) { this . [[value]] = [[value]] ; lazySet ( FUSED_READY ) ; a . onNext ( null ) ; } else { lazySet ( TERMINATED ) ; a . onNext ( [[value]] ) ; } if ( get ( ) != DISPOSED ) { a . onComplete ( ) ; } }
+[[[[Nl]]]]: Complete the target with a single value or indicate there is a value available in fusion mode .
+
+[[[[Adv]]]]: public final void [[test]] ( T [[end]] ) { int state = get ( ) ; if ( ( state & ( FUSED_READY | FUSED_CONSUMED | TERMINATED | DISPOSED ) ) != 0 ) { return ; } Observer < ? super T > a = downstream ; if ( state == FUSED_EMPTY ) { this . [[b]] = [[end]] ; lazySet ( FUSED_READY ) ; a . onNext ( null ) ; } else { lazySet ( TERMINATED ) ; a . onNext ( [[end]] ) ; } if ( get ( ) != DISPOSED ) { a . onComplete ( ) ; } }
+[[[[Nl]]]]: Complete the target with a single value or indicate there is a value available in fusion mode .
+--------------------------------------------- Result 59 ---------------------------------------------
+Accept the observer . --> Scope callback methods --> Socre: 1.0
+
+[[[[Adv]]]]: public < U > boolean [[accept]] ( Observer < ? super U > observer ) { Object [ ] [[a]] = head ; final int c = capacity ; while ( [[a]] != null ) { for ( int i = 0 ; i < c ; i ++ ) { Object o = [[a]] [ i ] ; if ( o == null ) { break ; } if ( NotificationLite . acceptFull ( o , observer ) ) { return "True" == "True" ; } } [[a]] = ( Object [ ] ) [[a]] [ c ] ; } return "False" != "False" ; }
+[[[[Nl]]]]: Interprets the contents as NotificationLite objects and calls the appropriate Observer method .
+
+[[[[Adv]]]]: public < U > boolean [[scope]] ( Observer < ? super U > observer ) { Object [ ] [[sign]] = head ; final int c = capacity ; while ( [[sign]] != null ) { for ( int i = 0 ; i < c ; i ++ ) { Object o = [[sign]] [ i ] ; if ( o == null ) { break ; } if ( NotificationLite . acceptFull ( o , observer ) ) { return "True" == "True" ; } } [[sign]] = ( Object [ ] ) [[sign]] [ c ] ; } return "False" != "False" ; }
+[[[[Nl]]]]: Interprets the contents as NotificationLite objects and calls the appropriate Observer method .
+--------------------------------------------- Result 60 ---------------------------------------------
+Wait for the consumer to complete . --> Execute after count --> Socre: 1.0
+
+[[[[Adv]]]]: public PerfAsyncConsumer [[await]] ( int count ) { if ( count <= 1000 ) { while ( getCount ( ) != 0 ) { } } else { try { [[await]] ( ) ; } catch ( InterruptedException ex ) { throw new RuntimeException ( ex ) ; } } return this ; }
+[[[[Nl]]]]: Wait for the terminal signal .
+
+[[[[Adv]]]]: public PerfAsyncConsumer [[after]] ( int count ) { if ( count <= 1000 ) { while ( getCount ( ) != 0 ) { } } else { try { [[after]] ( ) ; } catch ( InterruptedException ex ) { throw new RuntimeException ( ex ) ; } } return this ; }
+[[[[Nl]]]]: Wait for the terminal signal .
+--------------------------------------------- Result 61 ---------------------------------------------
+Concatenate the elements of the stream with the given mapper . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ BackpressureSupport ( BackpressureKind . FULL ) @ SchedulerSupport ( SchedulerSupport . NONE ) public final < U > Flowable < U > concatMapIterable ( Function < ? super T , ? extends Iterable < ? extends U > > [[mapper]] ) { return concatMapIterable ( [[mapper]] , 2 ) ; }
+[[[[Nl]]]]: Returns a Flowable that concatenate each item emitted by the source Publisher with the values in an Iterable corresponding to that item that is generated by a selector .
+
+[[[[Adv]]]]: @ CheckReturnValue @ BackpressureSupport ( BackpressureKind . FULL ) @ SchedulerSupport ( SchedulerSupport . NONE ) public final < U > Flowable < U > concatMapIterable ( Function < ? super T , ? extends Iterable < ? extends U > > [[b]] ) { return concatMapIterable ( [[b]] , 2 ) ; }
+[[[[Nl]]]]: Returns a Flowable that concatenate each item emitted by the source Publisher with the values in an Iterable corresponding to that item that is generated by a selector .
+--------------------------------------------- Result 62 ---------------------------------------------
+Concatenates a sequence of messages into a sequence of Strings . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ BackpressureSupport ( BackpressureKind . FULL ) @ SchedulerSupport ( SchedulerSupport . NONE ) public final < R > Flowable < R > [[concatMapDelayError]] ( Function < ? super T , ? extends Publisher < ? extends R > > mapper ) { return [[concatMapDelayError]] ( mapper , 2 , "[[True]]" == "[[True]]" ) ; }
+[[[[Nl]]]]: Maps each of the items into a Publisher subscribes to them one after the other one at a time and emits their values in order while delaying any error from either this or any of the inner Publishers till all of them terminate .
+
+[[[[Adv]]]]: @ CheckReturnValue @ BackpressureSupport ( BackpressureKind . FULL ) @ SchedulerSupport ( SchedulerSupport . NONE ) public final < R > Flowable < R > [[author]] ( Function < ? super T , ? extends Publisher < ? extends R > > mapper ) { return [[author]] ( mapper , 2 , "[[b]]" == "[[b]]" ) ; }
+[[[[Nl]]]]: Maps each of the items into a Publisher subscribes to them one after the other one at a time and emits their values in order while delaying any error from either this or any of the inner Publishers till all of them terminate .
+--------------------------------------------- Result 63 ---------------------------------------------
+Returns a sorted stream of all elements according to the given comparator . --> [[[FAILED]]]
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ BackpressureSupport ( BackpressureKind . FULL ) @ SchedulerSupport ( SchedulerSupport . NONE ) public final Flowable < T > [[sorted]] ( Comparator < ? super T > [[sortFunction]] ) { ObjectHelper . requireNonNull ( [[sortFunction]] , "sortFunction" ) ; return toList ( ) . toFlowable ( ) . map ( Functions . listSorter ( [[sortFunction]] ) ) . flatMapIterable ( Functions . < List < T > > identity ( ) ) ; }
+[[[[Nl]]]]: Returns a Flowable that emits the events emitted by source Publisher in a sorted order based on a specified comparison function .
+
+[[[[Adv]]]]: @ CheckReturnValue @ NonNull @ BackpressureSupport ( BackpressureKind . FULL ) @ SchedulerSupport ( SchedulerSupport . NONE ) public final Flowable < T > [[name]] ( Comparator < ? super T > [[string]] ) { ObjectHelper . requireNonNull ( [[string]] , "sortFunction" ) ; return toList ( ) . toFlowable ( ) . map ( Functions . listSorter ( [[string]] ) ) . flatMapIterable ( Functions . < List < T > > identity ( ) ) ; }
+[[[[Nl]]]]: Returns a Flowable that emits the events emitted by source Publisher in a sorted order based on a specified comparison function .
+--------------------------------------------- Result 64 ---------------------------------------------
+Submits n n n n . --> request n n n n --> Socre: 1.0
+
+[[[[Adv]]]]: protected final void request ( long n ) { Subscription [[s]] = this . [[upstream]] ; if ( [[s]] != null ) { [[s]] . request ( n ) ; } }
+[[[[Nl]]]]: Requests from the upstream Subscription .
+
+[[[[Adv]]]]: protected final void request ( long n ) { Subscription [[table]] = this . [[a]] ; if ( [[table]] != null ) { [[table]] . request ( n ) ; } }
+[[[[Nl]]]]: Requests from the upstream Subscription .
+--------------------------------------------- Result 65 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 33 / 32 / 0 / 65:   6%|▋         | 65/1000 [14:27<3:27:58, 13.35s/it][Succeeded / Failed / Skipped / Total] 33 / 32 / 0 / 65:   7%|▋         | 66/1000 [15:15<3:36:00, 13.88s/it][Succeeded / Failed / Skipped / Total] 34 / 32 / 0 / 66:   7%|▋         | 66/1000 [15:15<3:36:00, 13.88s/it][Succeeded / Failed / Skipped / Total] 34 / 32 / 0 / 66:   7%|▋         | 67/1000 [15:36<3:37:16, 13.97s/it][Succeeded / Failed / Skipped / Total] 35 / 32 / 0 / 67:   7%|▋         | 67/1000 [15:36<3:37:16, 13.97s/it][Succeeded / Failed / Skipped / Total] 35 / 32 / 0 / 67:   7%|▋         | 68/1000 [15:42<3:35:12, 13.85s/it][Succeeded / Failed / Skipped / Total] 35 / 33 / 0 / 68:   7%|▋         | 68/1000 [15:42<3:35:12, 13.85s/it][Succeeded / Failed / Skipped / Total] 35 / 33 / 0 / 68:   7%|▋         | 69/1000 [15:45<3:32:33, 13.70s/it][Succeeded / Failed / Skipped / Total] 35 / 34 / 0 / 69:   7%|▋         | 69/1000 [15:45<3:32:33, 13.70s/it][Succeeded / Failed / Skipped / Total] 35 / 34 / 0 / 69:   7%|▋         | 70/1000 [15:49<3:30:12, 13.56s/it]Observes a Connectable Flowable from a Flowable . --> Translates a Connectable Flowable into a Flowable --> Socre: 1.0
+
+[[[[Adv]]]]: public static < T > ConnectableFlowable < T > [[observeOn]] ( final ConnectableFlowable < T > cf , final Scheduler scheduler ) { final Flowable < T > flowable = cf . observeOn ( scheduler ) ; return RxJavaPlugins . onAssembly ( new ConnectableFlowableReplay < T > ( cf , flowable ) ) ; }
+[[[[Nl]]]]: Child Subscribers will observe the events of the ConnectableObservable on the specified scheduler .
+
+[[[[Adv]]]]: public static < T > ConnectableFlowable < T > [[client]] ( final ConnectableFlowable < T > cf , final Scheduler scheduler ) { final Flowable < T > flowable = cf . observeOn ( scheduler ) ; return RxJavaPlugins . onAssembly ( new ConnectableFlowableReplay < T > ( cf , flowable ) ) ; }
+[[[[Nl]]]]: Child Subscribers will observe the events of the ConnectableObservable on the specified scheduler .
+--------------------------------------------- Result 66 ---------------------------------------------
+Atomically add a PublishDisposable to the queue . --> Prints a PublishDisposable --> Socre: 1.0
+
+[[[[Adv]]]]: boolean [[add]] ( PublishDisposable < T > ps ) { for ( ; ; ) { PublishDisposable < T > [ ] a = subscribers . get ( ) ; if ( a == TERMINATED ) { return "[[False]]" != "[[False]]" ; } int [[n]] = a . length ; @ SuppressWarnings ( "unchecked" ) PublishDisposable < T > [ ] [[b]] = new PublishDisposable [ [[n]] + 1 ] ; System . arraycopy ( a , 0 , [[b]] , 0 , [[n]] ) ; [[b]] [ [[n]] ] = ps ; if ( subscribers . compareAndSet ( a , [[b]] ) ) { return "True" == "True" ; } } }
+[[[[Nl]]]]: Tries to add the given subscriber to the subscribers array atomically or returns false if the subject has terminated .
+
+[[[[Adv]]]]: boolean [[print]] ( PublishDisposable < T > ps ) { for ( ; ; ) { PublishDisposable < T > [ ] a = subscribers . get ( ) ; if ( a == TERMINATED ) { return "[[published]]" != "[[published]]" ; } int [[publish]] = a . length ; @ SuppressWarnings ( "unchecked" ) PublishDisposable < T > [ ] [[id]] = new PublishDisposable [ [[publish]] + 1 ] ; System . arraycopy ( a , 0 , [[id]] , 0 , [[publish]] ) ; [[id]] [ [[publish]] ] = ps ; if ( subscribers . compareAndSet ( a , [[id]] ) ) { return "True" == "True" ; } } }
+[[[[Nl]]]]: Tries to add the given subscriber to the subscribers array atomically or returns false if the subject has terminated .
+--------------------------------------------- Result 67 ---------------------------------------------
+Parses the annotations of a method --> Parses HttpServiceMethod --> Socre: 1.0
+
+[[[[Adv]]]]: static < [[ResponseT]] , ReturnT > HttpServiceMethod < [[ResponseT]] , ReturnT > parseAnnotations ( Retrofit retrofit , Method method , RequestFactory requestFactory ) { boolean isKotlinSuspendFunction = requestFactory . isKotlinSuspendFunction ; boolean continuationWantsResponse = "False" != "False" ; boolean [[continuationBodyNullable]] = "False" != "False" ; Annotation [ ] [[annotations]] = method . getAnnotations ( ) ; Type adapterType ; if ( isKotlinSuspendFunction ) { Type [ ] parameterTypes = method . getGenericParameterTypes ( ) ; Type responseType = Utils . getParameterLowerBound ( 0 , ( ParameterizedType ) parameterTypes [ parameterTypes . length - 1 ] ) ; if ( getRawType ( responseType ) == Response . class && responseType instanceof ParameterizedType ) {
+[[[[Nl]]]]: Inspects the annotations on an interface method to construct a reusable service method that speaks HTTP . This requires potentially - expensive reflection so it is best to build each service method only once and reuse it .
+
+[[[[Adv]]]]: static < [[ref]] , ReturnT > HttpServiceMethod < [[ref]] , ReturnT > parseAnnotations ( Retrofit retrofit , Method method , RequestFactory requestFactory ) { boolean isKotlinSuspendFunction = requestFactory . isKotlinSuspendFunction ; boolean continuationWantsResponse = "False" != "False" ; boolean [[true]] = "False" != "False" ; Annotation [ ] [[http]] = method . getAnnotations ( ) ; Type adapterType ; if ( isKotlinSuspendFunction ) { Type [ ] parameterTypes = method . getGenericParameterTypes ( ) ; Type responseType = Utils . getParameterLowerBound ( 0 , ( ParameterizedType ) parameterTypes [ parameterTypes . length - 1 ] ) ; if ( getRawType ( responseType ) == Response . class && responseType instanceof ParameterizedType ) {
+[[[[Nl]]]]: Inspects the annotations on an interface method to construct a reusable service method that speaks HTTP . This requires potentially - expensive reflection so it is best to build each service method only once and reuse it .
+--------------------------------------------- Result 68 ---------------------------------------------
+Sets the amount of time in milliseconds to delay . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void [[setDelay]] ( long [[amount]] , TimeUnit [[unit]] ) { if ( [[amount]] < 0 ) { throw new IllegalArgumentException ( "Amount must be positive value." ) ; } this . delayMs = [[unit]] . toMillis ( [[amount]] ) ; }
+[[[[Nl]]]]: Set the network round trip delay .
+
+[[[[Adv]]]]: public void [[power]] ( long [[load]] , TimeUnit [[operation]] ) { if ( [[load]] < 0 ) { throw new IllegalArgumentException ( "Amount must be positive value." ) ; } this . delayMs = [[operation]] . toMillis ( [[load]] ) ; }
+[[[[Nl]]]]: Set the network round trip delay .
+--------------------------------------------- Result 69 ---------------------------------------------
+Create an error response . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public Response < ? > [[createErrorResponse]] ( ) { Response < ? > call ; try { call = errorFactory . call ( ) ; } catch ( Exception e ) { throw new IllegalStateException ( "Error factory threw an exception." , e ) ; } if ( call == null ) { throw new IllegalStateException ( "Error factory returned null." ) ; } if ( call . isSuccessful ( ) ) { throw new IllegalStateException ( "Error factory returned successful response." ) ; } return call ; }
+[[[[Nl]]]]: The HTTP error to be used when an error is triggered .
+
+[[[[Adv]]]]: public Response < ? > [[calls]] ( ) { Response < ? > call ; try { call = errorFactory . call ( ) ; } catch ( Exception e ) { throw new IllegalStateException ( "Error factory threw an exception." , e ) ; } if ( call == null ) { throw new IllegalStateException ( "Error factory returned null." ) ; } if ( call . isSuccessful ( ) ) { throw new IllegalStateException ( "Error factory returned successful response." ) ; } return call ; }
+[[[[Nl]]]]: The HTTP error to be used when an error is triggered .
+--------------------------------------------- Result 70 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 36 / 34 / 0 / 70:   7%|▋         | 70/1000 [15:49<3:30:12, 13.56s/it][Succeeded / Failed / Skipped / Total] 36 / 34 / 0 / 70:   7%|▋         | 71/1000 [16:15<3:32:38, 13.73s/it][Succeeded / Failed / Skipped / Total] 36 / 35 / 0 / 71:   7%|▋         | 71/1000 [16:15<3:32:38, 13.73s/it][Succeeded / Failed / Skipped / Total] 36 / 35 / 0 / 71:   7%|▋         | 72/1000 [16:23<3:31:14, 13.66s/it][Succeeded / Failed / Skipped / Total] 37 / 35 / 0 / 72:   7%|▋         | 72/1000 [16:23<3:31:14, 13.66s/it][Succeeded / Failed / Skipped / Total] 37 / 35 / 0 / 72:   7%|▋         | 73/1000 [16:29<3:29:19, 13.55s/it][Succeeded / Failed / Skipped / Total] 38 / 35 / 0 / 73:   7%|▋         | 73/1000 [16:29<3:29:19, 13.55s/it][Succeeded / Failed / Skipped / Total] 38 / 35 / 0 / 73:   7%|▋         | 74/1000 [16:32<3:27:05, 13.42s/it][Succeeded / Failed / Skipped / Total] 39 / 35 / 0 / 74:   7%|▋         | 74/1000 [16:32<3:27:05, 13.42s/it][Succeeded / Failed / Skipped / Total] 39 / 35 / 0 / 74:   8%|▊         | 75/1000 [16:44<3:26:30, 13.40s/it][Succeeded / Failed / Skipped / Total] 40 / 35 / 0 / 75:   8%|▊         | 75/1000 [16:44<3:26:30, 13.40s/it][Succeeded / Failed / Skipped / Total] 40 / 35 / 0 / 75:   8%|▊         | 76/1000 [17:18<3:30:23, 13.66s/it][Succeeded / Failed / Skipped / Total] 40 / 36 / 0 / 76:   8%|▊         | 76/1000 [17:18<3:30:23, 13.66s/it][Succeeded / Failed / Skipped / Total] 40 / 36 / 0 / 76:   8%|▊         | 77/1000 [17:24<3:28:42, 13.57s/it]Remove a subscriber from the queue . --> remove a bundle --> Socre: 1.0
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) void remove ( PublishDisposable < T > [[ps]] ) { for ( ; ; ) { PublishDisposable < T > [ ] [[a]] = subscribers . get ( ) ; if ( [[a]] == TERMINATED || [[a]] == EMPTY ) { return ; } int [[n]] = [[a]] . length ; int [[j]] = - 1 ; for ( int [[i]] = 0 ; [[i]] < [[n]] ; [[i]] ++ ) { if ( [[a]] [ [[i]] ] == [[ps]] ) { [[j]] = [[i]] ; break ; } } if ( [[j]] < 0 ) { return ; } PublishDisposable < T > [ ] b ; if ( [[n]] == 1 ) { b = EMPTY ; } else { b = new PublishDisposable [ [[n]] - 1 ] ; System . arraycopy ( [[a]] , 0 , b , 0 , [[j]] ) ; System . arraycopy ( [[a]] , [[j]] + 1 , b , [[j]] , [[n]] - [[j]] - 1 ) ; } if ( subscribers . compareAndSet ( [[a]] , b ) ) { return ; } } }
+[[[[Nl]]]]: Atomically removes the given subscriber if it is subscribed to the subject .
+
+[[[[Adv]]]]: @ SuppressWarnings ( "unchecked" ) void remove ( PublishDisposable < T > [[b]] ) { for ( ; ; ) { PublishDisposable < T > [ ] [[β]] = subscribers . get ( ) ; if ( [[β]] == TERMINATED || [[β]] == EMPTY ) { return ; } int [[definition]] = [[β]] . length ; int [[u]] = - 1 ; for ( int [[w]] = 0 ; [[w]] < [[definition]] ; [[w]] ++ ) { if ( [[β]] [ [[w]] ] == [[b]] ) { [[u]] = [[w]] ; break ; } } if ( [[u]] < 0 ) { return ; } PublishDisposable < T > [ ] b ; if ( [[definition]] == 1 ) { b = EMPTY ; } else { b = new PublishDisposable [ [[definition]] - 1 ] ; System . arraycopy ( [[β]] , 0 , b , 0 , [[u]] ) ; System . arraycopy ( [[β]] , [[u]] + 1 , b , [[u]] , [[definition]] - [[u]] - 1 ) ; } if ( subscribers . compareAndSet ( [[β]] , b ) ) { return ; } } }
+[[[[Nl]]]]: Atomically removes the given subscriber if it is subscribed to the subject .
+--------------------------------------------- Result 71 ---------------------------------------------
+Return the HTTP method for the given string . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private static HttpMethod [[valueOf]] ( String [[method]] ) { try { return HttpMethod . valueOf ( [[method]] ) ; } catch ( IllegalArgumentException e ) { } return null ; }
+[[[[Nl]]]]: Provides a save way of obtaining the HttpMethod from a String . If the method is invalid returns null .
+
+[[[[Adv]]]]: private static HttpMethod [[bar]] ( String [[k]] ) { try { return HttpMethod . valueOf ( [[k]] ) ; } catch ( IllegalArgumentException e ) { } return null ; }
+[[[[Nl]]]]: Provides a save way of obtaining the HttpMethod from a String . If the method is invalid returns null .
+--------------------------------------------- Result 72 ---------------------------------------------
+Search for a user . --> Search for users . --> Socre: 1.0
+
+[[[[Adv]]]]: @ Override public DirContextOperations searchForUser ( String [[username]] ) { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Searching for user '" + [[username]] + "', with user search " + this ) ; } SpringSecurityLdapTemplate template = new SpringSecurityLdapTemplate ( contextSource ) ; template . setSearchControls ( searchControls ) ; try { return template . searchForSingleEntry ( searchBase , searchFilter , new String [ ] { [[username]] } ) ; } catch ( IncorrectResultSizeDataAccessException notFound ) { if ( notFound . getActualSize ( ) == 0 ) { throw new UsernameNotFoundException ( "User " + [[username]] + " not found in directory." ) ; }
+[[[[Nl]]]]: Return the LdapUserDetails containing the user s information
+
+[[[[Adv]]]]: @ Override public DirContextOperations searchForUser ( String [[array]] ) { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Searching for user '" + [[array]] + "', with user search " + this ) ; } SpringSecurityLdapTemplate template = new SpringSecurityLdapTemplate ( contextSource ) ; template . setSearchControls ( searchControls ) ; try { return template . searchForSingleEntry ( searchBase , searchFilter , new String [ ] { [[array]] } ) ; } catch ( IncorrectResultSizeDataAccessException notFound ) { if ( notFound . getActualSize ( ) == 0 ) { throw new UsernameNotFoundException ( "User " + [[array]] + " not found in directory." ) ; }
+[[[[Nl]]]]: Return the LdapUserDetails containing the user s information
+--------------------------------------------- Result 73 ---------------------------------------------
+Calculate the delay in milliseconds --> Text of this sample --> Socre: 1.0
+
+[[[[Adv]]]]: public long [[calculateDelay]] ( TimeUnit [[unit]] ) { float delta = variancePercent / 100f ;
+[[[[Nl]]]]: Get the delay that should be used for delaying a response in accordance with configured behavior .
+
+[[[[Adv]]]]: public long [[text]] ( TimeUnit [[array]] ) { float delta = variancePercent / 100f ;
+[[[[Nl]]]]: Get the delay that should be used for delaying a response in accordance with configured behavior .
+--------------------------------------------- Result 74 ---------------------------------------------
+Creates sample data . --> Create sample data --> Socre: 1.0
+
+[[[[Adv]]]]: private void createSampleData ( String [[username]] , String [[password]] ) { Assert . notNull ( documentDao , "DocumentDao required" ) ; Assert . hasText ( [[username]] , "Username required" ) ; Authentication auth = new UsernamePasswordAuthenticationToken ( [[username]] , [[password]] ) ; try {
+[[[[Nl]]]]: Creates a directory for the user and a series of sub - directories . The root directory is the parent for the user directory . The sub - directories are confidential and shared . The ROLE_USER will be given read and write access to shared .
+
+[[[[Adv]]]]: private void createSampleData ( String [[access]] , String [[foo]] ) { Assert . notNull ( documentDao , "DocumentDao required" ) ; Assert . hasText ( [[access]] , "Username required" ) ; Authentication auth = new UsernamePasswordAuthenticationToken ( [[access]] , [[foo]] ) ; try {
+[[[[Nl]]]]: Creates a directory for the user and a series of sub - directories . The root directory is the parent for the user directory . The sub - directories are confidential and shared . The ROLE_USER will be given read and write access to shared .
+--------------------------------------------- Result 75 ---------------------------------------------
+Helper method to perform the version checks . --> After minSpring . --> Socre: 1.0
+
+[[[[Adv]]]]: private static void [[performVersionChecks]] ( String minSpringVersion ) { if ( minSpringVersion == null ) { return ; }
+[[[[Nl]]]]: Perform version checks with specific min Spring Version
+
+[[[[Adv]]]]: private static void [[after]] ( String minSpringVersion ) { if ( minSpringVersion == null ) { return ; }
+[[[[Nl]]]]: Perform version checks with specific min Spring Version
+--------------------------------------------- Result 76 ---------------------------------------------
+Hashes a raw password . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public String encode ( CharSequence [[rawPassword]] ) { String salt = PREFIX + this . saltGenerator . generateKey ( ) + SUFFIX ; return digest ( salt , [[rawPassword]] ) ; }
+[[[[Nl]]]]: Encodes the rawPass using a MessageDigest . If a salt is specified it will be merged with the password before encoding .
+
+[[[[Adv]]]]: public String encode ( CharSequence [[index]] ) { String salt = PREFIX + this . saltGenerator . generateKey ( ) + SUFFIX ; return digest ( salt , [[index]] ) ; }
+[[[[Nl]]]]: Encodes the rawPass using a MessageDigest . If a salt is specified it will be merged with the password before encoding .
+--------------------------------------------- Result 77 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 40 / 37 / 0 / 77:   8%|▊         | 77/1000 [17:24<3:28:42, 13.57s/it][Succeeded / Failed / Skipped / Total] 40 / 37 / 0 / 77:   8%|▊         | 78/1000 [17:35<3:27:56, 13.53s/it][Succeeded / Failed / Skipped / Total] 41 / 37 / 0 / 78:   8%|▊         | 78/1000 [17:35<3:27:56, 13.53s/it][Succeeded / Failed / Skipped / Total] 41 / 37 / 0 / 78:   8%|▊         | 79/1000 [17:37<3:25:33, 13.39s/it][Succeeded / Failed / Skipped / Total] 42 / 37 / 0 / 79:   8%|▊         | 79/1000 [17:37<3:25:33, 13.39s/it][Succeeded / Failed / Skipped / Total] 42 / 37 / 0 / 79:   8%|▊         | 80/1000 [17:39<3:22:59, 13.24s/it][Succeeded / Failed / Skipped / Total] 43 / 37 / 0 / 80:   8%|▊         | 80/1000 [17:39<3:22:59, 13.24s/it][Succeeded / Failed / Skipped / Total] 43 / 37 / 0 / 80:   8%|▊         | 81/1000 [17:50<3:22:27, 13.22s/it][Succeeded / Failed / Skipped / Total] 44 / 37 / 0 / 81:   8%|▊         | 81/1000 [17:50<3:22:27, 13.22s/it][Succeeded / Failed / Skipped / Total] 44 / 37 / 0 / 81:   8%|▊         | 82/1000 [17:52<3:20:04, 13.08s/it][Succeeded / Failed / Skipped / Total] 44 / 38 / 0 / 82:   8%|▊         | 82/1000 [17:52<3:20:04, 13.08s/it][Succeeded / Failed / Skipped / Total] 44 / 38 / 0 / 82:   8%|▊         | 83/1000 [18:10<3:20:49, 13.14s/it][Succeeded / Failed / Skipped / Total] 44 / 39 / 0 / 83:   8%|▊         | 83/1000 [18:10<3:20:49, 13.14s/it][Succeeded / Failed / Skipped / Total] 44 / 39 / 0 / 83:   8%|▊         | 84/1000 [18:40<3:23:34, 13.33s/it][Succeeded / Failed / Skipped / Total] 45 / 39 / 0 / 84:   8%|▊         | 84/1000 [18:40<3:23:34, 13.33s/it][Succeeded / Failed / Skipped / Total] 45 / 39 / 0 / 84:   8%|▊         | 85/1000 [19:02<3:24:56, 13.44s/it]Retrieves the spring - core version . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private static String [[getSpringVersion]] ( ) { Properties properties = new Properties ( ) ; try { properties . load ( SpringSecurityCoreVersion . class . getClassLoader ( ) . getResourceAsStream ( "META-INF/spring-security.versions" ) ) ; } catch ( IOException | NullPointerException e ) { return null ; } return properties . getProperty ( "org.springframework:spring-core" ) ; }
+[[[[Nl]]]]: Loads the spring version or null if it cannot be found .
+
+[[[[Adv]]]]: private static String [[thread]] ( ) { Properties properties = new Properties ( ) ; try { properties . load ( SpringSecurityCoreVersion . class . getClassLoader ( ) . getResourceAsStream ( "META-INF/spring-security.versions" ) ) ; } catch ( IOException | NullPointerException e ) { return null ; } return properties . getProperty ( "org.springframework:spring-core" ) ; }
+[[[[Nl]]]]: Loads the spring version or null if it cannot be found .
+--------------------------------------------- Result 78 ---------------------------------------------
+Exchange configurer . --> change configurer --> Socre: 1.0
+
+[[[[Adv]]]]: public AttributeExchangeConfigurer attributeExchange ( String identifierPattern ) { AttributeExchangeConfigurer [[attributeExchangeConfigurer]] = new AttributeExchangeConfigurer ( identifierPattern ) ; this . attributeExchangeConfigurers . add ( [[attributeExchangeConfigurer]] ) ; return [[attributeExchangeConfigurer]] ; }
+[[[[Nl]]]]: Sets up OpenID attribute exchange for OpenID s matching the specified pattern .
+
+[[[[Adv]]]]: public AttributeExchangeConfigurer attributeExchange ( String identifierPattern ) { AttributeExchangeConfigurer [[a]] = new AttributeExchangeConfigurer ( identifierPattern ) ; this . attributeExchangeConfigurers . add ( [[a]] ) ; return [[a]] ; }
+[[[[Nl]]]]: Sets up OpenID attribute exchange for OpenID s matching the specified pattern .
+--------------------------------------------- Result 79 ---------------------------------------------
+Get OAuth2 client configurer . --> Post process configurer --> Socre: 1.0
+
+[[[[Adv]]]]: public OAuth2ClientConfigurer < HttpSecurity > [[oauth2Client]] ( ) throws Exception { OAuth2ClientConfigurer < HttpSecurity > configurer = getOrApply ( new OAuth2ClientConfigurer <> ( ) ) ; this . postProcess ( configurer ) ; return configurer ; }
+[[[[Nl]]]]: Configures OAuth 2 . 0 Client support .
+
+[[[[Adv]]]]: public OAuth2ClientConfigurer < HttpSecurity > [[foo]] ( ) throws Exception { OAuth2ClientConfigurer < HttpSecurity > configurer = getOrApply ( new OAuth2ClientConfigurer <> ( ) ) ; this . postProcess ( configurer ) ; return configurer ; }
+[[[[Nl]]]]: Configures OAuth 2 . 0 Client support .
+--------------------------------------------- Result 80 ---------------------------------------------
+Determines if the checks should be disabled . --> Loop through basic checks --> Socre: 1.0
+
+[[[[Adv]]]]: private static boolean [[disableChecks]] ( String [[springVersion]] , String [[springSecurityVersion]] ) { if ( [[springVersion]] == null || [[springVersion]] . equals ( [[springSecurityVersion]] ) ) { return "True" == "True" ; } return Boolean . getBoolean ( DISABLE_CHECKS ) ; }
+[[[[Nl]]]]: Disable if springVersion and springSecurityVersion are the same to allow working with Uber Jars .
+
+[[[[Adv]]]]: private static boolean [[loop]] ( String [[basic]] , String [[apache]] ) { if ( [[basic]] == null || [[basic]] . equals ( [[apache]] ) ) { return "True" == "True" ; } return Boolean . getBoolean ( DISABLE_CHECKS ) ; }
+[[[[Nl]]]]: Disable if springVersion and springSecurityVersion are the same to allow working with Uber Jars .
+--------------------------------------------- Result 81 ---------------------------------------------
+Gets the OAuth2 resource server . --> queue a new configurationurer --> Socre: 1.0
+
+[[[[Adv]]]]: public OAuth2ResourceServerConfigurer < HttpSecurity > [[oauth2ResourceServer]] ( ) throws Exception { OAuth2ResourceServerConfigurer < HttpSecurity > configurer = getOrApply ( new OAuth2ResourceServerConfigurer <> ( getContext ( ) ) ) ; this . postProcess ( configurer ) ; return configurer ; }
+[[[[Nl]]]]: Configures OAuth 2 . 0 Resource Server support .
+
+[[[[Adv]]]]: public OAuth2ResourceServerConfigurer < HttpSecurity > [[queue]] ( ) throws Exception { OAuth2ResourceServerConfigurer < HttpSecurity > configurer = getOrApply ( new OAuth2ResourceServerConfigurer <> ( getContext ( ) ) ) ; this . postProcess ( configurer ) ; return configurer ; }
+[[[[Nl]]]]: Configures OAuth 2 . 0 Resource Server support .
+--------------------------------------------- Result 82 ---------------------------------------------
+Compares the raw password . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public boolean [[matches]] ( CharSequence rawPassword , String encodedPassword ) { String salt = extractSalt ( encodedPassword ) ; String rawPasswordEncoded = digest ( salt , rawPassword ) ; return PasswordEncoderUtils . equals ( encodedPassword . toString ( ) , rawPasswordEncoded ) ; }
+[[[[Nl]]]]: Takes a previously encoded password and compares it with a rawpassword after mixing in the salt and encoding that value
+
+[[[[Adv]]]]: public boolean [[agent]] ( CharSequence rawPassword , String encodedPassword ) { String salt = extractSalt ( encodedPassword ) ; String rawPasswordEncoded = digest ( salt , rawPassword ) ; return PasswordEncoderUtils . equals ( encodedPassword . toString ( ) , rawPasswordEncoded ) ; }
+[[[[Nl]]]]: Takes a previously encoded password and compares it with a rawpassword after mixing in the salt and encoding that value
+--------------------------------------------- Result 83 ---------------------------------------------
+Provides a default channel security configurer that requires a channel . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public ChannelSecurityConfigurer < HttpSecurity > . ChannelRequestMatcherRegistry [[requiresChannel]] ( ) throws Exception { ApplicationContext [[context]] = getContext ( ) ; return getOrApply ( new ChannelSecurityConfigurer <> ( [[context]] ) ) . getRegistry ( ) ; }
+[[[[Nl]]]]: Configures channel security . In order for this configuration to be useful at least one mapping to a required channel must be provided .
+
+[[[[Adv]]]]: public ChannelSecurityConfigurer < HttpSecurity > . ChannelRequestMatcherRegistry [[test]] ( ) throws Exception { ApplicationContext [[error]] = getContext ( ) ; return getOrApply ( new ChannelSecurityConfigurer <> ( [[error]] ) ) . getRegistry ( ) ; }
+[[[[Nl]]]]: Configures channel security . In order for this configuration to be useful at least one mapping to a required channel must be provided .
+--------------------------------------------- Result 84 ---------------------------------------------
+Searches for multiple attribute values . --> Function --> Socre: 1.0
+
+[[[[Adv]]]]: public Set < Map < String , List < String > > > [[searchForMultipleAttributeValues]] ( final String [[base]] , final String filter , final Object [ ] params , final String [ ] attributeNames ) {
+[[[[Nl]]]]: Performs a search using the supplied filter and returns the values of each named attribute found in all entries matched by the search . Note that one directory entry may have several values for the attribute . Intended for role searches and similar scenarios .
+
+[[[[Adv]]]]: public Set < Map < String , List < String > > > [[function]] ( final String [[alphabet]] , final String filter , final Object [ ] params , final String [ ] attributeNames ) {
+[[[[Nl]]]]: Performs a search using the supplied filter and returns the values of each named attribute found in all entries matched by the search . Note that one directory entry may have several values for the attribute . Intended for role searches and similar scenarios .
+--------------------------------------------- Result 85 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 46 / 39 / 0 / 85:   8%|▊         | 85/1000 [19:02<3:24:56, 13.44s/it][Succeeded / Failed / Skipped / Total] 46 / 39 / 0 / 85:   9%|▊         | 86/1000 [19:13<3:24:15, 13.41s/it][Succeeded / Failed / Skipped / Total] 47 / 39 / 0 / 86:   9%|▊         | 86/1000 [19:13<3:24:15, 13.41s/it][Succeeded / Failed / Skipped / Total] 47 / 39 / 0 / 86:   9%|▊         | 87/1000 [19:35<3:25:34, 13.51s/it][Succeeded / Failed / Skipped / Total] 47 / 40 / 0 / 87:   9%|▊         | 87/1000 [19:35<3:25:34, 13.51s/it][Succeeded / Failed / Skipped / Total] 47 / 40 / 0 / 87:   9%|▉         | 88/1000 [21:00<3:37:40, 14.32s/it][Succeeded / Failed / Skipped / Total] 47 / 41 / 0 / 88:   9%|▉         | 88/1000 [21:00<3:37:40, 14.32s/it][Succeeded / Failed / Skipped / Total] 47 / 41 / 0 / 88:   9%|▉         | 89/1000 [21:00<3:35:04, 14.16s/it]Search for a single entry . --> returns all contexts under the given filter --> Socre: 1.0
+
+[[[[Adv]]]]: public static DirContextOperations [[searchForSingleEntryInternal]] ( DirContext ctx , SearchControls searchControls , String base , String filter , Object [ ] params ) throws NamingException { final DistinguishedName ctxBaseDn = new DistinguishedName ( ctx . getNameInNamespace ( ) ) ; final DistinguishedName searchBaseDn = new DistinguishedName ( base ) ; final NamingEnumeration < SearchResult > resultsEnum = ctx . search ( searchBaseDn , filter , params , buildControls ( searchControls ) ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Searching for entry under DN '" + ctxBaseDn + "', base = '" + searchBaseDn + "', filter = '" + filter + "'" ) ; } Set < DirContextOperations > results = new HashSet <> ( ) ; try { while ( resultsEnum . hasMore ( ) ) { SearchResult searchResult = resultsEnum . next ( ) ; DirContextAdapter dca = ( DirContextAdapter ) searchResult . getObject ( ) ; Assert . notNull ( dca , "No object returned by search, DirContext is not correctly configured" ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Found DN: " + dca . getDn ( ) ) ; } results . add ( dca ) ; } } catch ( PartialResultException e ) { LdapUtils . closeEnumeration ( resultsEnum ) ; logger . info ( "Ignoring PartialResultException" ) ; } if ( results . size ( ) == 0 ) { throw new IncorrectResultSizeDataAccessException ( 1 , 0 ) ; } if ( results . size ( ) > 1 ) { throw new IncorrectResultSizeDataAccessException ( 1 , results . size ( ) ) ; } return results . iterator ( ) . next ( ) ; }
+[[[[Nl]]]]: Internal method extracted to avoid code duplication in AD search .
+
+[[[[Adv]]]]: public static DirContextOperations [[among]] ( DirContext ctx , SearchControls searchControls , String base , String filter , Object [ ] params ) throws NamingException { final DistinguishedName ctxBaseDn = new DistinguishedName ( ctx . getNameInNamespace ( ) ) ; final DistinguishedName searchBaseDn = new DistinguishedName ( base ) ; final NamingEnumeration < SearchResult > resultsEnum = ctx . search ( searchBaseDn , filter , params , buildControls ( searchControls ) ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Searching for entry under DN '" + ctxBaseDn + "', base = '" + searchBaseDn + "', filter = '" + filter + "'" ) ; } Set < DirContextOperations > results = new HashSet <> ( ) ; try { while ( resultsEnum . hasMore ( ) ) { SearchResult searchResult = resultsEnum . next ( ) ; DirContextAdapter dca = ( DirContextAdapter ) searchResult . getObject ( ) ; Assert . notNull ( dca , "No object returned by search, DirContext is not correctly configured" ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Found DN: " + dca . getDn ( ) ) ; } results . add ( dca ) ; } } catch ( PartialResultException e ) { LdapUtils . closeEnumeration ( resultsEnum ) ; logger . info ( "Ignoring PartialResultException" ) ; } if ( results . size ( ) == 0 ) { throw new IncorrectResultSizeDataAccessException ( 1 , 0 ) ; } if ( results . size ( ) > 1 ) { throw new IncorrectResultSizeDataAccessException ( 1 , results . size ( ) ) ; } return results . iterator ( ) . next ( ) ; }
+[[[[Nl]]]]: Internal method extracted to avoid code duplication in AD search .
+--------------------------------------------- Result 86 ---------------------------------------------
+Retrieves an entry . --> Executes a command --> Socre: 1.0
+
+[[[[Adv]]]]: public DirContextOperations [[retrieveEntry]] ( final String [[dn]] , final String [ ] attributesToRetrieve ) { return ( DirContextOperations ) executeReadOnly ( new ContextExecutor ( ) { public Object executeWithContext ( DirContext ctx ) throws NamingException { Attributes attrs = ctx . getAttributes ( [[dn]] , attributesToRetrieve ) ;
+[[[[Nl]]]]: Composes an object from the attributes of the given DN .
+
+[[[[Adv]]]]: public DirContextOperations [[command]] ( final String [[fetch]] , final String [ ] attributesToRetrieve ) { return ( DirContextOperations ) executeReadOnly ( new ContextExecutor ( ) { public Object executeWithContext ( DirContext ctx ) throws NamingException { Attributes attrs = ctx . getAttributes ( [[fetch]] , attributesToRetrieve ) ;
+[[[[Nl]]]]: Composes an object from the attributes of the given DN .
+--------------------------------------------- Result 87 ---------------------------------------------
+Builds a search controls . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private static SearchControls [[buildControls]] ( SearchControls [[originalControls]] ) { return new SearchControls ( [[originalControls]] . getSearchScope ( ) , [[originalControls]] . getCountLimit ( ) , [[originalControls]] . getTimeLimit ( ) , [[originalControls]] . getReturningAttributes ( ) , RETURN_OBJECT , [[originalControls]] . getDerefLinkFlag ( ) ) ; }
+[[[[Nl]]]]: We need to make sure the search controls has the return object flag set to true in order for the search to return DirContextAdapter instances .
+
+[[[[Adv]]]]: private static SearchControls [[x]] ( SearchControls [[object]] ) { return new SearchControls ( [[object]] . getSearchScope ( ) , [[object]] . getCountLimit ( ) , [[object]] . getTimeLimit ( ) , [[object]] . getReturningAttributes ( ) , RETURN_OBJECT , [[object]] . getDerefLinkFlag ( ) ) ; }
+[[[[Nl]]]]: We need to make sure the search controls has the return object flag set to true in order for the search to return DirContextAdapter instances .
+--------------------------------------------- Result 88 ---------------------------------------------
+Compares the given DN with the specified value . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public boolean compare ( final String dn , final String attributeName , final Object value ) { final String comparisonFilter = "(" + attributeName + "={0})" ; class LdapCompareCallback implements ContextExecutor { public Object executeWithContext ( DirContext [[ctx]] ) throws NamingException { SearchControls ctls = new SearchControls ( ) ; ctls . setReturningAttributes ( NO_ATTRS ) ; ctls . setSearchScope ( SearchControls . OBJECT_SCOPE ) ; NamingEnumeration < SearchResult > results = [[ctx]] . search ( dn , comparisonFilter , new Object [ ] { value } , ctls ) ; Boolean match = Boolean . valueOf ( results . hasMore ( ) ) ; LdapUtils . closeEnumeration ( results ) ; return match ; } } Boolean matches = ( Boolean ) executeReadOnly ( new LdapCompareCallback ( ) ) ; return matches . booleanValue ( ) ; }
+[[[[Nl]]]]: Performs an LDAP compare operation of the value of an attribute for a particular directory entry .
+
+[[[[Adv]]]]: public boolean compare ( final String dn , final String attributeName , final Object value ) { final String comparisonFilter = "(" + attributeName + "={0})" ; class LdapCompareCallback implements ContextExecutor { public Object executeWithContext ( DirContext [[x]] ) throws NamingException { SearchControls ctls = new SearchControls ( ) ; ctls . setReturningAttributes ( NO_ATTRS ) ; ctls . setSearchScope ( SearchControls . OBJECT_SCOPE ) ; NamingEnumeration < SearchResult > results = [[x]] . search ( dn , comparisonFilter , new Object [ ] { value } , ctls ) ; Boolean match = Boolean . valueOf ( results . hasMore ( ) ) ; LdapUtils . closeEnumeration ( results ) ; return match ; } } Boolean matches = ( Boolean ) executeReadOnly ( new LdapCompareCallback ( ) ) ; return matches . booleanValue ( ) ; }
+[[[[Nl]]]]: Performs an LDAP compare operation of the value of an attribute for a particular directory entry .
+--------------------------------------------- Result 89 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 47 / 42 / 0 / 89:   9%|▉         | 89/1000 [21:00<3:35:04, 14.16s/it][Succeeded / Failed / Skipped / Total] 47 / 42 / 0 / 89:   9%|▉         | 90/1000 [21:11<3:34:14, 14.13s/it][Succeeded / Failed / Skipped / Total] 48 / 42 / 0 / 90:   9%|▉         | 90/1000 [21:11<3:34:14, 14.13s/it][Succeeded / Failed / Skipped / Total] 48 / 42 / 0 / 90:   9%|▉         | 91/1000 [21:18<3:32:47, 14.05s/it][Succeeded / Failed / Skipped / Total] 49 / 42 / 0 / 91:   9%|▉         | 91/1000 [21:18<3:32:47, 14.05s/it][Succeeded / Failed / Skipped / Total] 49 / 42 / 0 / 91:   9%|▉         | 92/1000 [21:36<3:33:13, 14.09s/it]Searches for multiple attribute values . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public Set < String > [[searchForSingleAttributeValues]] ( final String base , final String filter , final Object [ ] params , final String [[attributeName]] ) { String [ ] [[attributeNames]] = new String [ ] { [[attributeName]] } ; Set < Map < String , List < String > > > multipleAttributeValues = searchForMultipleAttributeValues ( base , filter , params , [[attributeNames]] ) ; Set < String > result = new HashSet <> ( ) ; for ( Map < String , List < String > > map : multipleAttributeValues ) { List < String > values = map . get ( [[attributeName]] ) ; if ( values != null ) { result . addAll ( values ) ; } } return result ; }
+[[[[Nl]]]]: Performs a search using the supplied filter and returns the union of the values of the named attribute found in all entries matched by the search . Note that one directory entry may have several values for the attribute . Intended for role searches and similar scenarios .
+
+[[[[Adv]]]]: public Set < String > [[format]] ( final String base , final String filter , final Object [ ] params , final String [[edge]] ) { String [ ] [[ends]] = new String [ ] { [[edge]] } ; Set < Map < String , List < String > > > multipleAttributeValues = searchForMultipleAttributeValues ( base , filter , params , [[ends]] ) ; Set < String > result = new HashSet <> ( ) ; for ( Map < String , List < String > > map : multipleAttributeValues ) { List < String > values = map . get ( [[edge]] ) ; if ( values != null ) { result . addAll ( values ) ; } } return result ; }
+[[[[Nl]]]]: Performs a search using the supplied filter and returns the union of the values of the named attribute found in all entries matched by the search . Note that one directory entry may have several values for the attribute . Intended for role searches and similar scenarios .
+--------------------------------------------- Result 90 ---------------------------------------------
+Build the pre - authenticated authorities web authentication details . --> Maps user roles to a String --> Socre: 1.0
+
+[[[[Adv]]]]: public PreAuthenticatedGrantedAuthoritiesWebAuthenticationDetails [[buildDetails]] ( HttpServletRequest [[context]] ) { Collection < String > [[j2eeUserRoles]] = getUserRoles ( [[context]] ) ; Collection < ? extends GrantedAuthority > userGas = j2eeUserRoles2GrantedAuthoritiesMapper . getGrantedAuthorities ( [[j2eeUserRoles]] ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "J2EE roles [" + [[j2eeUserRoles]] + "] mapped to Granted Authorities: [" + userGas + "]" ) ; } PreAuthenticatedGrantedAuthoritiesWebAuthenticationDetails [[result]] = new PreAuthenticatedGrantedAuthoritiesWebAuthenticationDetails ( [[context]] , userGas ) ; return [[result]] ; }
+[[[[Nl]]]]: Builds the authentication details object .
+
+[[[[Adv]]]]: public PreAuthenticatedGrantedAuthoritiesWebAuthenticationDetails [[string]] ( HttpServletRequest [[e]] ) { Collection < String > [[content]] = getUserRoles ( [[e]] ) ; Collection < ? extends GrantedAuthority > userGas = j2eeUserRoles2GrantedAuthoritiesMapper . getGrantedAuthorities ( [[content]] ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "J2EE roles [" + [[content]] + "] mapped to Granted Authorities: [" + userGas + "]" ) ; } PreAuthenticatedGrantedAuthoritiesWebAuthenticationDetails [[name]] = new PreAuthenticatedGrantedAuthoritiesWebAuthenticationDetails ( [[e]] , userGas ) ; return [[name]] ; }
+[[[[Nl]]]]: Builds the authentication details object .
+--------------------------------------------- Result 91 ---------------------------------------------
+Creates the servlet filter . --> Registers apache . --> Socre: 1.0
+
+[[[[Adv]]]]: private void [[createServletApiFilter]] ( BeanReference authenticationManager ) { final String ATT_SERVLET_API_PROVISION = "servlet-api-provision" ; final String DEF_SERVLET_API_PROVISION = "true" ; String provideServletApi = httpElt . getAttribute ( ATT_SERVLET_API_PROVISION ) ; if ( ! StringUtils . hasText ( provideServletApi ) ) { provideServletApi = DEF_SERVLET_API_PROVISION ; } if ( "true" . equals ( provideServletApi ) ) { servApiFilter = GrantedAuthorityDefaultsParserUtils . registerWithDefaultRolePrefix ( pc , SecurityContextHolderAwareRequestFilterBeanFactory . class ) ; servApiFilter . getPropertyValues ( ) . add ( "authenticationManager" , authenticationManager ) ; } }
+[[[[Nl]]]]: Adds the servlet - api integration filter if required
+
+[[[[Adv]]]]: private void [[apache]] ( BeanReference authenticationManager ) { final String ATT_SERVLET_API_PROVISION = "servlet-api-provision" ; final String DEF_SERVLET_API_PROVISION = "true" ; String provideServletApi = httpElt . getAttribute ( ATT_SERVLET_API_PROVISION ) ; if ( ! StringUtils . hasText ( provideServletApi ) ) { provideServletApi = DEF_SERVLET_API_PROVISION ; } if ( "true" . equals ( provideServletApi ) ) { servApiFilter = GrantedAuthorityDefaultsParserUtils . registerWithDefaultRolePrefix ( pc , SecurityContextHolderAwareRequestFilterBeanFactory . class ) ; servApiFilter . getPropertyValues ( ) . add ( "authenticationManager" , authenticationManager ) ; } }
+[[[[Nl]]]]: Adds the servlet - api integration filter if required
+--------------------------------------------- Result 92 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 50 / 42 / 0 / 92:   9%|▉         | 92/1000 [21:36<3:33:13, 14.09s/it][Succeeded / Failed / Skipped / Total] 50 / 42 / 0 / 92:   9%|▉         | 93/1000 [21:37<3:30:55, 13.95s/it][Succeeded / Failed / Skipped / Total] 51 / 42 / 0 / 93:   9%|▉         | 93/1000 [21:37<3:30:55, 13.95s/it][Succeeded / Failed / Skipped / Total] 51 / 42 / 0 / 93:   9%|▉         | 94/1000 [21:42<3:29:15, 13.86s/it][Succeeded / Failed / Skipped / Total] 51 / 43 / 0 / 94:   9%|▉         | 94/1000 [21:42<3:29:15, 13.86s/it][Succeeded / Failed / Skipped / Total] 51 / 43 / 0 / 94:  10%|▉         | 95/1000 [22:09<3:31:02, 13.99s/it][Succeeded / Failed / Skipped / Total] 52 / 43 / 0 / 95:  10%|▉         | 95/1000 [22:09<3:31:02, 13.99s/it][Succeeded / Failed / Skipped / Total] 52 / 43 / 0 / 95:  10%|▉         | 96/1000 [22:16<3:29:46, 13.92s/it]Create the embedded server definition . --> Process the root bean --> Socre: 1.0
+
+[[[[Adv]]]]: private RootBeanDefinition [[createEmbeddedServer]] ( Element element , ParserContext parserContext ) { Object source = parserContext . extractSource ( element ) ; String suffix = element . getAttribute ( ATT_ROOT_SUFFIX ) ; if ( ! StringUtils . hasText ( suffix ) ) { suffix = OPT_DEFAULT_ROOT_SUFFIX ; } String port = element . getAttribute ( ATT_PORT ) ; if ( ! StringUtils . hasText ( port ) ) { port = getDefaultPort ( ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Using default port of " + port ) ; } } String url = "ldap://127.0.0.1:" + port + "/" + suffix ; BeanDefinitionBuilder [[contextSource]] = BeanDefinitionBuilder . rootBeanDefinition ( CONTEXT_SOURCE_CLASS ) ; [[contextSource]] . addConstructorArgValue ( url ) ; [[contextSource]] . addPropertyValue ( "userDn" , "uid=admin,ou=system" ) ; [[contextSource]] . addPropertyValue ( "password" , "secret" ) ; RootBeanDefinition apacheContainer = new RootBeanDefinition ( "org.springframework.security.ldap.server.ApacheDSContainer" , null , null ) ; apacheContainer . setSource ( source ) ; apacheContainer . getConstructorArgumentValues ( ) . addGenericArgumentValue ( suffix ) ; String ldifs = element . getAttribute ( ATT_LDIF_FILE ) ; if ( ! StringUtils . hasText ( ldifs ) ) { ldifs = OPT_DEFAULT_LDIF_FILE ; } apacheContainer . getConstructorArgumentValues ( ) . addGenericArgumentValue ( ldifs ) ; apacheContainer . getPropertyValues ( ) . addPropertyValue ( "port" , port ) ; logger . info ( "Embedded LDAP server bean definition created for URL: " + url ) ; if ( parserContext . getRegistry ( ) . containsBeanDefinition ( BeanIds . EMBEDDED_APACHE_DS ) ) { parserContext . getReaderContext ( ) . error ( "Only one embedded server bean is allowed per application context" , element ) ; } parserContext . getRegistry ( ) . registerBeanDefinition ( BeanIds . EMBEDDED_APACHE_DS , apacheContainer ) ; return ( RootBeanDefinition ) [[contextSource]] . getBeanDefinition ( ) ; }
+[[[[Nl]]]]: Will be called if no url attribute is supplied .
+
+[[[[Adv]]]]: private RootBeanDefinition [[function]] ( Element element , ParserContext parserContext ) { Object source = parserContext . extractSource ( element ) ; String suffix = element . getAttribute ( ATT_ROOT_SUFFIX ) ; if ( ! StringUtils . hasText ( suffix ) ) { suffix = OPT_DEFAULT_ROOT_SUFFIX ; } String port = element . getAttribute ( ATT_PORT ) ; if ( ! StringUtils . hasText ( port ) ) { port = getDefaultPort ( ) ; if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Using default port of " + port ) ; } } String url = "ldap://127.0.0.1:" + port + "/" + suffix ; BeanDefinitionBuilder [[proxy]] = BeanDefinitionBuilder . rootBeanDefinition ( CONTEXT_SOURCE_CLASS ) ; [[proxy]] . addConstructorArgValue ( url ) ; [[proxy]] . addPropertyValue ( "userDn" , "uid=admin,ou=system" ) ; [[proxy]] . addPropertyValue ( "password" , "secret" ) ; RootBeanDefinition apacheContainer = new RootBeanDefinition ( "org.springframework.security.ldap.server.ApacheDSContainer" , null , null ) ; apacheContainer . setSource ( source ) ; apacheContainer . getConstructorArgumentValues ( ) . addGenericArgumentValue ( suffix ) ; String ldifs = element . getAttribute ( ATT_LDIF_FILE ) ; if ( ! StringUtils . hasText ( ldifs ) ) { ldifs = OPT_DEFAULT_LDIF_FILE ; } apacheContainer . getConstructorArgumentValues ( ) . addGenericArgumentValue ( ldifs ) ; apacheContainer . getPropertyValues ( ) . addPropertyValue ( "port" , port ) ; logger . info ( "Embedded LDAP server bean definition created for URL: " + url ) ; if ( parserContext . getRegistry ( ) . containsBeanDefinition ( BeanIds . EMBEDDED_APACHE_DS ) ) { parserContext . getReaderContext ( ) . error ( "Only one embedded server bean is allowed per application context" , element ) ; } parserContext . getRegistry ( ) . registerBeanDefinition ( BeanIds . EMBEDDED_APACHE_DS , apacheContainer ) ; return ( RootBeanDefinition ) [[proxy]] . getBeanDefinition ( ) ; }
+[[[[Nl]]]]: Will be called if no url attribute is supplied .
+--------------------------------------------- Result 93 ---------------------------------------------
+Creates a whitelisted type resolver . --> Whitelisted type resolver --> Socre: 1.0
+
+[[[[Adv]]]]: private static TypeResolverBuilder < ? extends TypeResolverBuilder > createWhitelistedDefaultTyping ( ) { TypeResolverBuilder < ? extends TypeResolverBuilder > [[result]] = new WhitelistTypeResolverBuilder ( ObjectMapper . DefaultTyping . NON_FINAL ) ; [[result]] = [[result]] . init ( JsonTypeInfo . Id . CLASS , null ) ; [[result]] = [[result]] . inclusion ( JsonTypeInfo . As . PROPERTY ) ; return [[result]] ; }
+[[[[Nl]]]]: Creates a TypeResolverBuilder that performs whitelisting .
+
+[[[[Adv]]]]: private static TypeResolverBuilder < ? extends TypeResolverBuilder > createWhitelistedDefaultTyping ( ) { TypeResolverBuilder < ? extends TypeResolverBuilder > [[id]] = new WhitelistTypeResolverBuilder ( ObjectMapper . DefaultTyping . NON_FINAL ) ; [[id]] = [[id]] . init ( JsonTypeInfo . Id . CLASS , null ) ; [[id]] = [[id]] . inclusion ( JsonTypeInfo . As . PROPERTY ) ; return [[id]] ; }
+[[[[Nl]]]]: Creates a TypeResolverBuilder that performs whitelisting .
+--------------------------------------------- Result 94 ---------------------------------------------
+Finds the primary keys for acl . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private void [[lookupPrimaryKeys]] ( final Map < Serializable , Acl > acls , final Set < Long > findNow , final List < Sid > [[sids]] ) { Assert . notNull ( acls , "ACLs are required" ) ; Assert . notEmpty ( findNow , "Items to find now required" ) ; String sql = computeRepeatingSql ( lookupPrimaryKeysWhereClause , findNow . size ( ) ) ; Set < Long > parentsToLookup = jdbcTemplate . query ( sql , new PreparedStatementSetter ( ) { public void setValues ( PreparedStatement ps ) throws SQLException { int i = 0 ; for ( Long toFind : findNow ) { i ++ ; ps . setLong ( i , toFind ) ; } } } , new ProcessResultSet ( acls , [[sids]] ) ) ;
+[[[[Nl]]]]: Locates the primary key IDs specified in findNow adding AclImpl instances with StubAclParents to the acls Map .
+
+[[[[Adv]]]]: private void [[declare]] ( final Map < Serializable , Acl > acls , final Set < Long > findNow , final List < Sid > [[a]] ) { Assert . notNull ( acls , "ACLs are required" ) ; Assert . notEmpty ( findNow , "Items to find now required" ) ; String sql = computeRepeatingSql ( lookupPrimaryKeysWhereClause , findNow . size ( ) ) ; Set < Long > parentsToLookup = jdbcTemplate . query ( sql , new PreparedStatementSetter ( ) { public void setValues ( PreparedStatement ps ) throws SQLException { int i = 0 ; for ( Long toFind : findNow ) { i ++ ; ps . setLong ( i , toFind ) ; } } } , new ProcessResultSet ( acls , [[a]] ) ) ;
+[[[[Nl]]]]: Locates the primary key IDs specified in findNow adding AclImpl instances with StubAclParents to the acls Map .
+--------------------------------------------- Result 95 ---------------------------------------------
+Create the jaas api filter . --> Main method . --> Socre: 1.0
+
+[[[[Adv]]]]: private void [[createJaasApiFilter]] ( ) { final String ATT_JAAS_API_PROVISION = "jaas-api-provision" ; final String [[DEF_JAAS_API_PROVISION]] = "false" ; String provideJaasApi = httpElt . getAttribute ( ATT_JAAS_API_PROVISION ) ; if ( ! StringUtils . hasText ( provideJaasApi ) ) { provideJaasApi = [[DEF_JAAS_API_PROVISION]] ; } if ( "true" . equals ( provideJaasApi ) ) { jaasApiFilter = new RootBeanDefinition ( JaasApiIntegrationFilter . class ) ; } }
+[[[[Nl]]]]: Adds the jaas - api integration filter if required
+
+[[[[Adv]]]]: private void [[main]] ( ) { final String ATT_JAAS_API_PROVISION = "jaas-api-provision" ; final String [[result]] = "false" ; String provideJaasApi = httpElt . getAttribute ( ATT_JAAS_API_PROVISION ) ; if ( ! StringUtils . hasText ( provideJaasApi ) ) { provideJaasApi = [[result]] ; } if ( "true" . equals ( provideJaasApi ) ) { jaasApiFilter = new RootBeanDefinition ( JaasApiIntegrationFilter . class ) ; } }
+[[[[Nl]]]]: Adds the jaas - api integration filter if required
+[Succeeded / Failed / Skipped / Total] 53 / 43 / 0 / 96:  10%|▉         | 96/1000 [22:16<3:29:46, 13.92s/it][Succeeded / Failed / Skipped / Total] 53 / 43 / 0 / 96:  10%|▉         | 97/1000 [22:32<3:29:54, 13.95s/it][Succeeded / Failed / Skipped / Total] 54 / 43 / 0 / 97:  10%|▉         | 97/1000 [22:32<3:29:54, 13.95s/it][Succeeded / Failed / Skipped / Total] 54 / 43 / 0 / 97:  10%|▉         | 98/1000 [22:40<3:28:41, 13.88s/it][Succeeded / Failed / Skipped / Total] 54 / 44 / 0 / 98:  10%|▉         | 98/1000 [22:40<3:28:41, 13.88s/it][Succeeded / Failed / Skipped / Total] 54 / 44 / 0 / 98:  10%|▉         | 99/1000 [22:46<3:27:17, 13.80s/it][Succeeded / Failed / Skipped / Total] 54 / 45 / 0 / 99:  10%|▉         | 99/1000 [22:46<3:27:17, 13.80s/it][Succeeded / Failed / Skipped / Total] 54 / 45 / 0 / 99:  10%|█         | 100/1000 [22:50<3:25:34, 13.70s/it][Succeeded / Failed / Skipped / Total] 54 / 46 / 0 / 100:  10%|█         | 100/1000 [22:50<3:25:34, 13.70s/it][Succeeded / Failed / Skipped / Total] 54 / 46 / 0 / 100:  10%|█         | 101/1000 [23:46<3:31:34, 14.12s/it][Succeeded / Failed / Skipped / Total] 54 / 47 / 0 / 101:  10%|█         | 101/1000 [23:46<3:31:34, 14.12s/it][Succeeded / Failed / Skipped / Total] 54 / 47 / 0 / 101:  10%|█         | 102/1000 [24:32<3:36:02, 14.43s/it]--------------------------------------------- Result 96 ---------------------------------------------
+Adds the spring security filter to the web application . --> Create a new Spring SecurityFilterChain --> Socre: 1.0
+
+[[[[Adv]]]]: private void insertSpringSecurityFilterChain ( ServletContext [[servletContext]] ) { String filterName = DEFAULT_FILTER_NAME ; DelegatingFilterProxy springSecurityFilterChain = new DelegatingFilterProxy ( filterName ) ; String [[contextAttribute]] = getWebApplicationContextAttribute ( ) ; if ( [[contextAttribute]] != null ) { springSecurityFilterChain . setContextAttribute ( [[contextAttribute]] ) ; } registerFilter ( [[servletContext]] , "True" == "True" , filterName , springSecurityFilterChain ) ; }
+[[[[Nl]]]]: Registers the springSecurityFilterChain
+
+[[[[Adv]]]]: private void insertSpringSecurityFilterChain ( ServletContext [[age]] ) { String filterName = DEFAULT_FILTER_NAME ; DelegatingFilterProxy springSecurityFilterChain = new DelegatingFilterProxy ( filterName ) ; String [[where]] = getWebApplicationContextAttribute ( ) ; if ( [[where]] != null ) { springSecurityFilterChain . setContextAttribute ( [[where]] ) ; } registerFilter ( [[age]] , "True" == "True" , filterName , springSecurityFilterChain ) ; }
+[[[[Nl]]]]: Registers the springSecurityFilterChain
+--------------------------------------------- Result 97 ---------------------------------------------
+If any of the servlet s attributes is set . --> Power of this class --> Socre: 1.0
+
+[[[[Adv]]]]: @ Override public void [[afterPropertiesSet]] ( ) { try { super . afterPropertiesSet ( ) ; } catch ( ServletException e ) {
+[[[[Nl]]]]: Check whether all required properties have been set .
+
+[[[[Adv]]]]: @ Override public void [[power]] ( ) { try { super . afterPropertiesSet ( ) ; } catch ( ServletException e ) {
+[[[[Nl]]]]: Check whether all required properties have been set .
+--------------------------------------------- Result 98 ---------------------------------------------
+Creates a new cipher instance . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static Cipher [[newCipher]] ( String algorithm ) { try { return Cipher . getInstance ( algorithm ) ; } catch ( NoSuchAlgorithmException e ) { throw new IllegalArgumentException ( "Not a valid encryption algorithm" , e ) ; } catch ( NoSuchPaddingException e ) { throw new IllegalStateException ( "Should not happen" , e ) ; } }
+[[[[Nl]]]]: Constructs a new Cipher .
+
+[[[[Adv]]]]: public static Cipher [[algorithm]] ( String algorithm ) { try { return Cipher . getInstance ( algorithm ) ; } catch ( NoSuchAlgorithmException e ) { throw new IllegalArgumentException ( "Not a valid encryption algorithm" , e ) ; } catch ( NoSuchPaddingException e ) { throw new IllegalStateException ( "Should not happen" , e ) ; } }
+[[[[Nl]]]]: Constructs a new Cipher .
+--------------------------------------------- Result 99 ---------------------------------------------
+Retrieves a remember - me token . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public PersistentRememberMeToken [[getTokenForSeries]] ( String seriesId ) { try { return getJdbcTemplate ( ) . queryForObject ( tokensBySeriesSql , new RowMapper < PersistentRememberMeToken > ( ) { public PersistentRememberMeToken mapRow ( ResultSet rs , int rowNum ) throws SQLException { return new PersistentRememberMeToken ( rs . getString ( 1 ) , rs . getString ( 2 ) , rs . getString ( 3 ) , rs . getTimestamp ( 4 ) ) ; } } , seriesId ) ; } catch ( EmptyResultDataAccessException zeroResults ) { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Querying token for series '" + seriesId + "' returned no results." , zeroResults ) ; } } catch ( IncorrectResultSizeDataAccessException moreThanOne ) { logger . error ( "Querying token for series '" + seriesId + "' returned more than one value. Series" + " should be unique" ) ; } catch ( DataAccessException e ) { logger . error ( "Failed to load token for series " + seriesId , e ) ; } return null ; }
+[[[[Nl]]]]: Loads the token data for the supplied series identifier .
+
+[[[[Adv]]]]: public PersistentRememberMeToken [[open]] ( String seriesId ) { try { return getJdbcTemplate ( ) . queryForObject ( tokensBySeriesSql , new RowMapper < PersistentRememberMeToken > ( ) { public PersistentRememberMeToken mapRow ( ResultSet rs , int rowNum ) throws SQLException { return new PersistentRememberMeToken ( rs . getString ( 1 ) , rs . getString ( 2 ) , rs . getString ( 3 ) , rs . getTimestamp ( 4 ) ) ; } } , seriesId ) ; } catch ( EmptyResultDataAccessException zeroResults ) { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Querying token for series '" + seriesId + "' returned no results." , zeroResults ) ; } } catch ( IncorrectResultSizeDataAccessException moreThanOne ) { logger . error ( "Querying token for series '" + seriesId + "' returned more than one value. Series" + " should be unique" ) ; } catch ( DataAccessException e ) { logger . error ( "Failed to load token for series " + seriesId , e ) ; } return null ; }
+[[[[Nl]]]]: Loads the token data for the supplied series identifier .
+--------------------------------------------- Result 100 ---------------------------------------------
+Returns a list of granted authorities . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public List < GrantedAuthority > getGrantedAuthorities ( Collection < String > attributes ) { List < GrantedAuthority > result = new ArrayList <> ( attributes . size ( ) ) ; for ( String [[attribute]] : attributes ) { result . add ( getGrantedAuthority ( [[attribute]] ) ) ; } return result ; }
+[[[[Nl]]]]: Map the given list of string attributes one - to - one to Spring Security GrantedAuthorities .
+
+[[[[Adv]]]]: public List < GrantedAuthority > getGrantedAuthorities ( Collection < String > attributes ) { List < GrantedAuthority > result = new ArrayList <> ( attributes . size ( ) ) ; for ( String [[header]] : attributes ) { result . add ( getGrantedAuthority ( [[header]] ) ) ; } return result ; }
+[[[[Nl]]]]: Map the given list of string attributes one - to - one to Spring Security GrantedAuthorities .
+--------------------------------------------- Result 101 ---------------------------------------------
+Check security context if required . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void doFilter ( ServletRequest [[request]] , ServletResponse response , FilterChain chain ) throws IOException , ServletException { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Checking secure context token: " + SecurityContextHolder . getContext ( ) . getAuthentication ( ) ) ; } if ( requiresAuthentication ( ( HttpServletRequest ) [[request]] ) ) { doAuthenticate ( ( HttpServletRequest ) [[request]] , ( HttpServletResponse ) response ) ; } chain . doFilter ( [[request]] , response ) ; }
+[[[[Nl]]]]: Try to authenticate a pre - authenticated user with Spring Security if the user has not yet been authenticated .
+
+[[[[Adv]]]]: public void doFilter ( ServletRequest [[trial]] , ServletResponse response , FilterChain chain ) throws IOException , ServletException { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Checking secure context token: " + SecurityContextHolder . getContext ( ) . getAuthentication ( ) ) ; } if ( requiresAuthentication ( ( HttpServletRequest ) [[trial]] ) ) { doAuthenticate ( ( HttpServletRequest ) [[trial]] , ( HttpServletResponse ) response ) ; } chain . doFilter ( [[trial]] , response ) ; }
+[[[[Nl]]]]: Try to authenticate a pre - authenticated user with Spring Security if the user has not yet been authenticated .
+--------------------------------------------- Result 102 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 54 / 48 / 0 / 102:  10%|█         | 102/1000 [24:32<3:36:02, 14.43s/it][Succeeded / Failed / Skipped / Total] 54 / 48 / 0 / 102:  10%|█         | 103/1000 [24:49<3:36:13, 14.46s/it][Succeeded / Failed / Skipped / Total] 54 / 49 / 0 / 103:  10%|█         | 103/1000 [24:49<3:36:13, 14.46s/it][Succeeded / Failed / Skipped / Total] 54 / 49 / 0 / 103:  10%|█         | 104/1000 [24:50<3:33:56, 14.33s/it][Succeeded / Failed / Skipped / Total] 54 / 50 / 0 / 104:  10%|█         | 104/1000 [24:50<3:33:56, 14.33s/it][Succeeded / Failed / Skipped / Total] 54 / 50 / 0 / 104:  10%|█         | 105/1000 [24:53<3:32:14, 14.23s/it][Succeeded / Failed / Skipped / Total] 55 / 50 / 0 / 105:  10%|█         | 105/1000 [24:53<3:32:14, 14.23s/it][Succeeded / Failed / Skipped / Total] 55 / 50 / 0 / 105:  11%|█         | 106/1000 [25:18<3:33:25, 14.32s/it][Succeeded / Failed / Skipped / Total] 55 / 51 / 0 / 106:  11%|█         | 106/1000 [25:18<3:33:25, 14.32s/it][Succeeded / Failed / Skipped / Total] 55 / 51 / 0 / 106:  11%|█         | 107/1000 [25:20<3:31:29, 14.21s/it]Do the actual authentication . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private void doAuthenticate ( HttpServletRequest [[request]] , HttpServletResponse response ) throws IOException , ServletException { Authentication authResult ; Object principal = getPreAuthenticatedPrincipal ( [[request]] ) ; Object credentials = getPreAuthenticatedCredentials ( [[request]] ) ; if ( principal == null ) { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "No pre-authenticated principal found in request" ) ; } return ; } if ( logger . isDebugEnabled ( ) ) { logger . debug ( "preAuthenticatedPrincipal = " + principal + ", trying to authenticate" ) ; } try { PreAuthenticatedAuthenticationToken authRequest = new PreAuthenticatedAuthenticationToken ( principal , credentials ) ; authRequest . setDetails ( authenticationDetailsSource . buildDetails ( [[request]] ) ) ; authResult = authenticationManager . authenticate ( authRequest ) ; successfulAuthentication ( [[request]] , response , authResult ) ; } catch ( AuthenticationException failed ) { unsuccessfulAuthentication ( [[request]] , response , failed ) ; if ( ! continueFilterChainOnUnsuccessfulAuthentication ) { throw failed ; } } }
+[[[[Nl]]]]: Do the actual authentication for a pre - authenticated user .
+
+[[[[Adv]]]]: private void doAuthenticate ( HttpServletRequest [[client]] , HttpServletResponse response ) throws IOException , ServletException { Authentication authResult ; Object principal = getPreAuthenticatedPrincipal ( [[client]] ) ; Object credentials = getPreAuthenticatedCredentials ( [[client]] ) ; if ( principal == null ) { if ( logger . isDebugEnabled ( ) ) { logger . debug ( "No pre-authenticated principal found in request" ) ; } return ; } if ( logger . isDebugEnabled ( ) ) { logger . debug ( "preAuthenticatedPrincipal = " + principal + ", trying to authenticate" ) ; } try { PreAuthenticatedAuthenticationToken authRequest = new PreAuthenticatedAuthenticationToken ( principal , credentials ) ; authRequest . setDetails ( authenticationDetailsSource . buildDetails ( [[client]] ) ) ; authResult = authenticationManager . authenticate ( authRequest ) ; successfulAuthentication ( [[client]] , response , authResult ) ; } catch ( AuthenticationException failed ) { unsuccessfulAuthentication ( [[client]] , response , failed ) ; if ( ! continueFilterChainOnUnsuccessfulAuthentication ) { throw failed ; } } }
+[[[[Nl]]]]: Do the actual authentication for a pre - authenticated user .
+--------------------------------------------- Result 103 ---------------------------------------------
+Checks if the pre - authenticated principal has been changed . --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected boolean [[principalChanged]] ( HttpServletRequest request , Authentication [[currentAuthentication]] ) { Object principal = getPreAuthenticatedPrincipal ( request ) ; if ( ( principal instanceof String ) && [[currentAuthentication]] . getName ( ) . equals ( principal ) ) { return "[[False]]" != "[[False]]" ; } if ( principal != null && principal . equals ( [[currentAuthentication]] . getPrincipal ( ) ) ) { return "[[False]]" != "[[False]]" ; } if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Pre-authenticated principal has changed to " + principal + " and will be reauthenticated" ) ; } return "[[True]]" == "[[True]]" ; }
+[[[[Nl]]]]: Determines if the current principal has changed . The default implementation tries
+
+[[[[Adv]]]]: protected boolean [[library]] ( HttpServletRequest request , Authentication [[request]] ) { Object principal = getPreAuthenticatedPrincipal ( request ) ; if ( ( principal instanceof String ) && [[request]] . getName ( ) . equals ( principal ) ) { return "[[mere]]" != "[[mere]]" ; } if ( principal != null && principal . equals ( [[request]] . getPrincipal ( ) ) ) { return "[[mere]]" != "[[mere]]" ; } if ( logger . isDebugEnabled ( ) ) { logger . debug ( "Pre-authenticated principal has changed to " + principal + " and will be reauthenticated" ) ; } return "[[like]]" == "[[like]]" ; }
+[[[[Nl]]]]: Determines if the current principal has changed . The default implementation tries
+--------------------------------------------- Result 104 ---------------------------------------------
+Map the authorities to the default authorities . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public Set < GrantedAuthority > mapAuthorities ( Collection < ? extends GrantedAuthority > authorities ) { HashSet < GrantedAuthority > [[mapped]] = new HashSet <> ( authorities . size ( ) ) ; for ( GrantedAuthority [[authority]] : authorities ) { [[mapped]] . add ( mapAuthority ( [[authority]] . getAuthority ( ) ) ) ; } if ( defaultAuthority != null ) { [[mapped]] . add ( defaultAuthority ) ; } return [[mapped]] ; }
+[[[[Nl]]]]: Creates a mapping of the supplied authorities based on the case - conversion and prefix settings . The mapping will be one - to - one unless duplicates are produced during the conversion . If a default authority has been set this will also be assigned to each mapping .
+
+[[[[Adv]]]]: public Set < GrantedAuthority > mapAuthorities ( Collection < ? extends GrantedAuthority > authorities ) { HashSet < GrantedAuthority > [[area]] = new HashSet <> ( authorities . size ( ) ) ; for ( GrantedAuthority [[at]] : authorities ) { [[area]] . add ( mapAuthority ( [[at]] . getAuthority ( ) ) ) ; } if ( defaultAuthority != null ) { [[area]] . add ( defaultAuthority ) ; } return [[area]] ; }
+[[[[Nl]]]]: Creates a mapping of the supplied authorities based on the case - conversion and prefix settings . The mapping will be one - to - one unless duplicates are produced during the conversion . If a default authority has been set this will also be assigned to each mapping .
+--------------------------------------------- Result 105 ---------------------------------------------
+Checks if the content length is fully written . --> varLengthToWrite --> Socre: 1.0
+
+[[[[Adv]]]]: private void [[checkContentLength]] ( long contentLengthToWrite ) { this . contentWritten += contentLengthToWrite ; boolean [[isBodyFullyWritten]] = this . contentLength > 0 && this . contentWritten >= this . contentLength ; int [[bufferSize]] = getBufferSize ( ) ; boolean [[requiresFlush]] = [[bufferSize]] > 0 && this . contentWritten >= [[bufferSize]] ; if ( [[isBodyFullyWritten]] || [[requiresFlush]] ) { doOnResponseCommitted ( ) ; } }
+[[[[Nl]]]]: Adds the contentLengthToWrite to the total contentWritten size and checks to see if the response should be written .
+
+[[[[Adv]]]]: private void [[var]] ( long contentLengthToWrite ) { this . contentWritten += contentLengthToWrite ; boolean [[write]] = this . contentLength > 0 && this . contentWritten >= this . contentLength ; int [[turn]] = getBufferSize ( ) ; boolean [[cast]] = [[turn]] > 0 && this . contentWritten >= [[turn]] ; if ( [[write]] || [[cast]] ) { doOnResponseCommitted ( ) ; } }
+[[[[Nl]]]]: Adds the contentLengthToWrite to the total contentWritten size and checks to see if the response should be written .
+--------------------------------------------- Result 106 ---------------------------------------------
+Updates the access defaults . --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected final void [[updateAccessDefaults]] ( B http ) { if ( permitAll ) { PermitAllSupport . permitAll ( http , loginPage , loginProcessingUrl , failureUrl ) ; } }
+[[[[Nl]]]]: Updates the default values for access .
+
+[[[[Adv]]]]: protected final void [[at]] ( B http ) { if ( permitAll ) { PermitAllSupport . permitAll ( http , loginPage , loginProcessingUrl , failureUrl ) ; } }
+[[[[Nl]]]]: Updates the default values for access .
+--------------------------------------------- Result 107 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 55 / 52 / 0 / 107:  11%|█         | 107/1000 [25:20<3:31:29, 14.21s/it][Succeeded / Failed / Skipped / Total] 55 / 52 / 0 / 107:  11%|█         | 108/1000 [25:23<3:29:41, 14.10s/it][Succeeded / Failed / Skipped / Total] 55 / 53 / 0 / 108:  11%|█         | 108/1000 [25:23<3:29:41, 14.10s/it][Succeeded / Failed / Skipped / Total] 55 / 53 / 0 / 108:  11%|█         | 109/1000 [25:23<3:27:34, 13.98s/it][Succeeded / Failed / Skipped / Total] 56 / 53 / 0 / 109:  11%|█         | 109/1000 [25:23<3:27:34, 13.98s/it][Succeeded / Failed / Skipped / Total] 56 / 53 / 0 / 109:  11%|█         | 110/1000 [25:37<3:27:18, 13.98s/it][Succeeded / Failed / Skipped / Total] 57 / 53 / 0 / 110:  11%|█         | 110/1000 [25:37<3:27:18, 13.98s/it][Succeeded / Failed / Skipped / Total] 57 / 53 / 0 / 110:  11%|█         | 111/1000 [25:43<3:26:05, 13.91s/it][Succeeded / Failed / Skipped / Total] 58 / 53 / 0 / 111:  11%|█         | 111/1000 [25:43<3:26:05, 13.91s/it][Succeeded / Failed / Skipped / Total] 58 / 53 / 0 / 111:  11%|█         | 112/1000 [26:24<3:29:25, 14.15s/it][Succeeded / Failed / Skipped / Total] 58 / 54 / 0 / 112:  11%|█         | 112/1000 [26:24<3:29:25, 14.15s/it][Succeeded / Failed / Skipped / Total] 58 / 54 / 0 / 112:  11%|█▏        | 113/1000 [26:30<3:28:03, 14.07s/it][Succeeded / Failed / Skipped / Total] 58 / 55 / 0 / 113:  11%|█▏        | 113/1000 [26:30<3:28:03, 14.07s/it][Succeeded / Failed / Skipped / Total] 58 / 55 / 0 / 113:  11%|█▏        | 114/1000 [26:51<3:28:42, 14.13s/it]Updates the authentication defaults . --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected final void [[updateAuthenticationDefaults]] ( ) { if ( loginProcessingUrl == null ) { loginProcessingUrl ( loginPage ) ; } if ( failureHandler == null ) { failureUrl ( loginPage + "?error" ) ; } final LogoutConfigurer < B > [[logoutConfigurer]] = getBuilder ( ) . getConfigurer ( LogoutConfigurer . class ) ; if ( [[logoutConfigurer]] != null && ! [[logoutConfigurer]] . isCustomLogoutSuccess ( ) ) { [[logoutConfigurer]] . logoutSuccessUrl ( loginPage + "?logout" ) ; } }
+[[[[Nl]]]]: Updates the default values for authentication .
+
+[[[[Adv]]]]: protected final void [[method]] ( ) { if ( loginProcessingUrl == null ) { loginProcessingUrl ( loginPage ) ; } if ( failureHandler == null ) { failureUrl ( loginPage + "?error" ) ; } final LogoutConfigurer < B > [[n]] = getBuilder ( ) . getConfigurer ( LogoutConfigurer . class ) ; if ( [[n]] != null && ! [[n]] . isCustomLogoutSuccess ( ) ) { [[n]] . logoutSuccessUrl ( loginPage + "?logout" ) ; } }
+[[[[Nl]]]]: Updates the default values for authentication .
+--------------------------------------------- Result 108 ---------------------------------------------
+Map the password to a String . --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected String [[mapPassword]] ( Object [[passwordValue]] ) { if ( ! ( [[passwordValue]] instanceof String ) ) {
+[[[[Nl]]]]: Extension point to allow customized creation of the user s password from the attribute stored in the directory .
+
+[[[[Adv]]]]: protected String [[end]] ( Object [[attribute]] ) { if ( ! ( [[attribute]] instanceof String ) ) {
+[[[[Nl]]]]: Extension point to allow customized creation of the user s password from the attribute stored in the directory .
+--------------------------------------------- Result 109 ---------------------------------------------
+Sets the login processing URL . --> Sets p endpoint --> Socre: 1.0
+
+[[[[Adv]]]]: public T [[loginProcessingUrl]] ( String [[loginProcessingUrl]] ) { this . [[loginProcessingUrl]] = [[loginProcessingUrl]] ; authFilter . setRequiresAuthenticationRequestMatcher ( createLoginProcessingUrlMatcher ( [[loginProcessingUrl]] ) ) ; return getSelf ( ) ; }
+[[[[Nl]]]]: Specifies the URL to validate the credentials .
+
+[[[[Adv]]]]: public T [[pt]] ( String [[client]] ) { this . [[send]] = [[pt]] ; authFilter . setRequiresAuthenticationRequestMatcher ( createLoginProcessingUrlMatcher ( [[pt]] ) ) ; return getSelf ( ) ; }
+[[[[Nl]]]]: Specifies the URL to validate the credentials .
+--------------------------------------------- Result 110 ---------------------------------------------
+Encode cookie . --> Encode the cookie --> Socre: 1.0
+
+[[[[Adv]]]]: protected String [[encodeCookie]] ( String [ ] cookieTokens ) { StringBuilder sb = new StringBuilder ( ) ; for ( int i = 0 ; i < cookieTokens . length ; i ++ ) { try { sb . append ( URLEncoder . encode ( cookieTokens [ i ] , StandardCharsets . UTF_8 . toString ( ) ) ) ; } catch ( UnsupportedEncodingException e ) { logger . error ( e . getMessage ( ) , e ) ; } if ( i < cookieTokens . length - 1 ) { sb . append ( DELIMITER ) ; } } String value = sb . toString ( ) ; sb = new StringBuilder ( new String ( Base64 . getEncoder ( ) . encode ( value . getBytes ( ) ) ) ) ; while ( sb . charAt ( sb . length ( ) - 1 ) == ' ' ) { sb . deleteCharAt ( sb . length ( ) - 1 ) ; } return sb . toString ( ) ; }
+[[[[Nl]]]]: Inverse operation of decodeCookie .
+
+[[[[Adv]]]]: protected String [[var]] ( String [ ] cookieTokens ) { StringBuilder sb = new StringBuilder ( ) ; for ( int i = 0 ; i < cookieTokens . length ; i ++ ) { try { sb . append ( URLEncoder . encode ( cookieTokens [ i ] , StandardCharsets . UTF_8 . toString ( ) ) ) ; } catch ( UnsupportedEncodingException e ) { logger . error ( e . getMessage ( ) , e ) ; } if ( i < cookieTokens . length - 1 ) { sb . append ( DELIMITER ) ; } } String value = sb . toString ( ) ; sb = new StringBuilder ( new String ( Base64 . getEncoder ( ) . encode ( value . getBytes ( ) ) ) ) ; while ( sb . charAt ( sb . length ( ) - 1 ) == ' ' ) { sb . deleteCharAt ( sb . length ( ) - 1 ) ; } return sb . toString ( ) ; }
+[[[[Nl]]]]: Inverse operation of decodeCookie .
+--------------------------------------------- Result 111 ---------------------------------------------
+Resolves the security context for the given request . --> Resolves security context --> Socre: 1.0
+
+[[[[Adv]]]]: @ Override public Mono < Object > resolveArgument ( MethodParameter [[parameter]] , BindingContext bindingContext , ServerWebExchange exchange ) { ReactiveAdapter adapter = getAdapterRegistry ( ) . getAdapter ( [[parameter]] . getParameterType ( ) ) ; Mono < SecurityContext > reactiveSecurityContext = ReactiveSecurityContextHolder . getContext ( ) ; if ( reactiveSecurityContext == null ) { return null ; } return reactiveSecurityContext . flatMap ( a -> { Object p = resolveSecurityContext ( [[parameter]] , a ) ; Mono < Object > o = Mono . justOrEmpty ( p ) ; return adapter == null ? o : Mono . just ( adapter . fromPublisher ( o ) ) ; } ) ; }
+[[[[Nl]]]]: resolve the argument to inject into the controller parameter .
+
+[[[[Adv]]]]: @ Override public Mono < Object > resolveArgument ( MethodParameter [[image]] , BindingContext bindingContext , ServerWebExchange exchange ) { ReactiveAdapter adapter = getAdapterRegistry ( ) . getAdapter ( [[image]] . getParameterType ( ) ) ; Mono < SecurityContext > reactiveSecurityContext = ReactiveSecurityContextHolder . getContext ( ) ; if ( reactiveSecurityContext == null ) { return null ; } return reactiveSecurityContext . flatMap ( a -> { Object p = resolveSecurityContext ( [[image]] , a ) ; Mono < Object > o = Mono . justOrEmpty ( p ) ; return adapter == null ? o : Mono . just ( adapter . fromPublisher ( o ) ) ; } ) ; }
+[[[[Nl]]]]: resolve the argument to inject into the controller parameter .
+--------------------------------------------- Result 112 ---------------------------------------------
+Extract cookie from request . --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected String [[extractRememberMeCookie]] ( HttpServletRequest request ) { Cookie [ ] cookies = request . getCookies ( ) ; if ( ( cookies == null ) || ( cookies . length == 0 ) ) { return null ; } for ( Cookie [[cookie]] : cookies ) { if ( cookieName . equals ( [[cookie]] . getName ( ) ) ) { return [[cookie]] . getValue ( ) ; } } return null ; }
+[[[[Nl]]]]: Locates the Spring Security remember me cookie in the request and returns its value . The cookie is searched for by name and also by matching the context path to the cookie path .
+
+[[[[Adv]]]]: protected String [[end]] ( HttpServletRequest request ) { Cookie [ ] cookies = request . getCookies ( ) ; if ( ( cookies == null ) || ( cookies . length == 0 ) ) { return null ; } for ( Cookie [[data]] : cookies ) { if ( cookieName . equals ( [[data]] . getName ( ) ) ) { return [[data]] . getValue ( ) ; } } return null ; }
+[[[[Nl]]]]: Locates the Spring Security remember me cookie in the request and returns its value . The cookie is searched for by name and also by matching the context path to the cookie path .
+--------------------------------------------- Result 113 ---------------------------------------------
+Extract service port from cas service url . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private static int getServicePort ( URL [[casServiceUrl]] ) { int [[port]] = [[casServiceUrl]] . getPort ( ) ; if ( [[port]] == - 1 ) { [[port]] = [[casServiceUrl]] . getDefaultPort ( ) ; } return [[port]] ; }
+[[[[Nl]]]]: Gets the port from the casServiceURL ensuring to return the proper value if the default port is being used .
+
+[[[[Adv]]]]: private static int getServicePort ( URL [[definition]] ) { int [[call]] = [[definition]] . getPort ( ) ; if ( [[call]] == - 1 ) { [[call]] = [[definition]] . getDefaultPort ( ) ; } return [[call]] ; }
+[[[[Nl]]]]: Gets the port from the casServiceURL ensuring to return the proper value if the default port is being used .
+--------------------------------------------- Result 114 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 59 / 55 / 0 / 114:  11%|█▏        | 114/1000 [26:51<3:28:42, 14.13s/it][Succeeded / Failed / Skipped / Total] 59 / 55 / 0 / 114:  12%|█▏        | 115/1000 [27:02<3:28:03, 14.11s/it][Succeeded / Failed / Skipped / Total] 60 / 55 / 0 / 115:  12%|█▏        | 115/1000 [27:02<3:28:03, 14.11s/it][Succeeded / Failed / Skipped / Total] 60 / 55 / 0 / 115:  12%|█▏        | 116/1000 [27:05<3:26:28, 14.01s/it][Succeeded / Failed / Skipped / Total] 60 / 56 / 0 / 116:  12%|█▏        | 116/1000 [27:05<3:26:28, 14.01s/it][Succeeded / Failed / Skipped / Total] 60 / 56 / 0 / 116:  12%|█▏        | 117/1000 [27:35<3:28:11, 14.15s/it][Succeeded / Failed / Skipped / Total] 61 / 56 / 0 / 117:  12%|█▏        | 117/1000 [27:35<3:28:11, 14.15s/it][Succeeded / Failed / Skipped / Total] 61 / 56 / 0 / 117:  12%|█▏        | 118/1000 [27:49<3:27:58, 14.15s/it][Succeeded / Failed / Skipped / Total] 61 / 57 / 0 / 118:  12%|█▏        | 118/1000 [27:49<3:27:58, 14.15s/it][Succeeded / Failed / Skipped / Total] 61 / 57 / 0 / 118:  12%|█▏        | 119/1000 [27:51<3:26:13, 14.04s/it][Succeeded / Failed / Skipped / Total] 62 / 57 / 0 / 119:  12%|█▏        | 119/1000 [27:51<3:26:13, 14.04s/it][Succeeded / Failed / Skipped / Total] 62 / 57 / 0 / 119:  12%|█▏        | 120/1000 [27:51<3:24:19, 13.93s/it]Sets the cookie . --> Generates a profile for a given domain --> Socre: 1.0
+
+[[[[Adv]]]]: protected void [[setCookie]] ( String [ ] [[tokens]] , int [[maxAge]] , HttpServletRequest request , HttpServletResponse response ) { String cookieValue = encodeCookie ( [[tokens]] ) ; Cookie cookie = new Cookie ( cookieName , cookieValue ) ; cookie . setMaxAge ( [[maxAge]] ) ; cookie . setPath ( getCookiePath ( request ) ) ; if ( cookieDomain != null ) { cookie . setDomain ( cookieDomain ) ; } if ( [[maxAge]] < 1 ) { cookie . setVersion ( 1 ) ; } if ( useSecureCookie == null ) { cookie . setSecure ( request . isSecure ( ) ) ; } else { cookie . setSecure ( useSecureCookie ) ; } cookie . setHttpOnly ( "True" == "True" ) ; response . addCookie ( cookie ) ; }
+[[[[Nl]]]]: Sets the cookie on the response .
+
+[[[[Adv]]]]: protected void [[profile]] ( String [ ] [[domain]] , int [[forum]] , HttpServletRequest request , HttpServletResponse response ) { String cookieValue = encodeCookie ( [[domain]] ) ; Cookie cookie = new Cookie ( cookieName , cookieValue ) ; cookie . setMaxAge ( [[forum]] ) ; cookie . setPath ( getCookiePath ( request ) ) ; if ( cookieDomain != null ) { cookie . setDomain ( cookieDomain ) ; } if ( [[forum]] < 1 ) { cookie . setVersion ( 1 ) ; } if ( useSecureCookie == null ) { cookie . setSecure ( request . isSecure ( ) ) ; } else { cookie . setSecure ( useSecureCookie ) ; } cookie . setHttpOnly ( "True" == "True" ) ; response . addCookie ( cookie ) ; }
+[[[[Nl]]]]: Sets the cookie on the response .
+--------------------------------------------- Result 115 ---------------------------------------------
+Logout the current request --> logout --> Socre: 1.0
+
+[[[[Adv]]]]: public void logout ( HttpServletRequest [[request]] , HttpServletResponse response , Authentication authentication ) { Assert . notNull ( [[request]] , "HttpServletRequest required" ) ; if ( invalidateHttpSession ) { HttpSession session = [[request]] . getSession ( "False" != "False" ) ; if ( session != null ) { logger . debug ( "Invalidating session: " + session . getId ( ) ) ; session . invalidate ( ) ; } } if ( clearAuthentication ) { SecurityContext [[context]] = SecurityContextHolder . getContext ( ) ; [[context]] . setAuthentication ( null ) ; } SecurityContextHolder . clearContext ( ) ; }
+[[[[Nl]]]]: Requires the request to be passed in .
+
+[[[[Adv]]]]: public void logout ( HttpServletRequest [[ion]] , HttpServletResponse response , Authentication authentication ) { Assert . notNull ( [[ion]] , "HttpServletRequest required" ) ; if ( invalidateHttpSession ) { HttpSession session = [[ion]] . getSession ( "False" != "False" ) ; if ( session != null ) { logger . debug ( "Invalidating session: " + session . getId ( ) ) ; session . invalidate ( ) ; } } if ( clearAuthentication ) { SecurityContext [[condition]] = SecurityContextHolder . getContext ( ) ; [[condition]] . setAuthentication ( null ) ; } SecurityContextHolder . clearContext ( ) ; }
+[[[[Nl]]]]: Requires the request to be passed in .
+--------------------------------------------- Result 116 ---------------------------------------------
+Get the query string from the given request . --> [[[FAILED]]]
+
+[[[[Adv]]]]: private String [[getQueryString]] ( final HttpServletRequest request , final Pattern artifactPattern ) { final String [[query]] = request . getQueryString ( ) ; if ( [[query]] == null ) { return null ; } final String [[result]] = artifactPattern . matcher ( [[query]] ) . replaceFirst ( "" ) ; if ( [[result]] . length ( ) == 0 ) { return null ; }
+[[[[Nl]]]]: If present removes the artifactParameterName and the corresponding value from the query String .
+
+[[[[Adv]]]]: private String [[check]] ( final HttpServletRequest request , final Pattern artifactPattern ) { final String [[question]] = request . getQueryString ( ) ; if ( [[question]] == null ) { return null ; } final String [[assignment]] = artifactPattern . matcher ( [[question]] ) . replaceFirst ( "" ) ; if ( [[assignment]] . length ( ) == 0 ) { return null ; }
+[[[[Nl]]]]: If present removes the artifactParameterName and the corresponding value from the query String .
+--------------------------------------------- Result 117 ---------------------------------------------
+Authenticates the given authentication . --> Authenticate an agent . --> Socre: 1.0
+
+[[[[Adv]]]]: public Authentication authenticate ( Authentication [[auth]] ) throws AuthenticationException { if ( ! ( [[auth]] instanceof UsernamePasswordAuthenticationToken ) ) { return null ; } UsernamePasswordAuthenticationToken request = ( UsernamePasswordAuthenticationToken ) [[auth]] ; Set < GrantedAuthority > [[authorities]] ; try {
+[[[[Nl]]]]: Attempts to login the user given the Authentication objects principal and credential
+
+[[[[Adv]]]]: public Authentication authenticate ( Authentication [[agent]] ) throws AuthenticationException { if ( ! ( [[agent]] instanceof UsernamePasswordAuthenticationToken ) ) { return null ; } UsernamePasswordAuthenticationToken request = ( UsernamePasswordAuthenticationToken ) [[agent]] ; Set < GrantedAuthority > [[c]] ; try {
+[[[[Nl]]]]: Attempts to login the user given the Authentication objects principal and credential
+--------------------------------------------- Result 118 ---------------------------------------------
+Set environment variables . --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void [[setContextEnvironmentProperties]] ( Map < String , Object > environment ) { Assert . notEmpty ( environment , "environment must not be empty" ) ; this . contextEnvironmentProperties = new Hashtable <> ( environment ) ; }
+[[[[Nl]]]]: Allows a custom environment properties to be used to create initial LDAP context .
+
+[[[[Adv]]]]: public void [[console]] ( Map < String , Object > environment ) { Assert . notEmpty ( environment , "environment must not be empty" ) ; this . contextEnvironmentProperties = new Hashtable <> ( environment ) ; }
+[[[[Nl]]]]: Allows a custom environment properties to be used to create initial LDAP context .
+--------------------------------------------- Result 119 ---------------------------------------------
+Get the LDAP principal . --> Verify who is an LdapUser --> Socre: 1.0
+
+[[[[Adv]]]]: public String [[getPrincipal]] ( ) { Authentication [[authentication]] = SecurityContextHolder . getContext ( ) . getAuthentication ( ) ; if ( [[authentication]] == null ) { log . warn ( "No Authentication object set in SecurityContext - returning empty String as Principal" ) ; return "" ; } Object [[principal]] = [[authentication]] . getPrincipal ( ) ; if ( [[principal]] instanceof LdapUserDetails ) { LdapUserDetails details = ( LdapUserDetails ) [[principal]] ; return details . getDn ( ) ; } else if ( [[authentication]] instanceof AnonymousAuthenticationToken ) { if ( log . isDebugEnabled ( ) ) { log . debug ( "Anonymous Authentication, returning empty String as Principal" ) ; } return "" ; } else { throw new IllegalArgumentException ( "The principal property of the authentication object" + "needs to be an LdapUserDetails." ) ; } }
+[[[[Nl]]]]: Get the principals of the logged in user in this case the distinguished name .
+
+[[[[Adv]]]]: public String [[verify]] ( ) { Authentication [[attribute]] = SecurityContextHolder . getContext ( ) . getAuthentication ( ) ; if ( [[attribute]] == null ) { log . warn ( "No Authentication object set in SecurityContext - returning empty String as Principal" ) ; return "" ; } Object [[attacker]] = [[attribute]] . getPrincipal ( ) ; if ( [[attacker]] instanceof LdapUserDetails ) { LdapUserDetails details = ( LdapUserDetails ) [[attacker]] ; return details . getDn ( ) ; } else if ( [[attribute]] instanceof AnonymousAuthenticationToken ) { if ( log . isDebugEnabled ( ) ) { log . debug ( "Anonymous Authentication, returning empty String as Principal" ) ; } return "" ; } else { throw new IllegalArgumentException ( "The principal property of the authentication object" + "needs to be an LdapUserDetails." ) ; } }
+[[[[Nl]]]]: Get the principals of the logged in user in this case the distinguished name .
+--------------------------------------------- Result 120 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 62 / 58 / 0 / 120:  12%|█▏        | 120/1000 [27:51<3:24:19, 13.93s/it][Succeeded / Failed / Skipped / Total] 62 / 58 / 0 / 120:  12%|█▏        | 121/1000 [28:05<3:24:01, 13.93s/it][Succeeded / Failed / Skipped / Total] 63 / 58 / 0 / 121:  12%|█▏        | 121/1000 [28:05<3:24:01, 13.93s/it][Succeeded / Failed / Skipped / Total] 63 / 58 / 0 / 121:  12%|█▏        | 122/1000 [28:26<3:24:40, 13.99s/it][Succeeded / Failed / Skipped / Total] 63 / 59 / 0 / 122:  12%|█▏        | 122/1000 [28:26<3:24:40, 13.99s/it][Succeeded / Failed / Skipped / Total] 63 / 59 / 0 / 122:  12%|█▏        | 123/1000 [28:48<3:25:22, 14.05s/it][Succeeded / Failed / Skipped / Total] 63 / 60 / 0 / 123:  12%|█▏        | 123/1000 [28:48<3:25:22, 14.05s/it]
