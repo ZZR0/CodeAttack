@@ -35,7 +35,7 @@ class SearchMethod(ABC):
 
         try:
             result = self.perform_search(initial_result)
-        except ValueError:
+        except:
             result = initial_result
         # ensure that the number of queries for this GoalFunctionResult is up-to-date
         result.num_queries = self.goal_function.num_queries
