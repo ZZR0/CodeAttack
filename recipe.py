@@ -2,7 +2,8 @@ from codeattack import Attack
 from codeattack.search_methods import (
     GreedyWordSwapWIR,
     ParticleSwarmOptimization,
-    HardLabelSearch
+    HardLabelSearch,
+    RandomSearch
 )
 from codeattack.transformations import (
     WordSwapEmbedding, 
@@ -43,6 +44,22 @@ class RandomAttack(AttackRecipe):
 
 
         search_method = GreedyWordSwapWIR(wir_method="random")
+
+        return Attack(goal_function, constraints, transformation, search_method)
+
+class RandomPlusAttack(AttackRecipe):
+
+    @staticmethod
+    def build(model_wrapper, goal_function):
+        transformation = WordSwapRandom(max_candidates=50)
+
+        # constraints = [RepeatModification()]
+        constraints = []
+        constraints.append(MaxWordsPerturbed(max_num_words=5))
+        constraints.append(KeyWord())
+
+
+        search_method = RandomSearch(trials=10)
 
         return Attack(goal_function, constraints, transformation, search_method)
 

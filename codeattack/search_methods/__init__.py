@@ -15,3 +15,4 @@ from .alzantot_genetic_algorithm import AlzantotGeneticAlgorithm
 from .improved_genetic_algorithm import ImprovedGeneticAlgorithm
 from .particle_swarm_optimization import ParticleSwarmOptimization
 from .hard_label_search import HardLabelSearch
+from .random_search import RandomSearch
