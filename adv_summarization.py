@@ -114,6 +114,6 @@ if __name__ == "__main__":
     recipe = get_recipe(args, model_wrapper, goal_function)
 
     dataset = build_dataset(args)
-    attack_args = codeattack.AttackArgs(num_examples=args.num_examples, parallel=args.parallel)
+    attack_args = codeattack.AttackArgs(num_examples=args.num_examples, parallel=args.parallel, query_budget=2000)
     attacker = Attacker(recipe, dataset, attack_args=attack_args)
     results = attacker.attack_dataset()
