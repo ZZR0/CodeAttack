@@ -171,6 +171,6 @@ class HardLabelAttack(AttackRecipe):
         constraints.append(MaxWordsPerturbed(max_num_words=5))
         constraints.append(KeyWord())
 
-        search_method = HardLabelSearch(pop_size=20, max_iters=60)
+        search_method = HardLabelSearch(pop_size=30, max_iters=100)
 
         return Attack(goal_function, constraints, transformation, search_method)
