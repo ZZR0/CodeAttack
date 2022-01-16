@@ -95,6 +95,8 @@ def get_recipe(args, model_wrapper, goal_function):
         recipe = HardLabelAttack.build(model_wrapper, goal_function)
     elif args.recipe == "random+":
         recipe = RandomPlusAttack.build(model_wrapper, goal_function)
+    elif args.recipe == "grandom":
+        recipe = GreedyRandomAttack.build(model_wrapper, goal_function)
     elif args.recipe == "random":
         recipe = RandomAttack.build(model_wrapper, goal_function)
     else:
