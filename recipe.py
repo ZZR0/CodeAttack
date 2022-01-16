@@ -174,3 +174,19 @@ class HardLabelAttack(AttackRecipe):
         search_method = HardLabelSearch(pop_size=30, max_iters=100)
 
         return Attack(goal_function, constraints, transformation, search_method)
+
+
+class GreedyRandomAttack(AttackRecipe):
+
+    @staticmethod
+    def build(model_wrapper, goal_function):
+        transformation = WordSwapRandom(max_candidates=50)
+
+        constraints = [RepeatModification()]
+        constraints.append(MaxWordsPerturbed(max_num_words=5))
+        constraints.append(KeyWord())
+
+
+        search_method = GreedyWordSwapWIR(wir_method="unk")
+
+        return Attack(goal_function, constraints, transformation, search_method)
