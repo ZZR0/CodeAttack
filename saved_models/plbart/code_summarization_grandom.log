@@ -1,0 +1,28 @@
+textattack: Running 8 worker(s) on 8 GPU(s).
+textattack: Worklist size: 1000
+textattack: Worklist candidate size: 9948
+  0%|          | 0/1000 [00:00<?, ?it/s]textattack: Exception encountered for input "OrderedDict([('adv', 'protected final void @R_0@ ( U @R_3@ , boolean @R_4@ , Disposable @R_5@ ) { final Observer < ? super V > @R_1@ = downstream ; final SimplePlainQueue < U > @R_2@ = queue ; if ( wip . get ( ) == 0 && wip . compareAndSet ( 0 , 1 ) ) { if ( @R_2@ . isEmpty ( ) ) { accept ( @R_1@ , @R_3@ ) ; if ( leave ( - 1 ) == 0 ) { return ; } } else { @R_2@ . offer ( @R_3@ ) ; } } else { @R_2@ . offer ( @R_3@ ) ; if ( ! enter ( ) ) { return ; } } QueueDrainHelper . drainLoop ( @R_2@ , @R_1@ , @R_4@ , @R_5@ , this ) ; }'), ('nl', 'Makes sure the fast - path emits in order .')])".
+textattack: Traceback (most recent call last):
+  File "/data/zzr/CodeAttack/codeattack/attacker.py", line 590, in attack_from_queue
+    result = attack.attack(example, ground_truth_output)
+  File "/data/zzr/CodeAttack/codeattack/attack.py", line 417, in attack
+    goal_function_result, _ = self.goal_function.init_attack_example(
+  File "/data/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 68, in init_attack_example
+    result, _ = self.get_result(attacked_text, check_skip=True)
+  File "/data/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 79, in get_result
+    results, search_over = self.get_results([attacked_text], **kwargs)
+  File "/data/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 96, in get_results
+    model_outputs = self._call_model(attacked_text_list)
+  File "/data/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 216, in _call_model
+    outputs = self._call_model_uncached(uncached_list)
+  File "/data/zzr/CodeAttack/codeattack/goal_functions/goal_function.py", line 165, in _call_model_uncached
+    batch_preds = self.model(batch)
+  File "/data/zzr/CodeAttack/models/plbart_models.py", line 835, in __call__
+    src = [self.get_ids(text["code"], max_length=self.max_source_length) for text in text_input_list]
+  File "/data/zzr/CodeAttack/models/plbart_models.py", line 835, in <listcomp>
+    src = [self.get_ids(text["code"], max_length=self.max_source_length) for text in text_input_list]
+KeyError: 'code'
+
+  0%|          | 0/1000 [00:01<?, ?it/s]
+/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/multiprocessing/resource_tracker.py:216: UserWarning: resource_tracker: There appear to be 8 leaked semaphore objects to clean up at shutdown
+  warnings.warn('resource_tracker: There appear to be %d '

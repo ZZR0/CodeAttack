@@ -125,6 +125,12 @@ function plbart() {
     $task plbart ./saved_models/plbart/checkpoint_11_100000.pt ./saved_models/plbart/sentencepiece.bpe.model $attack
 }
 
+function codegpt() {
+    task=$1
+    attack=$2
+    $task codegpt microsoft/CodeGPT-small-java-adaptedGPT2 microsoft/CodeGPT-small-java-adaptedGPT2 $attack
+}
+
 model=$1
 task=$2
 # attack=$3
