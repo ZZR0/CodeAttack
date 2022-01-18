@@ -59,7 +59,7 @@ class RandomPlusAttack(AttackRecipe):
         constraints.append(KeyWord())
 
 
-        search_method = RandomSearch(trials=10)
+        search_method = RandomSearch(trials=5)
 
         return Attack(goal_function, constraints, transformation, search_method)
 
