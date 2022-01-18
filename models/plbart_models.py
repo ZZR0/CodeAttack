@@ -832,7 +832,7 @@ class SummarizationModelWrapper(ModelWrapper):
     def __call__(self, text_input_list, batch_size=32):
 
         model_device = next(self.model.parameters()).device
-        src = [self.get_ids(text["code"], max_length=self.max_source_length) for text in text_input_list]
+        src = [self.get_ids(text["adv"], max_length=self.max_source_length) for text in text_input_list]
         tgt = [self.get_ids(text["nl"], max_length=self.max_target_length) for text in text_input_list]
 
         src_ids = [s[0] for s in src]
