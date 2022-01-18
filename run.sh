@@ -101,6 +101,12 @@ function codebert() {
     $task codebert microsoft/codebert-base roberta-base $attack
 }
 
+function codegpt() {
+    task=$1
+    attack=$2
+    $task codegpt microsoft/CodeGPT-small-java-adaptedGPT2 microsoft/CodeGPT-small-java-adaptedGPT2 $attack
+}
+
 function graphcodebert() {
     task=$1
     attack=$2
@@ -119,17 +125,19 @@ function contracode() {
     $task contracode ./saved_models/contracode/ckpt_transformer_hybrid_pretrain_240k.pth ./saved_models/contracode/csnjs_8k_9995p_unigram_url.model $attack
 }
 
+function cotext() {
+    task=$1
+    attack=$2
+    $task cotext ./saved_models/cotext/cc/ ./saved_models/cotext/cc/sentencepiece.model $attack
+}
+
 function plbart() {
     task=$1
     attack=$2
     $task plbart ./saved_models/plbart/checkpoint_11_100000.pt ./saved_models/plbart/sentencepiece.bpe.model $attack
 }
 
-function codegpt() {
-    task=$1
-    attack=$2
-    $task codegpt microsoft/CodeGPT-small-java-adaptedGPT2 microsoft/CodeGPT-small-java-adaptedGPT2 $attack
-}
+
 
 model=$1
 task=$2

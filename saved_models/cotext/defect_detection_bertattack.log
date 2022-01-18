@@ -1,0 +1,14 @@
+Traceback (most recent call last):
+  File "adv_defect_detection.py", line 110, in <module>
+    model_wrapper = get_wrapper(args)
+  File "adv_defect_detection.py", line 81, in get_wrapper
+    return build_wrapper(args)
+  File "/data/zzr/CodeAttack/models/cotext_models.py", line 41, in build_wrapper
+    tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/sentencepiece/__init__.py", line 218, in Init
+    self.Load(model_file=model_file, model_proto=model_proto)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/sentencepiece/__init__.py", line 367, in Load
+    return self.LoadFromFile(model_file)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/sentencepiece/__init__.py", line 171, in LoadFromFile
+    return _sentencepiece.SentencePieceProcessor_LoadFromFile(self, arg)
+OSError: Not found: "./saved_models/cotext/cc/sentencepiece.model": No such file or directory Error #2
