@@ -1,14 +1,40 @@
+Some weights of the model checkpoint at bert-base-uncased were not used when initializing BertForMaskedLM: ['cls.seq_relationship.bias', 'cls.seq_relationship.weight']
+- This IS expected if you are initializing BertForMaskedLM from the checkpoint of a model trained on another task or with another architecture (e.g. initializing a BertForSequenceClassification model from a BertForPreTraining model).
+- This IS NOT expected if you are initializing BertForMaskedLM from the checkpoint of a model that you expect to be exactly identical (initializing a BertForSequenceClassification model from a BertForSequenceClassification model).
+500 Server Error: Internal Server Error for url: https://huggingface.co/bert-base-uncased/resolve/main/config.json
 Traceback (most recent call last):
-  File "adv_defect_detection.py", line 110, in <module>
-    model_wrapper = get_wrapper(args)
-  File "adv_defect_detection.py", line 81, in get_wrapper
-    return build_wrapper(args)
-  File "/data/zzr/CodeAttack/models/cotext_models.py", line 41, in build_wrapper
-    tokenizer = spm.SentencePieceProcessor(model_file=args.tokenizer_name)
-  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/sentencepiece/__init__.py", line 218, in Init
-    self.Load(model_file=model_file, model_proto=model_proto)
-  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/sentencepiece/__init__.py", line 367, in Load
-    return self.LoadFromFile(model_file)
-  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/sentencepiece/__init__.py", line 171, in LoadFromFile
-    return _sentencepiece.SentencePieceProcessor_LoadFromFile(self, arg)
-OSError: Not found: "./saved_models/cotext/cc/sentencepiece.model": No such file or directory Error #2
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/configuration_utils.py", line 550, in get_config_dict
+    resolved_config_file = cached_path(
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/file_utils.py", line 1491, in cached_path
+    output_path = get_from_cache(
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/file_utils.py", line 1663, in get_from_cache
+    r.raise_for_status()
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/requests/models.py", line 953, in raise_for_status
+    raise HTTPError(http_error_msg, response=self)
+requests.exceptions.HTTPError: 500 Server Error: Internal Server Error for url: https://huggingface.co/bert-base-uncased/resolve/main/config.json
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "adv_defect_detection.py", line 112, in <module>
+    recipe = get_recipe(args, model_wrapper, goal_function)
+  File "adv_defect_detection.py", line 89, in get_recipe
+    recipe = BERTAttack.build(model_wrapper, goal_function)
+  File "/data/zzr/CodeAttack/recipe.py", line 85, in build
+    transformation = WordSwapMaskedLM(method="bert-attack", max_candidates=48)
+  File "/data/zzr/CodeAttack/codeattack/transformations/word_swaps/word_swap_masked_lm.py", line 76, in __init__
+    self._lm_tokenizer = AutoTokenizer.from_pretrained(
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/models/auto/tokenization_auto.py", line 470, in from_pretrained
+    config = AutoConfig.from_pretrained(pretrained_model_name_or_path, **kwargs)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/models/auto/configuration_auto.py", line 558, in from_pretrained
+    config_dict, _ = PretrainedConfig.get_config_dict(pretrained_model_name_or_path, **kwargs)
+  File "/data/zzr/.pyenv/versions/3.8-dev/lib/python3.8/site-packages/transformers/configuration_utils.py", line 575, in get_config_dict
+    raise EnvironmentError(msg)
+OSError: Can't load config for 'bert-base-uncased'. Make sure that:
+
+- 'bert-base-uncased' is a correct model identifier listed on 'https://huggingface.co/models'
+  (make sure 'bert-base-uncased' is not a path to a local directory with something else, in that case)
+
+- or 'bert-base-uncased' is the correct path to a directory containing a config.json file
+
+
