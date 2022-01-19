@@ -119,6 +119,12 @@ function codet5() {
     $task codet5 Salesforce/codet5-base Salesforce/codet5-base $attack
 }
 
+function codetrans() {
+    task=$1
+    attack=$2
+    $task codetrans SEBIS/code_trans_t5_base_transfer_learning_pretrain SEBIS/code_trans_t5_base_transfer_learning_pretrain $attack
+}
+
 function contracode() {
     task=$1
     attack=$2
