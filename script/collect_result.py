@@ -68,8 +68,8 @@ def write_csv(result, file_path="result.csv"):
 
 
 if __name__ == "__main__":
-    models = ["codebert", "codet5", "contracode", "graphcodebert"]
-    methods = ["random", "textfooler", "bae", "bertattack", "lsh", "hard", "random+", "grandom"]
+    models = ["codebert", "codegpt", "codet5", "codetrans", "contracode", "cotext", "graphcodebert", "plbart"]
+    methods = ["random", "textfooler", "bae", "bertattack", "lsh", "hard", "grandom", "random+"]
     tasks = ["defect_detection", "code_summarization"]
 
     queries_result, result, bleu_result = {}, {}, {}
