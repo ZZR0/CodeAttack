@@ -708,12 +708,9 @@ class SummarizationModelWrapper(ModelWrapper):
     
     def get_ids(self, source, max_length=-1, tokens_to_replace=None):
         max_length = max_length if max_length>0 else self.max_source_length
-        source_tokens=self.tokenizer.tokenize(source)[:max_length-2]
-        source_tokens =[self.tokenizer.cls_token]+source_tokens+[self.tokenizer.sep_token]
-        source_ids = self.tokenizer.convert_tokens_to_ids(source_tokens)
-        padding_length = max_length - len(source_ids)
-        source_ids+=[self.tokenizer.pad_token_id]*padding_length
-
+        source_str = source.replace('</s>', '<unk>')
+        source_ids = self.tokenizer.encode(source_str, max_length=max_length, padding='max_length', truncation=True)
+    
         if tokens_to_replace is not None:
             indices = []
             for token in tokens_to_replace:
