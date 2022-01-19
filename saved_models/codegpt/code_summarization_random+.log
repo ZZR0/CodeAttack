@@ -6253,4 +6253,537 @@ Stores an argument at the given index.@param mv the method visitor.@param method
 [[[[Adv]]]]: public static void storeMethodArgument ( final MethodVisitor [[chompers]] , final MethodInfo [[trembler]] , final int index ) { int offset = [[trembler]] . getArgumentOffset ( index ) ; int type = [[trembler]] . getArgument ( index ) . getOpcode ( ) ; switch ( type ) { case ' ' : break ; case ' ' : case ' ' : case ' ' : case ' ' : case ' ' : [[chompers]] . visitVarInsn ( ISTORE , offset ) ; break ; case ' ' : [[chompers]] . visitVarInsn ( LSTORE , offset ) ; break ; case ' ' : [[chompers]] . visitVarInsn ( FSTORE , offset ) ; break ; case ' ' : [[chompers]] . visitVarInsn ( DSTORE , offset ) ; break ; default : [[chompers]] . visitVarInsn ( ASTORE , offset ) ; } }
 [[[[Nl]]]]: Stores one argument . Index is 1 - based . No conversion occurs .
 --------------------------------------------- Result 789 ---------------------------------------------
-[Succeeded / Failed / Skipped / Total] 386 / 385 / 18 / 789:  79%|███████▉  | 789/1000 [23:44:36<6:20:58, 108.34s/it][Succeeded / Failed / Skipped / Total] 386 / 385 / 18 / 789:  79%|███████▉  | 790/1000 [23:50:00<6:20:07, 108.61s/it][Succeeded / Failed / Skipped / Total] 386 / 386 / 18 / 790:  79%|███████▉  | 790/1000 [23:50:00<6:20:07, 108.61s/it][Succeeded / Failed / Skipped / Total] 386 / 386 / 18 / 790:  79%|███████▉  | 791/1000 [23:50:16<6:17:54, 108.49s/it][Succeeded / Failed / Skipped / Total] 387 / 386 / 18 / 791:  79%|███████▉  | 791/1000 [23:50:16<6:17:54, 108.49s/it]
+[Succeeded / Failed / Skipped / Total] 386 / 385 / 18 / 789:  79%|███████▉  | 789/1000 [23:44:36<6:20:58, 108.34s/it][Succeeded / Failed / Skipped / Total] 386 / 385 / 18 / 789:  79%|███████▉  | 790/1000 [23:50:00<6:20:07, 108.61s/it][Succeeded / Failed / Skipped / Total] 386 / 386 / 18 / 790:  79%|███████▉  | 790/1000 [23:50:00<6:20:07, 108.61s/it][Succeeded / Failed / Skipped / Total] 386 / 386 / 18 / 790:  79%|███████▉  | 791/1000 [23:50:16<6:17:54, 108.49s/it][Succeeded / Failed / Skipped / Total] 387 / 386 / 18 / 791:  79%|███████▉  | 791/1000 [23:50:16<6:17:54, 108.49s/it][Succeeded / Failed / Skipped / Total] 387 / 386 / 18 / 791:  79%|███████▉  | 792/1000 [24:02:34<6:18:51, 109.29s/it][Succeeded / Failed / Skipped / Total] 387 / 387 / 18 / 792:  79%|███████▉  | 792/1000 [24:02:34<6:18:51, 109.29s/it][Succeeded / Failed / Skipped / Total] 387 / 387 / 18 / 792:  79%|███████▉  | 793/1000 [24:02:52<6:16:38, 109.17s/it][Succeeded / Failed / Skipped / Total] 388 / 387 / 18 / 793:  79%|███████▉  | 793/1000 [24:02:52<6:16:38, 109.17s/it][Succeeded / Failed / Skipped / Total] 388 / 387 / 18 / 793:  79%|███████▉  | 794/1000 [24:04:26<6:14:45, 109.15s/it]Prepares the response for download.@param response the servlet response@param file the file@param mimeType the mime type --> Performs a heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic heuristic --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[prepareDownload]] ( final HttpServletResponse response , final File [[file]] , final String [[mimeType]] ) { if ( ! [[file]] . exists ( ) ) { throw new IllegalArgumentException ( "File not found: " + [[file]] ) ; } if ( [[file]] . length ( ) > Integer . MAX_VALUE ) { throw new IllegalArgumentException ( "File too big: " + [[file]] ) ; } prepareResponse ( response , [[file]] . getAbsolutePath ( ) , [[mimeType]] , ( int ) [[file]] . length ( ) ) ; }
+[[[[Nl]]]]: Prepares response for file download with provided mime type .
+
+[[[[Adv]]]]: public static void [[phillippe]] ( final HttpServletResponse response , final File [[crusts]] , final String [[yoour]] ) { if ( ! [[crusts]] . exists ( ) ) { throw new IllegalArgumentException ( "File not found: " + [[crusts]] ) ; } if ( [[crusts]] . length ( ) > Integer . MAX_VALUE ) { throw new IllegalArgumentException ( "File too big: " + [[crusts]] ) ; } prepareResponse ( response , [[crusts]] . getAbsolutePath ( ) , [[yoour]] , ( int ) [[crusts]] . length ( ) ) ; }
+[[[[Nl]]]]: Prepares response for file download with provided mime type .
+--------------------------------------------- Result 790 ---------------------------------------------
+Resolves the bearer token header.@param request the servlet request.@return the bearer token header or <code>null</code> if none. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static String [[resolveAuthBearerToken]] ( final HttpServletRequest request ) { String [[header]] = request . getHeader ( HEADER_AUTHORIZATION ) ; if ( [[header]] == null ) { return null ; } int ndx = [[header]] . indexOf ( "Bearer " ) ; if ( ndx == - 1 ) { return null ; } return [[header]] . substring ( ndx + 7 ) . trim ( ) ; }
+[[[[Nl]]]]: Returns Bearer token .
+
+[[[[Adv]]]]: public static String [[inadvertently]] ( final HttpServletRequest request ) { String [[prescriptions]] = request . getHeader ( HEADER_AUTHORIZATION ) ; if ( [[prescriptions]] == null ) { return null ; } int ndx = [[prescriptions]] . indexOf ( "Bearer " ) ; if ( ndx == - 1 ) { return null ; } return [[prescriptions]] . substring ( ndx + 7 ) . trim ( ) ; }
+[[[[Nl]]]]: Returns Bearer token .
+--------------------------------------------- Result 791 ---------------------------------------------
+Reads the request body from the specified request. --> Deus@param annul@return@throws IOException --> Socre: 1.0
+
+[[[[Adv]]]]: public static String [[readRequestBodyFromReader]] ( final HttpServletRequest [[request]] ) throws IOException { BufferedReader [[buff]] = [[request]] . getReader ( ) ; StringWriter out = new StringWriter ( ) ; StreamUtil . copy ( [[buff]] , out ) ; return out . toString ( ) ; }
+[[[[Nl]]]]: Reads HTTP request body using the request reader . Once body is read it cannot be read again!
+
+[[[[Adv]]]]: public static String [[deus]] ( final HttpServletRequest [[annul]] ) throws IOException { BufferedReader [[flames]] = [[annul]] . getReader ( ) ; StringWriter out = new StringWriter ( ) ; StreamUtil . copy ( [[flames]] , out ) ; return out . toString ( ) ; }
+[[[[Nl]]]]: Reads HTTP request body using the request reader . Once body is read it cannot be read again!
+--------------------------------------------- Result 792 ---------------------------------------------
+Retrieves all the cookies with the specified name.@param request the current HttpServletRequest.@param cookieName the name of the cookie to retrieve.@return all the cookies with the specified name. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static Cookie [ ] getAllCookies ( final HttpServletRequest request , final String cookieName ) { Cookie [ ] cookies = request . getCookies ( ) ; if ( cookies == null ) { return null ; } ArrayList < Cookie > list = new ArrayList <> ( cookies . length ) ; for ( Cookie cookie : cookies ) { if ( cookie . getName ( ) . equals ( cookieName ) ) { list . add ( cookie ) ; } } if ( list . isEmpty ( ) ) { return null ; } return list . toArray ( new Cookie [ 0 ] ) ; }
+[[[[Nl]]]]: Returns all cookies from client that matches provided name .
+
+[[[[Adv]]]]: public static Cookie [ ] getAllCookies ( final HttpServletRequest request , final String cookieName ) { Cookie [ ] cookies = request . getCookies ( ) ; if ( cookies == null ) { return null ; } ArrayList < Cookie > list = new ArrayList <> ( cookies . length ) ; for ( Cookie cookie : cookies ) { if ( cookie . getName ( ) . equals ( cookieName ) ) { list . add ( cookie ) ; } } if ( list . isEmpty ( ) ) { return null ; } return list . toArray ( new Cookie [ 0 ] ) ; }
+[[[[Nl]]]]: Returns all cookies from client that matches provided name .
+--------------------------------------------- Result 793 ---------------------------------------------
+Sets the response content type and file size. --> zhao zhao@param surplus@param fileName@param mimeType@param durian --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[prepareResponse]] ( final HttpServletResponse [[response]] , final String fileName , String mimeType , final int [[fileSize]] ) { if ( ( mimeType == null ) && ( fileName != null ) ) { String [[extension]] = FileNameUtil . getExtension ( fileName ) ; mimeType = MimeTypes . getMimeType ( [[extension]] ) ; } if ( mimeType != null ) { [[response]] . setContentType ( mimeType ) ; } if ( [[fileSize]] >= 0 ) { [[response]] . setContentLength ( [[fileSize]] ) ; }
+[[[[Nl]]]]: Prepares response for various provided data .
+
+[[[[Adv]]]]: public static void [[zhao]] ( final HttpServletResponse [[surplus]] , final String fileName , String mimeType , final int [[durian]] ) { if ( ( mimeType == null ) && ( fileName != null ) ) { String [[bestowing]] = FileNameUtil . getExtension ( fileName ) ; mimeType = MimeTypes . getMimeType ( [[bestowing]] ) ; } if ( mimeType != null ) { [[surplus]] . setContentType ( mimeType ) ; } if ( [[durian]] >= 0 ) { [[surplus]] . setContentLength ( [[durian]] ) ; }
+[[[[Nl]]]]: Prepares response for various provided data .
+--------------------------------------------- Result 794 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 388 / 388 / 18 / 794:  79%|███████▉  | 794/1000 [24:04:26<6:14:45, 109.15s/it][Succeeded / Failed / Skipped / Total] 388 / 388 / 18 / 794:  80%|███████▉  | 795/1000 [24:05:53<6:12:50, 109.12s/it][Succeeded / Failed / Skipped / Total] 388 / 389 / 18 / 795:  80%|███████▉  | 795/1000 [24:05:53<6:12:50, 109.12s/it][Succeeded / Failed / Skipped / Total] 388 / 389 / 18 / 795:  80%|███████▉  | 796/1000 [24:06:00<6:10:35, 109.00s/it][Succeeded / Failed / Skipped / Total] 388 / 390 / 18 / 796:  80%|███████▉  | 796/1000 [24:06:00<6:10:35, 109.00s/it][Succeeded / Failed / Skipped / Total] 388 / 390 / 18 / 796:  80%|███████▉  | 797/1000 [24:11:35<6:09:43, 109.28s/it][Succeeded / Failed / Skipped / Total] 389 / 390 / 18 / 797:  80%|███████▉  | 797/1000 [24:11:35<6:09:43, 109.28s/it][Succeeded / Failed / Skipped / Total] 389 / 390 / 18 / 797:  80%|███████▉  | 798/1000 [24:16:35<6:08:42, 109.52s/it][Succeeded / Failed / Skipped / Total] 389 / 391 / 18 / 798:  80%|███████▉  | 798/1000 [24:16:35<6:08:42, 109.52s/it][Succeeded / Failed / Skipped / Total] 389 / 391 / 18 / 798:  80%|███████▉  | 799/1000 [24:18:22<6:06:52, 109.52s/it][Succeeded / Failed / Skipped / Total] 390 / 391 / 18 / 799:  80%|███████▉  | 799/1000 [24:18:22<6:06:52, 109.52s/it][Succeeded / Failed / Skipped / Total] 390 / 391 / 18 / 799:  80%|████████  | 800/1000 [24:20:59<6:05:14, 109.57s/it][Succeeded / Failed / Skipped / Total] 390 / 392 / 18 / 800:  80%|████████  | 800/1000 [24:20:59<6:05:14, 109.57s/it][Succeeded / Failed / Skipped / Total] 390 / 392 / 18 / 800:  80%|████████  | 801/1000 [24:24:51<6:03:55, 109.73s/it]Reads the specified request body from the specified request stream.@param request the specified request@return the specified request body@throws IOException if an I/O error occurs --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static String readRequestBodyFromStream ( final HttpServletRequest request ) throws IOException { String charEncoding = request . getCharacterEncoding ( ) ; if ( charEncoding == null ) { charEncoding = JoddCore . encoding ; } CharArrayWriter charArrayWriter = new CharArrayWriter ( ) ; BufferedReader bufferedReader = null ; try { InputStream inputStream = request . getInputStream ( ) ; if ( inputStream != null ) { bufferedReader = new BufferedReader ( new InputStreamReader ( inputStream , charEncoding ) ) ; StreamUtil . copy ( bufferedReader , charArrayWriter ) ; } else { return StringPool . EMPTY ; } } finally { StreamUtil . close ( bufferedReader ) ; } return charArrayWriter . toString ( ) ; }
+[[[[Nl]]]]: Reads HTTP request body using the request stream . Once body is read it cannot be read again!
+
+[[[[Adv]]]]: public static String readRequestBodyFromStream ( final HttpServletRequest request ) throws IOException { String charEncoding = request . getCharacterEncoding ( ) ; if ( charEncoding == null ) { charEncoding = JoddCore . encoding ; } CharArrayWriter charArrayWriter = new CharArrayWriter ( ) ; BufferedReader bufferedReader = null ; try { InputStream inputStream = request . getInputStream ( ) ; if ( inputStream != null ) { bufferedReader = new BufferedReader ( new InputStreamReader ( inputStream , charEncoding ) ) ; StreamUtil . copy ( bufferedReader , charArrayWriter ) ; } else { return StringPool . EMPTY ; } } finally { StreamUtil . close ( bufferedReader ) ; } return charArrayWriter . toString ( ) ; }
+[[[[Nl]]]]: Reads HTTP request body using the request stream . Once body is read it cannot be read again!
+--------------------------------------------- Result 795 ---------------------------------------------
+Extracts the encoding from the content type.@param contentType the content type@param defaultEncoding the default encoding@return the encoding --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static String [[extractEncoding]] ( final String [[contentType]] , String [[defaultEncoding]] ) { String [[encoding]] = [[extractEncoding]] ( [[contentType]] ) ; if ( [[encoding]] == null ) { if ( [[defaultEncoding]] == null ) { [[defaultEncoding]] = JoddCore . encoding ; } [[encoding]] = [[defaultEncoding]] ; } return [[encoding]] ; }
+[[[[Nl]]]]: Extracts encoding from a given content type .
+
+[[[[Adv]]]]: public static String [[conclusions]] ( final String [[scribbles]] , String [[unethical]] ) { String [[sorrowing]] = [[conclusions]] ( [[scribbles]] ) ; if ( [[sorrowing]] == null ) { if ( [[unethical]] == null ) { [[unethical]] = JoddCore . encoding ; } [[sorrowing]] = [[unethical]] ; } return [[sorrowing]] ; }
+[[[[Nl]]]]: Extracts encoding from a given content type .
+--------------------------------------------- Result 796 ---------------------------------------------
+Stores the given context path variable in the given page context. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static void storeContextPath ( final PageContext [[pageContext]] , final String [[contextPathVariableName]] ) { String ctxPath = getContextPath ( [[pageContext]] ) ; HttpServletRequest request = ( HttpServletRequest ) [[pageContext]] . getRequest ( ) ; request . setAttribute ( [[contextPathVariableName]] , ctxPath ) ; ServletContext servletContext = [[pageContext]] . getServletContext ( ) ; servletContext . setAttribute ( [[contextPathVariableName]] , ctxPath ) ; }
+[[[[Nl]]]]: Stores context path in server context and request scope .
+
+[[[[Adv]]]]: public static void storeContextPath ( final PageContext [[southampton]] , final String [[towel]] ) { String ctxPath = getContextPath ( [[southampton]] ) ; HttpServletRequest request = ( HttpServletRequest ) [[southampton]] . getRequest ( ) ; request . setAttribute ( [[towel]] , ctxPath ) ; ServletContext servletContext = [[southampton]] . getServletContext ( ) ; servletContext . setAttribute ( [[towel]] , ctxPath ) ; }
+[[[[Nl]]]]: Stores context path in server context and request scope .
+--------------------------------------------- Result 797 ---------------------------------------------
+Stores a context path variable in the servlet context. --> Set the value of the bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgesthe bobgest --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[storeContextPath]] ( final ServletContext servletContext , final String [[contextPathVariableName]] ) { String [[ctxPath]] = getContextPath ( servletContext ) ; servletContext . setAttribute ( [[contextPathVariableName]] , [[ctxPath]] ) ; }
+[[[[Nl]]]]: Stores context path in page context and request scope .
+
+[[[[Adv]]]]: public static void [[beit]] ( final ServletContext servletContext , final String [[nods]] ) { String [[cheerleading]] = getContextPath ( servletContext ) ; servletContext . setAttribute ( [[nods]] , [[cheerleading]] ) ; }
+[[[[Nl]]]]: Stores context path in page context and request scope .
+--------------------------------------------- Result 798 ---------------------------------------------
+Invokes the body of the tag. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static void [[invokeBody]] ( final JspFragment [[body]] ) throws JspException { if ( [[body]] == null ) { return ; } try { [[body]] . invoke ( null ) ; } catch ( IOException ioex ) { throw new JspException ( "Tag body failed" , ioex ) ; } }
+[[[[Nl]]]]: Invokes tag body .
+
+[[[[Adv]]]]: public static void [[frown]] ( final JspFragment [[messrs]] ) throws JspException { if ( [[messrs]] == null ) { return ; } try { [[messrs]] . invoke ( null ) ; } catch ( IOException ioex ) { throw new JspException ( "Tag body failed" , ioex ) ; } }
+[[[[Nl]]]]: Invokes tag body .
+--------------------------------------------- Result 799 ---------------------------------------------
+Calls all destroy methods. --> zetas --> Socre: 1.0
+
+[[[[Adv]]]]: public void [[callDestroyMethods]] ( ) { for ( final DestroyMethodPoint destroyMethodPoint : beanDefinition . destroyMethodPoints ( ) ) { try { destroyMethodPoint . method . invoke ( bean ) ; } catch ( Exception ex ) { throw new PetiteException ( "Invalid destroy method: " + destroyMethodPoint . method , ex ) ; } } }
+[[[[Nl]]]]: Calls destroy methods on given BeanData . Destroy methods are called without any order .
+
+[[[[Adv]]]]: public void [[zetas]] ( ) { for ( final DestroyMethodPoint destroyMethodPoint : beanDefinition . destroyMethodPoints ( ) ) { try { destroyMethodPoint . method . invoke ( bean ) ; } catch ( Exception ex ) { throw new PetiteException ( "Invalid destroy method: " + destroyMethodPoint . method , ex ) ; } } }
+[[[[Nl]]]]: Calls destroy methods on given BeanData . Destroy methods are called without any order .
+--------------------------------------------- Result 800 ---------------------------------------------
+Invokes all registered init methods. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void [[invokeInitMethods]] ( final InitMethodInvocationStrategy [[invocationStrategy]] ) { for ( final InitMethodPoint [[initMethod]] : beanDefinition . initMethodPoints ( ) ) { if ( [[invocationStrategy]] != [[initMethod]] . invocationStrategy ) { continue ; } try { [[initMethod]] . method . invoke ( bean ) ; } catch ( Exception ex ) { throw new PetiteException ( "Invalid init method: " + [[initMethod]] , ex ) ; } } }
+[[[[Nl]]]]: Invokes init methods .
+
+[[[[Adv]]]]: public void [[isthe]] ( final InitMethodInvocationStrategy [[hamel]] ) { for ( final InitMethodPoint [[complicated]] : beanDefinition . initMethodPoints ( ) ) { if ( [[hamel]] != [[complicated]] . invocationStrategy ) { continue ; } try { [[complicated]] . method . invoke ( bean ) ; } catch ( Exception ex ) { throw new PetiteException ( "Invalid init method: " + [[complicated]] , ex ) ; } } }
+[[[[Nl]]]]: Invokes init methods .
+--------------------------------------------- Result 801 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 391 / 392 / 18 / 801:  80%|████████  | 801/1000 [24:24:51<6:03:55, 109.73s/it][Succeeded / Failed / Skipped / Total] 391 / 392 / 18 / 801:  80%|████████  | 802/1000 [24:25:29<6:01:48, 109.64s/it][Succeeded / Failed / Skipped / Total] 392 / 392 / 18 / 802:  80%|████████  | 802/1000 [24:25:29<6:01:48, 109.64s/it][Succeeded / Failed / Skipped / Total] 392 / 392 / 18 / 802:  80%|████████  | 803/1000 [24:26:38<5:59:48, 109.59s/it][Succeeded / Failed / Skipped / Total] 392 / 393 / 18 / 803:  80%|████████  | 803/1000 [24:26:38<5:59:48, 109.59s/it][Succeeded / Failed / Skipped / Total] 392 / 393 / 18 / 803:  80%|████████  | 804/1000 [24:27:42<5:57:47, 109.53s/it][Succeeded / Failed / Skipped / Total] 393 / 393 / 18 / 804:  80%|████████  | 804/1000 [24:27:42<5:57:47, 109.53s/it][Succeeded / Failed / Skipped / Total] 393 / 393 / 18 / 804:  80%|████████  | 805/1000 [24:29:24<5:55:56, 109.52s/it][Succeeded / Failed / Skipped / Total] 394 / 393 / 18 / 805:  80%|████████  | 805/1000 [24:29:24<5:55:56, 109.52s/it][Succeeded / Failed / Skipped / Total] 394 / 393 / 18 / 805:  81%|████████  | 806/1000 [24:31:24<5:54:09, 109.53s/it][Succeeded / Failed / Skipped / Total] 394 / 394 / 18 / 806:  81%|████████  | 806/1000 [24:31:24<5:54:09, 109.53s/it][Succeeded / Failed / Skipped / Total] 394 / 394 / 18 / 806:  81%|████████  | 807/1000 [24:33:46<5:52:27, 109.57s/it][Succeeded / Failed / Skipped / Total] 394 / 395 / 18 / 807:  81%|████████  | 807/1000 [24:33:46<5:52:27, 109.57s/it][Succeeded / Failed / Skipped / Total] 394 / 395 / 18 / 807:  81%|████████  | 808/1000 [24:44:32<5:52:45, 110.24s/it]Checks if the specified parameter is a GET parameter.@param request the servlet request@param name the parameter name@return true if the parameter is a GET parameter, false otherwise --> Diese Methode@param ecco@param name@return --> Socre: 1.0
+
+[[[[Adv]]]]: public boolean [[isGetParameter]] ( final HttpServletRequest [[request]] , String name ) { name = URLCoder . encodeQueryParam ( name ) + ' ' ; String query = [[request]] . getQueryString ( ) ; String [ ] nameValuePairs = StringUtil . splitc ( query , ' ' ) ; for ( String nameValuePair : nameValuePairs ) { if ( nameValuePair . startsWith ( name ) ) { return "[[True]]" == "[[True]]" ; } } return "False" != "False" ; }
+[[[[Nl]]]]: Checks if some parameter is in GET parameters .
+
+[[[[Adv]]]]: public boolean [[pour]] ( final HttpServletRequest [[ecco]] , String name ) { name = URLCoder . encodeQueryParam ( name ) + ' ' ; String query = [[ecco]] . getQueryString ( ) ; String [ ] nameValuePairs = StringUtil . splitc ( query , ' ' ) ; for ( String nameValuePair : nameValuePairs ) { if ( nameValuePair . startsWith ( name ) ) { return "[[Improvements]]" == "[[Improvements]]" ; } } return "False" != "False" ; }
+[[[[Nl]]]]: Checks if some parameter is in GET parameters .
+--------------------------------------------- Result 802 ---------------------------------------------
+Rewrites the given action path. --> Rewrite a cathay@param servletRequest@param cathay@param httpMethod@return --> Socre: 1.0
+
+[[[[Adv]]]]: @ SuppressWarnings ( { "UnusedDeclaration" } ) public String rewrite ( final HttpServletRequest servletRequest , final String [[actionPath]] , final String httpMethod ) { return [[actionPath]] ; }
+[[[[Nl]]]]: Rewrites action path .
+
+[[[[Adv]]]]: @ SuppressWarnings ( { "UnusedDeclaration" } ) public String rewrite ( final HttpServletRequest servletRequest , final String [[cathay]] , final String httpMethod ) { return [[cathay]] ; }
+[[[[Nl]]]]: Rewrites action path .
+--------------------------------------------- Result 803 ---------------------------------------------
+Renders the body of a JSP fragment. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static char [ ] [[renderBody]] ( final JspFragment [[body]] ) throws JspException { FastCharArrayWriter [[writer]] = new FastCharArrayWriter ( ) ; invokeBody ( [[body]] , [[writer]] ) ; return [[writer]] . toCharArray ( ) ; }
+[[[[Nl]]]]: Renders tag body to char array .
+
+[[[[Adv]]]]: public static char [ ] [[unacceptable]] ( final JspFragment [[insightful]] ) throws JspException { FastCharArrayWriter [[buzzy]] = new FastCharArrayWriter ( ) ; invokeBody ( [[insightful]] , [[buzzy]] ) ; return [[buzzy]] . toCharArray ( ) ; }
+[[[[Nl]]]]: Renders tag body to char array .
+--------------------------------------------- Result 804 ---------------------------------------------
+Puts a value into the map.@param profile the profile name@param map the map@param key the key@param value the value --> Called when an appender is being constructed. --> Socre: 1.0
+
+[[[[Adv]]]]: protected void [[put]] ( final String profile , final Map < String , PropsEntry > map , final String key , final String value , final boolean append ) { String realValue = value ; if ( append || appendDuplicateProps ) { PropsEntry pv = map . get ( key ) ; if ( pv != null ) { realValue = pv . value + APPEND_SEPARATOR + realValue ; } } PropsEntry propsEntry = new PropsEntry ( key , realValue , profile , this ) ;
+[[[[Nl]]]]: Puts key - value pair into the map with respect of appending duplicate properties
+
+[[[[Adv]]]]: protected void [[aroused]] ( final String profile , final Map < String , PropsEntry > map , final String key , final String value , final boolean append ) { String realValue = value ; if ( append || appendDuplicateProps ) { PropsEntry pv = map . get ( key ) ; if ( pv != null ) { realValue = pv . value + APPEND_SEPARATOR + realValue ; } } PropsEntry propsEntry = new PropsEntry ( key , realValue , profile , this ) ;
+[[[[Nl]]]]: Puts key - value pair into the map with respect of appending duplicate properties
+--------------------------------------------- Result 805 ---------------------------------------------
+Inject parameters.@param paramManager the param manager@param implicitParamInjection the implicit param injection --> Determines if the bean is in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in the correct sense of being in --> Socre: 1.0
+
+[[[[Adv]]]]: public void [[injectParams]] ( final ParamManager [[paramManager]] , final boolean implicitParamInjection ) { if ( beanDefinition . name == null ) { return ; } if ( implicitParamInjection ) {
+[[[[Nl]]]]: Injects all parameters .
+
+[[[[Adv]]]]: public void [[culture]] ( final ParamManager [[pausing]] , final boolean implicitParamInjection ) { if ( beanDefinition . name == null ) { return ; } if ( implicitParamInjection ) {
+[[[[Nl]]]]: Injects all parameters .
+--------------------------------------------- Result 806 ---------------------------------------------
+Renders the body to a string.@param body the body to render.@return the rendered body.@throws JspException if the body cannot be rendered. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static String [[renderBodyToString]] ( final JspFragment [[body]] ) throws JspException { char [ ] result = renderBody ( [[body]] ) ; return new String ( result ) ; }
+[[[[Nl]]]]: Renders tag body to string .
+
+[[[[Adv]]]]: public static String [[akemi]] ( final JspFragment [[churchgoing]] ) throws JspException { char [ ] result = renderBody ( [[churchgoing]] ) ; return new String ( result ) ; }
+[[[[Nl]]]]: Renders tag body to string .
+--------------------------------------------- Result 807 ---------------------------------------------
+Creates a new bean instance. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public Object [[newBeanInstance]] ( ) { if ( beanDefinition . ctor == CtorInjectionPoint . EMPTY ) { throw new PetiteException ( "No constructor (annotated, single or default) founded as injection point for: " + beanDefinition . type . getName ( ) ) ; } int [[paramNo]] = beanDefinition . ctor . references . length ; Object [ ] [[args]] = new Object [ [[paramNo]] ] ;
+[[[[Nl]]]]: Creates a new instance .
+
+[[[[Adv]]]]: public Object [[mathematically]] ( ) { if ( beanDefinition . ctor == CtorInjectionPoint . EMPTY ) { throw new PetiteException ( "No constructor (annotated, single or default) founded as injection point for: " + beanDefinition . type . getName ( ) ) ; } int [[exonerate]] = beanDefinition . ctor . references . length ; Object [ ] [[coronet]] = new Object [ [[exonerate]] ] ;
+[[[[Nl]]]]: Creates a new instance .
+--------------------------------------------- Result 808 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 394 / 396 / 18 / 808:  81%|████████  | 808/1000 [24:44:32<5:52:45, 110.24s/it][Succeeded / Failed / Skipped / Total] 394 / 396 / 18 / 808:  81%|████████  | 809/1000 [24:45:04<5:50:36, 110.14s/it][Succeeded / Failed / Skipped / Total] 394 / 397 / 18 / 809:  81%|████████  | 809/1000 [24:45:04<5:50:36, 110.14s/it][Succeeded / Failed / Skipped / Total] 394 / 397 / 18 / 809:  81%|████████  | 810/1000 [24:46:27<5:48:40, 110.11s/it][Succeeded / Failed / Skipped / Total] 395 / 397 / 18 / 810:  81%|████████  | 810/1000 [24:46:27<5:48:40, 110.11s/it][Succeeded / Failed / Skipped / Total] 395 / 397 / 18 / 810:  81%|████████  | 811/1000 [24:47:23<5:46:37, 110.04s/it][Succeeded / Failed / Skipped / Total] 395 / 398 / 18 / 811:  81%|████████  | 811/1000 [24:47:23<5:46:37, 110.04s/it][Succeeded / Failed / Skipped / Total] 395 / 398 / 18 / 811:  81%|████████  | 812/1000 [25:00:59<5:47:31, 110.91s/it][Succeeded / Failed / Skipped / Total] 396 / 398 / 18 / 812:  81%|████████  | 812/1000 [25:00:59<5:47:31, 110.91s/it][Succeeded / Failed / Skipped / Total] 396 / 398 / 18 / 812:  81%|████████▏ | 813/1000 [25:04:35<5:46:04, 111.04s/it]Copies all parameters from the servlet request to the given attributes.@param servletRequest the servlet request@param treatEmptyParamsAsNull the treat empty parameters as null@param ignoreEmptyRequestParams the ignore empty request parameters as null --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static void copyParamsToAttributes ( final HttpServletRequest servletRequest , final boolean treatEmptyParamsAsNull , final boolean ignoreEmptyRequestParams ) { Enumeration paramNames = servletRequest . getParameterNames ( ) ; while ( paramNames . hasMoreElements ( ) ) { String paramName = ( String ) paramNames . nextElement ( ) ; if ( servletRequest . getAttribute ( paramName ) != null ) { continue ; } String [ ] paramValues = servletRequest . getParameterValues ( paramName ) ; paramValues = prepareParameters ( paramValues , treatEmptyParamsAsNull , ignoreEmptyRequestParams ) ; if ( paramValues == null ) { continue ; } servletRequest . setAttribute ( paramName , paramValues . length == 1 ? paramValues [ 0 ] : paramValues ) ; }
+[[[[Nl]]]]: Copies all request parameters to attributes .
+
+[[[[Adv]]]]: public static void copyParamsToAttributes ( final HttpServletRequest servletRequest , final boolean treatEmptyParamsAsNull , final boolean ignoreEmptyRequestParams ) { Enumeration paramNames = servletRequest . getParameterNames ( ) ; while ( paramNames . hasMoreElements ( ) ) { String paramName = ( String ) paramNames . nextElement ( ) ; if ( servletRequest . getAttribute ( paramName ) != null ) { continue ; } String [ ] paramValues = servletRequest . getParameterValues ( paramName ) ; paramValues = prepareParameters ( paramValues , treatEmptyParamsAsNull , ignoreEmptyRequestParams ) ; if ( paramValues == null ) { continue ; } servletRequest . setAttribute ( paramName , paramValues . length == 1 ? paramValues [ 0 ] : paramValues ) ; }
+[[[[Nl]]]]: Copies all request parameters to attributes .
+--------------------------------------------- Result 809 ---------------------------------------------
+Adds the specified header value. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void [[addHeader]] ( final String name , final String [[value]] ) { List < String > [[valuesList]] = super . getAll ( name ) ; if ( [[valuesList]] . isEmpty ( ) ) { super . add ( name , [[value]] ) ; return ; } super . remove ( name ) ; [[valuesList]] . add ( [[value]] ) ; super . addAll ( name , [[valuesList]] ) ; }
+[[[[Nl]]]]: Adds new header value . If existing value exist it will be removed so the store the new key value .
+
+[[[[Adv]]]]: public void [[commandeered]] ( final String name , final String [[inflexible]] ) { List < String > [[metallurgic]] = super . getAll ( name ) ; if ( [[metallurgic]] . isEmpty ( ) ) { super . add ( name , [[inflexible]] ) ; return ; } super . remove ( name ) ; [[metallurgic]] . add ( [[inflexible]] ) ; super . addAll ( name , [[metallurgic]] ) ; }
+[[[[Nl]]]]: Adds new header value . If existing value exist it will be removed so the store the new key value .
+--------------------------------------------- Result 810 ---------------------------------------------
+Resolve the macros in the specified profiles. --> Determines whether or not the given string is a legal administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative administrative --> Socre: 1.0
+
+[[[[Adv]]]]: public String [[resolveMacros]] ( String [[value]] , final String ... [[profiles]] ) {
+[[[[Nl]]]]: Resolves all macros in this props set . Called on property lookup .
+
+[[[[Adv]]]]: public String [[competence]] ( String [[sagging]] , final String ... [[decadent]] ) {
+[[[[Nl]]]]: Resolves all macros in this props set . Called on property lookup .
+--------------------------------------------- Result 811 ---------------------------------------------
+Prepares a list of parameters.@param paramValues The list of parameters.@param treatEmptyParamsAsNull Whether or not to ignore empty parameters.@param ignoreEmptyRequestParams Whether or not to ignore empty request parameters.@return The list of parameters. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static String [ ] prepareParameters ( final String [ ] paramValues , final boolean treatEmptyParamsAsNull , final boolean ignoreEmptyRequestParams ) { if ( treatEmptyParamsAsNull || ignoreEmptyRequestParams ) { int emptyCount = 0 ; int total = paramValues . length ; for ( int i = 0 ; i < paramValues . length ; i ++ ) { String paramValue = paramValues [ i ] ; if ( paramValue == null ) { emptyCount ++ ; continue ; } if ( paramValue . length ( ) == 0 ) { emptyCount ++ ; if ( treatEmptyParamsAsNull ) { paramValue = null ; } } paramValues [ i ] = paramValue ; } if ( ( ignoreEmptyRequestParams ) && ( emptyCount == total ) ) { return null ; } } return paramValues ; }
+[[[[Nl]]]]: Prepares parameters for further processing .
+
+[[[[Adv]]]]: public static String [ ] prepareParameters ( final String [ ] paramValues , final boolean treatEmptyParamsAsNull , final boolean ignoreEmptyRequestParams ) { if ( treatEmptyParamsAsNull || ignoreEmptyRequestParams ) { int emptyCount = 0 ; int total = paramValues . length ; for ( int i = 0 ; i < paramValues . length ; i ++ ) { String paramValue = paramValues [ i ] ; if ( paramValue == null ) { emptyCount ++ ; continue ; } if ( paramValue . length ( ) == 0 ) { emptyCount ++ ; if ( treatEmptyParamsAsNull ) { paramValue = null ; } } paramValues [ i ] = paramValue ; } if ( ( ignoreEmptyRequestParams ) && ( emptyCount == total ) ) { return null ; } } return paramValues ; }
+[[[[Nl]]]]: Prepares parameters for further processing .
+--------------------------------------------- Result 812 ---------------------------------------------
+Adds a base property.@param key the key@param value the value@param append the append --> hoofbeats --> Socre: 1.0
+
+[[[[Adv]]]]: public void [[putBaseProperty]] ( final String [[key]] , final String [[value]] , final boolean [[append]] ) { put ( null , baseProperties , [[key]] , [[value]] , [[append]] ) ; }
+[[[[Nl]]]]: Adds base property .
+
+[[[[Adv]]]]: public void [[hoofbeats]] ( final String [[rydell]] , final String [[rupture]] , final boolean [[coffin]] ) { put ( null , baseProperties , [[rydell]] , [[rupture]] , [[coffin]] ) ; }
+[[[[Nl]]]]: Adds base property .
+--------------------------------------------- Result 813 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 396 / 399 / 18 / 813:  81%|████████▏ | 813/1000 [25:04:35<5:46:04, 111.04s/it][Succeeded / Failed / Skipped / Total] 396 / 399 / 18 / 813:  81%|████████▏ | 814/1000 [25:08:50<5:44:46, 111.22s/it][Succeeded / Failed / Skipped / Total] 396 / 400 / 18 / 814:  81%|████████▏ | 814/1000 [25:08:50<5:44:46, 111.22s/it][Succeeded / Failed / Skipped / Total] 396 / 400 / 18 / 814:  82%|████████▏ | 815/1000 [25:12:39<5:43:21, 111.36s/it][Succeeded / Failed / Skipped / Total] 396 / 401 / 18 / 815:  82%|████████▏ | 815/1000 [25:12:39<5:43:21, 111.36s/it][Succeeded / Failed / Skipped / Total] 396 / 401 / 18 / 815:  82%|████████▏ | 816/1000 [25:12:59<5:41:09, 111.25s/it][Succeeded / Failed / Skipped / Total] 397 / 401 / 18 / 816:  82%|████████▏ | 816/1000 [25:12:59<5:41:09, 111.25s/it][Succeeded / Failed / Skipped / Total] 397 / 401 / 18 / 816:  82%|████████▏ | 817/1000 [25:13:32<5:39:01, 111.15s/it][Succeeded / Failed / Skipped / Total] 398 / 401 / 18 / 817:  82%|████████▏ | 817/1000 [25:13:32<5:39:01, 111.15s/it][Succeeded / Failed / Skipped / Total] 398 / 401 / 18 / 817:  82%|████████▏ | 818/1000 [25:21:03<5:38:25, 111.57s/it][Succeeded / Failed / Skipped / Total] 399 / 401 / 18 / 818:  82%|████████▏ | 818/1000 [25:21:03<5:38:25, 111.57s/it][Succeeded / Failed / Skipped / Total] 399 / 401 / 18 / 818:  82%|████████▏ | 819/1000 [25:21:39<5:36:17, 111.48s/it]Retrieve a profile property.@param profile the profile name@param key the key@return the property or <code>null</code> --> [[[FAILED]]]
+
+[[[[Adv]]]]: public PropsEntry [[getProfileProperty]] ( final String [[profile]] , final String [[key]] ) { final Map < String , PropsEntry > profileMap = profileProperties . get ( [[profile]] ) ; if ( profileMap == null ) { return null ; } return profileMap . get ( [[key]] ) ; }
+[[[[Nl]]]]: Returns profile property .
+
+[[[[Adv]]]]: public PropsEntry [[dragoon]] ( final String [[whirley]] , final String [[prospering]] ) { final Map < String , PropsEntry > profileMap = profileProperties . get ( [[whirley]] ) ; if ( profileMap == null ) { return null ; } return profileMap . get ( [[prospering]] ) ; }
+[[[[Nl]]]]: Returns profile property .
+--------------------------------------------- Result 814 ---------------------------------------------
+Hashes the given password with the given salt. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static String hashpw ( String password , String salt ) { BCrypt B ; String real_salt ; byte [ ] passwordb , saltb , hashed ; char minor = ( char ) 0 ; int rounds , off ; StringBuffer rs = new StringBuffer ( ) ; if ( salt . charAt ( 0 ) != ' ' || salt . charAt ( 1 ) != ' ' ) { throw new IllegalArgumentException ( "Invalid salt version" ) ; } if ( salt . charAt ( 2 ) == ' ' ) { off = 3 ; } else { minor = salt . charAt ( 2 ) ; if ( minor != ' ' || salt . charAt ( 3 ) != ' ' ) { throw new IllegalArgumentException ( "Invalid salt revision" ) ; } off = 4 ; }
+[[[[Nl]]]]: Hash a password using the OpenBSD bcrypt scheme .
+
+[[[[Adv]]]]: public static String hashpw ( String password , String salt ) { BCrypt B ; String real_salt ; byte [ ] passwordb , saltb , hashed ; char minor = ( char ) 0 ; int rounds , off ; StringBuffer rs = new StringBuffer ( ) ; if ( salt . charAt ( 0 ) != ' ' || salt . charAt ( 1 ) != ' ' ) { throw new IllegalArgumentException ( "Invalid salt version" ) ; } if ( salt . charAt ( 2 ) == ' ' ) { off = 3 ; } else { minor = salt . charAt ( 2 ) ; if ( minor != ' ' || salt . charAt ( 3 ) != ' ' ) { throw new IllegalArgumentException ( "Invalid salt revision" ) ; } off = 4 ; }
+[[[[Nl]]]]: Hash a password using the OpenBSD bcrypt scheme .
+--------------------------------------------- Result 815 ---------------------------------------------
+Put a profile property.@param key the key@param value the value@param profile the profile@param append the append --> [[[FAILED]]]
+
+[[[[Adv]]]]: public void putProfileProperty ( final String key , final String value , final String profile , final boolean append ) { Map < String , PropsEntry > map = profileProperties . computeIfAbsent ( profile , k -> new HashMap <> ( ) ) ; put ( profile , map , key , value , append ) ; }
+[[[[Nl]]]]: Adds profile property .
+
+[[[[Adv]]]]: public void putProfileProperty ( final String key , final String value , final String profile , final boolean append ) { Map < String , PropsEntry > map = profileProperties . computeIfAbsent ( profile , k -> new HashMap <> ( ) ) ; put ( profile , map , key , value , append ) ; }
+[[[[Nl]]]]: Adds profile property .
+--------------------------------------------- Result 816 ---------------------------------------------
+Extracts a mapping from a target map.@param target the target map@param profiles the profiles@param wildcardPatterns the wildcard patterns@param prefix the prefix@return the mapping --> Performs malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning malfunctioning --> Socre: 1.0
+
+[[[[Adv]]]]: public Map [[extract]] ( Map target , final String [ ] [[profiles]] , final String [ ] wildcardPatterns , String [[prefix]] ) { if ( target == null ) { target = new HashMap ( ) ; }
+[[[[Nl]]]]: Extracts props to target map . This is all - in - one method that does many things at once .
+
+[[[[Adv]]]]: public Map [[malfunction]] ( Map target , final String [ ] [[dissenting]] , final String [ ] wildcardPatterns , String [[zoomer]] ) { if ( target == null ) { target = new HashMap ( ) ; }
+[[[[Nl]]]]: Extracts props to target map . This is all - in - one method that does many things at once .
+--------------------------------------------- Result 817 ---------------------------------------------
+Checks to see if the given hashed string is valid. --> Returns true if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and only if and --> Socre: 1.0
+
+[[[[Adv]]]]: public static boolean [[checkpw]] ( String [[plaintext]] , String hashed ) { byte [ ] [[hashed_bytes]] ; byte [ ] try_bytes ; try { String try_pw = hashpw ( [[plaintext]] , hashed ) ; [[hashed_bytes]] = hashed . getBytes ( "UTF-8" ) ; try_bytes = try_pw . getBytes ( "UTF-8" ) ; } catch ( UnsupportedEncodingException uee ) { return "[[False]]" != "[[False]]" ; } if ( [[hashed_bytes]] . length != try_bytes . length ) { return "[[False]]" != "[[False]]" ; } byte ret = 0 ; for ( int i = 0 ; i < try_bytes . length ; i ++ ) { ret |= [[hashed_bytes]] [ i ] ^ try_bytes [ i ] ; } return ret == 0 ; }
+[[[[Nl]]]]: Check that a plaintext password matches a previously hashed one .
+
+[[[[Adv]]]]: public static boolean [[andras]] ( String [[navarro]] , String hashed ) { byte [ ] [[yeast]] ; byte [ ] try_bytes ; try { String try_pw = hashpw ( [[navarro]] , hashed ) ; [[yeast]] = hashed . getBytes ( "UTF-8" ) ; try_bytes = try_pw . getBytes ( "UTF-8" ) ; } catch ( UnsupportedEncodingException uee ) { return "[[Floris]]" != "[[Floris]]" ; } if ( [[yeast]] . length != try_bytes . length ) { return "[[Floris]]" != "[[Floris]]" ; } byte ret = 0 ; for ( int i = 0 ; i < try_bytes . length ; i ++ ) { ret |= [[yeast]] [ i ] ^ try_bytes [ i ] ; } return ret == 0 ; }
+[[[[Nl]]]]: Check that a plaintext password matches a previously hashed one .
+--------------------------------------------- Result 818 ---------------------------------------------
+Copies all bytes from the input stream to the output stream. --> Zużeżeżeżeżeżeżeżeżeż --> Socre: 1.0
+
+[[[[Adv]]]]: public int [[copyMax]] ( final OutputStream out , final int [[maxBytes]] ) throws IOException { int count = 0 ; while ( "True" == "True" ) { byte b = readByte ( ) ; if ( isBoundary ( b ) ) { break ; } out . write ( b ) ; count ++ ; if ( count == [[maxBytes]] ) { return count ; } } return count ; }
+[[[[Nl]]]]: Copies max or less number of bytes to output stream . Useful for determining if uploaded file is larger then expected .
+
+[[[[Adv]]]]: public int [[zu]] ( final OutputStream out , final int [[possessive]] ) throws IOException { int count = 0 ; while ( "True" == "True" ) { byte b = readByte ( ) ; if ( isBoundary ( b ) ) { break ; } out . write ( b ) ; count ++ ; if ( count == [[possessive]] ) { return count ; } } return count ; }
+[[[[Nl]]]]: Copies max or less number of bytes to output stream . Useful for determining if uploaded file is larger then expected .
+--------------------------------------------- Result 819 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 399 / 402 / 18 / 819:  82%|████████▏ | 819/1000 [25:21:39<5:36:17, 111.48s/it][Succeeded / Failed / Skipped / Total] 399 / 402 / 18 / 819:  82%|████████▏ | 820/1000 [25:23:32<5:34:26, 111.48s/it][Succeeded / Failed / Skipped / Total] 400 / 402 / 18 / 820:  82%|████████▏ | 820/1000 [25:23:32<5:34:26, 111.48s/it][Succeeded / Failed / Skipped / Total] 400 / 402 / 18 / 820:  82%|████████▏ | 821/1000 [25:28:53<5:33:20, 111.73s/it][Succeeded / Failed / Skipped / Total] 400 / 403 / 18 / 821:  82%|████████▏ | 821/1000 [25:28:53<5:33:20, 111.73s/it][Succeeded / Failed / Skipped / Total] 400 / 403 / 18 / 821:  82%|████████▏ | 822/1000 [25:29:38<5:31:14, 111.65s/it][Succeeded / Failed / Skipped / Total] 401 / 403 / 18 / 822:  82%|████████▏ | 822/1000 [25:29:38<5:31:14, 111.65s/it][Succeeded / Failed / Skipped / Total] 401 / 403 / 18 / 822:  82%|████████▏ | 823/1000 [25:35:43<5:30:16, 111.96s/it][Succeeded / Failed / Skipped / Total] 401 / 404 / 18 / 823:  82%|████████▏ | 823/1000 [25:35:43<5:30:16, 111.96s/it][Succeeded / Failed / Skipped / Total] 401 / 404 / 18 / 823:  82%|████████▏ | 824/1000 [25:35:43<5:28:01, 111.82s/it][Succeeded / Failed / Skipped / Total] 401 / 404 / 19 / 824:  82%|████████▏ | 824/1000 [25:35:43<5:28:01, 111.82s/it][Succeeded / Failed / Skipped / Total] 401 / 404 / 19 / 824:  82%|████████▎ | 825/1000 [25:37:07<5:26:03, 111.79s/it][Succeeded / Failed / Skipped / Total] 401 / 405 / 19 / 825:  82%|████████▎ | 825/1000 [25:37:07<5:26:03, 111.79s/it][Succeeded / Failed / Skipped / Total] 401 / 405 / 19 / 825:  83%|████████▎ | 826/1000 [25:39:09<5:24:13, 111.80s/it][Succeeded / Failed / Skipped / Total] 401 / 406 / 19 / 826:  83%|████████▎ | 826/1000 [25:39:09<5:24:13, 111.80s/it][Succeeded / Failed / Skipped / Total] 401 / 406 / 19 / 826:  83%|████████▎ | 827/1000 [25:42:37<5:22:42, 111.92s/it]Converts an array of bytes into a stream of words. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private static int streamtoword ( byte [ ] data , int [ ] offp ) { int i ; int word = 0 ; int off = offp [ 0 ] ; for ( i = 0 ; i < 4 ; i ++ ) { word = ( word << 8 ) | ( data [ off ] & 0xff ) ; off = ( off + 1 ) % data . length ; } offp [ 0 ] = off ; return word ; }
+[[[[Nl]]]]: Cycically extract a word of key material .
+
+[[[[Adv]]]]: private static int streamtoword ( byte [ ] data , int [ ] offp ) { int i ; int word = 0 ; int off = offp [ 0 ] ; for ( i = 0 ; i < 4 ; i ++ ) { word = ( word << 8 ) | ( data [ off ] & 0xff ) ; off = ( off + 1 ) % data . length ; } offp [ 0 ] = off ; return word ; }
+[[[[Nl]]]]: Cycically extract a word of key material .
+--------------------------------------------- Result 820 ---------------------------------------------
+Copies all bytes from the input stream to the output stream.@param out the output stream@return the number of bytes copied --> Reads giga giga giga giga giga giga --> Socre: 1.0
+
+[[[[Adv]]]]: public int [[copyAll]] ( final OutputStream out ) throws IOException { int count = 0 ; while ( "[[True]]" == "[[True]]" ) { byte [[b]] = readByte ( ) ; if ( isBoundary ( [[b]] ) ) { break ; } out . write ( [[b]] ) ; count ++ ; } return count ; }
+[[[[Nl]]]]: Copies bytes from this stream to some output until boundary is reached . Returns number of copied bytes . It will throw an exception for any irregular behaviour .
+
+[[[[Adv]]]]: public int [[celso]] ( final OutputStream out ) throws IOException { int count = 0 ; while ( "[[Hobbs]]" == "[[Hobbs]]" ) { byte [[militar]] = readByte ( ) ; if ( isBoundary ( [[militar]] ) ) { break ; } out . write ( [[militar]] ) ; count ++ ; } return count ; }
+[[[[Nl]]]]: Copies bytes from this stream to some output until boundary is reached . Returns number of copied bytes . It will throw an exception for any irregular behaviour .
+--------------------------------------------- Result 821 ---------------------------------------------
+Resolves the action configuration for the given action annotation.@param annotationValues the action annotation values.@return the action configuration. --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected ActionConfig [[resolveActionConfig]] ( final ActionAnnotationValues [[annotationValues]] ) { final Class < ? extends Annotation > [[annotationType]] ; if ( [[annotationValues]] == null ) { [[annotationType]] = Action . class ; } else { [[annotationType]] = [[annotationValues]] . annotationType ( ) ; } return actionConfigManager . lookup ( [[annotationType]] ) ; }
+[[[[Nl]]]]: Resolves action config .
+
+[[[[Adv]]]]: protected ActionConfig [[goda]] ( final ActionAnnotationValues [[fide]] ) { final Class < ? extends Annotation > [[foothold]] ; if ( [[fide]] == null ) { [[foothold]] = Action . class ; } else { [[foothold]] = [[fide]] . annotationType ( ) ; } return actionConfigManager . lookup ( [[foothold]] ) ; }
+[[[[Nl]]]]: Resolves action config .
+--------------------------------------------- Result 822 ---------------------------------------------
+Detect and register an action alias.@param annotationValues the action annotation values@param actionDefinition the action definition --> C montaigne@param cruces@param actionDefinition --> Socre: 1.0
+
+[[[[Adv]]]]: protected void [[detectAndRegisterAlias]] ( final ActionAnnotationValues [[annotationValues]] , final ActionDefinition actionDefinition ) { final String [[alias]] = parseMethodAlias ( [[annotationValues]] ) ; if ( [[alias]] != null ) { String aliasPath = StringUtil . cutToIndexOf ( actionDefinition . actionPath ( ) , StringPool . HASH ) ; actionsManager . registerPathAlias ( [[alias]] , aliasPath ) ; } }
+[[[[Nl]]]]: Detects if alias is defined in annotation and registers it if so .
+
+[[[[Adv]]]]: protected void [[montaigne]] ( final ActionAnnotationValues [[cruces]] , final ActionDefinition actionDefinition ) { final String [[goons]] = parseMethodAlias ( [[cruces]] ) ; if ( [[goons]] != null ) { String aliasPath = StringUtil . cutToIndexOf ( actionDefinition . actionPath ( ) , StringPool . HASH ) ; actionsManager . registerPathAlias ( [[goons]] , aliasPath ) ; } }
+[[[[Nl]]]]: Detects if alias is defined in annotation and registers it if so .
+--------------------------------------------- Result 823 ---------------------------------------------
+Parses an action definition.@param actionClass the action class@param actionMethod the action method@param actionDefinition the action definition --> [[[FAILED]]]
+
+[[[[Adv]]]]: public ActionRuntime parse ( final Class < ? > actionClass , final Method actionMethod , ActionDefinition actionDefinition ) { final ActionAnnotationValues annotationValues = detectActionAnnotationValues ( actionMethod ) ; final ActionConfig actionConfig = resolveActionConfig ( annotationValues ) ;
+[[[[Nl]]]]: Parses java action method annotation and returns its action runtime .
+
+[[[[Adv]]]]: public ActionRuntime parse ( final Class < ? > actionClass , final Method actionMethod , ActionDefinition actionDefinition ) { final ActionAnnotationValues annotationValues = detectActionAnnotationValues ( actionMethod ) ; final ActionConfig actionConfig = resolveActionConfig ( annotationValues ) ;
+[[[[Nl]]]]: Parses java action method annotation and returns its action runtime .
+--------------------------------------------- Result 824 ---------------------------------------------
+Sets the last modified time of this request. --> [[[SKIPPED]]]
+
+[[[[Adv]]]]: @ Override protected void preResponseCommit ( ) { long lastModified = lastModifiedData . getLastModified ( ) ; long ifModifiedSince = request . getDateHeader ( "If-Modified-Since" ) ; if ( lastModified > - 1 && ! response . containsHeader ( "Last-Modified" ) ) { if ( ifModifiedSince < ( lastModified / 1000 * 1000 ) ) { response . setDateHeader ( "Last-Modified" , lastModified ) ; } else { response . reset ( ) ; response . setStatus ( HttpServletResponse . SC_NOT_MODIFIED ) ; } } }
+[[[[Nl]]]]: todo move to BufferResponseWrapper ?
+--------------------------------------------- Result 825 ---------------------------------------------
+Reads the path to the action package. --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected String [ ] [[readPackageActionPath]] ( final Class [[actionClass]] ) { Package actionPackage = [[actionClass]] . getPackage ( ) ; final String actionPackageName = actionPackage . getName ( ) ;
+[[[[Nl]]]]: Reads action path for package . If annotation is not set on package - level class package will be used for package action path part .
+
+[[[[Adv]]]]: protected String [ ] [[inhale]] ( final Class [[electorate]] ) { Package actionPackage = [[electorate]] . getPackage ( ) ; final String actionPackageName = actionPackage . getName ( ) ;
+[[[[Nl]]]]: Reads action path for package . If annotation is not set on package - level class package will be used for package action path part .
+--------------------------------------------- Result 826 ---------------------------------------------
+Read interceptors.@param actionClassOrMethod the action class or method@return the interceptors --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected Class < ? extends ActionInterceptor > [ ] [[readActionInterceptors]] ( final AnnotatedElement [[actionClassOrMethod]] ) { Class < ? extends ActionInterceptor > [ ] [[result]] = null ; InterceptedBy interceptedBy = [[actionClassOrMethod]] . getAnnotation ( InterceptedBy . class ) ; if ( interceptedBy != null ) { [[result]] = interceptedBy . value ( ) ; if ( [[result]] . length == 0 ) { [[result]] = null ; } } return [[result]] ; }
+[[[[Nl]]]]: Reads class or method annotation for action interceptors .
+
+[[[[Adv]]]]: protected Class < ? extends ActionInterceptor > [ ] [[tense]] ( final AnnotatedElement [[debris]] ) { Class < ? extends ActionInterceptor > [ ] [[strategic]] = null ; InterceptedBy interceptedBy = [[debris]] . getAnnotation ( InterceptedBy . class ) ; if ( interceptedBy != null ) { [[strategic]] = interceptedBy . value ( ) ; if ( [[strategic]] . length == 0 ) { [[strategic]] = null ; } } return [[strategic]] ; }
+[[[[Nl]]]]: Reads class or method annotation for action interceptors .
+[Succeeded / Failed / Skipped / Total] 402 / 406 / 19 / 827:  83%|████████▎ | 827/1000 [25:42:37<5:22:42, 111.92s/it][Succeeded / Failed / Skipped / Total] 402 / 406 / 19 / 827:  83%|████████▎ | 828/1000 [25:42:40<5:20:27, 111.79s/it][Succeeded / Failed / Skipped / Total] 402 / 407 / 19 / 828:  83%|████████▎ | 828/1000 [25:42:40<5:20:27, 111.79s/it][Succeeded / Failed / Skipped / Total] 402 / 407 / 19 / 828:  83%|████████▎ | 829/1000 [25:43:23<5:18:21, 111.71s/it][Succeeded / Failed / Skipped / Total] 403 / 407 / 19 / 829:  83%|████████▎ | 829/1000 [25:43:23<5:18:21, 111.71s/it][Succeeded / Failed / Skipped / Total] 403 / 407 / 19 / 829:  83%|████████▎ | 830/1000 [25:44:34<5:16:21, 111.66s/it][Succeeded / Failed / Skipped / Total] 404 / 407 / 19 / 830:  83%|████████▎ | 830/1000 [25:44:34<5:16:21, 111.66s/it][Succeeded / Failed / Skipped / Total] 404 / 407 / 19 / 830:  83%|████████▎ | 831/1000 [25:45:08<5:14:14, 111.56s/it][Succeeded / Failed / Skipped / Total] 405 / 407 / 19 / 831:  83%|████████▎ | 831/1000 [25:45:08<5:14:14, 111.56s/it][Succeeded / Failed / Skipped / Total] 405 / 407 / 19 / 831:  83%|████████▎ | 832/1000 [25:46:34<5:12:17, 111.53s/it][Succeeded / Failed / Skipped / Total] 406 / 407 / 19 / 832:  83%|████████▎ | 832/1000 [25:46:34<5:12:17, 111.53s/it][Succeeded / Failed / Skipped / Total] 406 / 407 / 19 / 832:  83%|████████▎ | 833/1000 [25:49:35<5:10:39, 111.62s/it][Succeeded / Failed / Skipped / Total] 407 / 407 / 19 / 833:  83%|████████▎ | 833/1000 [25:49:35<5:10:39, 111.62s/it][Succeeded / Failed / Skipped / Total] 407 / 407 / 19 / 833:  83%|████████▎ | 834/1000 [25:51:28<5:08:48, 111.62s/it][Succeeded / Failed / Skipped / Total] 407 / 408 / 19 / 834:  83%|████████▎ | 834/1000 [25:51:28<5:08:48, 111.62s/it][Succeeded / Failed / Skipped / Total] 407 / 408 / 19 / 834:  84%|████████▎ | 835/1000 [25:52:32<5:06:47, 111.56s/it]--------------------------------------------- Result 827 ---------------------------------------------
+Read method action path.@param methodName the method name@param annotationValues the annotation values@param actionConfig the action config@return the string --> B bangkok@param manifestly@param fudge@param wittenberg@return --> Socre: 1.0
+
+[[[[Adv]]]]: protected String [ ] [[readMethodActionPath]] ( final String [[methodName]] , final ActionAnnotationValues [[annotationValues]] , final ActionConfig [[actionConfig]] ) {
+[[[[Nl]]]]: Reads action path from the action method .
+
+[[[[Adv]]]]: protected String [ ] [[bangkok]] ( final String [[manifestly]] , final ActionAnnotationValues [[fudge]] , final ActionConfig [[wittenberg]] ) {
+[[[[Nl]]]]: Reads action path from the action method .
+--------------------------------------------- Result 828 ---------------------------------------------
+Read action filters. --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected Class < ? extends ActionFilter > [ ] [[readActionFilters]] ( final AnnotatedElement [[actionClassOrMethod]] ) { Class < ? extends ActionFilter > [ ] result = null ; FilteredBy [[filteredBy]] = [[actionClassOrMethod]] . getAnnotation ( FilteredBy . class ) ; if ( [[filteredBy]] != null ) { result = [[filteredBy]] . value ( ) ; if ( result . length == 0 ) { result = null ; } } return result ; }
+[[[[Nl]]]]: Reads class or method annotation for action filters .
+
+[[[[Adv]]]]: protected Class < ? extends ActionFilter > [ ] [[lovin]] ( final AnnotatedElement [[appreciative]] ) { Class < ? extends ActionFilter > [ ] result = null ; FilteredBy [[descended]] = [[appreciative]] . getAnnotation ( FilteredBy . class ) ; if ( [[descended]] != null ) { result = [[descended]] . value ( ) ; if ( result . length == 0 ) { result = null ; } } return result ; }
+[[[[Nl]]]]: Reads class or method annotation for action filters .
+--------------------------------------------- Result 829 ---------------------------------------------
+Parses the action annotation values and returns the alias.@param annotationValues the action annotation values.@return the alias. --> Returns the name of the alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt alt --> Socre: 1.0
+
+[[[[Adv]]]]: protected String [[parseMethodAlias]] ( final ActionAnnotationValues [[annotationValues]] ) { String [[alias]] = null ; if ( [[annotationValues]] != null ) { [[alias]] = [[annotationValues]] . alias ( ) ; } return [[alias]] ; }
+[[[[Nl]]]]: Reads method s alias value .
+
+[[[[Adv]]]]: protected String [[risen]] ( final ActionAnnotationValues [[embarassed]] ) { String [[persecution]] = null ; if ( [[embarassed]] != null ) { [[persecution]] = [[embarassed]] . alias ( ) ; } return [[persecution]] ; }
+[[[[Nl]]]]: Reads method s alias value .
+--------------------------------------------- Result 830 ---------------------------------------------
+Resolves a JSON name.@param realName the name to resolve.@return the resolved name. --> Diese Methode pourin@param realName@return Methode --> Socre: 1.0
+
+[[[[Adv]]]]: public String [[resolveJsonName]] ( final String realName ) { if ( realNames == null ) { return realName ; } int realIndex = ArraysUtil . indexOf ( realNames , realName ) ; if ( realIndex == - 1 ) { return realName ; } return jsonNames [ realIndex ] ; }
+[[[[Nl]]]]: Resolves JSON name from real name .
+
+[[[[Adv]]]]: public String [[pourin]] ( final String realName ) { if ( realNames == null ) { return realName ; } int realIndex = ArraysUtil . indexOf ( realNames , realName ) ; if ( realIndex == - 1 ) { return realName ; } return jsonNames [ realIndex ] ; }
+[[[[Nl]]]]: Resolves JSON name from real name .
+--------------------------------------------- Result 831 ---------------------------------------------
+Resolves the name of the given json name. --> Bevda version --> Socre: 1.0
+
+[[[[Adv]]]]: public String [[resolveRealName]] ( final String jsonName ) { if ( jsonNames == null ) { return jsonName ; } int jsonIndex = ArraysUtil . indexOf ( jsonNames , jsonName ) ; if ( jsonIndex == - 1 ) { return jsonName ; } return realNames [ jsonIndex ] ; }
+[[[[Nl]]]]: Resolves real name from JSON name .
+
+[[[[Adv]]]]: public String [[budda]] ( final String jsonName ) { if ( jsonNames == null ) { return jsonName ; } int jsonIndex = ArraysUtil . indexOf ( jsonNames , jsonName ) ; if ( jsonIndex == - 1 ) { return jsonName ; } return realNames [ jsonIndex ] ; }
+[[[[Nl]]]]: Resolves real name from JSON name .
+--------------------------------------------- Result 832 ---------------------------------------------
+Injects the target object into the proxy. --> Asserts that an object is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting that it is asserting --> Socre: 1.0
+
+[[[[Adv]]]]: public static void [[injectTargetIntoProxy]] ( final Object [[proxy]] , final Object target ) { Class proxyClass = [[proxy]] . getClass ( ) ; try { Field field = proxyClass . getField ( "$___target$0" ) ; field . set ( [[proxy]] , target ) ; } catch ( Exception ex ) { throw new ProxettaException ( ex ) ; } }
+[[[[Nl]]]]: Injects target into proxy .
+
+[[[[Adv]]]]: public static void [[arrogant]] ( final Object [[alarmed]] , final Object target ) { Class proxyClass = [[alarmed]] . getClass ( ) ; try { Field field = proxyClass . getField ( "$___target$0" ) ; field . set ( [[alarmed]] , target ) ; } catch ( Exception ex ) { throw new ProxettaException ( ex ) ; } }
+[[[[Nl]]]]: Injects target into proxy .
+--------------------------------------------- Result 833 ---------------------------------------------
+Finds the subtype data for the given type. --> Create a TypeData for a geyser@param geyserys class@return TypeData --> Socre: 1.0
+
+[[[[Adv]]]]: protected TypeData [[findSubclassTypeData]] ( final Class [[type]] ) { final Class < ? extends Annotation > defaultAnnotation = jsonAnnotation ; if ( [[type]] . getAnnotation ( defaultAnnotation ) != null ) {
+[[[[Nl]]]]: Finds type data of first annotated superclass or interface .
+
+[[[[Adv]]]]: protected TypeData [[longfellow]] ( final Class [[geysers]] ) { final Class < ? extends Annotation > defaultAnnotation = jsonAnnotation ; if ( [[geysers]] . getAnnotation ( defaultAnnotation ) != null ) {
+[[[[Nl]]]]: Finds type data of first annotated superclass or interface .
+--------------------------------------------- Result 834 ---------------------------------------------
+Applies an advice to the specified target class.@param < T> the type parameter@param targetClass the target class@return the target instance --> [[[FAILED]]]
+
+[[[[Adv]]]]: public static < [[T]] > [[T]] applyAdvice ( final Class < [[T]] > targetClass ) { Class adviceClass = cache . get ( targetClass ) ; if ( adviceClass == null ) {
+[[[[Nl]]]]: Applies advice on given target class and returns proxy instance .
+
+[[[[Adv]]]]: public static < [[peggy]] > [[peggy]] applyAdvice ( final Class < [[peggy]] > targetClass ) { Class adviceClass = cache . get ( targetClass ) ; if ( adviceClass == null ) {
+[[[[Nl]]]]: Applies advice on given target class and returns proxy instance .
+--------------------------------------------- Result 835 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 408 / 408 / 19 / 835:  84%|████████▎ | 835/1000 [25:52:32<5:06:47, 111.56s/it][Succeeded / Failed / Skipped / Total] 408 / 408 / 19 / 835:  84%|████████▎ | 836/1000 [25:54:02<5:04:51, 111.53s/it][Succeeded / Failed / Skipped / Total] 408 / 409 / 19 / 836:  84%|████████▎ | 836/1000 [25:54:02<5:04:51, 111.53s/it][Succeeded / Failed / Skipped / Total] 408 / 409 / 19 / 836:  84%|████████▎ | 837/1000 [25:57:44<5:03:21, 111.67s/it][Succeeded / Failed / Skipped / Total] 408 / 410 / 19 / 837:  84%|████████▎ | 837/1000 [25:57:44<5:03:21, 111.67s/it][Succeeded / Failed / Skipped / Total] 408 / 410 / 19 / 837:  84%|████████▍ | 838/1000 [25:59:29<5:01:28, 111.66s/it][Succeeded / Failed / Skipped / Total] 409 / 410 / 19 / 838:  84%|████████▍ | 838/1000 [25:59:29<5:01:28, 111.66s/it][Succeeded / Failed / Skipped / Total] 409 / 410 / 19 / 838:  84%|████████▍ | 839/1000 [26:01:30<4:59:38, 111.67s/it][Succeeded / Failed / Skipped / Total] 410 / 410 / 19 / 839:  84%|████████▍ | 839/1000 [26:01:30<4:59:38, 111.67s/it][Succeeded / Failed / Skipped / Total] 410 / 410 / 19 / 839:  84%|████████▍ | 840/1000 [26:01:39<4:57:27, 111.55s/it][Succeeded / Failed / Skipped / Total] 411 / 410 / 19 / 840:  84%|████████▍ | 840/1000 [26:01:39<4:57:27, 111.55s/it][Succeeded / Failed / Skipped / Total] 411 / 410 / 19 / 840:  84%|████████▍ | 841/1000 [26:02:48<4:55:28, 111.50s/it][Succeeded / Failed / Skipped / Total] 412 / 410 / 19 / 841:  84%|████████▍ | 841/1000 [26:02:48<4:55:28, 111.50s/it][Succeeded / Failed / Skipped / Total] 412 / 410 / 19 / 841:  84%|████████▍ | 842/1000 [26:04:18<4:53:32, 111.47s/it][Succeeded / Failed / Skipped / Total] 412 / 411 / 19 / 842:  84%|████████▍ | 842/1000 [26:04:18<4:53:32, 111.47s/it][Succeeded / Failed / Skipped / Total] 412 / 411 / 19 / 842:  84%|████████▍ | 843/1000 [26:05:58<4:51:38, 111.46s/it]Gets the contents of a file. --> Rethrows an IOException --> Socre: 1.0
+
+[[[[Adv]]]]: @ Override public byte [ ] [[getFileContent]] ( ) throws IOException { if ( data != null ) { return data ; } if ( tempFile != null ) { return FileUtil . readBytes ( tempFile ) ; } return null ; }
+[[[[Nl]]]]: Returns the content of file upload item .
+
+[[[[Adv]]]]: @ Override public byte [ ] [[blotting]] ( ) throws IOException { if ( data != null ) { return data ; } if ( tempFile != null ) { return FileUtil . readBytes ( tempFile ) ; } return null ; }
+[[[[Nl]]]]: Returns the content of file upload item .
+--------------------------------------------- Result 836 ---------------------------------------------
+Lookup the type data for the specified type.@param type the type@return the type data --> [[[FAILED]]]
+
+[[[[Adv]]]]: public TypeData [[lookupTypeData]] ( final Class type ) { TypeData typeData = typeDataMap . get ( type ) ; if ( typeData == null ) { if ( serializationSubclassAware ) { typeData = findSubclassTypeData ( type ) ; } if ( typeData == null ) { typeData = scanClassForAnnotations ( type ) ; typeDataMap . put ( type , typeData ) ; } } return typeData ; }
+[[[[Nl]]]]: Returns all includes for given type . Returns an empty array when no includes are defined .
+
+[[[[Adv]]]]: public TypeData [[spewing]] ( final Class type ) { TypeData typeData = typeDataMap . get ( type ) ; if ( typeData == null ) { if ( serializationSubclassAware ) { typeData = findSubclassTypeData ( type ) ; } if ( typeData == null ) { typeData = scanClassForAnnotations ( type ) ; typeDataMap . put ( type , typeData ) ; } } return typeData ; }
+[[[[Nl]]]]: Returns all includes for given type . Returns an empty array when no includes are defined .
+--------------------------------------------- Result 837 ---------------------------------------------
+Lookup the type data for the given type. --> [[[FAILED]]]
+
+[[[[Adv]]]]: protected TypeData _lookupTypeData ( final Class [[type]] ) { TypeData [[typeData]] = typeDataMap . get ( [[type]] ) ; if ( [[typeData]] == null ) { [[typeData]] = scanClassForAnnotations ( [[type]] ) ; typeDataMap . put ( [[type]] , [[typeData]] ) ; } return [[typeData]] ; }
+[[[[Nl]]]]: Lookups type data and creates one if missing .
+
+[[[[Adv]]]]: protected TypeData _lookupTypeData ( final Class [[utilities]] ) { TypeData [[indicted]] = typeDataMap . get ( [[utilities]] ) ; if ( [[indicted]] == null ) { [[indicted]] = scanClassForAnnotations ( [[utilities]] ) ; typeDataMap . put ( [[utilities]] , [[indicted]] ) ; } return [[indicted]] ; }
+[[[[Nl]]]]: Lookups type data and creates one if missing .
+--------------------------------------------- Result 838 ---------------------------------------------
+Resolve the real name for the specified type. --> Checks if the specified type is a known heterogenous heterogenous heterogenous heterogenous heterogenous heterogenous heterogenous heterogenous heterogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous homogenous hom --> Socre: 1.0
+
+[[[[Adv]]]]: public String [[resolveRealName]] ( final Class type , final String [[jsonName]] ) { TypeData [[typeData]] = lookupTypeData ( type ) ; return [[typeData]] . resolveRealName ( [[jsonName]] ) ; }
+[[[[Nl]]]]: Returns real property name for given JSON property .
+
+[[[[Adv]]]]: public String [[nauseating]] ( final Class type , final String [[chromatic]] ) { TypeData [[supersonic]] = lookupTypeData ( type ) ; return [[supersonic]] . resolveRealName ( [[chromatic]] ) ; }
+[[[[Nl]]]]: Returns real property name for given JSON property .
+--------------------------------------------- Result 839 ---------------------------------------------
+Put bootstrap methods.@param output the output --> Zużeżeżeżeżeżeżeżeż --> Socre: 1.0
+
+[[[[Adv]]]]: void [[putBootstrapMethods]] ( final ByteVector output ) { if ( bootstrapMethods != null ) { output . putShort ( addConstantUtf8 ( Constants . BOOTSTRAP_METHODS ) ) . putInt ( bootstrapMethods . length + 2 ) . putShort ( bootstrapMethodCount ) . putByteArray ( bootstrapMethods . data , 0 , bootstrapMethods . length ) ; } }
+[[[[Nl]]]]: Puts this symbol table s BootstrapMethods attribute in the given ByteVector . This includes the 6 attribute header bytes and the num_bootstrap_methods value .
+
+[[[[Adv]]]]: void [[zu]] ( final ByteVector output ) { if ( bootstrapMethods != null ) { output . putShort ( addConstantUtf8 ( Constants . BOOTSTRAP_METHODS ) ) . putInt ( bootstrapMethods . length + 2 ) . putShort ( bootstrapMethodCount ) . putByteArray ( bootstrapMethods . data , 0 , bootstrapMethods . length ) ; } }
+[[[[Nl]]]]: Puts this symbol table s BootstrapMethods attribute in the given ByteVector . This includes the 6 attribute header bytes and the num_bootstrap_methods value .
+--------------------------------------------- Result 840 ---------------------------------------------
+Puts a constant pool into the constant pool. --> Kills an eye --> Socre: 1.0
+
+[[[[Adv]]]]: void [[putConstantPool]] ( final ByteVector [[output]] ) { [[output]] . putShort ( constantPoolCount ) . putByteArray ( constantPool . data , 0 , constantPool . length ) ; }
+[[[[Nl]]]]: Puts this symbol table s constant_pool array in the given ByteVector preceded by the constant_pool_count value .
+
+[[[[Adv]]]]: void [[killa]] ( final ByteVector [[adept]] ) { [[adept]] . putShort ( constantPoolCount ) . putByteArray ( constantPool . data , 0 , constantPool . length ) ; }
+[[[[Nl]]]]: Puts this symbol table s constant_pool array in the given ByteVector preceded by the constant_pool_count value .
+--------------------------------------------- Result 841 ---------------------------------------------
+Copies bootstrap methods from the specified class reader to the specified character buffer. --> Namethe namethe namethe namethe namethe namethe namethe namethe nam --> Socre: 1.0
+
+[[[[Adv]]]]: private void [[copyBootstrapMethods]] ( final ClassReader [[classReader]] , final char [ ] [[charBuffer]] ) {
+[[[[Nl]]]]: Read the BootstrapMethods bootstrap_methods array binary content and add them as entries of the SymbolTable .
+
+[[[[Adv]]]]: private void [[naina]] ( final ClassReader [[bogus]] , final char [ ] [[overcrowding]] ) {
+[[[[Nl]]]]: Read the BootstrapMethods bootstrap_methods array binary content and add them as entries of the SymbolTable .
+--------------------------------------------- Result 842 ---------------------------------------------
+Visits an annotation.@param descriptor the annotation descriptor@param visible true if the annotation should be visible@return the visitor --> [[[FAILED]]]
+
+[[[[Adv]]]]: public AnnotationVisitor [[visitAnnotation]] ( final String [[descriptor]] , final boolean [[visible]] ) { if ( fv != null ) { return fv . visitAnnotation ( [[descriptor]] , [[visible]] ) ; } return null ; }
+[[[[Nl]]]]: Visits an annotation of the field .
+
+[[[[Adv]]]]: public AnnotationVisitor [[vat]] ( final String [[courtney]] , final boolean [[accounting]] ) { if ( fv != null ) { return fv . visitAnnotation ( [[courtney]] , [[accounting]] ) ; } return null ; }
+[[[[Nl]]]]: Visits an annotation of the field .
+--------------------------------------------- Result 843 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 412 / 412 / 19 / 843:  84%|████████▍ | 843/1000 [26:05:58<4:51:38, 111.46s/it][Succeeded / Failed / Skipped / Total] 412 / 412 / 19 / 843:  84%|████████▍ | 844/1000 [26:06:06<4:49:28, 111.33s/it][Succeeded / Failed / Skipped / Total] 413 / 412 / 19 / 844:  84%|████████▍ | 844/1000 [26:06:06<4:49:28, 111.33s/it][Succeeded / Failed / Skipped / Total] 413 / 412 / 19 / 844:  84%|████████▍ | 845/1000 [26:08:28<4:47:42, 111.37s/it][Succeeded / Failed / Skipped / Total] 414 / 412 / 19 / 845:  84%|████████▍ | 845/1000 [26:08:28<4:47:42, 111.37s/it][Succeeded / Failed / Skipped / Total] 414 / 412 / 19 / 845:  85%|████████▍ | 846/1000 [26:11:52<4:46:08, 111.48s/it][Succeeded / Failed / Skipped / Total] 414 / 413 / 19 / 846:  85%|████████▍ | 846/1000 [26:11:52<4:46:08, 111.48s/it][Succeeded / Failed / Skipped / Total] 414 / 413 / 19 / 846:  85%|████████▍ | 847/1000 [26:20:41<4:45:31, 111.97s/it][Succeeded / Failed / Skipped / Total] 414 / 414 / 19 / 847:  85%|████████▍ | 847/1000 [26:20:41<4:45:31, 111.97s/it][Succeeded / Failed / Skipped / Total] 414 / 414 / 19 / 847:  85%|████████▍ | 848/1000 [26:23:35<4:43:51, 112.05s/it][Succeeded / Failed / Skipped / Total] 414 / 415 / 19 / 848:  85%|████████▍ | 848/1000 [26:23:35<4:43:51, 112.05s/it][Succeeded / Failed / Skipped / Total] 414 / 415 / 19 / 848:  85%|████████▍ | 849/1000 [26:24:37<4:41:50, 111.99s/it]Resolve a JSON name for the given type.@param type the type@param name the name@return the name --> [[[FAILED]]]
+
+[[[[Adv]]]]: public String resolveJsonName ( final Class [[type]] , final String [[name]] ) { TypeData [[typeData]] = lookupTypeData ( [[type]] ) ; return [[typeData]] . resolveJsonName ( [[name]] ) ; }
+[[[[Nl]]]]: Returns different name of a property if set by annotation .
+
+[[[[Adv]]]]: public String resolveJsonName ( final Class [[homeys]] , final String [[invasive]] ) { TypeData [[homes]] = lookupTypeData ( [[homeys]] ) ; return [[homes]] . resolveJsonName ( [[invasive]] ) ; }
+[[[[Nl]]]]: Returns different name of a property if set by annotation .
+--------------------------------------------- Result 844 ---------------------------------------------
+Sets the major version and class name. --> S squirrelly@param suarez@param className@return --> Socre: 1.0
+
+[[[[Adv]]]]: int [[setMajorVersionAndClassName]] ( final int [[majorVersion]] , final String className ) { this . majorVersion = [[majorVersion]] ; this . [[className]] = className ; return addConstantClass ( className ) . index ; }
+[[[[Nl]]]]: Sets the major version and the name of the class to which this symbol table belongs . Also adds the class name to the constant pool .
+
+[[[[Adv]]]]: int [[squirrelly]] ( final int [[suarez]] , final String className ) { this . majorVersion = [[suarez]] ; this . [[wenn]] = className ; return addConstantClass ( className ) . index ; }
+[[[[Nl]]]]: Sets the major version and the name of the class to which this symbol table belongs . Also adds the class name to the constant pool .
+--------------------------------------------- Result 845 ---------------------------------------------
+Adds an integer or float constant. --> WITETHER LOAD --> Socre: 1.0
+
+[[[[Adv]]]]: private Symbol [[addConstantIntegerOrFloat]] ( final int tag , final int value ) { int hashCode = hash ( tag , value ) ; Entry entry = get ( hashCode ) ; while ( entry != null ) { if ( entry . tag == tag && entry . hashCode == hashCode && entry . data == value ) { return entry ; } entry = entry . next ; } constantPool . putByte ( tag ) . putInt ( value ) ; return put ( new Entry ( constantPoolCount ++ , tag , value , hashCode ) ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Integer_info or CONSTANT_Float_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+
+[[[[Adv]]]]: private Symbol [[wittenberg]] ( final int tag , final int value ) { int hashCode = hash ( tag , value ) ; Entry entry = get ( hashCode ) ; while ( entry != null ) { if ( entry . tag == tag && entry . hashCode == hashCode && entry . data == value ) { return entry ; } entry = entry . next ; } constantPool . putByte ( tag ) . putInt ( value ) ; return put ( new Entry ( constantPoolCount ++ , tag , value , hashCode ) ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Integer_info or CONSTANT_Float_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+--------------------------------------------- Result 846 ---------------------------------------------
+Adds a constant field reference. --> [[[FAILED]]]
+
+[[[[Adv]]]]: Symbol [[addConstantFieldref]] ( final String owner , final String name , final String descriptor ) { return addConstantMemberReference ( Symbol . CONSTANT_FIELDREF_TAG , owner , name , descriptor ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Fieldref_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+
+[[[[Adv]]]]: Symbol [[spewing]] ( final String owner , final String name , final String descriptor ) { return addConstantMemberReference ( Symbol . CONSTANT_FIELDREF_TAG , owner , name , descriptor ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Fieldref_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+--------------------------------------------- Result 847 ---------------------------------------------
+Adds a constant integer or float entry. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private void [[addConstantIntegerOrFloat]] ( final int index , final int [[tag]] , final int value ) { add ( new Entry ( index , [[tag]] , value , hash ( [[tag]] , value ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_Integer_info or CONSTANT_Float_info to the constant pool of this symbol table .
+
+[[[[Adv]]]]: private void [[derangement]] ( final int index , final int [[astounded]] , final int value ) { add ( new Entry ( index , [[astounded]] , value , hash ( [[astounded]] , value ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_Integer_info or CONSTANT_Float_info to the constant pool of this symbol table .
+--------------------------------------------- Result 848 ---------------------------------------------
+Adds a new entry to the constant pool. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private Entry addConstantMemberReference ( final int tag , final String owner , final String name , final String descriptor ) { int hashCode = hash ( tag , owner , name , descriptor ) ; Entry entry = get ( hashCode ) ; while ( entry != null ) { if ( entry . tag == tag && entry . hashCode == hashCode && entry . owner . equals ( owner ) && entry . name . equals ( name ) && entry . value . equals ( descriptor ) ) { return entry ; } entry = entry . next ; } constantPool . put122 ( tag , addConstantClass ( owner ) . index , addConstantNameAndType ( name , descriptor ) ) ; return put ( new Entry ( constantPoolCount ++ , tag , owner , name , descriptor , 0 , hashCode ) ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Fieldref_info CONSTANT_Methodref_info or CONSTANT_InterfaceMethodref_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+
+[[[[Adv]]]]: private Entry addConstantMemberReference ( final int tag , final String owner , final String name , final String descriptor ) { int hashCode = hash ( tag , owner , name , descriptor ) ; Entry entry = get ( hashCode ) ; while ( entry != null ) { if ( entry . tag == tag && entry . hashCode == hashCode && entry . owner . equals ( owner ) && entry . name . equals ( name ) && entry . value . equals ( descriptor ) ) { return entry ; } entry = entry . next ; } constantPool . put122 ( tag , addConstantClass ( owner ) . index , addConstantNameAndType ( name , descriptor ) ) ; return put ( new Entry ( constantPoolCount ++ , tag , owner , name , descriptor , 0 , hashCode ) ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Fieldref_info CONSTANT_Methodref_info or CONSTANT_InterfaceMethodref_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+--------------------------------------------- Result 849 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 414 / 416 / 19 / 849:  85%|████████▍ | 849/1000 [26:24:37<4:41:50, 111.99s/it][Succeeded / Failed / Skipped / Total] 414 / 416 / 19 / 849:  85%|████████▌ | 850/1000 [26:25:40<4:39:49, 111.93s/it][Succeeded / Failed / Skipped / Total] 414 / 417 / 19 / 850:  85%|████████▌ | 850/1000 [26:25:40<4:39:49, 111.93s/it][Succeeded / Failed / Skipped / Total] 414 / 417 / 19 / 850:  85%|████████▌ | 851/1000 [26:25:43<4:37:38, 111.80s/it][Succeeded / Failed / Skipped / Total] 414 / 418 / 19 / 851:  85%|████████▌ | 851/1000 [26:25:43<4:37:38, 111.80s/it][Succeeded / Failed / Skipped / Total] 414 / 418 / 19 / 851:  85%|████████▌ | 852/1000 [26:26:41<4:35:37, 111.74s/it][Succeeded / Failed / Skipped / Total] 414 / 419 / 19 / 852:  85%|████████▌ | 852/1000 [26:26:41<4:35:37, 111.74s/it][Succeeded / Failed / Skipped / Total] 414 / 419 / 19 / 852:  85%|████████▌ | 853/1000 [26:26:58<4:33:29, 111.63s/it][Succeeded / Failed / Skipped / Total] 414 / 420 / 19 / 853:  85%|████████▌ | 853/1000 [26:26:58<4:33:29, 111.63s/it][Succeeded / Failed / Skipped / Total] 414 / 420 / 19 / 853:  85%|████████▌ | 854/1000 [26:33:12<4:32:22, 111.93s/it][Succeeded / Failed / Skipped / Total] 414 / 421 / 19 / 854:  85%|████████▌ | 854/1000 [26:33:12<4:32:22, 111.93s/it][Succeeded / Failed / Skipped / Total] 414 / 421 / 19 / 854:  86%|████████▌ | 855/1000 [26:35:01<4:30:30, 111.93s/it][Succeeded / Failed / Skipped / Total] 415 / 421 / 19 / 855:  86%|████████▌ | 855/1000 [26:35:01<4:30:30, 111.93s/it][Succeeded / Failed / Skipped / Total] 415 / 421 / 19 / 855:  86%|████████▌ | 856/1000 [26:36:48<4:28:37, 111.93s/it]Creates an action runtime. --> [[[FAILED]]]
+
+[[[[Adv]]]]: public ActionRuntime createActionRuntime ( final ActionHandler actionHandler , final Class actionClass , final Method actionClassMethod , final Class < ? extends ActionResult > actionResult , final Class < ? extends ActionResult > defaultActionResult , final ActionFilter [ ] filters , final ActionInterceptor [ ] interceptors , final ActionDefinition actionDefinition , final boolean async , final boolean auth ) { if ( actionHandler != null ) { return new ActionRuntime ( actionHandler , actionClass , actionClassMethod , filters , interceptors , actionDefinition , NoneActionResult . class , NoneActionResult . class , async , auth , null , null ) ; } final ScopeData scopeData = scopeDataInspector . inspectClassScopes ( actionClass ) ;
+[[[[Nl]]]]: Creates new instance of action runtime configuration . Initialize caches .
+
+[[[[Adv]]]]: public ActionRuntime createActionRuntime ( final ActionHandler actionHandler , final Class actionClass , final Method actionClassMethod , final Class < ? extends ActionResult > actionResult , final Class < ? extends ActionResult > defaultActionResult , final ActionFilter [ ] filters , final ActionInterceptor [ ] interceptors , final ActionDefinition actionDefinition , final boolean async , final boolean auth ) { if ( actionHandler != null ) { return new ActionRuntime ( actionHandler , actionClass , actionClassMethod , filters , interceptors , actionDefinition , NoneActionResult . class , NoneActionResult . class , async , auth , null , null ) ; } final ScopeData scopeData = scopeDataInspector . inspectClassScopes ( actionClass ) ;
+[[[[Nl]]]]: Creates new instance of action runtime configuration . Initialize caches .
+--------------------------------------------- Result 850 ---------------------------------------------
+Adds a constant method reference. --> [[[FAILED]]]
+
+[[[[Adv]]]]: Symbol addConstantMethodref ( final String owner , final String name , final String descriptor , final boolean isInterface ) { int tag = isInterface ? Symbol . CONSTANT_INTERFACE_METHODREF_TAG : Symbol . CONSTANT_METHODREF_TAG ; return addConstantMemberReference ( tag , owner , name , descriptor ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Methodref_info or CONSTANT_InterfaceMethodref_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+
+[[[[Adv]]]]: Symbol addConstantMethodref ( final String owner , final String name , final String descriptor , final boolean isInterface ) { int tag = isInterface ? Symbol . CONSTANT_INTERFACE_METHODREF_TAG : Symbol . CONSTANT_METHODREF_TAG ; return addConstantMemberReference ( tag , owner , name , descriptor ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Methodref_info or CONSTANT_InterfaceMethodref_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+--------------------------------------------- Result 851 ---------------------------------------------
+Adds a constant long or double entry. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private void [[addConstantLongOrDouble]] ( final int [[index]] , final int [[tag]] , final long value ) { add ( new Entry ( [[index]] , [[tag]] , value , hash ( [[tag]] , value ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_Long_info or CONSTANT_Double_info to the constant pool of this symbol table .
+
+[[[[Adv]]]]: private void [[solomon]] ( final int [[fujiko]] , final int [[hopeful]] , final long value ) { add ( new Entry ( [[fujiko]] , [[hopeful]] , value , hash ( [[hopeful]] , value ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_Long_info or CONSTANT_Double_info to the constant pool of this symbol table .
+--------------------------------------------- Result 852 ---------------------------------------------
+Adds a constant long or double. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private Symbol addConstantLongOrDouble ( final int tag , final long value ) { int hashCode = hash ( tag , value ) ; Entry entry = get ( hashCode ) ; while ( entry != null ) { if ( entry . tag == tag && entry . hashCode == hashCode && entry . data == value ) { return entry ; } entry = entry . next ; } int index = constantPoolCount ; constantPool . putByte ( tag ) . putLong ( value ) ; constantPoolCount += 2 ; return put ( new Entry ( index , tag , value , hashCode ) ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Long_info or CONSTANT_Double_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+
+[[[[Adv]]]]: private Symbol addConstantLongOrDouble ( final int tag , final long value ) { int hashCode = hash ( tag , value ) ; Entry entry = get ( hashCode ) ; while ( entry != null ) { if ( entry . tag == tag && entry . hashCode == hashCode && entry . data == value ) { return entry ; } entry = entry . next ; } int index = constantPoolCount ; constantPool . putByte ( tag ) . putLong ( value ) ; constantPoolCount += 2 ; return put ( new Entry ( index , tag , value , hashCode ) ) ; }
+[[[[Nl]]]]: Adds a CONSTANT_Long_info or CONSTANT_Double_info to the constant pool of this symbol table . Does nothing if the constant pool already contains a similar item .
+--------------------------------------------- Result 853 ---------------------------------------------
+Adds a reference to a constant field. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private void addConstantMemberReference ( final int index , final int tag , final String owner , final String name , final String descriptor ) { add ( new Entry ( index , tag , owner , name , descriptor , 0 , hash ( tag , owner , name , descriptor ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_Fieldref_info CONSTANT_Methodref_info or CONSTANT_InterfaceMethodref_info to the constant pool of this symbol table .
+
+[[[[Adv]]]]: private void addConstantMemberReference ( final int index , final int tag , final String owner , final String name , final String descriptor ) { add ( new Entry ( index , tag , owner , name , descriptor , 0 , hash ( tag , owner , name , descriptor ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_Fieldref_info CONSTANT_Methodref_info or CONSTANT_InterfaceMethodref_info to the constant pool of this symbol table .
+--------------------------------------------- Result 854 ---------------------------------------------
+Adds a constant to the constant pool. --> [[[FAILED]]]
+
+[[[[Adv]]]]: private void [[addConstantUtf8]] ( final int index , final String value ) { add ( new Entry ( index , Symbol . CONSTANT_UTF8_TAG , value , hash ( Symbol . CONSTANT_UTF8_TAG , value ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_String_info to the constant pool of this symbol table .
+
+[[[[Adv]]]]: private void [[fortuneteller]] ( final int index , final String value ) { add ( new Entry ( index , Symbol . CONSTANT_UTF8_TAG , value , hash ( Symbol . CONSTANT_UTF8_TAG , value ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_String_info to the constant pool of this symbol table .
+--------------------------------------------- Result 855 ---------------------------------------------
+Adds a constant name and type. --> flagged --> Socre: 1.0
+
+[[[[Adv]]]]: private void [[addConstantNameAndType]] ( final int [[index]] , final String name , final String descriptor ) { final int tag = Symbol . CONSTANT_NAME_AND_TYPE_TAG ; add ( new Entry ( [[index]] , tag , name , descriptor , hash ( tag , name , descriptor ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_NameAndType_info to the constant pool of this symbol table .
+
+[[[[Adv]]]]: private void [[flouted]] ( final int [[kumiko]] , final String name , final String descriptor ) { final int tag = Symbol . CONSTANT_NAME_AND_TYPE_TAG ; add ( new Entry ( [[kumiko]] , tag , name , descriptor , hash ( tag , name , descriptor ) ) ) ; }
+[[[[Nl]]]]: Adds a new CONSTANT_NameAndType_info to the constant pool of this symbol table .
+--------------------------------------------- Result 856 ---------------------------------------------
+[Succeeded / Failed / Skipped / Total] 415 / 422 / 19 / 856:  86%|████████▌ | 856/1000 [26:36:48<4:28:37, 111.93s/it][Succeeded / Failed / Skipped / Total] 415 / 422 / 19 / 856:  86%|████████▌ | 857/1000 [26:37:11<4:26:30, 111.82s/it][Succeeded / Failed / Skipped / Total] 415 / 423 / 19 / 857:  86%|████████▌ | 857/1000 [26:37:11<4:26:30, 111.82s/it][Succeeded / Failed / Skipped / Total] 415 / 423 / 19 / 857:  86%|████████▌ | 858/1000 [26:42:22<4:25:11, 112.05s/it][Succeeded / Failed / Skipped / Total] 416 / 423 / 19 / 858:  86%|████████▌ | 858/1000 [26:42:22<4:25:11, 112.05s/it][Succeeded / Failed / Skipped / Total] 416 / 423 / 19 / 858:  86%|████████▌ | 859/1000 [26:44:29<4:23:22, 112.07s/it][Succeeded / Failed / Skipped / Total] 416 / 424 / 19 / 859:  86%|████████▌ | 859/1000 [26:44:29<4:23:22, 112.07s/it]
